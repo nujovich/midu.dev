@@ -1,0 +1,29 @@
+---
+import Head from "@components/Head.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: {
+    src: string;
+    alt: string;
+  };
+}
+
+const {
+  title,
+  description,
+  ogImage = {
+    src: "https://midu.dev/og-image.png",
+    alt: "Midudev",
+  },
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <Head {title} {description} {ogImage} />
+  <body class="bg-midu-700 text-midu-50">
+    <slot />
+  </body>
+</html>

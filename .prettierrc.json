@@ -8,7 +8,7 @@
   "useTabs": true,
   "overrides": [
     {
-      "files": ["*.json", "*.md", "*.yml", "*.yaml"],
+      "files": ["*.astro",""*.json", "*.md", "*.yml", "*.yaml"],
       "options": {
         "useTabs": false
       }

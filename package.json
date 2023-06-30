@@ -22,5 +22,22 @@
     "prettier-plugin-astro": "^0.10.0",
     "standard": "^17.1.0",
     "typescript": "^5.1.6"
+  },
+  "prettier": {
+    "astroAllowShorthand": true,
+    "overrides": [
+      {
+        "files": "*.astro",
+        "options": {
+          "parser": "astro"
+        }
+      }
+    ],
+    "pluginSearchDirs": [
+      "."
+    ],
+    "plugins": [
+      "prettier-plugin-astro"
+    ]
   }
 }

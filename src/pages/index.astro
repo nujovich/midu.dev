@@ -1,10 +1,14 @@
 ---
-import Layout from "@layout/Layout.astro"
-import Grid from "@components/Grid.astro"
-import Header from "@components/Header.astro"
+import Layout from "@layout/Layout.astro";
+import Grid from "@components/Grid.astro";
+import Header from "@components/Header.astro";
+import Hero from "@components/Hero.astro";
 ---
 
 <Layout>
-  <Header />
   <Grid />
+  <div class="relative z-10">
+    <Header />
+    <Hero />
+  </div>
 </Layout>

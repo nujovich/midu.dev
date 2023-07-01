@@ -1,0 +1,40 @@
+---
+import Buttons from "@components/Buttons.astro";
+import Icons from "@components/Icons.astro";
+import NextEvents from "@components/NextEvents.astro";
+---
+
+<section
+  class="flex flex-col items-center justify-center gap-6 h-[100lvh] sm:h-[calc(100vh-12rem)]"
+>
+  <NextEvents />
+  <h1 class="text-4xl max-w-xl text-center font-bold [text-wrap:balance]">
+    Subamos el nivel de la comunidad hispana de desarrollo web
+  </h1>
+  <p class="">
+    No te pierdas ninguna de las clases en vivo y eventos de la comunidad.
+  </p>
+  <div
+    class="flex items-center justify-center text-center gap-3 w-full max-w-lg"
+  >
+    <Buttons
+      ButtonUrl="https://discord.gg/midudev"
+      ButtonClass="bg-midu-purple"
+    >
+      <Icons
+        IconPack="simple-icons"
+        IconName="discord"
+        IconClass="fill-midu-50 w-5 h-5 inline-block"
+      />
+      <span>Únete a nuestro Discord</span>
+    </Buttons>
+    <Buttons ButtonUrl="#agenda" ButtonClass="bg-midu-400">
+      <Icons
+        IconPack="simple-icons"
+        IconName="googlecalendar"
+        IconClass="fill-midu-50 w-5 h-5 inline-block"
+      />
+      <span>Revisa la agenda</span>
+    </Buttons>
+  </div>
+</section>

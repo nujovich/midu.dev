@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Inicio",
+    "url": "/"
+  },
+  {
+    "title": "Agenda",
+    "url": "/agenda"
+  },
+  {
+    "title": "Artículos",
+    "url": "/articulos"
+  },
+  {
+    "title": "Podcast",
+    "url": "/podcast"
+  },
+  {
+    "title": "Cursos",
+    "url": "/cursos"
+  },
+  {
+    "title": "Libros",
+    "url": "/libros"
+  }
+]

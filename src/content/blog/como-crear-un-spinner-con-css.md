@@ -4,8 +4,7 @@ date: '2021-04-15'
 description: >-
   Aprende a crear un donut spinner 🍩 sólo usando CSS y en menos de un minuto. Perfecto para frontenders impacientes ⏲️.
 toc: true
-tags:
-  - css
+tags :  css
 image: https://img.youtube.com/vi/8nm9WPptL0c/maxresdefault.jpg
 ---
 

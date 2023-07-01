@@ -3,9 +3,7 @@ title: CURSO EXPRESS gratis de GraphQL, React Apollo y Apollo Server
 date: "2019-07-13"
 image: "/images/curso-express-graphql.png"
 description: "Aprender gratis sobre GraphQL. Una introducción en español sobre como conectarlo con React usando Apollo Client y crear tu propio servidor con Apollo Server."
-tags:
-  - graphql
-  - react
+tags : graphql
 
 toc: true
 ---

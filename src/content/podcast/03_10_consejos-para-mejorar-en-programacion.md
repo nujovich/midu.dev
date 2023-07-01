@@ -9,8 +9,7 @@ category: 'podcast'
 season: 03
 episode: 10
 audio: https://anchor.fm/s/2c58e75c/podcast/play/54539543/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-6-7%2F0083f44f-fb5d-3d95-ce01-873e6cdac8f2.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p>¡Te regalo algunos consejos sobre cómo mejorar en programación!</p>

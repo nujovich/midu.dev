@@ -3,8 +3,7 @@ title: "Cómo solucionar el error ReferenceError: window is not defined"
 date: '2022-07-10'
 description: ¿Estás programando con JavaScript en el servidor y estás encontrando este error? ¡Es normal! Te cuento cómo solucionarlo
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 En algún momento te vas a encontrar el error `ReferenceError: window is not defined` si desarrollas con **JavaScript**. Esto es porque estás dando por hecho que todos los entornos donde se ejecuta este lenguaje tiene acceso a este objeto global... **¡y no es así!**

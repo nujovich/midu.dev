@@ -7,8 +7,7 @@ category: 'podcast'
 season: 02
 episode: 04
 audio: https://anchor.fm/s/2c58e75c/podcast/play/23800481/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-11-10%2F68107a6f-f9c3-ae9c-40df-b271684ed2fa.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p><strong>¿Qué es lo que lo está PETANDO en CSS?</strong> ¿Qué tendrías que estar <strong>APRENDIENDO</strong>? ¿Qué te estás <strong>PERDIENDO</strong> en el mundo de la maquetación?</p>

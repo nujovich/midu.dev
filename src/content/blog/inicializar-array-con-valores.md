@@ -2,8 +2,7 @@
 title: Cómo inicializar Array con valores en JavaScript
 date: '2023-01-03'
 description: 'Aprende a inicializar un Array con valores en JavaScript'
-tags:
-- javascript
+tags: javascript
 ---
 
 En *JavaScript*, un *Array* es una **estructura de datos que nos permite almacenar una colección de elementos**. Estos elementos pueden ser de cualquier tipo, incluso pueden ser otros Arrays.

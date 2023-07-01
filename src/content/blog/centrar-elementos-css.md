@@ -3,8 +3,7 @@ title: Las mejores formas de centrar elementos en CSS
 date: '2021-08-05'
 description: Descubre cómo centrar elementos en CSS tanto horizontalmente como verticalmente con propiedades que funcionan en todos los navegadores modernos.
 toc: true
-tags:
-- css
+tags: css
 ---
 
 Si hay una broma recurrente en *CSS* siempre ha sido **la dificultad de centrar un elemento tanto horizontal como verticalmente en condiciones**. Durante muchos años nos han acompañado multitud de hacks para poder conseguirlo... pero hoy en día ya no es necesario.

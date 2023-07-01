@@ -7,8 +7,7 @@ category: 'podcast'
 season: 03
 episode: 09
 audio: https://anchor.fm/s/2c58e75c/podcast/play/54330624/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-6-3%2F12277aea-be05-f806-403f-55d810874af1.mp3
-tags:
-- podcast
+tags: podcast
 ---
 
 <p>No conocer a David Bonilla en el sector tecnológico es imposible. Lleva escribiendo la Bonilista desde que tengo uso de razón, no faltando a la cita cada domingo.</p>

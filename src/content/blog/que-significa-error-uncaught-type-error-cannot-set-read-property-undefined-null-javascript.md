@@ -4,8 +4,7 @@ date: '2021-07-05'
 description: Aprende a solucionar este típico error de JavaScript al intentar acceder a propiedades y atributos de un objeto
 topic: javascript
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 A veces, cuando estamos trabajando con JavaScript, nos puede mostrar el error `Uncaught TypeError: Cannot set/read property 'XXX' of undefined/null`. Este error, además, puede hacer que nuestra aplicación o web deje de responder como es debido pero...

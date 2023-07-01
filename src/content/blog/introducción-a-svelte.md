@@ -5,8 +5,7 @@ image: '/images/svelte-logo.png'
 description: Svelte es un nuevo framework que tiene como objetivo simplificar al máximo la creación de aplicaciones web reactivas escribiendo el mínimo número de líneas posible.
 
 toc: true
-tags:
-- svelte
+tags: svelte
 ---
 
 {{< youtube id="Xsxm8_BI63s" >}}

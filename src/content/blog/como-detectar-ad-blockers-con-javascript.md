@@ -3,8 +3,7 @@ title: Cómo detectar ad blockers con JavaScript
 date: '2021-02-06'
 description: Usando un poco de JavaScript podemos detectar si el usuario de nuestro sitio está usando un AdBlocker y hacer algo al respecto.
 toc: true
-tags:
-  - javascript
+tags :  javascript
 image: /images/og/como-detectar-ad-blockers-con-javascript.png
 ---
 

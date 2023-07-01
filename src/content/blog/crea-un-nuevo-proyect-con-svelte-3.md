@@ -5,8 +5,7 @@ image: '/images/crear-proyecto-con-svelte.png'
 description: Aprende a crear desde cero y paso a paso tu proyecto con el framework Svelte.js con este pequeño tutorial en español. Para tener todas las dependencias y un entorno de desarrollo listo para empezar a trabajar.
 
 toc: true
-tags:
-- svelte
+tags: svelte
 ---
 
 Pues viendo el éxito que tuvo el [artículo sobre la introducción a Svelte.js](https://midu.dev/introducci%C3%B3n-a-svelte/), me he decidido a hacer una **serie de artículos y vídeos para explicar cómo hacer una pequeña aplicación con este framework.**

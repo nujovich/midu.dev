@@ -4,8 +4,7 @@ date: 2021-09-02
 description:
   "Consultas de contenedores CSS editables, previsualización de paquetes web, mejor manejo de cadenas de texto en la Consola y más."
 toc: true
-tags:
-- devtools
+tags: devtools
 ---
 
 **¡Ya tenemos disponible una nueva versión de Google Chrome!** Y con ello, un montón de novedades para mejorar las herramientas de desarrollo. He traducido [las notas de lanzamiento oficial](https://developer.chrome.com/blog/new-in-devtools-93/) para que tengas en castellano las novedades del navegador en tu idioma. ⬇️

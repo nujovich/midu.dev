@@ -6,8 +6,7 @@ description: >-
   nvm-windows
 
 toc: true
-tags:
-  - node
+tags :  node
 image: /images/og/como-instalar-node-en-mac-y-windows.png
 ---
 

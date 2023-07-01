@@ -7,8 +7,7 @@ category: 'podcast'
 season: 03
 episode: 05
 audio: https://anchor.fm/s/2c58e75c/podcast/play/39172063/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-7-22%2F12908a9c-674b-d9a4-07ea-c80d97fde6d4.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p><strong>¡No hagas despliegue a producción en viernes! 😱</strong> O eso dicen. ¿En qué año estamos? <strong>Parece mentira que en 2021</strong>, donde hemos conocido cosas como GitHub Copilot que nos completa el código casi automáticamente y Tesla presenta un asistente casi humanoide... estamos todavía preocupados de hacer despliegues en viernes. 🥲</p>

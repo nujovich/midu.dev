@@ -3,8 +3,7 @@ title: Descarga el logo de HTML5, CSS3 y JavaScript en formato vectorial SVG
 date: '2021-08-03'
 description: Logos oficiales y optimizados en formato SVG de los lenguajes HTML, CSS y JavaScript
 topic: javascript
-tags:
-- javascript
+tags: javascript
 toc: true
 ---
 

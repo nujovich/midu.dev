@@ -3,8 +3,7 @@ title: Buenas prácticas para escribir commits en Git
 date: '2021-07-22'
 description: Aprende a escribir buenos mensajes de commit en Git con esta lista de buenas prácticas
 toc: true
-tags:
-- git
+tags: git
 ---
 
 Escribir buenos mensajes de commit es importante para que el histórico de tu proyecto sea legible, fácilmente escaneable y, claro, entendible por cualquier persona que participe en el proyecto.

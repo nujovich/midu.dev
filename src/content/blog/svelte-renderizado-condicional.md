@@ -5,8 +5,7 @@ image: '/images/svelte-conditional-rendering.jpg'
 description: Aprende a realizar un renderizado condicional, esto es, mostrar diferentes elementos o componentes de Svelte dependiendo de una condición
 
 toc: true
-tags:
-- svelte
+tags: svelte
 ---
 
 Seguimos con [Svelte](https://midu.dev/introducci%C3%B3n-a-svelte/) para hablar hoy de cómo poder crear renderizados condicionales con este framework. Si prefieres ver [el vídeo de mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1), como siempre, aquí te lo dejo. Si quieres texto... ¡sigue leyendo 👇!

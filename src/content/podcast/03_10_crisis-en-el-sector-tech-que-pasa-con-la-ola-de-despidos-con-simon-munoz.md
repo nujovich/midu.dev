@@ -7,8 +7,7 @@ category: 'podcast'
 season: 03
 episode: 10
 audio: https://anchor.fm/s/2c58e75c/podcast/play/54310409/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-6-2%2Fe121fed2-6ab4-a405-efe0-16ecfa65247d.mp3
-tags:
-- podcast
+tags: podcast
 ---
 
 <p>Hablamos con Simón Muñoz, que cuenta con más de 20 años de experiencia en el desarrollo de productos digitales, para hablar sobre la ola de despidos que están ocurriendo en el sector tech. Y no hablamos sólo de crypto. Empresas como Meta y Netflix están congelando las contrataciones, otras han despedido parte de su plantilla y no se sabe hasta dónde va a llegar esto.</p>

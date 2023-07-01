@@ -5,8 +5,7 @@ description: >-
   ¿Existen alternativas a Webpack y Rollup? ¡Sí! Y algunas MUY interesantes.
   Conoce los mejores empaquetadores de apps web del momento.
 toc: true
-tags:
-  - webpack
+tags :  webpack
 image: /images/og/empaquetadores-de-aplicaciones-web-2021.png
 ---
 

@@ -5,9 +5,7 @@ image: '/images/og_curso_nextjs_2020.jpg'
 description: Aprende qué es NextJS, el framework de React por excelencia, creando un clon de Twitter desde cero
 
 toc: true
-tags:
-- nextjs
-- react
+tags: nextjs
 ---
 
 Estoy emitiendo todos los viernes un live coding **[en mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1)** donde vamos a ir construyendo paso a paso y desde cero **un clon de Twitter usando NextJS, el framework de React de Vercel.**

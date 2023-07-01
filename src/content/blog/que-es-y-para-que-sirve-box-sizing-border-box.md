@@ -6,8 +6,7 @@ description: >-
   GitHub, el paso más lógico parece migrar a GitHub Actions. En este artículo te
   cuento cómo hacerlo paso a paso con proyectos de Node.js.
 topic: css
-tags:
-  - css
+tags :  css
 image: /images/og/que-es-y-para-que-sirve-box-sizing-border-box.png
 ---
 

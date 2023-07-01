@@ -4,8 +4,7 @@ title: >-
 date: '2022-06-25'
 description: >-
   Hacer una copia de un Array en JavaScript puede parecer algo sencillo pero lo cierto es que este tipo de datos esconde algunas trampas que hay que controlar. 
-tags:
-  - javascript
+tags :  javascript
 toc: true
 ---
 

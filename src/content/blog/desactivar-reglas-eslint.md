@@ -2,8 +2,7 @@
 title: Desactivar reglas de eslint
 date: '2023-01-29'
 description: Aprende a desactivar reglas de eslint en tu código a diferentes niveles
-tags:
-- javascript
+tags: javascript
 ---
 
 ESLint es una herramienta de linting de JavaScript que ayuda a encontrar y corregir problemas en el código. A veces, puede que una regla específica no se ajuste a tus necesidades o preferencias, y necesites desactivarla. Aquí hay varias maneras de hacerlo.

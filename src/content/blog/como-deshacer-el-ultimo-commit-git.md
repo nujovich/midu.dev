@@ -5,8 +5,7 @@ description: >-
   A veces hacemos commit en git e inmediatamente nos damos cuenta que nos hemos
   equivocado.
 toc: true
-tags:
-  - git
+tags :  git
 image: /images/og/como-deshacer-el-ultimo-commit-git.png
 ---
 

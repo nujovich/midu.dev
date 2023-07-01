@@ -3,8 +3,7 @@ title: Métricas de Web Performance
 date: '2021-11-06'
 description: Todas las métricas de Web Performance que debes conocer, sus valores recomendados y cómo se miden
 toc: true
-tags:
-- performance
+tags: performance
 ---
 
 **¿Conoces todas las métricas que puedes extraer del rendimiento de una web?** Si no las sabes... ¡deberías! La *Web Performance* es muy importante para el éxito de cualquier página. Ya no sólo porque [Google lo tiene en cuenta a la hora de posicionar tu sitio](https://developers.google.com/web/updates/2018/07/search-ads-speed) en los resultados de búsqueda, sino porque muchas de las métricas que se miden impactan directamente en la experiencia de las personas que usan tu sitio.

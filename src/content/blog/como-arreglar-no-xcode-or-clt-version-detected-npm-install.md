@@ -4,8 +4,7 @@ title: >-
 date: '2021-03-31'
 description: >-
   ¿Estás intentando hacer un npm install y te aparece este error en la terminal? Seguramente 
-tags:
-  - macos
+tags :  macos
 image: >-
   /images/og/como-arreglar-macos-xcrun-error-invalid-active-developer-path-missing-xcrun.png
 ---

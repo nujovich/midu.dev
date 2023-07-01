@@ -3,8 +3,7 @@ title: 'Cómo leer el contenido de un directorio en Deno'
 date: '2022-12-22'
 description: Aprende a leer el contenido de un directorio en Deno usando la función Deno.readDir
 toc: true
-tags:
-  - deno
+tags :  deno
 support: deno 1.29.1
 ---
 

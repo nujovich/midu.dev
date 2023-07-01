@@ -3,9 +3,7 @@ title: Dev Fest Alicante - React Rendering Strategies enlaces
 date: "2019-11-05"
 image: "/images/react-rendering-strategies-cover.png"
 description: Todos los enlaces y recursos de la charla de React y sus estrategias de renderizado en React
-tags:
-  - react
-  - performance
+tags :  react
 language: 🇬🇧
 type: page
 ---

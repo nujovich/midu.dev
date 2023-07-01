@@ -7,8 +7,7 @@ category: 'podcast'
 season: 02
 episode: 03
 audio: https://anchor.fm/s/2c58e75c/podcast/play/19061277/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-8-4%2Fd803b641-d2b2-b75e-587c-4441d295b8a8.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p><strong>Guillermo Rauch</strong> es una de las personas más influyentes en el mundo del desarrollo web. Actualmente es <strong>CEO y co-fundador de Vercel ▲</strong> (hasta hace muy poco ZEIT), una plataforma que te permite desplegar tus aplicaciones de forma rápida y sencilla. Además, mantiene y escribe sus pensamientos e ideas en <a href="http://rauchg.com/">rauchg.com</a>.</p>

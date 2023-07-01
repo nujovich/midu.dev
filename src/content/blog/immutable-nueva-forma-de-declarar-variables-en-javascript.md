@@ -3,8 +3,7 @@ title: immutable, el nuevo tipo para declarar variables en Javascript
 date: '2018-12-28'
 image: '/images/immutable-const-variable.png'
 description: 'Usando immutable podremos crear estructuras de datos en Javascript que no son reasignables y tampoco modificables.'
-tags:
-- javascript
+tags: javascript
 
 ---
 

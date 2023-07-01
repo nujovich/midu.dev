@@ -6,8 +6,7 @@ date: '2020-12-16'
 description: >-
   ¿Has actualizado a la última versión de macOS y te ha aparecido este error? Se
   puede solucionar instalando de nuevo las Command Line Developer Tools.
-tags:
-  - macos
+tags :  macos
 image: >-
   /images/og/como-arreglar-macos-xcrun-error-invalid-active-developer-path-missing-xcrun.png
 ---

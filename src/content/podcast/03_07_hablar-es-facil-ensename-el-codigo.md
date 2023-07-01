@@ -7,8 +7,7 @@ category: 'podcast'
 season: 03
 episode: 07
 audio: https://anchor.fm/s/2c58e75c/podcast/play/46559771/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-0-23%2Fe8f86abc-036b-0584-3ab2-9f5dd79e6cff.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p>A Linus Torvalds seguramente lo conoces por muchas cosas. Este ingenierio finlandés es el creador del kernel de Linux y de Git. Podría pasarme un podcast entero seguramente hablándote de él pero, en su lugar, voy a utilizar una de sus frases más famosas:</p>

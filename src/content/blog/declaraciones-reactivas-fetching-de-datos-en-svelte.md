@@ -5,8 +5,7 @@ image: '/images/declaraciones-reactivas-fetching-con-svelte.jpg'
 description: Domina completamente la reactividad en Svelte para ir más allá de las asignaciones y crear declaraciones y sentencias totalmente reactivas para poder hacer fetching de datos.
 
 toc: true
-tags:
-- svelte
+tags: svelte
 ---
 
 [Ya dominamos cómo crear componentes y gestionar el estado de los mismos](https://midu.dev/componentes-y-estado-en-svelte/) gracias a las asignaciones reactivas es el momento de ejecutar código cada vez que este estado cambie. Para ello, vamos a conocer **cómo crear declaraciones reactivas y, al final, conseguiremos hacer fetch de datos de una API**. Si no te gusta leer, **te dejo [**mi canal de Youtube**](https://www.youtube.com/watch?v=n3T_vbCJ1nY) 👇 donde he subido la misma explicación en vídeo.**

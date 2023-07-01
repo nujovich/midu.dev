@@ -3,8 +3,7 @@ title: Cómo usar rutas absolutas en los imports en Next.js
 date: '2021-05-19'
 image: '/images/deja-de-usar-imports-relativos-next-js.png'
 description: Evita usar rutas relativas a la hora de importar archivos en tus componentes de React en Next.js y usa rutas más fáciles de leer
-tags:
-- nextjs
+tags: nextjs
 ---
 
 Normalmente cuando trabajamos con aplicaciones de React, tenemos multitud de componentes en diferentes carpetas y tenemos que usar rutas relativas para poder importarlos allí donde lo necesitamos.

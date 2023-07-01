@@ -6,8 +6,7 @@ description: >-
   interfaz del usuario utilizando el framework Svelte.
 
 toc: true
-tags:
-  - svelte
+tags :  svelte
 image: /images/og/renderizar-listas-de-elementos-en-svelte.png
 ---
 

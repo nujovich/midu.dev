@@ -3,8 +3,7 @@ title: ¿Qué hay de nuevo en las DevTools de Chrome 92? Notas de la versión
 date: '2021-07-23'
 description: Editor de Grid en CSS, soporte para redeclaraciones de const en la Consola, ver el orden de los elementos y mucho más
 toc: true
-tags:
-- devtools
+tags: devtools
 ---
 
 ## Editor de CSS Grid

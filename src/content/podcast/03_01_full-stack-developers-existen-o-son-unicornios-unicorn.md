@@ -7,8 +7,7 @@ category: 'podcast'
 season: 03
 episode: 01
 audio: https://anchor.fm/s/2c58e75c/podcast/play/24705878/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-0-3%2F42214f70-223f-578c-91c5-ded4ee817354.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p>La leyenda de los Fullstack Developers 👨‍💻. ¿Existen ¿Unicornios 🦄? ¿Postureo? ¿Tienen sentido hoy en día?<br>

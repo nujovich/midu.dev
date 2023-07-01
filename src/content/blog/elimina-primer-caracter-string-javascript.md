@@ -3,8 +3,7 @@ title: "Eliminar primer carácter de una cadena de texto en JavaScript"
 date: '2021-07-27'
 description: Instrucciones para eliminar el primer carácter de un string en JavaScript de diferentes maneras
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 **Los strings son tipos primitivos en JavaScript** y, por lo tanto, son inmutables. Esto quiere decir que no pueden ser modificados así que para realizar un cambio en una cadena de texto, en realidad, **tienes que crear un nuevo string.**

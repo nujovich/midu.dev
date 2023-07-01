@@ -3,8 +3,7 @@ title: CSS Scroll Snap, la solución definitiva a la creación de sliders en la 
 date: '2018-12-27'
 image: '/images/scroll-snap.png'
 description: 'Introducción a CSS Scroll Snap. La solución definitiva a la batalla infinita entre los desarrolladores web y la creación de sliders. Por fin.'
-tags:
-- css
+tags: css
 
 ---
 

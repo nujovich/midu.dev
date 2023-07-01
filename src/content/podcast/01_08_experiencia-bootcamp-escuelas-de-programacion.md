@@ -7,8 +7,7 @@ category: 'podcast'
 season: 01
 episode: 08
 audio: https://anchor.fm/s/2c58e75c/podcast/play/16702212/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-6-17%2F90903094-44100-2-4a074dae3640cc6f.mp3
-tags:
-- podcast
+tags: podcast
 ---
 
 Hablamos con los protagonistas de la última promoción del bootcamp de Barcelona Skylab. ¿De dónde vienen? ¿Por qué se decidieron a aprender la programación web? Nos cuentan también cómo lo han pasado y cómo de intensos han sido las últimas 12 semanas para ellos. Además de las vivencias, dan algunos consejos para todos aquellos que se estén preparando para vivir una aventura como esta.

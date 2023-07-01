@@ -7,8 +7,7 @@ category: 'podcast'
 season: 03
 episode: 04
 audio: https://anchor.fm/s/2c58e75c/podcast/play/31351132/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-3-13%2F49b78646-a68f-43f7-f353-3bd30d277edd.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p><strong>Cada vez se hacen más entrevistas con Live Coding Challenge. </strong>Y la verdad es que no siempre se hacen bien. En este podcast te comparto mi experiencia después de hacer decenas y decenas de procesos de este estilo en mi empresa. Todo lo que he aprendido. Buenas prácticas. Ideas. Vaya, <strong>cómo no hacer una entrevista de mierda. 🤣</strong></p>

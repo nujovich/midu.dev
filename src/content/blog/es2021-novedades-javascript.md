@@ -3,8 +3,7 @@ title: "ES2021 / ES12: novedades de la última versión de JavaScript"
 date: "2021-08-07"
 description: Descubre todas las novedades del lenguaje JavaScript para ser más productivo y sacarle todo el partido.
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 **JavaScript** no deja de evolucionar y todos los años se añaden nuevas funcionalidades para mejorar la productividad de los desarrolladores. Este año **2021 no iba a ser una excepción** y te explico las nuevas características que ya tienes disponible en la mayoría de navegadores.

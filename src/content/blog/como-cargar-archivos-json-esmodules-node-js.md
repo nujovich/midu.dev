@@ -3,8 +3,7 @@ title: >-
   Cómo cargar archivos JSON con ESModules en Node.js
 date: '2021-06-14'
 description: Con la llegada de los ECMAScript Modules a Node.js parece que se ha perdido la posibilidad de cargar archivos JSON... pero no. ¡Te cuento cómo puedes hacerlo!
-tags:
-  - node
+tags :  node
 ---
 
 Usar ECMAScript Modules en Node.js es ya una realidad y, con ello, no sólo vamos a tener que acostumbrarnos a una nueva sintaxis... también hay ciertas ventajas de `commonjs` que ahora mismo no sirven. Como importar archivos JSON usando simplemente un `const data = require('file.json')`.

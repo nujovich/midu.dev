@@ -3,8 +3,7 @@ title: Lista de deseos para el futuro de Javascript
 date: '2019-02-03'
 image: '/images/js-future.jpg'
 description: En los últimos años hemos visto una evolución brutal de Javascript como lenguaje de programación, añadiendo nuevas caracterísitcas, métodos y funcionalidades. Pero los desarrolladores de este lenguaje queremos más. Aquí una lista de mis deseos.
-tags:
-- javascript
+tags: javascript
 
 ---
 

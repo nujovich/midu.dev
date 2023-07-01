@@ -2,8 +2,7 @@
 title: "Curso de Rust para desarrolladores JavaScript"
 date: '2023-01-10'
 description: "Aprende Rust usando todos tus conocimientos que ya tienes de JavaScript"
-tags:
-  - rust
+tags :  rust
 toc: true
 ---
 

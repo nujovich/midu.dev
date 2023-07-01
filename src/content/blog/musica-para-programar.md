@@ -3,8 +3,7 @@ title: Música para programar y concentrarse ✌
 date: '2021-07-26'
 description: Encuentra tu lista de reproducción para concentrarte y mejorar tu productividad mientras estás estudiando, programando o trabajando
 toc: true
-tags:
-- me
+tags: me
 ---
 
 **¿Qué música escuchas para PROGRAMAR 🎧?** ¡Te digo la mía!

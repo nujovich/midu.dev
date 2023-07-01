@@ -3,8 +3,7 @@ title: "Cómo convertir una función de callback en JavaScript a una función as
 date: "2022-12-06"
 description: "En este artículo, te muestro cómo convertir una función de devolución de llamada en JavaScript a una función que utiliza la palabra clave async/await. Con esta técnica, puedes hacer que tu código sea más legible y fácil de mantener."
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 En este artículo, te muestro cómo convertir una función con *callbacks* en JavaScript a una función que utiliza `async/await`. Con esta técnica, puedes hacer que tu código sea más legible y fácil de mantener.

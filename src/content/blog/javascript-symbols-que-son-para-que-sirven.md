@@ -3,8 +3,7 @@ title: Symbols en JavaScript. ¿Qué son y para qué sirven?
 date: '2022-12-20'
 description: Los Symbols en JavaScript son un tipo de dato primitivo pero poca gente sabe su utilidad. ¡Te la explico en este artículo!
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 Los *Symbols* (símbolos en español) son un tipo de dato primitivo en JavaScript que se introdujo en *ECMAScript 6*. Que sean primitivos quiere decir que está al nivel de los *String*, *Number*, *Boolean* y compañía.

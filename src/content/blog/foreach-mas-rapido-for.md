@@ -5,8 +5,7 @@ description: Explicamos qué razón hace que forEach de JavaScript sea más ráp
 topic: javascript
 
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 Mucha gente cree, **de forma equivocada**, que `for` es la forma más rápida de hacer bucles en JavaScript **SIEMPRE**. Y que `forEach` es más lento.

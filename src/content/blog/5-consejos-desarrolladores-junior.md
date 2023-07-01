@@ -4,8 +4,7 @@ date: '2022-03-23'
 description: Te comparto 5 consejos para desarrolladores que están comenzando en el mundo de la programación
 topic: me
 toc: true
-tags:
-- me
+tags: me
 ---
 
 {{< youtube id="-yw7_3ysx1Q" >}}

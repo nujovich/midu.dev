@@ -4,8 +4,7 @@ date: '2021-07-04'
 description: >-
   Descubre cómo puedes usar el método map a la hora de iterar Arrays y funciones asíncronas fácilmente
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 Si alguna vez has intentado usar los métodos de Array `.map` o `.forEach` con una función asíncrona habrás visto que no puedes esperar el resultado sin más en cada iteración.

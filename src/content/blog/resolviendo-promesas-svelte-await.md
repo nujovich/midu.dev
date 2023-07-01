@@ -4,8 +4,7 @@ date: '2020-12-12'
 description: >-
   Aprende a usar las plantillas de Svelte para resolver tus promesas y mejorar
   tus componentes
-tags:
-  - svelte
+tags :  svelte
 image: /images/og/resolviendo-promesas-svelte-await.png
 ---
 

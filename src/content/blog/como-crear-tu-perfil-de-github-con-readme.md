@@ -6,8 +6,7 @@ description: >-
   personalizar tu perfil utilizando un README.md
 
 toc: true
-tags:
-  - github
+tags :  github
 image: /images/og/como-crear-tu-perfil-de-github-con-readme.png
 ---
 

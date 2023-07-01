@@ -2,8 +2,7 @@
 title: Cómo leer, copiar y pegar del portapapeles en JavaScript
 date: '2023-01-30'
 description: En este artículo aprenderás a usar el portapapeles en JavaScript con ejemplos de código
-tags:
-- javascript
+tags: javascript
 ---
 
 La API del portapapeles disponible en el objeto `navigator` te permite leer y escribir datos del portapapeles del usuario.

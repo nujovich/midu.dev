@@ -3,8 +3,7 @@ title: "Cómo usar git bisect para encontrar el commit culpable de un error"
 date: '2021-07-16'
 description: Gracias a git bisect, puedes comenzar una búsqueda entre un historial de commits para determinar cuál de ellos es el que introduce el error.
 topic: git
-tags:
-  - git
+tags :  git
 ---
 
 Imagina que estás en un proyecto y, de repente, hay un error en producción pero, desde el último pase, se han hecho cientos de commits. ¿Cómo sabes qué commit es el culpable? Hacerlo a mano es una tarea difícil...

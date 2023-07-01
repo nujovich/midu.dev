@@ -2,8 +2,7 @@
 title: "Top 5 preguntas de JavaScript en Stack Overflow"
 date: '2023-02-10'
 description: "Solucionamos las 5 preguntas más populares de JavaScript en Stack Overflow"
-tags:
-  - javascript
+tags :  javascript
 toc: true
 ---
 

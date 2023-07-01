@@ -3,8 +3,7 @@ title: ¿Es React una biblioteca o un framework?
 date: '2022-10-12'
 description: Aprende la diferencia entre una biblioteca y un framework y cómo afecta a React
 topic: react
-tags:
-- react
+tags: react
 ---
 
 Existe una fina línea hoy en día entre qué es una biblioteca o un framework. Oficialmente, **React se autodenomina como biblioteca en su página web**. Esto es porque para poder crear una aplicación completa, necesitas usar otras bibliotecas, y se considera que React se enfoca específicamente en la construcción de interfaces de usuario.

@@ -4,8 +4,7 @@ date: '2022-07-12'
 description: No hay un método que directamente nos diga que un valor es una Promesa pero podemos conseguirlo con unas pocas líneas de código
 toc: true
 draft: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 No existe en JavaScript un método que compruebe si un valor es una Promesa. Y esto puede resultar sorprendente. Obviamente **puedes comprobar si un valor es una instancia** de `Promise` y eso podría parecer suficiente. **Spoiler: no lo es.**

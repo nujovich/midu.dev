@@ -3,8 +3,7 @@ title: Por qué creo que Microsoft use Chromium es una buena noticia... para tod
 date: '2018-12-05'
 image: '/images/microsoft-edge-presentation.jpg'
 description: 'Al parecer, Microsoft va a dejar de mantener el motor actual de Edge para empezar a utilizar Chromium, el motor de código abierto de Chrome. Todo el mundo está dando su opinión y, oye, yo no iba a ser menos. Eso sí, yo creo que igual es una buena noticia para todos. También para ti.'
-tags:
-- opinion
+tags: opinion
 
 ---
 

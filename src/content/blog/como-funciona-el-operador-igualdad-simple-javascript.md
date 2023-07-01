@@ -3,8 +3,7 @@ title: ¿Cómo funciona realmente la igualdad ==?
 date: '2021-07-24'
 description: En JavaScript puedes usar == o === para hacer comparaciones. Deberías usar siempre el estricto pero te explico como funciona el ==.
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 ## == no siempre hace transformación de tipos

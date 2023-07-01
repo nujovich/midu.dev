@@ -5,8 +5,7 @@ description: Elegir la mejor tipografía para tu código tiene una gran importan
 image: '/images/og/5-tipografias-programar.png'
 
 toc: true
-tags:
-- vscode
+tags: vscode
 ---
 
 Elegir la mejor tipografía para tu código tiene una gran importancia para ser más productivo y trabajar de una forma más cómoda. En el siguiente vídeo y artículo comparto contigo **mis cinco fuentes favoritas para programar**. Por supuesto, **todas son monospace** (que cada letra ocupa el mismo espacio).

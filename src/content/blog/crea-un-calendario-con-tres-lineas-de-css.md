@@ -5,8 +5,7 @@ image: '/images/og/crea-un-calendario-con-tres-lineas-de-css.png'
 description: "Aprende a maquetar un calendario en HTML con unas pocas líneas de CSS gracias a la potencia de display:grid"
 
 toc: true
-tags:
-- css
+tags: css
 ---
 
 Hasta hace poco, **maquetar un calendario en CSS** era bastante rollo. No es que fuese imposible, ni mucho menos, pero para crear la cuadrícula de días debíamos de tener en cuenta unas cuantas cosas y hacía que el CSS fuese, no complicado, pero sí algo largo.

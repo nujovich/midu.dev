@@ -3,8 +3,7 @@ title: "Cómo resolver todas las promesas en JavaScript"
 date: "2022-12-07"
 description: "Cómo utilizar el método Promise.all() de JavaScript para esperar a que se resuelvan varias promesas de manera simultánea y obtener todos sus resultados."
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 Si has trabajado con promesas en JavaScript, es posible que hayas encontrado una situación en la que necesitas esperar a que se resuelvan varias promesas de manera simultánea y obtener todos sus resultados. En este caso, puedes utilizar el método `Promise.all()` para resolver todas las promesas de una sola vez.

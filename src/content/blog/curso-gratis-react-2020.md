@@ -4,8 +4,7 @@ date: '2020-05-17'
 image: '/images/curso-gratis-react-2020.jpg'
 description: Aprende qué es React, crea una aplicación desde cero, crea tus propios hooks y añade infinite scroll y testing con estas clases en vivo gratis.
 toc: true
-tags:
-- react
+tags: react
 ---
 
 Aprende qué es React, crea una aplicación desde cero, crea tus propios hooks y añade infinite scroll y testing con estas clases. Lo enseñamos desde cero y te explicamos por qué lo necesitas y deberías aprenderlo. 👇

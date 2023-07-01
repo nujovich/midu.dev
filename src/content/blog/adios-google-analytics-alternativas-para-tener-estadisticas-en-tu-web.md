@@ -5,8 +5,7 @@ image: '/images/og/adios-google-analytics-alternativas-para-tener-estadisticas-e
 description: ¿Por qué he dejado de usar Google Analytics y tú también deberías? Además, te doy algunas alternativas que puedes utilizar en su lugar
 topic: me
 toc: true
-tags:
-- me
+tags: me
 ---
 
 Desde el nacimiento del blog **siempre he usado Google Analytics**. Es la elección obvia. **Es gratis** (más o menos) y los datos que ofrece son muchos y variados. Te permite conocer mejor tu audiencia y, lo que es importante, hacer acciones para mejorar tus métricas.

@@ -3,8 +3,7 @@ title: Malas prácticas en JavaScript
 date: '2022-09-11'
 description: Se habla mucho de las buenas prácticas en programación pero... ¿qué pasa con lo que debes evitar?
 topic: javascript
-tags:
-- javascript
+tags: javascript
 ---
 
 Todo el mundo habla de las buenas prácticas en programación. Pero ¿qué pasa con lo que debes evitar?

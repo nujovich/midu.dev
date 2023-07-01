@@ -3,8 +3,7 @@ title: Type casting en TypeScript
 date: '2022-07-14'
 description: Typecasting es una técnica que te permite la conversión de un tipo a otro 
 toc: true
-tags:
-- typescript
+tags: typescript
 ---
 
 JavaScript es un lenguaje de programación con tipos dinámicos. Eso permite que podamos cambiar los tipos de las variables muy fácilmente o tratar que sabemos qué tipo es aunque no sea conocido de antemano.

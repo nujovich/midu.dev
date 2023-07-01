@@ -4,8 +4,7 @@ date: '2022-07-20'
 description: Aprende a solucionar este típico error de JavaScript al intentar acceder a propiedades y atributos de un objeto
 topic: me
 toc: true
-tags:
-- me
+tags: me
 ---
 
 Mucha gente me pregunta que **qué se necesita para ser senior.** Lo primero que diría es *paciencia*, porque llegar a ese nivel es cuestión de tiempo y motivación. Lo segundo es que dependerá de la empresa, porque cada una puede entender que ese perfil requiere diferentes aptitudes (y actitudes).

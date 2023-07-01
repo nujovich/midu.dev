@@ -5,8 +5,7 @@ image: '/images/componentes-y-estado-con-svelte.jpg'
 description: Aprende a crear componentes en Svelte para reutilizar trozos de tu interfaz y a gestionar el estado de los mismos para tener reactividad.
 
 toc: true
-tags:
-- svelte
+tags: svelte
 ---
 
 Hoy vamos a ver cómo podemos **crear componentes en Svelte** y cómo podemos **añadirle un estado** a estos componentes para dotarlos de reactividad. Si te gustaría ver este contenido en vídeo aquí tienes el que he subido a [**mi canal de Youtube**](https://www.youtube.com/watch?v=B4obfRtW4ho) 👇.

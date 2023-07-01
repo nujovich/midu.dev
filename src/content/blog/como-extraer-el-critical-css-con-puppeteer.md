@@ -5,8 +5,7 @@ image: '/images/critical-path-css-20-lines-of-code.jpg'
 description: 'Gracias a la potencia de Puppeeteer y usando el Code Coverage de las Chrome Developer Tools, podemos extraer muy fácilmente el CSS crítico de nuestro site'
 topic: performance
 
-tags:
-- performance
+tags: performance
 ---
 
 El Critical Path de una web, o en castellano, **la ruta crítica es la secuencia mínima que una página tiene que seguir para poder hacer su primer pintado.** ¿Y por qué es importante? Porque según la longitud de ese camino crítico, el usuario verá más tarde la página web.

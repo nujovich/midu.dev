@@ -4,8 +4,7 @@ date: '2021-07-05'
 description: Aprende a integrar la base de datos Firestore de Google Firebase con la búsqueda de Algolia de forma fácil y rápida 
 topic: firebase
 toc: true
-tags:
-- firebase
+tags: firebase
 ---
 
 {{< youtube id="eD1CUWs_3_k" >}}

@@ -7,8 +7,7 @@ category: 'podcast'
 season: 03
 episode: 08
 audio: https://anchor.fm/s/2c58e75c/podcast/play/50700470/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-3-17%2Fbbf5b817-418d-5798-b9c4-bf3a179e0d2d.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p>Conversamos con <a href="https://www.youtube.com/channel/UC4FHiPgS1KXkUMx3dxBUtPg">@HolaMundo</a>, uno de los mayores referentes de la creación de contenido en programación en español. 👏 &nbsp;Hablamos de Seniority, salarios, dinero, saltar de trabajos, la ansiedad en el mundo, cómo es crear contenido, haters, cómo ir a Nueva Zelanda y mucho más.</p>

@@ -4,8 +4,7 @@ date: '2022-07-22'
 description: Existe la errónea creencia que en JavaScript todo es un objeto o hereda de Object. Te explico por qué.
 topic: javascript
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 Decir que en JavaScript *"todo es un objeto"* es incorrecto... No *"todo hereda de Object"* en el lenguaje, aunque lo parezca. No sé de dónde salió esa idea pero... es un error pensar esto.

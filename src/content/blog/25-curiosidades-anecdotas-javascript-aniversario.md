@@ -5,8 +5,7 @@ image: '/images/25-cosas-de-javascript-aniversario.jpg'
 description: El pasado 4 de diciembre se cumplían 25 años del nacimiento de JavaScript pero... ¿era realmente su aniversario? ¿Es verdad que fue creado en 10 días? ¿Por qué se creó? Viendo el nombre... ¿tiene algo que ver con Java?
 topic: javascript
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 **El pasado 4 de diciembre** se celebró el 25 aniversario del tan querido, y vilipendiado, lenguaje de programación **JavaScript**. Lo cierto es que de una forma u otra, en estos 25 años, **JavaScript se ha convertido en la lingua franca de la programación**, especialmente de la referida a la web pero que ha traspasado fronteras gracias, seguramente, a su sencillez.

@@ -7,8 +7,7 @@ category: 'podcast'
 season: 01
 episode: 13
 audio: https://anchor.fm/s/2c58e75c/podcast/play/16702227/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-6-17%2F90903129-44100-2-c1b7e7074376afd4.mp3
-tags:
-- podcast
+tags: podcast
 ---
 
 ¡Volvemos de las vacaciones! Y lo hacemos para traer a WhatTheFront! un tema que siempre vuelve. ¿Qué hacemos con el open source? ¿Cómo conseguimos que sea sostenible y que los creadores tengan motivos suficientes para seguir manteniéndolo?

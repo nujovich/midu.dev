@@ -4,8 +4,7 @@ date: '2021-01-07'
 description: Lista de libros con versiones gratuitas para aprender y dominar el lenguaje de programación Javascript
 image: '/images/og/libros-gratis-javascript-para-aprender.png'
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 {{< youtube id="Rtqvnl02Zcs" >}}

@@ -3,8 +3,7 @@ title: "ES2022 / ES13: novedades de la última versión de JavaScript"
 date: "2021-08-07"
 description: Descubre todas las novedades del lenguaje JavaScript con la especificación EcmaScript 2022, para sacarle el máximo partido al lenguaje.
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 **JavaScript** no deja de evolucionar y todos los años se añaden nuevas funcionalidades para mejorar la productividad de los desarrolladores. Este año **2021 no iba a ser una excepción** y te explico las nuevas características que ya tienes disponible en la mayoría de navegadores.

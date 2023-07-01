@@ -7,8 +7,7 @@ category: 'podcast'
 season: 01
 episode: 10
 audio: https://anchor.fm/s/2c58e75c/podcast/play/16702210/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-6-17%2F90903086-44100-2-2ef6ec5ac5fef0e0.mp3
-tags:
-- podcast
+tags: podcast
 ---
 
 Todos hemos pasado por el proceso de las entrevista laborales. Tanto si eres junior, y estás buscando tu primera experiencia laboral, como si ya llevas años en el sector y quieres cambiar de trabajo, en este podcast de WhatTheFront te damos consejos y compartimos experiencias para conseguir el trabajo que quieres.

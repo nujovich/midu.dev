@@ -4,8 +4,7 @@ date: '2021-02-08'
 image: '/images/og/curso-gratis-svelte.jpg'
 description: Aprende Svelte desde cero, el framework más nuevo del mundo del frontend que ofrece una nueva formación de crear interfaces de usuario
 toc: true
-tags:
-- svelte
+tags: svelte
 ---
 
 Descubre **qué es el framework Svelte JS**, el framework con la **mejor tendencia este 2021.** ¿Viene a quitarle el trono a React? Bueno, trae cosas muy interesantes. Sobretodo que hace que tengas que escribir muy poco código, pero lo mejor es que lo descubres por ti mismo.

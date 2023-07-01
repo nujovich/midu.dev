@@ -3,8 +3,7 @@ title: Carga scripts externos de forma asíncrona en código JavaScript
 date: '2022-02-18'
 description: Importa de forma dinámica archivos externos desde código JavaScript de forma fácil y rápida.
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 Aunque hoy en día usamos empaquetadores de código para cargar nuestros scripts pero, **¿qué pasa si queremos cargar scripts externos de forma asíncrona y sólo cuando la necesitemos?**

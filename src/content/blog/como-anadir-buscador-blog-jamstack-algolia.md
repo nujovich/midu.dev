@@ -3,8 +3,7 @@ title: 'Cómo añadir un buscador en tu blog JamStack con Algolia'
 date: '2021-05-21'
 description: Te voy a explicar paso a paso cómo he añadido en mi blog hecho con JamStack un buscador gracias a Algolia
 toc: true
-tags:
-  - algolia
+tags :  algolia
 image: >-
   /images/og/como-anadir-buscador-blog-jamstack-algolia.jpg
 ---

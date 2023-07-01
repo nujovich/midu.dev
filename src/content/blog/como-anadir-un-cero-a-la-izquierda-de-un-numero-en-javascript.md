@@ -3,8 +3,7 @@ title: 'Cómo añadir un cero a la izquierda de un número en JavaScript'
 date: '2022-12-05'
 description: Cómo usar el método padStart para añadir ceros a la izquierda de un número en JavaScript
 toc: true
-tags:
-  - javascript
+tags :  javascript
 ---
 
 A veces es necesario darle un formato específico a un número en **JavaScript** para cumplir con ciertos requisitos.

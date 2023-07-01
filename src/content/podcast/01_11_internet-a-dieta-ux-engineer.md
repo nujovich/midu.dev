@@ -7,8 +7,7 @@ category: 'podcast'
 season: 01
 episode: 11
 audio: https://anchor.fm/s/2c58e75c/podcast/play/16702222/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-6-17%2F90903089-44100-2-6fcaa11634f99351.mp3
-tags:
-- podcast
+tags: podcast
 ---
 
 En este programa contamos con Adrià Fontcuberta y Marina Aísa para hablar sobre el contenido de sus charlas en la T3chfest de este año:

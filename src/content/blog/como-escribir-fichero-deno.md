@@ -3,8 +3,7 @@ title: 'Cómo escribir un fichero en Deno'
 date: '2022-12-26'
 description: Aprende a escribir el contenido de un fichero en Deno usando 
 toc: true
-tags:
-  - deno
+tags :  deno
 support: deno 1.29.1
 ---
 

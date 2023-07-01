@@ -8,8 +8,7 @@ category: 'podcast'
 season: 03
 episode: 03
 audio: https://anchor.fm/s/2c58e75c/podcast/play/25423360/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-0-19%2F839920f7-362f-b8d0-0535-2beedcd79508.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p>¡Los resultados de la encuesta anual sobre el estado de Javascript trae SORPRESAS 😱!</p>

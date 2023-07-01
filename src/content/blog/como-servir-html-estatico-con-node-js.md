@@ -5,8 +5,7 @@ description: >-
   Aprender a servir un archivo index.html, cualquier página HTML o estáticos
   usando Node.js y sin ninguna dependencia
 toc: true
-tags:
-  - node
+tags :  node
 image: /images/og/como-servir-html-estatico-con-node-js.png
 ---
 

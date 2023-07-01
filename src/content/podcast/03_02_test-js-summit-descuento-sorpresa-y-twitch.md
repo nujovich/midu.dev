@@ -7,8 +7,7 @@ category: 'podcast'
 season: 03
 episode: 02
 audio: https://anchor.fm/s/2c58e75c/podcast/play/24961570/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-0-9%2Fc8cc736e-6646-4e90-e33e-90181bee8908.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p>¡Ayer hice un sorteo en mi <a href="https://midu.tube">canal de Youtube</a> de 5 entradas para ir a la <strong>TestJS Summit</strong>! Si te lo perdiste, no pasa nada, porque todavía traigo más sorpresas.</p>

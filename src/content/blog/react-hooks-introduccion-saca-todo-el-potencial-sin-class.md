@@ -4,8 +4,7 @@ date: '2019-02-06'
 image: '/images/react-hooks.jpeg'
 description: Con la nueva característica de React, llamada Hooks, podremos utilizar los componentes funcionales para sacar todo el potencial a la librería. Algo que, hasta hace poco, sólo era posible con las clases.
 
-tags:
-- react
+tags: react
 ---
 
 [¡Ya está disponible React 16.8.0, la versión que trae los Hooks!](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). Y, para celebrarlo, voy a iniciar una serie de artículos y [vídeos que iré publicando en mi canal de YouTube](https://www.youtube.com/c/midudev?sub_confirmation=1) con los que espero **cubrir todo sobre esta nueva API de React que promete permitirnos olvidarnos de usar clases para crear componentes en React.** En esta primera entrega vamos a ver un primer ejemplo, muy sencillo, para dotar de estado a un componente funcional (creado con una `function`) usando el hook `useState`. Pero antes...

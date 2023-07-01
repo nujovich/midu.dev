@@ -6,8 +6,7 @@ description: >-
   funcionalidad de Timeago en diferentes idiomas. ¿Es necesario? Aprende una
   forma de hacerlo totalmente nativo y sin dependencias.
 toc: true
-tags:
-  - javascript
+tags :  javascript
 image: /images/og/como-crear-un-time-ago-sin-dependencias-intl-relativeformat.png
 ---
 

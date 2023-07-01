@@ -4,8 +4,7 @@ date: '2022-12-04'
 description: AdventJS es una plataforma de retos de programación que abre el mes de Diciembre. Cada día, un nuevo reto de código.
 topic: javascript
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 [AdventJS es una página web de retos de programación](https://adventjs.dev/) que ofrece una experiencia única y desafiante para los amantes del código.

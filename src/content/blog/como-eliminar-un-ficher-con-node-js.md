@@ -6,8 +6,7 @@ description: >-
   fs.unlink y fs.unlinkSync.
 topic: node
 toc: true
-tags:
-  - node
+tags :  node
 image: /images/og/como-eliminar-un-ficher-con-node-js.png
 ---
 

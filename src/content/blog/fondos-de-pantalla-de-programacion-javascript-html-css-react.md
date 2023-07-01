@@ -6,8 +6,7 @@ image: '/images/og-wallpapers.jpg'
 topic: javascript
 
 toc: true
-tags:
-- javascript
+tags: javascript
 ---
 
 En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla sobre programación y desarrollo web** para vuestros setups.

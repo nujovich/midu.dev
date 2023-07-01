@@ -3,8 +3,7 @@ title: 'Estrategia de Git: Ship / Show / Ask'
 date: '2022-04-06'
 description: >-
   Estrategia para trabajar con Git y equipos a la hora de llevar código a producción y fusionar cambios.
-tags:
-  - git
+tags :  git
 ---
 
 ## Ship / Show / Ask

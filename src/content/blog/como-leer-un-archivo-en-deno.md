@@ -3,8 +3,7 @@ title: 'Cómo leer el contenido de un archivo en Deno'
 date: '2022-12-21'
 description: Aprende a leer el contenido de un archivo en Deno usando la función Deno.readTextFile y Deno.readFile
 toc: true
-tags:
-  - deno
+tags :  deno
 support: deno 1.29.1
 ---
 

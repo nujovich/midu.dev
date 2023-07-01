@@ -8,8 +8,7 @@ category: 'podcast'
 season: 03
 episode: 11
 audio: https://anchor.fm/s/2c58e75c/podcast/play/56545357/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-9-20%2F8b7a0983-d782-d426-b0ed-978e29b1fc61.m4a
-tags:
-- podcast
+tags: podcast
 ---
 
 <p><strong>🍻 Episodio patrocinado por Cervezas San Miguel.</strong></p>

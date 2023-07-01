@@ -1,0 +1,20 @@
+---
+import Layout from "@layout/Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  tags: string[];
+}
+
+const { title, description, url, tags } = Astro.props;
+---
+
+<Layout {title} {description} {url}>
+  <main class="">
+    <article class="prose-sm md:prose-md lg:prose-lg">
+      <slot />
+    </article>
+  </main>
+</Layout>

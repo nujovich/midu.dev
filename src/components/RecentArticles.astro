@@ -1,0 +1,41 @@
+---
+import RecentArticlesTemplate from "@components/RecentArticlesTemplate.astro";
+
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort((a, b) => {
+  if (a.data.date && b.data.date) {
+    const dateA = new Date(a.data.date);
+    const dateB = new Date(b.data.date);
+
+    // Verificar si los años de las fechas son iguales
+    if (dateA.getFullYear() === dateB.getFullYear()) {
+      // Si los años son iguales, comparar las fechas normalmente
+      return dateB.valueOf() - dateA.valueOf();
+    } else {
+      // Si los años son diferentes, colocar primero el artículo más reciente
+      return dateB.getFullYear() - dateA.getFullYear();
+    }
+  }
+  return 0;
+});
+---
+
+<section class="">
+  <ul class="">
+    {
+      posts
+        .filter((post) => {
+          const date = new Date(post.data.date);
+          return date.getFullYear() >= 2023; // Filtrar solo los artículos del 2023 en adelante
+        })
+        .slice(0, 4)
+        .map((post) => (
+          <RecentArticlesTemplate
+            title={post.data.title}
+            url={`/blog/${post.slug}`}
+          />
+        ))
+    }
+  </ul>
+</section>

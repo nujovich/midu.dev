@@ -1,0 +1,16 @@
+---
+import books from '@data/books.json'
+import { Icon } from "astro-icon"
+---
+
+<ul class="grid grid-cols-4 max-w-4xl gap-x-4">
+  <span class='text-2xl font-bold text-midu-100 max-w-[10rem] [text-wrap:balance]'>Libros publicados</span>
+  {
+    books.map((book) => (
+      <li class="flex flex-col items-start justify-start max-w-md">
+        <Icon class="" name={book.name} />
+      </li>
+    ))
+  }
+  <a href='#' class="text-midu-400 font-bold col-start-2 col-end-4 pt-4">Ver lista completa de libros</a>
+</ul>

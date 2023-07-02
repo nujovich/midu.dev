@@ -1,15 +1,17 @@
 ---
 import Courses from "@components/Courses.astro";
+import Books from "@components/Books.astro";
 ---
 
-<section class="flex items-center justify-center">
-  <div class="flex flex-col items-start justify-center gap-3">
+<section class="flex items-center justify-center my-20">
+  <div class="flex flex-col items-start justify-center gap-5">
     <h2 class="text-4xl font-extrabold text-midu-100">
       Recursos de Desarrollo
     </h2>
     <p class="">Profundiza en el desarrollo web con los siguientes recursos:</p>
-    <div class="">
+    <div class="flex flex-col gap-y-20">
       <Courses />
+      <Books />
     </div>
   </div>
 </section>

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "nextjs",
+    "title": "Next.js",
+    "description": "Aprende qué es NextJS, el framework de React por excelencia, creando un clon de Twitter desde cero.",
+    "url": "https://midu.dev/curso-gratis-next-js-framework-de-react-2020/"
+  },
+  {
+    "name": "react",
+    "title": "React",
+    "description": "Aprende qué es React, crea una aplicación desde cero, crea tus propios hooks y añade infinite scroll y testing con estas clases en vivo.",
+    "url": "https://midu.dev/curso-gratis-react-2020/"
+  },
+  {
+    "name": "svelte",
+    "title": "Svelte",
+    "description": "Aprende Svelte desde cero, el framework más nuevo del mundo del frontend que ofrece una nueva formación de crear interfaces de usuario",
+    "url": "https://midu.dev/curso-gratis-svelte/"
+  }
+]

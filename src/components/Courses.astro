@@ -1,0 +1,18 @@
+---
+import courses from "@data/courses.json";
+import { Icon } from "astro-icon";
+---
+
+<ul class="grid grid-cols-4 max-w-4xl gap-x-4">
+  <span class='text-2xl font-bold text-midu-100'>Cursos</span>
+  {
+    courses.map((course) => (
+      <li class="flex flex-col items-start justify-start max-w-md gap-y-4">
+        <Icon class="w-14 h-14" name={course.name} />
+        <h3 class="font-extrabold">Aprende {course.title}</h3>
+        <p class="text-sm text-midu-50/60 font-medium">{course.description}</p>
+      </li>
+    ))
+  }
+  <a href='#' class="text-midu-400 font-bold col-start-2 col-end-4 pt-4">Ver listado de cursos</a>
+</ul>

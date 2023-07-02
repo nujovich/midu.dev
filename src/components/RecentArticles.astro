@@ -21,21 +21,29 @@ const posts = (await getCollection("blog")).sort((a, b) => {
 });
 ---
 
-<section class="">
-  <ul class="">
-    {
-      posts
-        .filter((post) => {
-          const date = new Date(post.data.date);
-          return date.getFullYear() >= 2023; // Filtrar solo los artículos del 2023 en adelante
-        })
-        .slice(0, 4)
-        .map((post) => (
-          <RecentArticlesTemplate
-            title={post.data.title}
-            url={`/blog/${post.slug}`}
-          />
-        ))
-    }
-  </ul>
+<section
+  class="flex items-center justify-center h-[calc(100vh-12rem)]"
+>
+  <div class="flex flex-col items-start justify-center gap-8">
+    <h2 class="w-full text-4xl font-extrabold text-midu-100">Artículos Recientes</h2>
+    <ul class="grid grid-cols-2 items-center justify-center gap-y-12">
+      {
+        posts
+          .filter((post) => {
+            const date = new Date(post.data.date);
+            return date.getFullYear() >= 2023; // Filtrar solo los artículos del 2023 en adelante
+          })
+          .slice(0, 4)
+          .map((post) => (
+            <RecentArticlesTemplate
+              tags={post.data.tags}
+              title={post.data.title}
+              url={`/blog/${post.slug}`}
+              date={post.data.date}
+            />
+          ))
+      }
+    </ul>
+    <a href='/blog/' class="text-lg font-bold text-midu-400 pt-6">Ver otros artículos</a>
+  </div>
 </section>

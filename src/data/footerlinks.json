@@ -1,0 +1,83 @@
+{
+	"footer": [
+		{
+			"title": "Recursos",
+			"items": [
+				{
+					"name": "Artículos",
+					"url": "/articulo"
+				},
+				{
+					"name": "Podcast",
+					"url": "/podcast"
+				},
+				{
+					"name": "Cursos",
+					"url": "/cursos"
+				},
+				{
+					"name": "Libros",
+					"url": "/libros"
+				}
+			]
+		},
+		{
+			"title": "Redes Sociales",
+			"items": [
+				{
+					"name": "Youtube (Midudev)",
+					"url": "/youtube-midudev"
+				},
+				{
+					"name": "Youtube (Midulive)",
+					"url": "/youtube-midulive"
+				},
+				{
+					"name": "Instagram",
+					"url": "/instagram"
+				},
+				{
+					"name": "Tiktok",
+					"url": "/tiktok"
+				},
+				{
+					"name": "Twitter",
+					"url": "/twitter"
+				},
+				{
+					"name": "Discord",
+					"url": "/discord"
+				}
+			]
+		},
+		{
+			"title": "Proyectos",
+			"items": [
+				{
+					"name": "Aprende JavaScript",
+					"url": "/aprende-javascript"
+				},
+				{
+					"name": "AdventJS",
+					"url": "/adventjs"
+				},
+				{
+					"name": "ReactKS Wiki",
+					"url": "/reactks-wiki"
+				},
+				{
+					"name": "Codi Link",
+					"url": "/codi-link"
+				},
+				{
+					"name": "Sueldos.dev",
+					"url": "/sueldos-dev"
+				},
+				{
+					"name": "Noticias.dev",
+					"url": "/noticias-dev"
+				}
+			]
+		}
+	]
+}

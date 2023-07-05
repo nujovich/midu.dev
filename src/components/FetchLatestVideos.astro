@@ -1,0 +1,32 @@
+---
+import { getLiveStreams } from "@services/getLiveStreams";
+
+async function fetchData() {
+  try {
+    const LiveStreams = await getLiveStreams("UC3aj05GEEyzdOqYM5FLSFeg");
+    return LiveStreams;
+  } catch (error) {
+    console.error("Error:", error);
+    return [];
+  }
+}
+
+const LiveStreams = await fetchData();
+---
+
+{
+  LiveStreams.slice(0, 3).map((streams) => (
+    <div class="flex items-center justify-center border-2 border-midu-50">
+      <a href={streams.link} class="relative overflow-hidden group">
+        <img
+          src={streams.thumbnail}
+          alt={streams.title}
+          class="aspect-video object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+        />
+        <div class="group-hover:visible invisible absolute flex items-center justify-center inset-0 bg-transparent group-hover:bg-midu-700/60 backdrop-blur-0 group-hover:backdrop-blur-sm text-center transition-all duration-300 ease-in-out">
+          <h3 class="text-sm font-bold text-midu-400 [text-wrap:balance]">{streams.title}</h3>
+        </div>
+      </a>
+    </div>
+  ))
+}

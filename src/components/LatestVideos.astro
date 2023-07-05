@@ -1,0 +1,15 @@
+---
+import FetchLatestVideos from "@components/FetchLatestVideos.astro";
+---
+
+<section class="flex flex-col items-center justify-center h-[calc(100vh-4rem)] gap-y-6">
+  <h2 class="text-4xl font-extrabold text-midu-100">Repasa las últimas clases</h2>
+  <p class="text-sm [text-wrap:balance] max-w-lg text-center">
+    ¿No estuviste en vivo? No te preocupes puedes encontrar las clases en
+    @Midulive en youtbe
+  </p>
+  <div class="grid grid-cols-3 max-w-4xl gap-x-3">
+    <FetchLatestVideos />
+  </div>
+  <a href="#" class="font-bold text-midu-500">Ver clases en Youtube</a>
+</section>

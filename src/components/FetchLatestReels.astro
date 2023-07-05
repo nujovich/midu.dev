@@ -1,0 +1,15 @@
+---
+import { getLatestReels } from "@services/getLatestReels";
+
+const reels = await getLatestReels();
+
+const instaURL = "https://www.instagram.com/reel/";
+---
+
+{
+  reels.slice(0, 2).map((reel) => (
+    <a href={`${instaURL}${reel.node.shortcode}`}>
+      <img src={reel.node.display_url} class="aspect-video" />
+    </a>
+  ))
+}

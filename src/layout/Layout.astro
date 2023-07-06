@@ -1,5 +1,7 @@
 ---
 import Head from "@components/Head.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 
 interface Props {
   title: string;
@@ -24,6 +26,8 @@ const {
 <html lang="en">
   <Head {title} {description} {ogImage} />
   <body class="bg-midu-700 text-midu-50 font-midufont">
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  title: string;
+  date: string;
+  tags: string;
+  url: string;
+}
+
+const { title, date, tags, url } = Astro.props;
+
+const fullDate = date.toLocaleDateString("es", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<li class="flex items-center justify-start max-w-xl">
+  <a href={url} class="flex items-center justify-center gap-4">
+    <Icon name={tags} class="w-14 h-14 rounded-full" />
+    <div class="flex flex-col items-start justify-between gap-1 max-w-md">
+      <h2 class="text-lg font-extrabold leading-snug">{title}</h2>
+      <p class="text-xs font-medium text-midu-50/60">{fullDate}</p>
+    </div>
+  </a>
+</li>

@@ -4,7 +4,6 @@ date: "2019-11-05"
 image: "/images/react-rendering-strategies-cover.png"
 description: "Find all the links and resources from the React Rendering strategies talk by Miguel Ángel Durán"
 tags :  react
-  - performance
 language: 🇬🇧
 type: page
 ---

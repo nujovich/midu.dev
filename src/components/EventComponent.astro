@@ -1,0 +1,57 @@
+---
+interface Props {
+  startTime: string;
+  endTime: string;
+  date: string;
+  title: string;
+  description: string;
+}
+
+const { title, description, startTime, endTime, date } = Astro.props;
+
+const fullDate = date.toLocaleDateString("es", {
+  weekday: "long",
+});
+
+const startTimeFormated = startTime.toLocaleTimeString("es", {
+  hour: "2-digit",
+  minute: "2-digit",
+});
+
+const endTimeFormated = endTime.toLocaleTimeString("es", {
+  hour: "2-digit",
+  minute: "2-digit",
+});
+
+const actualTime = new Date();
+const onDirect = "En directo";
+
+const isLive = () => {
+  const currentDate = new Date().toLocaleDateString("es", {
+    weekday: "long",
+  });
+
+  if (
+    currentDate === fullDate &&
+    actualTime >= startTime &&
+    actualTime <= endTime
+  ) {
+    return onDirect;
+  } else {
+    return "";
+  }
+};
+---
+
+<li class="bg-midu-600 px-6 py-4 rounded-lg min-w-[42rem] max-w-2xl">
+  <time class="text-xs font-bold capitalize"
+    >{fullDate} - {startTimeFormated} - {endTimeFormated}</time
+  >
+  <span class="">{isLive}</span>
+  <h3
+    class="text-lg font-extrabold text-midu-50 [text-wrap:balance] leading-snug"
+  >
+    {title}
+  </h3>
+  <p class="text-sm text-midu-50/60 [text-wrap:balance] pt-2">{description}</p>
+</li>

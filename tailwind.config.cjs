@@ -22,7 +22,9 @@ module.exports = {
 				'midu-500': '#0063C6',
 				'midu-600': '#031931',
 				'midu-700': '#00111C',
-				'midu-purple': '#7C3AED',
+				'midu-purple-500': '#8B5CF6',
+				'midu-purple-600': '#7C3AED',
+				'midu-purple-950': '#2E1065',
 			},
 			fontFamily: {
 				'midufont': [
@@ -55,6 +57,6 @@ module.exports = {
 		},
 	},
 	plugins: [
-    require('@tailwindcss/typography'),
-  ],
+		require('@tailwindcss/typography'),
+	],
 }

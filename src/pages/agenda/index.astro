@@ -1,0 +1,35 @@
+---
+import Layout from "../../layout/Layout.astro";
+import EventComponent from "@components/EventComponent.astro";
+import { getCollection } from "astro:content";
+
+const agenda = (await getCollection("agenda")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const title = "midudev 👨‍💻 | Eventos";
+const description = "Eventos de midudev 👨‍💻";
+---
+
+<Layout {title} {description}>
+  <main class="flex flex-col items-center justify-center max-w-4xl mx-auto gap-y-4">
+    <h1 class="font-extrabold text-4xl text-midu-50">Próximos Directos</h1>
+    <p class="max-w-3xl text-center [text-wrap:balance]">
+      Sí quieres estar al día y mantenerte informado no puedes perderte los
+      siguientes directos en <span class="text-midu-purple-500 font-bold">twitch.tv/midudev.</span>
+    </p>
+    <ul class="flex flex-col items-center justify-center gap-y-3">
+      {
+        agenda.map((event) => (
+          <EventComponent
+            title={event.data.title}
+            description={event.data.description}
+            date={event.data.date}
+            startTime={event.data.startTime}
+            endTime={event.data.endTime}
+          />
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

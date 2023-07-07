@@ -1,5 +1,6 @@
 ---
 import Layout from "@layout/Layout.astro";
+import TableOfContents from "@components/TableOfContents.astro";
 
 interface Props {
   title: string;
@@ -8,12 +9,14 @@ interface Props {
   tags: string;
 }
 
-const { title, description, url, tags } = Astro.props;
+const { title, description, url } = Astro.props;
 ---
 
 <Layout {title} {description} {url}>
-  <main class="">
-    <article class="prose-sm md:prose-md lg:prose-lg">
+  <main class="flex items-center justify-center mx-auto">
+    <article
+      class="grid grid-cols-4 max-w-6xl prose-sm md:prose-md lg:prose-lg prose-headings:font-extrabold"
+    >
       <slot />
     </article>
   </main>

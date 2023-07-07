@@ -1,19 +1,25 @@
 ---
 import Layout from "@layout/Layout.astro";
-import TableOfContents from "@components/TableOfContents.astro";
+import ArticleComponent from "@components/ArticleComponent.astro";
 
 interface Props {
   title: string;
   description: string;
   url: string;
   tags: string;
+  date: string;
 }
 
-const { title, description, url } = Astro.props;
+const { title, description, url, tags, date } = Astro.props;
 ---
 
 <Layout {title} {description} {url}>
-  <main class="flex items-center justify-center mx-auto">
+  <main class="flex flex-col items-start justify-center mx-auto max-w-5xl">
+    <ArticleComponent 
+      title: {title}
+      tags: {tags}
+      date: {date}
+    />
     <article
       class="grid grid-cols-4 max-w-6xl prose-sm md:prose-md lg:prose-lg prose-headings:font-extrabold"
     >

@@ -4,5 +4,11 @@ import mdx from '@astrojs/mdx'
 
 // https://astro.build/config
 export default defineConfig({
+  markdown: {
+    shikiConfig: {
+      theme: 'rose-pine',
+      wrap: true,
+    },
+  },
 	integrations: [tailwind(), mdx()],
 })

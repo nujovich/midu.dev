@@ -21,7 +21,8 @@ function buildToc(headings) {
 }
 ---
 
-<nav class="fixed toc">
+<nav class="fixed max-w-xs pl-10">
+  <h3 class="!text-sm font-bold pl-7">Índice</h3>
   <ul class="text-sm [text-wrap:balance]">
     {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
   </ul>

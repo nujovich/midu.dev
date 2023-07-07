@@ -1,8 +1,17 @@
+export function fetchWithTimeout(url, timeout = 5000) {
+	return Promise.race([
+		fetch(url),
+		new Promise((_, reject) =>
+			setTimeout(() => reject(new Error('Timeout')), timeout)
+		),
+	])
+}
+
 export async function getLiveStreams(channelId) {
 	const url = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
 
 	try {
-		const response = await fetch(url)
+		const response = await fetchWithTimeout(url)
 		const xmlString = await response.text()
 
 		const entryRegex = /<entry>(.*?)<\/entry>/gs

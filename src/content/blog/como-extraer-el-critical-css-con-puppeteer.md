@@ -8,6 +8,8 @@ topic: performance
 tags: performance
 ---
 
+## intro
+
 El Critical Path de una web, o en castellano, **la ruta crítica es la secuencia mínima que una página tiene que seguir para poder hacer su primer pintado.** ¿Y por qué es importante? Porque según la longitud de ese camino crítico, el usuario verá más tarde la página web.
 
 {{< youtube id="GIYp3qG1520" >}}
@@ -25,7 +27,7 @@ Initial navigation
     |---images/logo.jpg (cdn.fotocasa.es) - 3200.39ms, 73.59KB
 ```
 
-### ¿Por qué el CSS bloquea el renderizado de nuestra página?
+## ¿Por qué el CSS bloquea el renderizado de nuestra página?
 
 Como véis, **el CSS es un recurso que bloquea el renderizado de nuestra página.** Del propio HTML lo podríamos esperar ya que, sin él, no podríamos tener el DOM montado pero... ¿del CSS?
 

@@ -10,9 +10,10 @@ tags :  node
 image: /images/og/como-eliminar-un-ficher-con-node-js.png
 ---
 
+
 En ocasiones necesitamos **eliminar un fichero de nuestro sistema de forma programática** utilizando [`Node.js`](https://midu.dev/tags/node/). Muchas veces vamos directos a buscar un paquete en `npm` (que los hay y muy buenos como [del](https://github.com/sindresorhus/del)) que nos solucione la papeleta pero `Node.js` incorpora una forma nativa de eliminar ficheros y enlaces simbólicos a ficheros con muy poco esfuerzo. Y creo que puede ser interesante aprenderlo.
 
-### Cómo eliminar un fichero con Node.js usando `fs.unlink`
+## Cómo eliminar un fichero con Node.js usando `fs.unlink`
 
 Para eliminar un fichero en Node.js podemos usar el módulo `fs` que tiene dos métodos que nos ayudarán a conseguirlo: `fs.unlink()` y `fs.unlinkSync()`.
 
@@ -45,7 +46,7 @@ fs.unlink('./old-article.md')
   })
 ```
 
-### Cómo conseguir eliminar el fichero con Promesas
+## Cómo conseguir eliminar el fichero con Promesas
 
 Desde *Node.js* 10, también **puedes utilizar la versión de `fs.unlink` que devuelve una Promesa**. Para ello, sólo tienes que requerir el módulo `fs` pero accediendo a la propiedad `promises`. 
 
@@ -71,11 +72,11 @@ fs.unlink('./old-article.md')
 })()
 ```
 
-### Cómo eliminar más de un fichero a la vez con Node.js
+## Cómo eliminar más de un fichero a la vez con Node.js
 
 Vale, el ejemplo anterior funciona... pero es muy básico, ya que **sólo nos permite eliminar un fichero a la vez** y, en ocasiones, queremos eliminar una lista de ficheros.
 
-#### Usando un `Promise.all`
+### Usando un `Promise.all`
 
 Sería muy sencillo basarnos en el ejemplo anterior para poder borrar más de un fichero gracias al uso de `Promise.all`:
 
@@ -97,7 +98,7 @@ Promise.all(files.map(file => fs.unlink(file)))
   })
 ```
 
-#### Eliminando los ficheros de un directorio
+### Eliminando los ficheros de un directorio
 
 Por ejemplo, si tuvieramos una carpeta `/images` y quisieramos borrar todos los ficheros dentro, podríamos usar el método `fs.readdir` para leer los ficheros de un directorio y el `path.join` para tener el path correcto para nuestro sistema para el fichero. De esta forma:
 
@@ -147,7 +148,7 @@ fs.readdir(FOLDER_TO_REMOVE)
   })
 ```
 
-#### Eliminado un directorio de forma recursiva
+### Eliminado un directorio de forma recursiva
 
 ¿Y qué pasa si quiero eliminar también los subdirectorios de ese directorio? Bueno, si estás utilizando la versión `Node.js 12.10.0` o superior, puedes utilizar directamente el método [`fs.rmdir`](https://nodejs.org/api/fs.html#fs_fs_rmdir_path_options_callback) y la opción `recursive` el directorio de forma recursiva (esto no sólo eliminará los ficheros de dentro si no también todos sus subdirectorios).
 
@@ -165,7 +166,7 @@ fs.rmdir('./articles', { recursive: true })
 
 > A la hora de escribir este artículo, la opción `recursive` está en modo experimental y puede no ser estable.
 
-#### Eliminar ficheros buscando un `pattern`
+### Eliminar ficheros buscando un `pattern`
 
 Otra opción sería utilizar una librería como [globby](https://github.com/sindresorhus/globby) para poder borrar archivos de forma más granular. Por ejemplo, pongamos que tenemos una carpeta de imágenes con esta estructura:
 
@@ -199,7 +200,7 @@ globby('./images/old-image*.jpg')
 
 Al final, aquí podríamos usar cualquier patrón (o lista de patrones) que queramos buscar. Usando [la documentación de globby](https://github.com/sindresorhus/globby#globbing-patterns) puedes encontrar diferentes posibilidades, como usar `!` al principio de un `pattern` para negar la búsqueda o usar expresiones OR con `{}`.
 
-### Cómo mover ficheros a la papelera con Node.js
+## Cómo mover ficheros a la papelera con Node.js
 
 **Los ejemplos anteriores eliminan de forma definitiva los ficheros.** Y muchas veces tiene sentido pero, en ocasiones, lo que queremos en realidad, es simplemente **dejar los ficheros en la Papelera de Reciclaje de nuestro sistema operativo para decidir más tarde qué hacemos con ellos.**
 

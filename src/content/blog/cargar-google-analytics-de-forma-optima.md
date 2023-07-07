@@ -8,6 +8,8 @@ toc: true
 tags: performance
 ---
 
+## Intro 
+
 Cargar Google Analytics tiene, lo quieras o no, un impacto en la performance de tu página web. **No es la peor librería de terceros para añadir en tu web** (¡Hola Optimizely 🤪!) porque, en ese aspecto, Google tiene cierta sensibilidad en hacer que tu web cargue rápido pero... **eso no significa que siempre nos vaya a proporcionar la mejor opción**. Por defecto Google nos ofrece un código que puede ser interesante si estamos pensando en usar otros productos de la compañía pero podemos hacer algunas mejoras o... directamente usar otro.
 
 Pero empecemos por el principio, si vamos a las `opciones de nuestra propiedad -> Información de Seguimiento -> Código de seguimiento`, allí nos recomendará el siguiente trozo de código para implementar en nuestra web para activar el seguimiento de Google Analytics:
@@ -26,7 +28,7 @@ Pero empecemos por el principio, si vamos a las `opciones de nuestra propiedad -
 
 Lo que normalmente hacemos con este trozo de código es copiarlo en algún lugar de nuestra página y hacerlo funcionar. Veamos algunas pequeñas mejoras que podemos hacer al respecto.
 
-### Mejor en el &lt;head> y en el orden correcto
+## Mejor en el &lt;head> y en el orden correcto
 
 El mejor lugar donde cargar el snippet es en el `<head>`. Al ser un script asíncrono, esto hará que la carga del script no bloquee otros recursos, ni tampoco el parseo del HTML y que, sólo al descargarlo, pausará el parseo del HTML para ejecutarlo.
 
@@ -51,7 +53,7 @@ Al final, el resultado sería este:
 
 Como véis, para el primer recurso hay una barra lila enorme. Eso ha sido la negociación de los certificados SSL y ha evitado que pudieramos empezar a trackear con Google Analytics antes. ¿Podemos hacer algo para mejorarlo 🤔?
 
-### Ayuda al navegador a cargar más rápido los recursos
+## Ayuda al navegador a cargar más rápido los recursos
 
 Ya que sabemos que nuestro snippet va a cargar unos recursos en concreto, podemos ayudar a nuestro navegador a cargarlos cuanto antes. Para ello vamos a usar los Resource Hints (sugerencia de recursos):
 
@@ -72,7 +74,7 @@ En cualquier caso, tras usar el consejo de esta sección, la carga quedaría de 
 
 {{< img src="https://i.loli.net/2018/12/10/5c0e46e5a37c0.png" alt="Con preconnect y prefetch, hemos mejorado algo la carga de los recursos" align="">}}
 
-### Cargar Google Analytics directamente
+## Cargar Google Analytics directamente
 
 **¿Es Google Analytics el único servicio de Google que estás usando en tu página?** ¿Eres desarrollador o tienes acceso rápido y directo al equipo para añadir los eventos que necesitas? **Entonces, seguramente, no necesitas utilizar el snippet que te ha proporcionado Google.**
 
@@ -104,7 +106,7 @@ Como podéis ver, **ahora solo tenemos que hacer preconnect y prefetch de un sol
 
 {{< img src="https://i.loli.net/2018/12/10/5c0e47d8b3ae8.png" alt="Cargando sólo Google Analytcs, mejoramos en 100ms la carga en desktop" align="">}}
 
-### Usar el minimal Google Analytics
+## Usar el minimal Google Analytics
 
 Existe todavía una opción todavía más hardcore para conseguir utilizar Google Analytics con un impacto mínimo en la performance de tu página. Se llama [Minimal Google Analytics](https://minimalanalytics.com/) y es un pequeño snippet de código que te hace que no tengas que cargar **ninguna librería externa para utilizar Google Analytics**. Sí, has leído bien, puedes utilizar un pequeño script en línea para poder utilizar algunas funcionalidades de Google Analytics.
 
@@ -155,14 +157,14 @@ Pero lo interesante, que me imagino que lo estáis esperando, es la imagen de ne
 
 ## Resumiendo las opciones
 
-### Usa analytics.js si...
+## Usa analytics.js si...
 
 ✅ sólo te interesa cargar Google Analytics.<br />
 ✅ puedes añadir eventos o funnels en Analytics directamente en el código.<br />
 ✅ eres exigente con la performance de tu web y quieres cargar lo normal.<br />
 ✅ todavía te interesa utilizar algunas funcionalidades especiales de Analytics como tracking con Adwords.
 
-### Usa gtag.js si...
+## Usa gtag.js si...
 
 ✅ vas a usar otros productos de Google como Optimize o Adwords.<br />
 ✅ quieres usar otras funcionalidades de Google Tag Manager.<br />
@@ -170,13 +172,13 @@ Pero lo interesante, que me imagino que lo estáis esperando, es la imagen de ne
 
 ✅ la performance no te quita el sueño (por más que debería! 🤪)
 
-### Usa minimal Google Analytics snippet
+## Usa minimal Google Analytics snippet
 
 ✅ sólo quieres utilizar lo más básico de Google Analytics.<br />
 ✅sabes lo que estás haciendo al cargar este script en línea y aceptas no usar algo oficial de Google para trackear tu página. <br />
 ✅eres MUY exigente (como yo! 🙃) con la performance de tu página.
 
-### Y uses el que uses...
+## Y uses el que uses...
 
 ✅ coloca en el `<head>` el snippet de código.<br />
 ✅ separa el snippet para colocar el código en línea antes de tus estilos y el otro después (en el caso del minimal GA, siempre antes).<br />

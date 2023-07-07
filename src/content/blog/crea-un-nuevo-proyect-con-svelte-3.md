@@ -8,6 +8,8 @@ toc: true
 tags: svelte
 ---
 
+## intro 
+
 Pues viendo el éxito que tuvo el [artículo sobre la introducción a Svelte.js](https://midu.dev/introducci%C3%B3n-a-svelte/), me he decidido a hacer una **serie de artículos y vídeos para explicar cómo hacer una pequeña aplicación con este framework.**
 
 En este artículo vamos a explicar como, paso a paso, puedes conseguir crear un nuevo proyecto con Svelte y tener listo tu entorno de desarrollo para poder desarrollar tu aplicación. Si prefieres verlo en vídeo, te dejo aquí el que he hecho para [mi canal de YouTube](https://www.youtube.com/c/midudev?sub_confirmation=1):
@@ -91,7 +93,7 @@ created public/bundle.js in 145ms
 
 Ahora, si entramos en la dirección que nos facilita, veremos un típico "Hello world" con la particularidad que, este, está hecho con Svelte.js
 
-# Estructura de carpetas del proyecto
+## Estructura de carpetas del proyecto
 
 Si abrimos la carpeta con nuestro editor de código, podremos ver la estructura de carpetas que nos ha creado. Vamos a revisarla aquí:
 

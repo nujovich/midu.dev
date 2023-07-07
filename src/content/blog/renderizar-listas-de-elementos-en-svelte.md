@@ -10,17 +10,19 @@ tags :  svelte
 image: /images/og/renderizar-listas-de-elementos-en-svelte.png
 ---
 
+## Intro 
+
 Nueva entrega en la serie de artículos sobre [Svelte](https://midu.dev/introducci%C3%B3n-a-svelte/). Hoy hablamos de cómo podemos iterar una lista de elementos y renderizarlos utilizando este novedoso framework.
 
 Como siempre, si no te gusta leer, puedes ver [el vídeo de mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1). Te lo dejo aquí mismo. 👇
 
 {{< youtube id="93CL7O4hNWU" >}}
 
-### ¿Qué es el renderizado de listas?
+## ¿Qué es el renderizado de listas?
 
 Es la acción de iterar un Array y, para cada elemento, mostrar en la interfaz del usuario algo que represente ese elemento. Por ejemplo, podríamos iterar una lista de nombres de usuarios y, para cada elemento, mostrar en la interfaz el nombre de ese usuario.
 
-### La sintaxis para renderizar una lista de elementos en Svelte
+## La sintaxis para renderizar una lista de elementos en Svelte
 
 Como ya vimos en el artículo sobre [renderizado condicional](https://midu.dev/svelte-renderizado-condicional/), *Svelte* tiene una sintaxis propia para conseguir renderizar una lista de elementos.
 
@@ -78,7 +80,7 @@ Por lo que nuestro ejemplo, podría quedar así:
 </ul>
 ```
 
-### Desestructurando objetos al iterarlos
+## Desestructurando objetos al iterarlos
 
 Ahora bien, es un poco molesto tener que utilizar las propiedades `Title` y `Year` desde el objeto `movie`. ¿Se podría mejorar de alguna forma para poder usar directamente las propiedades en nuestro código? Sí, usando **la desestructuración del objeto directamente en la sintaxis del `{#each}`**:
 
@@ -113,11 +115,11 @@ Siguiendo el ejemplo de la desestructuración, **podemos cambiarle el nombre a l
 > No solo puedes utilizar la desestructuración del objeto. Puedes utilizar también el operador `rest` y también desestructurar arrays, en el caso que sea eso lo que estás iterando. Simplemente, sigue la misma sintaxis que usas en Javascript.
 
 
-### Renderizado condicional iterando elementos
+## Renderizado condicional iterando elementos
 
 Hasta ahora hemos visto [cómo podemos hacer un renderizado condicional de elementos en Svelte](https://midu.dev/svelte-renderizado-condicional/), esto es renderizar una cosa u otra dependiendo de una condición. Y ya sabemos cómo renderizar una lista de elementos. Ahora, podemos utilizar los dos conceptos para...
 
-#### Renderizado condicional DENTRO de una iteración de elementos
+### Renderizado condicional DENTRO de una iteración de elementos
 
 Imaginemos que si la película fue lanzada hace menos de cinco años, queremos decir que la película es nueva. (Sé que no es muy real, pero nos servirá como ejemplo. 😜).
 
@@ -141,7 +143,7 @@ Para ello, podemos renderizar todos los elementos con `#each` y, dentro, [hacer 
 
 [📝 ¡Prueba la demo!](https://svelte.dev/repl/70f796e68596411fb58e55960602a1d7?version=3.20.1)
 
-#### Renderizado condicional FUERA de la iteración
+### Renderizado condicional FUERA de la iteración
 
 También deberíamos **controlar cuando la lista de elementos es vacía**, de forma que le mostremos al usuario algún tipo de aviso para que lo sepa. Para ello, podríamos utilizar el renderizado condicional de la siguiente forma:
 
@@ -191,7 +193,7 @@ De esta forma, cuando `movies` sea una lista vacía, entonces mostrará al usuar
 
 Exactamente, **la sintaxis de `#each` también acepta una cláusula `:else`** que se ejecutará cuando la lista que queremos iterar esté vacía. De esta forma conseguimos controlar más fácilmente cuando ocurra, sin necesidad de tirar del `#if` para hacer un renderizado condicional y que facilitará mucho más el código de nuestros componentes en Svelte.
 
-### Conclusiones
+## Conclusiones
 
 Recapitulando, hemos visto **cómo podemos renderizar listas de elementos con Svelte siguiendo la siguiente sintaxis**:
 

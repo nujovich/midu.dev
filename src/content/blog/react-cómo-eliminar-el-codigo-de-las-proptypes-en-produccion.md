@@ -6,7 +6,7 @@ description: Las PropTypes nos ayudan a detectar problemas de tipos al usar prop
 tags: react
 ---
 
-### ¿Qué son las PropTypes?
+## ¿Qué son las PropTypes?
 
 Las *PropTypes* de *React* nos pemiten verificar los tipos de las props de nuestros componentes. De esta forma, **en desarollo**, podemos saber si estamos pasándole al componente los tipos de datos correctos.
 
@@ -37,7 +37,7 @@ Una vez tengamos nuestras *PropTypes* definidas recibiremos **en consola** una a
 
 Entonces, ¿qué sentido tiene que este código llegue a producción? Y, lo más importante, **¿cómo evitamos que llegue a producción y así ahorremos un poco en ancho de banda?**
 
-### Cómo eliminar el código de las PropTypes en producción
+## Cómo eliminar el código de las PropTypes en producción
 
 Para conseguirlo podemos utilizar el plugin de *babel* `babel-plugin-transform-react-remove-prop-types`, y lo podemos instalar de esta forma:
 
@@ -68,7 +68,7 @@ Como ves, el `import` de las `prop-types` no ha desaparecido y es que, por defec
 
 Normalmente esto es suficiente pero, si quieres, puedes seguir leyendo para conocer más opciones que tiene el plugin para afinar su  funcionamiento.
 
-### Más opciones de `transform-react-remove-prop-types`
+## Más opciones de `transform-react-remove-prop-types`
 
 A veces queremos mantener las PropTypes porque, por ejemplo, en realidad es un componente que vamos a publicar y, por lo tanto, no vamos a consumirlo nada más compilarlo. Piensa en, por ejemplo, un componente que tengas en GitHub y quieras que otra persone use. Si lo publicas sin PropTypes, de alguna forma, estás quitándole funcionalidad muy útil.
 
@@ -135,10 +135,10 @@ const Component = props => { //... }
 
 Esta no es la única opción interesante que tiene. Por ejemplo, puedes forzar a eliminar el import de la librería `prop-types` usando la opción `removeImport: true`.
 
-### Conclusiones
+## Conclusiones
 
 Con este artículo espero haberte ayudado a conocer una forma de eliminar las PropTypes de tu código de producción. Esta en concreto nos funciona en producción en mi empresa sin ningún problema pero puede existir algún problema si estás usando la librería `prop-types` para algo que no es su uso esperado. Sólo tenlo en cuenta y **pruébalo en tus aplicaciones antes de llevarlo a producción.** Pero eh, ¡Eso no creo que hiciera falta que te lo dijese! 😜
 
-### Referencias
+## Referencias
 
 [babel-plugin-transform-react-remove-prop-types](https://www.npmjs.com/package/babel-plugin-transform-react-remove-prop-types)

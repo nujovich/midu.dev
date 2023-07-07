@@ -10,7 +10,7 @@ Escribir buenos mensajes de commit es importante para que el histórico de tu pr
 
 Por ello voy a darte 6 reglas para escribir un buen mensaje de commit:
 
-### 1. Usa el verbo imperativo (`Add`, `Change`, `Fix`, `Remove`, ...)
+## 1. Usa el verbo imperativo (`Add`, `Change`, `Fix`, `Remove`, ...)
 
 Aunque el mensaje puede sonar un poco borde, el verbo presente es una forma de expresar la acción que se realiza en el commit. Por ejemplo, `Add` significa que se añade un nuevo archivo, `Change` significa que se modifica un archivo existente y `Fix` significa que se arregla un bug.
 
@@ -27,7 +27,7 @@ Lo mejor es que el mensaje del commit complete esta frase: *"Si aplico este comm
 - ...change the default system color
 - ...remove a random notification
 
-### 2. No uses punto final ni puntos suspensivos en tus mensajes
+## 2. No uses punto final ni puntos suspensivos en tus mensajes
 
 Usar puntuación, más allá de las comas, es innecesario a la hora de crear un buen mensaje de commit. Cada carácter cuenta a la hora de crear un buen mensaje de commit así que no lo desperdicies con puntos innecesarios.
 
@@ -41,7 +41,7 @@ git commit -m "Change the default system color" # ✅
 
 Si te fijas, los commits que genera GitHub no tienen puntos suspensivos ni punto final en ningún caso.
 
-### 3. Usa como máximo 50 carácteres para tu mensaje de commit
+## 3. Usa como máximo 50 carácteres para tu mensaje de commit
 
 Sé corto y conciso. Si tienes mucho que explicar... seguramente es que tu commit hace demasiadas cosas. ¿Puedes separarlo en diferentes commits? Pues hazlo.
 
@@ -53,7 +53,7 @@ git commit -m "Add new search feature" # ✅
 git commit -m "Change typography to improve performance" # ✅
 ```
 
-### 4. Añade todo el contexto que sea necesario en el cuerpo del mensaje de commit
+## 4. Añade todo el contexto que sea necesario en el cuerpo del mensaje de commit
 
 A veces necesitas proveer de más contexto a tu commit. Para ello, en lugar de saturar el sumario del commit, añade información que sea necesaria en el cuerpo del mensaje.
 
@@ -67,7 +67,7 @@ Y con el editor, podrás añadir un mensaje de commit con saltos de línea fáci
 
 > Como hemos comentado antes, el primer mensaje de commit es el título del commit. Pero el resto de mensajes son el cuerpo y, por lo tanto, sí debes usar todas las reglas de puntuación que tendrían un texto normal.
 
-### 5. Usa un prefijo para tus commits para hacerlos más semánticos
+## 5. Usa un prefijo para tus commits para hacerlos más semánticos
 
 Cuando un proyecto crece, es necesario que existan ciertas reglas para que el historial sea legible. Para ello, puedes añadir un prefijo para darle más significado a los commits que realizas. A esto se le llama *commits semánticos* y se haría de la siguiente manera:
 
@@ -108,7 +108,7 @@ Estos serían los prefijos:
 
 Otra ventaja muy importante de utilizar commits semánticos es que podrás leer el historial de commits para publicar nuevas versiones de un paquete, desplegar nuevas versiones de una aplicación o generar un CHANGELOG con todos los cambios.
 
-### 6. Considera usar utilidades para hacer commit
+## 6. Considera usar utilidades para hacer commit
 
 Puedes usar `husky` para ejecutar scripts o comandos antes de realizar diferentes acciones sobre el repositorio, gracias a los hooks de git. Por ejemplo, puedes ejecutar los tests antes de subir los cambios al repositorio remoto.
 

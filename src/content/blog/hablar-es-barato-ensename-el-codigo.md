@@ -2,7 +2,7 @@
 title: Hablar es barato. ¡Enséñame el código!, reflexión sobre las palabras de Linus Torvalds
 date: "2022-02-04"
 description: "Pequeña reflexión sobre las palabras de Linus Torvalds y qué podemos aprender de ellas en programación."
-tags :  me
+tags :  opinion
 ---
 
 A Linus Torvalds seguramente lo conoces por muchas cosas. Este ingenierio finlandés es el **creador del kernel de Linux y de Git**. Podría pasarme un podcast entero seguramente hablándote de él pero, en su lugar, voy a utilizar una de sus frases más famosas:

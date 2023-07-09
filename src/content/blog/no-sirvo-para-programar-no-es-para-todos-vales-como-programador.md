@@ -5,7 +5,7 @@ description: Te cuento mi historia sobre cómo empecé en la programación y mi 
 topic: javascript
 toc: true
 image: /images/og/no-sirvo-para-programar.jpeg
-tags: me
+tags: opinion
 ---
 
 Hoy quiero hablarte de mi experiencia en la universidad y de cómo eso casi acaba con **mi carrera como programador.**

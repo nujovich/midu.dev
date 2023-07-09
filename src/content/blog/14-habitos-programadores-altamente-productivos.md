@@ -2,9 +2,9 @@
 title: Resumen del libro "14 Hábitos de Desarrolladores Altamente Productivos" 
 date: '2022-07-26'
 description: Te cuento los 14 
-topic: me
+topictags: opinion
 toc: true
-tags: me
+tags: opinion
 ---
 
 > Si te interesa adquirir el libro, lo puedes comprar aquí: [https://amzn.to/3Oy8jze](https://amzn.to/3Oy8jze)

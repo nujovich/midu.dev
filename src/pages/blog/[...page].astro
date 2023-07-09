@@ -1,0 +1,62 @@
+---
+import Layout from "@layout/Layout.astro";
+import BlogComponent from "@components/BlogComponent.astro";
+import Categories from "@components/Categories.astro";
+import Pagination from "@components/Pagination.astro";
+
+import { getCollection } from "astro:content";
+export async function getStaticPaths({ paginate }) {
+  const allPost = await getCollection("blog");
+  const formatedPosts = allPost.sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
+  return paginate(formatedPosts, {
+    pageSize: 10,
+  });
+}
+
+const { page } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname.split("/");
+const firstPath = pathname[1];
+
+const title = "midudev 👨‍💻 | Artículos";
+const description = "Artículos de midudev";
+---
+
+<Layout {title} {description}>
+  <main class="grid grid-cols-4 items-start justify-between px-36">
+    <section class="col-span-3">
+      <h2 class="font-bold text-4xl pb-10">Artículos recientes</h2>
+      <div class="flex flex-col items-start justify-center gap-10">
+        {
+          page.data.map((post) => (
+            <BlogComponent
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              tags={post.data.tags}
+              url={`/blog/${post.slug}`}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <aside class="">
+      <h3 class="font-bold text-2xl pb-10">Categorías</h3>
+      <div class="flex flex-wrap gap-3">
+        <Categories />
+      </div>
+    </aside>
+  </main>
+  <div class="w-full flex items-center justify-start pt-20 px-36">
+    <Pagination
+      length={page.lastPage}
+      currentUrl={page.url.current}
+      currentPage={page.currentPage}
+      firstUrl={`/${firstPath}`}
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+      lastUrl={`/${firstPath}/${page.lastPage}`}
+    />
+  </div>
+</Layout>

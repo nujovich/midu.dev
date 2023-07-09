@@ -1,0 +1,80 @@
+---
+const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } =
+  Astro.props;
+const paginationList = Array.from({ length: `${length}` }, (_, i) => i + 1);
+
+const startIndex = Math.max(currentPage - 2, 0); // Índice de inicio de las páginas mostradas
+const endIndex = Math.min(startIndex + 4, paginationList.length - 1); // Índice de fin de las páginas mostradas
+const visiblePages = paginationList.slice(startIndex, endIndex + 1);
+---
+
+<nav
+  aria-label="Blog pages"
+  class="flex items-center gap-x-2 font-medium text-midu-50 text-sm"
+>
+  {
+    currentPage > 2 ? (
+      <a href={firstUrl} class="pr-3">
+        &lt;&lt; Primero
+      </a>
+    ) : currentPage === 2 ? (
+      <span class="disabled invisible hidden">first</span>
+    ) : null
+  }
+
+  {
+    prevUrl ? (
+      <a href={prevUrl} class="px-2">
+        &lt; Anterior
+      </a>
+    ) : (
+      <span class="disabled">
+      </span>
+    )
+  }
+
+  {
+    visiblePages.map((num) => (
+      <a
+        href={`${firstUrl}${num == 1 ? "" : "/" + num}`}
+        class={` ${
+          currentPage == num ? "visited:text-midu-400" : ""
+        }`}
+      >
+        {num}
+      </a>
+    ))
+  }
+
+  {
+    !nextUrl ? (
+      <span class="disabled">
+      </span>
+    ) : (
+      <a href={nextUrl} class="px-2">
+        <i class="" />
+        Siguiente &gt;
+      </a>
+    )
+  }
+
+  {
+    lastUrl == currentUrl ? (
+      <span class="disabled">
+      </span>
+    ) : (
+      <a href={lastUrl} class="">
+      </a>
+    )
+  }
+
+  {
+    currentPage < length - 2 ? (
+      <a href={lastUrl} class="pl-3">
+        Último  &gt;&gt;
+      </a>
+    ) : currentPage === length - 2 ? (
+      <span class="disabled invisible hidden">last</span>
+    ) : null
+  }
+</nav>

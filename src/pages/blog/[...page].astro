@@ -8,7 +8,7 @@ import { getCollection } from "astro:content";
 export async function getStaticPaths({ paginate }) {
   const allPost = await getCollection("blog");
   const formatedPosts = allPost.sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
   return paginate(formatedPosts, {
     pageSize: 10,
@@ -29,15 +29,21 @@ const description = "Artículos de midudev";
       <h2 class="font-bold text-4xl pb-10">Artículos recientes</h2>
       <div class="flex flex-col items-start justify-center gap-10">
         {
-          page.data.map((post) => (
+          page.data.map(async(post) => {
+          const { remarkPluginFrontmatter } = await post.render()
+
+          return (
             <BlogComponent
               title={post.data.title}
               description={post.data.description}
               date={post.data.date}
               tags={post.data.tags}
               url={`/blog/${post.slug}`}
+              readTime={remarkPluginFrontmatter.minutesRead}
             />
-          ))
+          )
+          })
+          }
         }
       </div>
     </section>

@@ -8,9 +8,10 @@ interface Props {
   url: string;
   tags: string;
   date: string;
+  readTime: string;
 }
 
-const { title, description, url, tags, date } = Astro.props;
+const { title, description, url, tags, date, readTime } = Astro.props;
 ---
 
 <Layout {title} {description} {url}>
@@ -19,6 +20,7 @@ const { title, description, url, tags, date } = Astro.props;
       title: {title}
       tags: {tags}
       date: {date}
+      readTime: {readTime}
     />
     <article
       class="grid grid-cols-4 max-w-6xl prose-sm md:prose-md lg:prose-lg prose-headings:font-extrabold"

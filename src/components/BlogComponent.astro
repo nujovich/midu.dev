@@ -6,9 +6,10 @@ interface Props {
   date: string;
   tags: string;
   url: string;
+  readTime: string;
 }
 
-const { title, date, tags, url } = Astro.props;
+const { title, date, tags, url, readTime } = Astro.props;
 
 const fullDate = date.toLocaleDateString("es", {
   year: "numeric",
@@ -22,7 +23,10 @@ const fullDate = date.toLocaleDateString("es", {
     <Icon name={tags} class="w-14 h-14 rounded-full" />
     <div class="flex flex-col items-start justify-between gap-1 max-w-md">
       <h2 class="text-lg font-extrabold leading-snug">{title}</h2>
-      <p class="text-xs font-medium text-midu-50/60">{fullDate}</p>
+      <div class="flex items-center gap-x-1">
+        <p class="text-xs font-medium text-midu-50/60">{fullDate}</p>
+        <p class="text-xs font-medium text-midu-50/80">- {readTime}</p>
+      </div>
     </div>
   </a>
 </li>

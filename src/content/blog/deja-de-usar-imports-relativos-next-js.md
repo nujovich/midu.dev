@@ -1,7 +1,7 @@
 ---
 title: Cómo usar rutas absolutas en los imports en Next.js
-date: '2021-05-19'
-image: '/images/deja-de-usar-imports-relativos-next-js.png'
+date: "2021-05-19"
+image: "/images/deja-de-usar-imports-relativos-next-js.png"
 description: Evita usar rutas relativas a la hora de importar archivos en tus componentes de React en Next.js y usa rutas más fáciles de leer
 tags: nextjs
 ---
@@ -25,7 +25,7 @@ next-js-react-app/
 Imaginemos que desde el archivo `pages/search/index.js` queremos importar el componente Button. Tendríamos que hacer el import de la siguiente manera:
 
 ```javascript
-import Button from '../../components/Button'
+import Button from "../../components/Button";
 ```
 
 Esto, que es un ejemplo sencillo, si tuvieramos que repetir constamente nos encontraríamos que es difícil de estar pendiente constantemente de seguir las rutas relativas para cada componente o archivo que queramos importar.
@@ -33,7 +33,7 @@ Esto, que es un ejemplo sencillo, si tuvieramos que repetir constamente nos enco
 Para mejorar esto podemos usar los **imports con rutas absolutas** de esta forma:
 
 ```javascript
-import Button from 'components/Button'
+import Button from "components/Button";
 ```
 
 Si lo probamos, veremos que no funciona... **¡pero podemos hacer que lo haga!**

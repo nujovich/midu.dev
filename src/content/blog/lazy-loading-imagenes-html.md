@@ -1,6 +1,6 @@
 ---
-title: Lazy Loading de imágenes en HTML sin escribir JavaScript ⚡ 
-date: '2021-07-25'
+title: Lazy Loading de imágenes en HTML sin escribir JavaScript ⚡
+date: "2021-07-25"
 description: Aprende a utilizar el Lazy Load de imágenes nativo de HTML, para mejorar el rendimiento de tu sitio web muy fácilmente.
 toc: true
 tags: html
@@ -8,7 +8,7 @@ tags: html
 
 Desde hace un tiempo puedes hacer un lazy load nativo de tus imágenes e iframes gracias al nuevo atributo `loading` de HTML. Esto es un paso enorme a la hora de mejorar el rendimiento de tus sitios sin necesidad de cargar bibliotecas externas.
 
-El nuevo atributo es parte del **estándar de HTML5** y se puede utilizar en las etiquetas `img` y `iframe` (no se puede usar en las etiquetas `video` ni `audio`). Internamente utiliza un *Intersection* *Observer* para saber cuando el elemento se encuentra en pantalla pero, claro, no tienes que preocuparte de escribir tú ni una sola línea de JavaScript para conseguirlo.
+El nuevo atributo es parte del **estándar de HTML5** y se puede utilizar en las etiquetas `img` y `iframe` (no se puede usar en las etiquetas `video` ni `audio`). Internamente utiliza un _Intersection_ _Observer_ para saber cuando el elemento se encuentra en pantalla pero, claro, no tienes que preocuparte de escribir tú ni una sola línea de JavaScript para conseguirlo.
 
 La sintaxis para usarlo sería así:
 
@@ -33,28 +33,31 @@ El atributo `loading` se puede usar en las etiquetas `img` y `iframe` como hemos
 
 ```html
 <!-- Carga diferida de la imagen cuando el usuario se acerca a la imagen -->
-<img src="lazy-image.jpg" loading="lazy" alt="..."/>
+<img src="lazy-image.jpg" loading="lazy" alt="..." />
 
 <!-- Carga la imagen inmediatamente -->
-<img src="hero-banner.jpg" loading="eager" alt=".."/>
+<img src="hero-banner.jpg" loading="eager" alt=".." />
 
 <!-- Dejamos que el navegador decida -->
-<img src="auto-image.jpg" loading="auto" alt=".."/>
+<img src="auto-image.jpg" loading="auto" alt=".." />
 
 <!-- Carga diferida en <picture>. <img> es el único elemento
      que necesita el atributo. El resto de `sources` usará
      esa configuración. -->
 <picture>
-  <source media="(min-width: 42em)" srcset="normal.jpg 1x, retina.jpg 2x">
-  <source srcset="optimized.jpg 1x, optimized-retina.jpg 2x">
-  <img src="fallback.jpg" loading="lazy">
+  <source media="(min-width: 42em)" srcset="normal.jpg 1x, retina.jpg 2x" />
+  <source srcset="optimized.jpg 1x, optimized-retina.jpg 2x" />
+  <img src="fallback.jpg" loading="lazy" />
 </picture>
 
 <!-- Lazy-load con imágenes que usan srcset -->
-<img src="imagen-s.jpg"
-     srcset="imagen-l.jpg 1024w, imagen-m.jpg 640w, imagen-s.jpg 320w"
-     sizes="(min-width: 36em) 33.3vw, 100vw"
-     alt="El lanzamiento más esperado" loading="lazy">
+<img
+  src="imagen-s.jpg"
+  srcset="imagen-l.jpg 1024w, imagen-m.jpg 640w, imagen-s.jpg 320w"
+  sizes="(min-width: 36em) 33.3vw, 100vw"
+  alt="El lanzamiento más esperado"
+  loading="lazy"
+/>
 
 <!-- Lazy-load también funciona con iframes -->
 <iframe src="video-player.html" loading="lazy"></iframe>
@@ -73,7 +76,7 @@ Actualmente más del 70% de los navegadores de Internet soporta totalmente la ca
 
 A día de hoy Firefox lo soporta pero sólo para ser usado con imágenes. Todavía no tiene soporte para `iframe`.
 
-En el caso de Internet Explorer 11, no tiene ningún soporte. Mientras que Safari, tanto de escritorio como para móvil, su soporte actualmente es experimental y tiene que ser activado manualmente a través de *Settings > Advanced > Experimental Features.*
+En el caso de Internet Explorer 11, no tiene ningún soporte. Mientras que Safari, tanto de escritorio como para móvil, su soporte actualmente es experimental y tiene que ser activado manualmente a través de _Settings > Advanced > Experimental Features._
 
 Tienes el **soporte de los navegadores actualizado a día de hoy** en la siguiente tabla para hacerte a la idea:
 
@@ -91,8 +94,8 @@ Tienes el **soporte de los navegadores actualizado a día de hoy** en la siguien
 Puedes comprobar si la propiedad `loading` es parte del prototipo del `HTMLImageElement` o `HTMLIFrameElement`. Por ejemplo, con este código
 
 ```javascript
-const hasNativeLazyLoadSupport = 'loading' in HTMLImageElement.prototype
-if (!hasNativeLazyLoadSupport) { 
+const hasNativeLazyLoadSupport = "loading" in HTMLImageElement.prototype;
+if (!hasNativeLazyLoadSupport) {
   // aplicar otra estrategia para la carga diferida
 }
 ```
@@ -101,7 +104,7 @@ if (!hasNativeLazyLoadSupport) {
 
 Si tu navegador no soporta este atributo simplemente lo ignorará. Esto es ideal, ya que hace que puedas usar este atributo `loading` en las imágenes y funcionará en aquellos navegadores que lo soporten. Los que no lo soporten... obviamente no obtendrán el beneficio de la carga diferida pero tampoco tendrán un impacto negativo ni les afectarán de ninguna manera.
 
-A este tipo de estrategia se le llama *mejora* *progresiva*, ya que no rompe la retrocompatibilidad pero hace que los navegadores que sí lo soporten tengan una carga más rápida y eficiente.
+A este tipo de estrategia se le llama _mejora_ _progresiva_, ya que no rompe la retrocompatibilidad pero hace que los navegadores que sí lo soporten tengan una carga más rápida y eficiente.
 
 ### ¿Y si quiero hacer lazy loading en un navegador que no lo soporta?
 
@@ -109,51 +112,51 @@ En ese caso puedes utilizar la biblioteca `vanilla-lazyload` para dar soporte en
 
 ```html
 <!-- Imagen que se ve desde el principio, no hacemos lazy load -->
-<img src="hero-image.jpg" loading="eager" alt="Hero image">
+<img src="hero-image.jpg" loading="eager" alt="Hero image" />
 
 <!-- Usamos `loading` a `lazy` y `data-src` en lugar de `src` -->
-<img data-src="lazy-image1.jpg" loading="lazy" alt="Imagen diferida 1">
-<img data-src="lazy-image2.jpg" loading="lazy" alt="Imagen diferida 2">
-<img data-src="lazy-image3.jpg" loading="lazy" alt="Imagen diferida 3">
+<img data-src="lazy-image1.jpg" loading="lazy" alt="Imagen diferida 1" />
+<img data-src="lazy-image2.jpg" loading="lazy" alt="Imagen diferida 2" />
+<img data-src="lazy-image3.jpg" loading="lazy" alt="Imagen diferida 3" />
 <iframe data-src="video-player.html" loading="lazy" alt="Iframe diferido">
+  <script>
+    (function () {
+      // miramos si tiene soporte a lazy loading nativo
+      const hasNativeLazyLoadSupport = "loading" in HTMLImageElement.prototype;
 
-<script>
-  (function() {
-    // miramos si tiene soporte a lazy loading nativo
-    const hasNativeLazyLoadSupport = 'loading' in HTMLImageElement.prototype
+      // si tiene soporte nativo de carga diferida...
+      if (hasNativeLazyLoadSupport) {
+        // recuperamos todas las imágenes e iframes con el atributo
+        const lazyEls = document.querySelectorAll("[loading=lazy]");
+        // pasamos el data-src a src y dejamos que el navegador haga el resto
+        lazyEls.forEach((lazyEl) => {
+          const src = lazyEl.getAttribute("data-src");
+          lazyEl.setAttribute("src", src);
+        });
+      } else {
+        // Cargamos dinámicamente una biblioteca externa para
+        // hacer la carga diferida
+        const script = document.createElement("script");
+        script.async = true;
+        script.src =
+          "https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js";
 
-    // si tiene soporte nativo de carga diferida...
-    if (hasNativeLazyLoadSupport) {
-      // recuperamos todas las imágenes e iframes con el atributo
-      const lazyEls = document.querySelectorAll("[loading=lazy]")
-      // pasamos el data-src a src y dejamos que el navegador haga el resto
-      lazyEls.forEach(lazyEl => {
-        const src = lazyEl.getAttribute("data-src")
-        lazyEl.setAttribute("src", src)
-      })
-    } else {
-      // Cargamos dinámicamente una biblioteca externa para 
-      // hacer la carga diferida
-      const script = document.createElement("script")
-      script.async = true
-      script.src =
-        "https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"
-
-      // esta configuración es necesaria por la librería vanilla-lazyload
-      // le indicamos los elementos a los que queremos hacer la carga diferida
-      window.lazyLoadOptions = {
-        elements_selector: "[loading=lazy]"
+        // esta configuración es necesaria por la librería vanilla-lazyload
+        // le indicamos los elementos a los que queremos hacer la carga diferida
+        window.lazyLoadOptions = {
+          elements_selector: "[loading=lazy]",
+        };
+        // añadimos el script par la carga asíncrona de la biblioteca
+        document.body.appendChild(script);
       }
-      // añadimos el script par la carga asíncrona de la biblioteca
-      document.body.appendChild(script)
-    }
-  })()
-</script>
+    })();
+  </script></iframe
+>
 ```
 
 ## ¿Debería usar siempre el atributo loading=lazy?
 
-**NO.** Evita usar el atributo `loading="lazy"` para imágenes que sean visibles en la página desde el principio ya que estás añadiendo cálculos innecesarios en tu sitio (ya que el cálculo se hace usando *Intersection Observer*)
+**NO.** Evita usar el atributo `loading="lazy"` para imágenes que sean visibles en la página desde el principio ya que estás añadiendo cálculos innecesarios en tu sitio (ya que el cálculo se hace usando _Intersection Observer_)
 
 **Lo recomendable es añadir este atributo sólo en las imágenes que no se muestren en la página inmediatamente** y que se carguen a medida que se necesiten. De esta forma la priorización que hará el navegador será mucho más correcta.
 
@@ -161,14 +164,20 @@ Aquí tienes un ejemplo:
 
 ```html
 <!-- son visibiles en el viewport -->
-<img src="zapatos.jpg" alt="Zapatos" width="200" height="200">
-<img src="camiseta.jpg" alt="Camiseta" width="200" height="200">
-<img src="chandal.jpg" alt="Chandal" width="200" height="200">
+<img src="zapatos.jpg" alt="Zapatos" width="200" height="200" />
+<img src="camiseta.jpg" alt="Camiseta" width="200" height="200" />
+<img src="chandal.jpg" alt="Chandal" width="200" height="200" />
 
 <!-- imágenes que hay que hacer scroll para verlas -->
-<img src="camisa.jpg" loading="lazy" alt="Camisa" width="200" height="200">
-<img src="chaqueta.jpg" loading="lazy" alt="Chaqueta" width="200" height="200">
-<img src="pijama.jpg" loading="lazy" alt="Pijama" width="200" height="200">
+<img src="camisa.jpg" loading="lazy" alt="Camisa" width="200" height="200" />
+<img
+  src="chaqueta.jpg"
+  loading="lazy"
+  alt="Chaqueta"
+  width="200"
+  height="200"
+/>
+<img src="pijama.jpg" loading="lazy" alt="Pijama" width="200" height="200" />
 ```
 
 ## ¡Lo estoy probando pero se está descargando las imágenes!

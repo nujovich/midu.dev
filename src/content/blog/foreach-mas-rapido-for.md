@@ -1,6 +1,6 @@
 ---
 title: ¿Por qué forEach es más rápido que for en JavaScript?
-date: '2022-12-16'
+date: "2022-12-16"
 description: Explicamos qué razón hace que forEach de JavaScript sea más rápido que el clásico for en algunas situaciones
 topic: javascript
 
@@ -15,18 +15,18 @@ A favor de esa opinión hay que decir dos cosas:
 - En algunos casos sigue siendo cierto, como veremos en el artículo.
 - En algún momento del pasado sí fue verdad para todos los casos, porque los compiladores no contaban con las optimizaciones que hoy sí tienen.
 
-Pero te voy a explicar en este artículo como esto ha cambiado y, en los casos más habituales, `forEach` es más rápido que `for` (especialmente en navegadores modernos y *runtimes* como Node) para ejecuciones simples.
+Pero te voy a explicar en este artículo como esto ha cambiado y, en los casos más habituales, `forEach` es más rápido que `for` (especialmente en navegadores modernos y _runtimes_ como Node) para ejecuciones simples.
 
 ## ¿Qué es el método `forEach` de Array?
 
 `forEach` es un método de las arrays de JavaScript que se utiliza para iterar sobre los elementos de un array y ejecutar una función determinada en cada uno de ellos. A diferencia del bucle `for`, forEach no tiene un contador y no permite la interrupción o el salto de iteración.
 
 ```javascript
-const array = [1, 2, 3, 4, 5]
+const array = [1, 2, 3, 4, 5];
 
 array.forEach((element) => {
-  console.log(element)
-})
+  console.log(element);
+});
 ```
 
 ## ¿Por qué `forEach` puede ser más rápido que `for`?
@@ -36,10 +36,10 @@ En general, `forEach` puede ser más rápido que `for` debido a que es más simp
 Por ejemplo, el siguiente código el mismo código de antes con `for` se vería así:
 
 ```javascript
-const array = [1, 2, 3, 4, 5]
+const array = [1, 2, 3, 4, 5];
 
 for (let i = 0; i < array.length; i++) {
-  console.log(array[i])
+  console.log(array[i]);
 }
 ```
 
@@ -51,33 +51,33 @@ De hecho, vamos a crear un pequeño benchmark para comprobarlo. Imagina que tene
 
 ```javascript
 // creamos un array de 1000 números
-const array = Array.from({ length: 1000 }, (_, i) => i)
+const array = Array.from({ length: 1000 }, (_, i) => i);
 
 // creamos un nuevo array con los números pares
-let newArray = []
+let newArray = [];
 
 // con for
 for (let i = 0; i < array.length; i++) {
   if (array[i] % 2 === 0) {
-    newArray.push(array[i])
+    newArray.push(array[i]);
   }
 }
 
 // con forEach
 array.forEach((element) => {
   if (element % 2 === 0) {
-    newArray.push(element)
+    newArray.push(element);
   }
-})
+});
 
 // con map y filter
 newArray = array
   .map((element) => {
     if (element % 2 === 0) {
-      return element
+      return element;
     }
   })
-  .filter(Boolean)
+  .filter(Boolean);
 ```
 
 Y los resultados del benchmark en operaciones por segundo (más es mejor):
@@ -101,24 +101,24 @@ Como hemos comentado antes, `forEach` no permite la interrupción o el salto de 
 Por ejemplo, si queremos buscar un elemento en un array y parar el bucle cuando lo encontremos, no podemos hacerlo con `forEach`. En este caso, `for` es más rápido.
 
 ```javascript
-const array = [1, 2, 3, 4, 5]
+const array = [1, 2, 3, 4, 5];
 
-let found = false
+let found = false;
 
 for (let i = 0; i < array.length; i++) {
   if (array[i] === 3) {
-    found = true
-    break
+    found = true;
+    break;
   }
 }
 ```
 
-Sin embargo, recuerda que para esto tienes el método `.some` de *Array* que te permite parar el bucle cuando encuentras el elemento que buscas y, de hecho, suele ser más rápido que `for`:
+Sin embargo, recuerda que para esto tienes el método `.some` de _Array_ que te permite parar el bucle cuando encuentras el elemento que buscas y, de hecho, suele ser más rápido que `for`:
 
 ```javascript
-const array = [1, 2, 3, 4, 5]
+const array = [1, 2, 3, 4, 5];
 
-const found = array.some((element) => element === 3)
+const found = array.some((element) => element === 3);
 ```
 
 Es más legible y más rápido que `for` y `forEach`. ¿Qué más se puede pedir?
@@ -128,13 +128,13 @@ Hay otras ocasiones en las que `for` puede ser más rápido que `forEach`. Por e
 ```javascript
 // con for
 for (let i = 0; i < 1000; i++) {
-  console.log(i)
+  console.log(i);
 }
 
 // con forEach
 Array.from({ length: 1000 }).forEach((_, i) => {
-  console.log(i)
-})
+  console.log(i);
+});
 ```
 
 ### El tamaño también importa
@@ -148,29 +148,29 @@ En todos los ejemplos anteriores hemos trabajado con un array de 1000 elementos.
 Si quieres verlo por ti mismo, puedes ejecutar el siguiente código en tu navegador y ver los resultados en la consola.
 
 ```javascript
-const array = Array.from({ length: 1000 }).map((x, i) => i)
+const array = Array.from({ length: 1000 }).map((x, i) => i);
 
 // for
-const c = process.hrtime()
-let aux2 = []
+const c = process.hrtime();
+let aux2 = [];
 for (let i = 0; i < array.length; i++) {
-  if (array[i] % 2 === 0) aux2.push(array[i])
+  if (array[i] % 2 === 0) aux2.push(array[i]);
 }
-const d = process.hrtime(c)
+const d = process.hrtime(c);
 
 // forEach
-const a = process.hrtime()
-let aux = []
-array.forEach(n => {
-  if (n % 2 === 0) aux.push(n)
-})
-const b = process.hrtime(a)
+const a = process.hrtime();
+let aux = [];
+array.forEach((n) => {
+  if (n % 2 === 0) aux.push(n);
+});
+const b = process.hrtime(a);
 
-console.log('forEach', b[1], ' nanoseconds')
-console.log('for', d[1], ' nanoseconds')
+console.log("forEach", b[1], " nanoseconds");
+console.log("for", d[1], " nanoseconds");
 ```
 
-Puedes cambiar los valores e ir jugando para ver las diferencias entre uno y otro. Igualmente verás que en muchos casos gana *forEach* y en otros gana *for*. Pero en todos los casos, la diferencia de velocidad suele ser insignificante.
+Puedes cambiar los valores e ir jugando para ver las diferencias entre uno y otro. Igualmente verás que en muchos casos gana _forEach_ y en otros gana _for_. Pero en todos los casos, la diferencia de velocidad suele ser insignificante.
 
 ## Conclusión: no sacrifiques la legibilidad por velocidad
 

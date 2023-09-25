@@ -1,6 +1,6 @@
 ---
 title: No sirvo para programar. ¿Programar no es para todos? ¿Vales para programador?
-date: '2021-03-30'
+date: "2021-03-30"
 description: Te cuento mi historia sobre cómo empecé en la programación y mi experiencia al comenzar en esta carrera tras mi desastroso inicio en la universidad.
 topic: javascript
 toc: true
@@ -23,7 +23,7 @@ Así que en 2001 iba bien con las notas y entonces llegó el Bachillerato. Y, co
 
 Las matemáticas en Bachillerato me costaron un montón y hay mucha gente que me pregunta... "Oye, ¿Hay que saber matemáticas para poder programar?". Pues bueno vas a descubrir un poco mi historia con las matemáticas a ver si esto te hace cambiar de idea...
 
-Total. Suspendí la asignatura de matemáticas. Se me daban fatal. Nunca las llegué a comprender.  Las integrales nunca las puede dominar... pero al ser la única asignatura que me quedo pendiente, por unas pocas décimas, llegué  a un acuerdo con mi profesor y me dijo te voy a aprobar... pero me tienes que jurar que no vas a ir a la selectividad...
+Total. Suspendí la asignatura de matemáticas. Se me daban fatal. Nunca las llegué a comprender. Las integrales nunca las puede dominar... pero al ser la única asignatura que me quedo pendiente, por unas pocas décimas, llegué a un acuerdo con mi profesor y me dijo te voy a aprobar... pero me tienes que jurar que no vas a ir a la selectividad...
 
 Yo lo cierto es que no tenía ningún plan de ir a la universidad no quería ir así que yo le dije que por supuesto que no había ningún problema que no se preocupase no iba a ir a la selectividad... así que yo me fui a casa supercontento y le dije a mis padres: "Oye, he aprobado el bachillerato espero que estéis orgullosos de mí. Ahora por fin voy a poder estudiar desarrollo de aplicaciones informáticas".
 
@@ -67,4 +67,3 @@ Con los años eso es lo que me ha llenado más. Enseñar la programación como a
 {{< subscribe-to-youtube >}}
 
 </div>
-

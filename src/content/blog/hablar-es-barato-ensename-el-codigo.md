@@ -2,14 +2,14 @@
 title: Hablar es barato. ¡Enséñame el código!, reflexión sobre las palabras de Linus Torvalds
 date: "2022-02-04"
 description: "Pequeña reflexión sobre las palabras de Linus Torvalds y qué podemos aprender de ellas en programación."
-tags :  opinion
+tags: opinion
 ---
 
 A Linus Torvalds seguramente lo conoces por muchas cosas. Este ingenierio finlandés es el **creador del kernel de Linux y de Git**. Podría pasarme un podcast entero seguramente hablándote de él pero, en su lugar, voy a utilizar una de sus frases más famosas:
 
 > "Hablar es barato. Muéstrame el código." En inglés: Talk is cheap. Show me the code.
 
-Esta frase fue la contestación de Linus en una acalorada discusión con *Jamie Lokier*. Estaban hablando sobre cómo mejorar la creación de hilos en Linux. Tras intercambiar algunos mensajes y después de una extensa contestación de *Jamie Lokier*, entonces Linus dijo esa famosa frase: **Hablar es barato. Muéstrame el código.**
+Esta frase fue la contestación de Linus en una acalorada discusión con _Jamie Lokier_. Estaban hablando sobre cómo mejorar la creación de hilos en Linux. Tras intercambiar algunos mensajes y después de una extensa contestación de _Jamie Lokier_, entonces Linus dijo esa famosa frase: **Hablar es barato. Muéstrame el código.**
 
 Lo cierto es que esta frase sirve para muchas cosas en la vida. Por ejemplo, **hablar es muy fácil pero pasar a la acción, normalmente, nos cuesta bastante más.** Sólo tienes que pensar cuántas veces has dicho que vas a hacer deporte o vas a comer mejor y, al final, no has pasado a la acción.
 
@@ -33,7 +33,7 @@ La frase de Linus también encuentra su sitio en muchas discusiones que, al meno
 
 Cuando se hacen estimaciones de tiempo, que no se debería, o de esfuerzo, que es una forma también enmascarada de hablar de tiempo... muchas veces solemos infravalorar el trabajo que hay detrás. Especialmente, estoy seguro, que te ha pasado cuando un compañero o compañera que no sabe programar se pone a opinar sobre cómo de difícil es hacer algo.
 
-Por ejemplo: *"Hay que cambiar este botón de sitio"*. Puede sonar a algo simple, sencillo y que, sin contexto, cualquier persona diría que es fácil.
+Por ejemplo: _"Hay que cambiar este botón de sitio"_. Puede sonar a algo simple, sencillo y que, sin contexto, cualquier persona diría que es fácil.
 
 Pero a veces confundimos deseo con realidad y, **la realidad, es que existen variables que pueden hacer que una tarea sencilla sea, a la postre, algo un poquito más complicado.**
 
@@ -43,6 +43,6 @@ Un compañero, seguramente con toda su buena intención dijo que no había que p
 
 No quiero ahora invocar al karma ni a un poder superior que le castigó por sus palabras pero... lo cierto, es que después de terminar de calentar su comida en el microondas... **todavía le quedaron meses por delante** para terminar la tarea para que, además, el desarrollo fuese demasiado complicado por intentar crear un fork de la librería. Vamos, un desastre.
 
-Al final, con lo que quiero que te quedes y que yo, al menos, intento hacerlo, es siempre intentar no ser, lo que se diría, un *bocachancla*. Vamos, hablar de más y luego hacer más bien poco. Es útil considerar todos los problemas que tendría una implementación real porque, por fácil que suenan las cosas, luego hay que tener en cuenta otros trabajos que quizás no hemos previsto.
+Al final, con lo que quiero que te quedes y que yo, al menos, intento hacerlo, es siempre intentar no ser, lo que se diría, un _bocachancla_. Vamos, hablar de más y luego hacer más bien poco. Es útil considerar todos los problemas que tendría una implementación real porque, por fácil que suenan las cosas, luego hay que tener en cuenta otros trabajos que quizás no hemos previsto.
 
 Por eso, si alguien tiene reparos, igual está bien escuchar y atender a las posibilidades que expone. Y, si tan claro lo tenemos, pues intentar desbloquear a la gente con implementaciones concretas porque... ya sabes, que **hablar es barato y lo que hay que hacer es enseñar el código.**

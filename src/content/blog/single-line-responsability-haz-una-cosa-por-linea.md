@@ -1,7 +1,7 @@
 ---
 title: Single Line Responsibility, one line does one thing
-date: '2018-12-18'
-image: '/images/slr_one_line_one_thing-5395037.png'
+date: "2018-12-18"
+image: "/images/slr_one_line_one_thing-5395037.png"
 description: "Experience and knowledge could help you writing readable, mantainable and clean code but, following the Single Line Responsibility principle will help you to be sure you're doing it."
 language: 🇬🇧
 tags: best-practice
@@ -22,21 +22,28 @@ Let's see some **real production code where the Single Line Responsibility is NO
 /* (spoiler: you're gonna need horizontal scroll) */
 
 // get an element, add an event and pass the callback with some calculated params
-document.querySelector('.js-push-button').addEventListener('click', function () { pushEnabled && pushMessage(JSON.stringify(messages))})
+document
+  .querySelector(".js-push-button")
+  .addEventListener("click", function () {
+    pushEnabled && pushMessage(JSON.stringify(messages));
+  });
 
 // check condition, concatenate two dots with a substring and assign to a variable
-if (value.length > 13) value = value.substring(0,12) + '..';
+if (value.length > 13) value = value.substring(0, 12) + "..";
 
 // let's push to grid a created path with a bunch of params no body understand!
-grid.push(paper.path("M0 " + i + " L" + getPaperWidth(i) + " " + i, false))
+grid.push(paper.path("M0 " + i + " L" + getPaperWidth(i) + " " + i, false));
 
-// feel like there you are a god  
-e.innerHTML = t._getDateTime(new Date(), ed.getParam("template_mdate_format", ed.getLang("template.mdate_format")))
+// feel like there you are a god
+e.innerHTML = t._getDateTime(
+  new Date(),
+  ed.getParam("template_mdate_format", ed.getLang("template.mdate_format"))
+);
 ```
 
-Does it feel nasty? Oh my, it should feel nasty and that's good. That means that you're willing to know more about the **Single Line Responsibility** advice. 
+Does it feel nasty? Oh my, it should feel nasty and that's good. That means that you're willing to know more about the **Single Line Responsibility** advice.
 
-> Single Line Responsibility is a rule that enforces you to try to do only one thing in each line. 
+> Single Line Responsibility is a rule that enforces you to try to do only one thing in each line.
 
 ## Using Single Line Responsibility, for good
 
@@ -55,20 +62,21 @@ return SearchFactory.searchUrlValueObject({
       ? this._findFeatureByValue(featureIds[0])
       : undefined,
   // is the template string really necessary? hard to know!
-  urlPattern: `${this._config('routing')[isMap ? 'map' : 'search']}`
-})
+  urlPattern: `${this._config("routing")[isMap ? "map" : "search"]}`,
+});
 
 // ✅ refactored following the Single Line Responsibility™
 // create a const for the featureLiteral
-const featureLiteral = featureIds && featureIds.length === 1
-  ? this._findFeatureByValue(featureIds[0])
-  : undefined
+const featureLiteral =
+  featureIds && featureIds.length === 1
+    ? this._findFeatureByValue(featureIds[0])
+    : undefined;
 // extract the ternary in a const to use later
-const routingType = isMap ? 'map' : 'search'
+const routingType = isMap ? "map" : "search";
 // remove the unnecesary template string and use the routingType
-const urlPattern = this._config('routing')[routingType]
+const urlPattern = this._config("routing")[routingType];
 // use short-hand for key-value object and return the searchUrlValueObject
-return SearchFactory.searchUrlValueObject({featureLiteral, urlPattern})
+return SearchFactory.searchUrlValueObject({ featureLiteral, urlPattern });
 ```
 
 <br />
@@ -76,7 +84,7 @@ return SearchFactory.searchUrlValueObject({featureLiteral, urlPattern})
 ### Template strings are powerful just don't bloat them with logic.
 
 ```javascript
-// ❌ logic in the template string and using it as a parameter  
+// ❌ logic in the template string and using it as a parameter
 writeFile(
     COMPONENT_PACKAGE_JSON_FILE,
     `{
@@ -102,7 +110,7 @@ writeFile(
   "author": "",
   "license": "MIT"
 }`
-    
+
 // ✅ refactored following the Single Line Responsibility™
 const createHomePageSection = homepage => {
   if (!homepage) return ''
@@ -141,13 +149,16 @@ writeFile(COMPONENT_PACKAGE_JSON_FILE, fileContent)
 
 ```javascript
 // ❌ reading could be a bit difficult
-listOfNumbers.filter(n => n % 2 === 0).map(n => n * n).some(n => n > 30)
+listOfNumbers
+  .filter((n) => n % 2 === 0)
+  .map((n) => n * n)
+  .some((n) => n > 30);
 
 // ✅ separate each line, linter could help you with this!
 listOfNumbers
-  .filter(n => n % 2 === 0)
-  .map(n => n * n)
-  .some(n => n > 30)
+  .filter((n) => n % 2 === 0)
+  .map((n) => n * n)
+  .some((n) => n > 30);
 ```
 
 <br />
@@ -156,12 +167,13 @@ listOfNumbers
 
 ```javascript
 // ❌ I'm scared
-const { result: { realEstates: { count = 0 } = {} } = { realEstates: {} } } = props
+const { result: { realEstates: { count = 0 } = {} } = { realEstates: {} } } =
+  props;
 
 // ✅ not the best but I'll sleep at night
-const { results = {} } = props
-const { realEstates = {} } = results
-const { count = 0 } = realEstates
+const { results = {} } = props;
+const { realEstates = {} } = results;
+const { count = 0 } = realEstates;
 ```
 
 <br />
@@ -247,18 +259,20 @@ render () {
 ```
 
 <br /><br />
+
 ## Frequently asked questions 🤔
 
 ### Should I use it ALWAYS?
+
 **Nope.** The rule is not meant to be strict but a guide to try to follow as much of possible. Sometimes could be possible that one line is more appropriate for doing more things but still **following SLR could surface the possibility of extracting a useful function.**
 
 ```javascript
 // a typical simple example of doing two things in the same line that could make sense
-const result = numbers.map(n => n * 2)
+const result = numbers.map((n) => n * 2);
 
 // using SLR™
-const multiplyBy2 = n => n * 2 // extract the function, could be used again
-const result = numbers.map(multiplyBy2)
+const multiplyBy2 = (n) => n * 2; // extract the function, could be used again
+const result = numbers.map(multiplyBy2);
 ```
 
 Anyway, the idea behind the Single Line Responsibility is to do your best effort to not creating code hard to read by concatenating stuff in a single line. It could make sense in a specific context, just keep it in mind.
@@ -270,14 +284,14 @@ Anyway, the idea behind the Single Line Responsibility is to do your best effort
 As I said, **let's not being pedantic about SLR.** The idea behind SLR is trying as much of possible of doing one thing per line but, sometimes, could be good enough to try to limit the things to do in one line. In the next case I'm accessing a position of the array featureIds and using it as a param:
 
 ```javascript
-this._findFeatureByValue(featureIds[0])
+this._findFeatureByValue(featureIds[0]);
 ```
 
 Surely, we could do the next thing:
 
 ```javascript
-const featureValue = featureIds[0]
-this._findFeatureByValue(featureValue)
+const featureValue = featureIds[0];
+this._findFeatureByValue(featureValue);
 ```
 
 But, what happens when we want to do that inside a conditional in order to check if featureIds have at least one position in order to know if we should extract it? Well, there're plenty of solutions (extracting to a method, control `undefined` values...). The idea is not trying to achieve everything in one line but sometimes is just fine having an exception.

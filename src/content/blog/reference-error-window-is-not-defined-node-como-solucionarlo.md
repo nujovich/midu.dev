@@ -1,9 +1,9 @@
 ---
 title: "Cómo solucionar el error ReferenceError: window is not defined"
-date: '2022-07-10'
+date: "2022-07-10"
 description: ¿Estás programando con JavaScript en el servidor y estás encontrando este error? ¡Es normal! Te cuento cómo solucionarlo
 toc: true
-tags :  javascript
+tags: javascript
 ---
 
 En algún momento te vas a encontrar el error `ReferenceError: window is not defined` si desarrollas con **JavaScript**. Esto es porque estás dando por hecho que todos los entornos donde se ejecuta este lenguaje tiene acceso a este objeto global... **¡y no es así!**
@@ -11,7 +11,7 @@ En algún momento te vas a encontrar el error `ReferenceError: window is not def
 Por ejemplo, si estás trabajando con Node.js, no tienes acceso al objeto `window` y, por lo tanto, es posible que si intentas acceder a `window` te devuelva este error:
 
 ```javascript
-const value = window.localStorage.getItem('key')
+const value = window.localStorage.getItem("key");
 ```
 
 > En Node.js el localStorage no está disponible. En otros entornos de ejecución como Deno sí que lo está, pero es algo particular ya que han adaptado la API para que funcione en la parte del servidor.
@@ -23,9 +23,9 @@ Igual ni siquiera estás usando conscientemente Node.js pero hay frameworks como
 Si el problema está en tu código es bastante sencillo. **Encuentra dónde estés accediendo a una propiedad del objeto `window` y elimina el código**. Si eso no es posible (por ejemplo, un código que se ejecuta tanto en servidor como en cliente) entonces puedes envolver el código en un condicional que compruebe si tiene acceso a `window`.
 
 ```javascript
-let value
-if (typeof window !== 'undefined') {
-  value = window.localStorage.getItem('key')
+let value;
+if (typeof window !== "undefined") {
+  value = window.localStorage.getItem("key");
 }
 ```
 
@@ -39,24 +39,25 @@ También es posible que encuentres este problema con algunas **librerías de ter
 
 ```javascript
 // Código ejecutado en el servidor
-import useSomething from 'dependencia-externa'
+import useSomething from "dependencia-externa";
 
-useSomething()
+useSomething();
 // ReferenceError: window is not defined
 ```
 
 En estos casos **lo mejor es revisar toda la traza para determinar el origen del problema...**
 
-Una vez detectes la dependencia *culpable*, tendrás diferentes opciones:
+Una vez detectes la dependencia _culpable_, tendrás diferentes opciones:
 
 - Buscar una alternativa que no tenga el problema.
 - Revisar si realmente necesitas cargar la dependencia en ese punto y si puedes mover la importación y uso de la dependencia en un archivo que sólo se ejecute en el cliente.
 - Cargar de forma dinámica la dependencia sólo cuando sepas que estás en el cliente.
 
 ```javascript
-if (typeof window !== 'undefined') {
-  import('dependencia-externa')
-    .then(({default: useSomething}) => useSomething())
+if (typeof window !== "undefined") {
+  import("dependencia-externa").then(({ default: useSomething }) =>
+    useSomething()
+  );
 }
 ```
 
@@ -107,7 +108,7 @@ export default User () {
 }
 ```
 
-> Si tu aplicación es sólo *Client Side Rendering* entonces no te tienes que preocupar de estas cosas... aunque hoy en día es cada vez más complicado que sea así, ya que estarías perdiendo algunas ventajas de SEO y rendimiento.
+> Si tu aplicación es sólo _Client Side Rendering_ entonces no te tienes que preocupar de estas cosas... aunque hoy en día es cada vez más complicado que sea así, ya que estarías perdiendo algunas ventajas de SEO y rendimiento.
 
 ## Conclusiones
 

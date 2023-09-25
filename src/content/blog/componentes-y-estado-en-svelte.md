@@ -1,7 +1,7 @@
 ---
 title: Cómo crear componentes y gestionar el estado en Svelte
-date: '2020-02-02'
-image: '/images/componentes-y-estado-con-svelte.jpg'
+date: "2020-02-02"
+image: "/images/componentes-y-estado-con-svelte.jpg"
 description: Aprende a crear componentes en Svelte para reutilizar trozos de tu interfaz y a gestionar el estado de los mismos para tener reactividad.
 
 toc: true
@@ -20,11 +20,13 @@ Pongamos este ejemplo, donde tenemos una prop llamada `name`, unos estilos para 
 
 ```html
 <script>
-	export let name;
+  export let name;
 </script>
 
 <style>
-	h1 { color: #09f; }
+  h1 {
+    color: #09f;
+  }
 </style>
 
 <h1>Hello {name}!</h1>
@@ -36,14 +38,16 @@ Así que vamos a añadir un `<button>` y vamos a añadir la función que llamare
 
 ```html {hl_lines=["3-5",12]}
 <script>
-	export let name;
-  function handleClick () {
-    name = 'Pepito'
+  export let name;
+  function handleClick() {
+    name = "Pepito";
   }
 </script>
 
 <style>
-	h1 { color: #09f; }
+  h1 {
+    color: #09f;
+  }
 </style>
 
 <button>Cambiar nombre</button>
@@ -55,7 +59,7 @@ Hemos añadido la función y el botón pero, al hacer clic no ocurriría nada. E
 En este caso, para escuchar el evento clic del botón y hacer que se ejecute cada vez que ocurra la función que queremos, tenemos que añadir la directiva `on:click`, muy parecido a como se tiene que hacer en React y Vue.
 
 ```html
-<button on:click={handleClick}>
+<button on:click="{handleClick}"></button>
 ```
 
 Ahora, cada vez que hagamos click en el botón, veremos que el nombre cambia del que le pasábamos por props a `Pepito`... **¿PERO QUE CLASE DE MAGIA NEGRA ES ESTA?** 🧙‍♂️ Porque, si nos fijamos, en ningún sitio le hemos dicho a Svelte que queríamos que `name` fuese un estado del componente.
@@ -72,7 +76,7 @@ En ese paso de compilación podríamos ver dónde está pasando la magia, y revi
 
 ```javascript
 function handleClick() {
-  $$invalidate(0, name = "Pepito");
+  $$invalidate(0, (name = "Pepito"));
 }
 ```
 
@@ -82,15 +86,15 @@ Ahora que sabemos todo esto, **podríamos crear el típico ejemplo del contador*
 
 ```html
 <script>
-let contador = 0 // inicializamos una variable con el contador a 0
+  let contador = 0; // inicializamos una variable con el contador a 0
 
-// al hacer click, incrementamos el contador en uno
-function handleClick () {
-  contador++
-}
+  // al hacer click, incrementamos el contador en uno
+  function handleClick() {
+    contador++;
+  }
 </script>
 
-<button on:click={handleClick}>Incrementar</button>
+<button on:click="{handleClick}">Incrementar</button>
 <span>{contador}</span>
 ```
 
@@ -102,15 +106,15 @@ Imaginemos que queremos ahora reutilizar el componente Contador, ya que nos gust
 
 Ahora, desde otro componente (vamos a poner que sea el componente `App.svelte` que es el que estamos renderizando en el punto de entrada de nuestra aplicación), lo único que tenemos que hacer es importarlo.
 
-```html 
+```html
 // App.svelte
 <script>
-  import Counter from './Counter.svelte'
+  import Counter from "./Counter.svelte";
 </script>
 
 <Counter>
-<Counter>
-<Counter>
+  <Counter> <Counter></Counter></Counter
+></Counter>
 ```
 
 Lo más interesante de este ejemplo es que **en el componente `Counter.svelte` no hemos tenido que exportar el componente en sí.** No hay ningún tipo de `export default` ni nada. Simplemente, Svelte entiende que es un componente y que se puede importar. De esta forma hace que los componentes queden muy limpios.
@@ -120,43 +124,43 @@ Hasta aquí tenemos tres contadores en pantalla, para hacer que esto sea más in
 ```html {hl_lines=["6-8"]}
 // App.svelte
 <script>
-  import Counter from './Counter.svelte'
+  import Counter from "./Counter.svelte";
 </script>
 
-<Counter initialValue={5}>
-<Counter initialValue={10}>
-<Counter>
+<Counter initialValue="{5}">
+  <Counter initialValue="{10}"> <Counter></Counter></Counter
+></Counter>
 ```
 
 Para hacer que la prop se pueda leer desde el `Counter` vamos al fichero `Counter.svelte` y tenemos, dentro de `<script>` que exportar una variable con el mismo nombre de la prop. La inicializamos con el valor `0` de forma que, si no se pasa una prop, ese sea el valor que toma por defecto.
 
 ```javascript
-export let initialValue = 0
+export let initialValue = 0;
 ```
 
 Ahora, esta variable es la que usaremos para inicializar la variable `contador` que teníamos antes y que estábamos usando como state:
 
 ```javascript
-let contador = initialValue
+let contador = initialValue;
 ```
 
 Y el código final, quedaría así:
 
 ```html
 <script>
-// exportamos la prop e iniciamos a 0 como valor por defecto
-export let initialValue = 0
+  // exportamos la prop e iniciamos a 0 como valor por defecto
+  export let initialValue = 0;
 
-// iniciamos la variable contador con el valor de initialValue
-let contador = initialValue
+  // iniciamos la variable contador con el valor de initialValue
+  let contador = initialValue;
 
-// al hacer click, incrementamos el contador en uno
-function handleClick () {
-  contador++
-}
+  // al hacer click, incrementamos el contador en uno
+  function handleClick() {
+    contador++;
+  }
 </script>
 
-<button on:click={handleClick}>Incrementar</button>
+<button on:click="{handleClick}">Incrementar</button>
 <span>{contador}</span>
 ```
 

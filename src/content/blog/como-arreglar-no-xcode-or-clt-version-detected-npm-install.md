@@ -1,10 +1,10 @@
 ---
 title: >-
   Cómo arreglar el error 'gyp: No Xcode or CLT version detected' de macOS al hacer npm install
-date: '2021-03-31'
+date: "2021-03-31"
 description: >-
-  ¿Estás intentando hacer un npm install y te aparece este error en la terminal? Seguramente 
-tags :  macos
+  ¿Estás intentando hacer un npm install y te aparece este error en la terminal? Seguramente
+tags: macos
 image: >-
   /images/og/como-arreglar-macos-xcrun-error-invalid-active-developer-path-missing-xcrun.png
 ---
@@ -27,7 +27,7 @@ No receipt for 'com.apple.pkg.DeveloperToolsCLILeo' found at '/'.
 No receipt for 'com.apple.pkg.DeveloperToolsCLI' found at '/'.
 
 gyp: No Xcode or CLT version detected!
-gyp ERR! configure error 
+gyp ERR! configure error
 gyp ERR! stack Error: `gyp` failed with exit code: 1
 gyp ERR! stack     at ChildProcess.onCpExit (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/configure.js:305:16)
 gyp ERR! stack     at emitTwo (events.js:106:13)
@@ -38,7 +38,7 @@ gyp ERR! command "/usr/local/Cellar/node/8.1.3/bin/node" "/usr/local/lib/node_mo
 gyp ERR! cwd /Users/project/node_modules/ckmeans
 gyp ERR! node -v v7.0.0
 gyp ERR! node-gyp -v v3.4.0
-gyp ERR! not ok 
+gyp ERR! not ok
 ```
 
 **Este error significa que las Herramientas de Desarrollo (CLT) de Xcode no están instaladas** o no se encuentran en el path que se espera. También es posible que las tengas instaladas pero todavía no has aceptado los términos de uso que te habilita poder usarlas.
@@ -67,7 +67,7 @@ Es posible que al intentar instalar las herramientas de desarrollo te diga que y
 
 ```
 $ xcode-select --install
-xcode-select: error: command line tools are already installed, 
+xcode-select: error: command line tools are already installed,
 use "Software Update" to install updates
 ```
 
@@ -90,4 +90,4 @@ El primer comando recupera el `path` que usa tu sistema actualmente para alojar 
 
 4. Instalarlas de forma manual:
 
-Si todavía no funciona, prueba a descargar e instalar manualmente las *Command Line Tools for Xcode* desde [la página de Apple Developers.](https://developer.apple.com/download/more/)
+Si todavía no funciona, prueba a descargar e instalar manualmente las _Command Line Tools for Xcode_ desde [la página de Apple Developers.](https://developer.apple.com/download/more/)

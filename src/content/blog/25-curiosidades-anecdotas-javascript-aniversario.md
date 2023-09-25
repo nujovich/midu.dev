@@ -1,7 +1,7 @@
 ---
 title: 25 curiosidades y anécdotas sobre JavaScript por su 25 aniversario | Parte I
-date: '2020-12-07'
-image: '/images/25-cosas-de-javascript-aniversario.jpg'
+date: "2020-12-07"
+image: "/images/25-cosas-de-javascript-aniversario.jpg"
 description: El pasado 4 de diciembre se cumplían 25 años del nacimiento de JavaScript pero... ¿era realmente su aniversario? ¿Es verdad que fue creado en 10 días? ¿Por qué se creó? Viendo el nombre... ¿tiene algo que ver con Java?
 topic: javascript
 toc: true
@@ -18,9 +18,9 @@ Y si no, sigue leyendo y empezamos con estas 25 curiosidades.
 
 ## ¿Seguro que fue ayer el aniversario de JavaScript?
 
-Sí y no. En realidad, **la primera versión del lenguaje que hoy conocemos como JavaScript se lanzó en mayo de 1995**. Su primer nombre fue *Mocha*. Más tarde pasó a llamarse *LiveScript* y, tras unos meses, se quedó con el nombre definitivo de **JavaScript**.
+Sí y no. En realidad, **la primera versión del lenguaje que hoy conocemos como JavaScript se lanzó en mayo de 1995**. Su primer nombre fue _Mocha_. Más tarde pasó a llamarse _LiveScript_ y, tras unos meses, se quedó con el nombre definitivo de **JavaScript**.
 
-Así lo explica el propio creador de JavaScript, *Brendan Eich*:
+Así lo explica el propio creador de JavaScript, _Brendan Eich_:
 
 <blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><p lang="en" dir="ltr">That (trademarked) name is 25 today. The birthday was in May, already celebrated. I&#39;m torn, as JS name was a big fat marketing scam! Java was hot, but died in the browser (MS rejecting Java after doing a Sun deal, and mostly Flash, killed it; then HTML5/fast-JS spiked its heart).</p>&mdash; BrendanEich (@BrendanEich) <a href="https://twitter.com/BrendanEich/status/1334966006813319168?ref_src=twsrc%5Etfw">December 4, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -28,7 +28,7 @@ Finalmente aunque creado en marzo de 1995 y anunciado en diciembre, no fue **has
 
 ## ¿Realmente se creó en 10 días?
 
-**La primera versión que se lanzó con el nombre de Mocha sí tardó 10 días en desarrollarse.** Eso es porque *Netscape* presionó a Brendan en tener una primera versión funcional lo antes posible para poder enfrentarse al empuje de Microsoft para usar Visual Basic en la web.
+**La primera versión que se lanzó con el nombre de Mocha sí tardó 10 días en desarrollarse.** Eso es porque _Netscape_ presionó a Brendan en tener una primera versión funcional lo antes posible para poder enfrentarse al empuje de Microsoft para usar Visual Basic en la web.
 
 Obviamente, la primera versión de JavaScript que conocemos como Mocha no es, para nada, parecida a la que conocemos ahora. Ni siquiera a la versión que apareció en diciembre de 1995 (ya que los 10 días se usaron en mayo y se iteró el lenguaje final).
 
@@ -54,7 +54,7 @@ Lo cierto es que en aquel entonces Java, a secas, tenía cierta popularidad y se
 
 La idea, además, era **poder manipular y recoger datos en la web para que pudieran interactuar**, justamente, con el código Java. De forma que las interacciones más sencillas se podían hacer en la parte de la web y, las más complejas, en Java.
 
-[Fuente: 2ality](https://2ality.com/2011/03/JavaScript-how-it-all-began.html#:~:text=This%20post%20presents%20a%20brief,what%20influenced%20its%20design%20decisions.&text=They%20recruited%20Eich%20in%201995,Scheme%20(a%20Lisp%20dialect).)
+[Fuente: 2ality](<https://2ality.com/2011/03/JavaScript-how-it-all-began.html#:~:text=This%20post%20presents%20a%20brief,what%20influenced%20its%20design%20decisions.&text=They%20recruited%20Eich%20in%201995,Scheme%20(a%20Lisp%20dialect).>)
 
 ## No siempre existió la igualdad estricta ===
 
@@ -84,14 +84,14 @@ Se añadió en **Internet Explorer 3.0** y su **última versión estable es de 2
 
 ## ECMAScript !== Javascript
 
-Viendo que Microsoft creó *su propio* *JavaScript* y el auge que iba teniendo JavaScript como lenguaje de scripting en la web se llegó a un entendimiento para estandarizar el lenguaje de programación en un ente independiente. De esta forma la *ECMA* (*European Computer Manufacturers Association*) fue la encargada de poner en común lo que Javascript y JScript intentaban lograr.
+Viendo que Microsoft creó _su propio_ _JavaScript_ y el auge que iba teniendo JavaScript como lenguaje de scripting en la web se llegó a un entendimiento para estandarizar el lenguaje de programación en un ente independiente. De esta forma la _ECMA_ (_European Computer Manufacturers Association_) fue la encargada de poner en común lo que Javascript y JScript intentaban lograr.
 
 A pesar de la primera especificación, que apareció en junio de 1997, **JavaScript y JScript siguieron durante un tiempo divergiendo** en ciertos métodos y funcionalidades que aportaban.
 
 De esta forma podríamos decir que **ECMAScript** es el estándar para crear un lenguaje de programación y JavaScript es la implementación de ese lenguaje. Hoy en día no hay diferenciación en la práctica pero, para que nos hagamos una idea, ECMAScript usa la extensión `.es` para sus ficheros.
 
 Sobre el nombre, aquí os dejo una perla del creador de Javascript:<br>
-***EcmaScript siempre ha sido un nombre indeseado que suena como una enfermedad de piel.***
+**_EcmaScript siempre ha sido un nombre indeseado que suena como una enfermedad de piel._**
 
 [Fuente: Press Release de Netscape sobre la estandarización de Javascript](https://web.archive.org/web/19981203070212/http://cgi.netscape.com/newsref/pr/newsrelease289.html)<br>
 [Fuente: Mozilla Discussion Mailing List](https://mail.mozilla.org/pipermail/es-discuss/2006-October/000133.html)
@@ -136,9 +136,9 @@ Al final como traía TANTOS cambios y no se llegaba a ningún acuerdo **se deses
 Pero lo que hemos visto no era la única sorpresa que traía **ECMAScript 4.** También se trabajaba en una extensión de la especificación conocida como **E4X** que buscaba unir Javascript con XML. Era tal que así:
 
 ```javascript
-const myClass = 'welcome';
-const name = 'Evert';
-const foo = <div class={myClass}>{"Hello " + name }</div>;
+const myClass = "welcome";
+const name = "Evert";
+const foo = <div class={myClass}>{"Hello " + name}</div>;
 ```
 
 ¿Te suena? Efectivamente, **hoy en día JSX de Facebook hace algo similar** y, sin ninguna duda, E4X sirvió como inspiración.
@@ -149,7 +149,7 @@ Como curiosidad, **E4X** llegó a funcionar en Firefox en algunas versiones y se
 
 ## Node.js no fue el primer Javascript en el servidor
 
-Una vez superada la crisis de **ECMAScript 4**, seguimos evolucionando el lenguaje y llevando Javascript a nuevas cotas. Tras el lanzamiento del motor V8 por parte de Google, Javascript comenzó a ir **MUY rápido**. Esto hacía que empezase a ser un lenguaje más interesante para otros ámbitos. 
+Una vez superada la crisis de **ECMAScript 4**, seguimos evolucionando el lenguaje y llevando Javascript a nuevas cotas. Tras el lanzamiento del motor V8 por parte de Google, Javascript comenzó a ir **MUY rápido**. Esto hacía que empezase a ser un lenguaje más interesante para otros ámbitos.
 
 Y así fue con Node.js, nacido en 2009. Pero, por raro que parezca, **Node.js no fue la primera vez que se intentaba llevar Javascript a la parte del servidor.** De hecho este objetivo se buscó desde el primer día.
 
@@ -161,9 +161,9 @@ Y así fue con Node.js, nacido en 2009. Pero, por raro que parezca, **Node.js no
 
 ## CoffeeScript
 
-Ya hemos visto anteriormente los lenguajes que influenciaron a Javascript en el inicio pero... **¿qué lo llevó al siguiente nivel?** Lo cierto es que, entre otras cosas, CoffeeScript tiene bastante que ver gracias a la popularidad que consiguió en 2010 y que abrió un nuevo ecosistema en Javascript que dura hoy en día con *TypeScript* y *Babel*: **los transpiladores.**
+Ya hemos visto anteriormente los lenguajes que influenciaron a Javascript en el inicio pero... **¿qué lo llevó al siguiente nivel?** Lo cierto es que, entre otras cosas, CoffeeScript tiene bastante que ver gracias a la popularidad que consiguió en 2010 y que abrió un nuevo ecosistema en Javascript que dura hoy en día con _TypeScript_ y _Babel_: **los transpiladores.**
 
-**CoffeeScript es un lenguaje de programación que compila su código a Javascript.** Su objetivo era simplificar el código que se escribía, haciéndolo más breve y en ocasiones verboso. Además, incluía ciertas características que ahora son conocidas por todos, como las *arrow function*, el *return implícito* o el *azúcar sintáctico para usar clases.*
+**CoffeeScript es un lenguaje de programación que compila su código a Javascript.** Su objetivo era simplificar el código que se escribía, haciéndolo más breve y en ocasiones verboso. Además, incluía ciertas características que ahora son conocidas por todos, como las _arrow function_, el _return implícito_ o el _azúcar sintáctico para usar clases._
 
 **Todavía hoy en día sigue usándose** (a la hora de escribir este artículo, la última versión es la 2.5.1), aunque menos que antes, y algunos grandes proyectos como **Atom Editor** fueron construidos con este lenguaje (aunque poco a poco han ido migrando de nuevo a Javascript tras la irrupción de Babel):
 

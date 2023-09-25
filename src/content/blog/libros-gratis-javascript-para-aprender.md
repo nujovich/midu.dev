@@ -1,8 +1,8 @@
 ---
-title: "TOP 7 Libros 📚 para Aprender y Dominar JAVASCRIPT (Gratis)" 
-date: '2021-01-07'
+title: "TOP 7 Libros 📚 para Aprender y Dominar JAVASCRIPT (Gratis)"
+date: "2021-01-07"
 description: Lista de libros con versiones gratuitas para aprender y dominar el lenguaje de programación Javascript
-image: '/images/og/libros-gratis-javascript-para-aprender.png'
+image: "/images/og/libros-gratis-javascript-para-aprender.png"
 toc: true
 tags: javascript
 ---
@@ -26,12 +26,12 @@ Son 222 páginas y tiene una [versión de pago por 19'95$](https://gumroad.com/l
 
 ## 2. Javascript for impatient programmers
 
-El siguiente libro es del crack **Axel Rauschmayer.** Puedes comprarlo por 46$ pero también cuenta con una versión totalmente gratis en HTML. 
+El siguiente libro es del crack **Axel Rauschmayer.** Puedes comprarlo por 46$ pero también cuenta con una versión totalmente gratis en HTML.
 
 Este libro está actualizado con las **últimas novedades de la última especificación del lenguaje EcmaScript 2020** y Axel es un verdadero crack de la materia. Lo mejor de este libro es que va directo al grano y no sólo explica la historia y evolución de Javascript, si no cómo se toman decisiones a día de hoy para hacer evolucionar el lenguaje. **¡Recomendadísimo!**
 
 [🔗 Leer Javascript for Impatient Programmers](https://exploringjs.com/impatient-js/toc.html)<br>
-[🛒  Comprar Javascript for Impatient Programmers](https://amzn.to/35iOMz8)
+[🛒 Comprar Javascript for Impatient Programmers](https://amzn.to/35iOMz8)
 
 ## 3. Eloquent JavaScript
 
@@ -48,7 +48,7 @@ Su última actualización es de 2018 pero sigue siendo un referente y si te gust
 
 Como el nombre indica este es un libro que, aunque técnico, **está más pensado para recomendar buenas prácticas** y dar una visión global sobre diferentes patrones que puedes usar al construir aplicaciones de Javascript que te faciliten la vida para mantenerlas y entenderlas.
 
-Creo que **no es el mejor libro para empezar a aprender Javascript**, pero sí es interesante cuando ya tienes la soltura suficiente para crear aplicaciones, ya que puede darte buenas ideas. 
+Creo que **no es el mejor libro para empezar a aprender Javascript**, pero sí es interesante cuando ya tienes la soltura suficiente para crear aplicaciones, ya que puede darte buenas ideas.
 
 Está escrito por Henrik Joreteg y aunque tiene una versión de pago, se puede leer completamente gratis en su web. Lo cuál os recomiendo porque es bastnte cortito.
 
@@ -61,7 +61,7 @@ Este libro es un referente pero **aviso, no es para aprender Javascript desde ce
 
 Esta joya en forma de libro técnico está **escrita por Addy Osmani**, engineering manager en Google, y te enseña un montón de patrones para hacer que tu código Javascript sea limpio y mantenible.
 
-Cada pattern que presenta te cuenta sus ventajas y desventajas. Patrón Singleton, Observer,     Prototype, Factory, MVC...
+Cada pattern que presenta te cuenta sus ventajas y desventajas. Patrón Singleton, Observer, Prototype, Factory, MVC...
 
 Una cosa más. El libro está actualizado a día de hoy **pero como se escribió hace algun tiempo tiene una sección entera dedicada a patrones para jQuery**, perfecto para llevar las mejores prácticas a sitios web y aplicaciones que todavía usen esta librería.
 

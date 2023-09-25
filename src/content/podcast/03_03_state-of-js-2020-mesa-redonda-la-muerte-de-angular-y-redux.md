@@ -14,4 +14,3 @@ tags: podcast
 <p>¡Los resultados de la encuesta anual sobre el estado de Javascript trae SORPRESAS 😱!</p>
 <p>¿Qué framework lo está petando 🤯? ¿Qué pasa con TypeScript? ¿Es la muerte de Redux ☠️?</p>
 <p>Contaremos con Adrià Fontcuberta y Alba Silvente. &nbsp;Y la participación de mucha gente de la comunidad. ¡No te lo pierdas!</p>
-

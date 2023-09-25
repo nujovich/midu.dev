@@ -1,9 +1,9 @@
 ---
-title: '🛑 NO hagas Despliegue a Producción en Viernes. ¿O sí?  - 03x05'
-date: 'Mon, 23 Aug 2021 08:00:00 GMT'
-image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1629657337012-d3ae9137be117.jpg'
-description: '¡No hagas despliegue a producción en viernes! 😱 O eso dicen. ¿En qué año estamos? Parece mentira que en 2021, donde hemos conocido cosas como GitHub Copilot que nos completa el có'
-category: 'podcast'
+title: "🛑 NO hagas Despliegue a Producción en Viernes. ¿O sí?  - 03x05"
+date: "Mon, 23 Aug 2021 08:00:00 GMT"
+image: "https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1629657337012-d3ae9137be117.jpg"
+description: "¡No hagas despliegue a producción en viernes! 😱 O eso dicen. ¿En qué año estamos? Parece mentira que en 2021, donde hemos conocido cosas como GitHub Copilot que nos completa el có"
+category: "podcast"
 season: 03
 episode: 05
 audio: https://anchor.fm/s/2c58e75c/podcast/play/39172063/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-7-22%2F12908a9c-674b-d9a4-07ea-c80d97fde6d4.m4a
@@ -17,4 +17,3 @@ tags: podcast
 <p><strong>¡No te pierdas mis directos en Twitch y mis vídeos en YouTube!</strong></p>
 <p><a href="https://twitch.tv/midudev">https://twitch.tv/midudev</a><br>
 <a href="https://youtube.com/midudev">https://youtube.com/midudev</a></p>
-

@@ -1,15 +1,14 @@
 ---
 title: CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I
-date: '2018-12-27'
-image: '/images/scroll-snap.png'
-description: 'Introducción a CSS Scroll Snap. La solución definitiva a la batalla infinita entre los desarrolladores web y la creación de sliders. Por fin.'
+date: "2018-12-27"
+image: "/images/scroll-snap.png"
+description: "Introducción a CSS Scroll Snap. La solución definitiva a la batalla infinita entre los desarrolladores web y la creación de sliders. Por fin."
 tags: css
-
 ---
 
 {{< img align="left" alt="Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados" src="/images/searching-slider-results.png">}}
 
-Si llevas unos años en la programación web estoy bastante seguro que te has enfrentado a uno de los problemas más recurrentes del mundillo. **Hablo de los sliders.** A falta de una implementación nativa, cientos de soluciones en Javascript han convivido a lo largo de los años. Algunos vanilla, otros basados en alguna librería como jQuery o React, pero todos basándose de alguna forma en cálculos sobre el DOM. Algunos nombres serían: *slick, slippery, momentum-slider, simple-slider*... y es que, **una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados.** 🤯
+Si llevas unos años en la programación web estoy bastante seguro que te has enfrentado a uno de los problemas más recurrentes del mundillo. **Hablo de los sliders.** A falta de una implementación nativa, cientos de soluciones en Javascript han convivido a lo largo de los años. Algunos vanilla, otros basados en alguna librería como jQuery o React, pero todos basándose de alguna forma en cálculos sobre el DOM. Algunos nombres serían: _slick, slippery, momentum-slider, simple-slider_... y es que, **una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados.** 🤯
 
 Pues sabes qué, **que eso se ha acabado**. Porque, por fin, **ahora en CSS podrás crear tus propios sliders sin necesidad de utilizar, en la gran mayoría de los casos, una librería.** Se llama Scroll Snap, tiene un soporte bastante respetable y va a cambiar mucho el cómo creamos sliders en web:
 
@@ -19,7 +18,7 @@ Pues sabes qué, **que eso se ha acabado**. Porque, por fin, **ahora en CSS podr
 
 Esto, antes, lo conseguíamos utilizando Javascript y haciendo algunos cálculos (normalmente costosos) sobre los elementos del DOM. Como la web ha ido evolucionando para adaptarse a los móviles, y la experiencia a la hora de hacer scroll se ha convertido en vital por la falta de espacio, hace tiempo que se puso el foco en mejor la experiencia a la hora de dirigir el scroll.
 
-La historia de *Scroll Snap* viene de muy atrás. De hecho, [los primeros drafts son de... ¡2013!](https://gist.github.com/majido/9900261e1b7e2b1eb180b01c03656b42). Esto ha hecho que algunos navegadores actualmente tengan la especificación antigua (conocida como css-snappoints) y otros, como Chrome y Safari, tengan la nueva (conocida como css-scrollsnap).
+La historia de _Scroll Snap_ viene de muy atrás. De hecho, [los primeros drafts son de... ¡2013!](https://gist.github.com/majido/9900261e1b7e2b1eb180b01c03656b42). Esto ha hecho que algunos navegadores actualmente tengan la especificación antigua (conocida como css-snappoints) y otros, como Chrome y Safari, tengan la nueva (conocida como css-scrollsnap).
 
 {{< img align="" alt="Evolución de la especificación de Scroll Snap" src="/images/specification-history.png">}}
 
@@ -82,12 +81,13 @@ En este caso ya vemos que, normalmente, el que nos interesaría para crear un sl
 Ahora que ya conocemos las dos propiedades básicas de CSS Scroll Snap, ya casi tenemos preparado el terreno para poder crear nuestro slider con sólo puro CSS. **¡Lo veremos en la segunda parte! ¡No te lo pierdas! ☝️**
 
 ## Recursos
-*Draft de la especificación: https://drafts.csswg.org/css-scroll-snap/*
 
-*Artículo muy completo en Alligator: https://alligator.io/css/scroll-snapping/*
+_Draft de la especificación: https://drafts.csswg.org/css-scroll-snap/_
 
-*Documentación en Mozilla: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type*
+_Artículo muy completo en Alligator: https://alligator.io/css/scroll-snapping/_
 
-*Artículo comparando la versión anterior y la actual de Scroll Snap: https://css-tricks.com/practical-css-scroll-snapping/*
+_Documentación en Mozilla: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type_
 
-*Artículo en Developers Google: https://developers.google.com/web/updates/2018/07/css-scroll-snap*
+_Artículo comparando la versión anterior y la actual de Scroll Snap: https://css-tricks.com/practical-css-scroll-snapping/_
+
+_Artículo en Developers Google: https://developers.google.com/web/updates/2018/07/css-scroll-snap_

@@ -23,4 +23,3 @@ tags: podcast
   <li>Crece con cualquier error que cometas</li>
   <li>Entiende cómo funcionan las cosas por debajo</li>
 </ul>
-

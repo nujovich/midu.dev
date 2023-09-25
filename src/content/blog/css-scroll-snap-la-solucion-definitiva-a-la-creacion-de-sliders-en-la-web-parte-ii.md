@@ -1,9 +1,9 @@
 ---
-date: '2019-01-12'
-description: 'Crea tu propio slider paso a paso, sencillo pero totalmente funcional, utilizando CSS gracias a la propiedad Scroll Snap.'
-image: '/images/snap.jpg'
+date: "2019-01-12"
+description: "Crea tu propio slider paso a paso, sencillo pero totalmente funcional, utilizando CSS gracias a la propiedad Scroll Snap."
+image: "/images/snap.jpg"
 
-title: 'CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte II'
+title: "CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte II"
 tags: css
 ---
 
@@ -26,7 +26,7 @@ Con el repaso que hemos hecho de las propiedades `scroll-snap-type` y `scroll-sn
 ### Creando el HTML básico
 
 ```html
-<div class='slider'>
+<div class="slider">
   <img src="image1.png" />
   <img src="image2.png" />
   <img src="image3.png" />
@@ -44,10 +44,10 @@ Vale. Estamos muy lejos de un slider, pero no os vayáis todavía. En primer lug
 
 ```css
 .slider {
-    display: flex;
-    
-    width: 100%;
-    height: 100vh;
+  display: flex;
+
+  width: 100%;
+  height: 100vh;
 }
 ```
 
@@ -70,7 +70,7 @@ Esto mejora bastante las cosas pero **todavía podemos hacer que las imágenes q
 
 ### Añadiendo la funcionalidad CSS Scroll Snap a nuestro slider
 
-Bueno, esto va tomando forma. Además, si observáis en la demostración anterior, **ya tenemos las imágenes completamente alineadas** y, si intentamos hacer scroll, podremos ver que a la derecha están el resto de imágenes. Pues con esto, ya sólo nos queda utilizar la mágia de *CSS Scroll Snap* para crear el slider. Para ello:
+Bueno, esto va tomando forma. Además, si observáis en la demostración anterior, **ya tenemos las imágenes completamente alineadas** y, si intentamos hacer scroll, podremos ver que a la derecha están el resto de imágenes. Pues con esto, ya sólo nos queda utilizar la mágia de _CSS Scroll Snap_ para crear el slider. Para ello:
 
 - Usamos en el contenedor la regla `scroll-snap-type: x mandatory;`. Esto indicará que **queremos capturar el scroll horizontal** del contenedor y que es obligatorio que siempre, al dejar de hacer scroll, vaya a un punto de anclaje. De esta forma evitaremos que nuestro slider se quede en mitad de dos imágenes.
 - En las imágenes, usaremos `scroll-snap-align: center;`. Esto le indicará que **el punto de anclaje es el centro del elemento.** Así, nuestras imágenes siempre quedarán alineadas que, en este caso, significa que se verá sólo una imagen (ya que ocupan el 100% del contenedor).
@@ -79,7 +79,6 @@ Bueno, esto va tomando forma. Además, si observáis en la demostración anterio
 .slider {
   /* ... resto de propiedades */
   scroll-snap-type: x mandatory;
-
 }
 
 .slider img {

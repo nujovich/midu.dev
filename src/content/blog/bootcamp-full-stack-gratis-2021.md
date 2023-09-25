@@ -1,14 +1,14 @@
 ---
 title: "Bootcamp Full Stack Gratis: Aprende Desarrollo Full Stack ⚡"
-date: '2021-02-07'
-image: '/images/og/bootcamp-full-stack-gratis-2021.jpg'
+date: "2021-02-07"
+image: "/images/og/bootcamp-full-stack-gratis-2021.jpg"
 description: ¿Por qué he dejado de usar Google Analytics y tú también deberías? Además, te doy algunas alternativas que puedes utilizar en su lugar
 topic: javascript
 toc: true
 tags: javascript
 ---
 
-Empezamos el **Bootcamp FullStack gratuito** con una introducción. Este curso es una introducción al **desarrollo web moderno con JavaScript**. El enfoque principal está en las aplicaciones de una sola página implementadas con *React* y que las soportan con servicios web RESTful y GraphQL implementados con Node.js también veremos TypeScript y React Native, además de bases de datos NoSQL.
+Empezamos el **Bootcamp FullStack gratuito** con una introducción. Este curso es una introducción al **desarrollo web moderno con JavaScript**. El enfoque principal está en las aplicaciones de una sola página implementadas con _React_ y que las soportan con servicios web RESTful y GraphQL implementados con Node.js también veremos TypeScript y React Native, además de bases de datos NoSQL.
 
 <a href='https://midu.tube' target='_blank'>
 {{< img align="center" src="/images/youtube-suscribirme.png" >}}

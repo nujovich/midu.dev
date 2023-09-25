@@ -1,8 +1,7 @@
 ---
 title: "Qué hay de nuevo en DevTools (Chrome 93)"
 date: 2021-09-02
-description:
-  "Consultas de contenedores CSS editables, previsualización de paquetes web, mejor manejo de cadenas de texto en la Consola y más."
+description: "Consultas de contenedores CSS editables, previsualización de paquetes web, mejor manejo de cadenas de texto en la Consola y más."
 toc: true
 tags: devtools
 ---
@@ -15,13 +14,11 @@ Ahora puedes ver y editar las [consultas de contenedores CSS](https://web.dev/ne
 
 {{< img src="https://developer-chrome-com.imgix.net/image/dPDCek3EhZgLQPGtEG3y0fTn4v82/3NzGBpukHQfUZUKUpUgf.png" alt="Consultas a contenedores CSS en el panel de Estilos" >}}
 
-Las consultas de contenedores (*container queries*) ofrecen una manera mucho más dinámica de realizar diseños adaptables. La regla `@container` funciona de una forma similar a las consultas de medios (*media queries*). Sin embargo, en lugar de consultar el tamaño de la ventana y la información del agente del usuario, `@container` consulta el contenedor ascendiente que cumple cierto criterio.
+Las consultas de contenedores (_container queries_) ofrecen una manera mucho más dinámica de realizar diseños adaptables. La regla `@container` funciona de una forma similar a las consultas de medios (_media queries_). Sin embargo, en lugar de consultar el tamaño de la ventana y la información del agente del usuario, `@container` consulta el contenedor ascendiente que cumple cierto criterio.
 
 En el panel de **Elementos**, haz clic en el elemento del DOM que tenga la regla `@container`, DevTools ahora muestra la información de `@container` en el panel de **Estilos**. Clica en él para editar su tamaño. El panel **Estilos** también muestra la información correspondiente al contenedor. Coloca el puntero del mouse encima para resaltar el elemento contenedor en la página y revisa el tamaño del contenedor. Haz clic en él para seleccionar el elemento contenedor.
 
 Actualmente la característica de consultas de contenedores es experimental. Por favor, activa la opción `#enable-container-queries` en `chrome://flags` para probarlo.
-
-
 
 Chromium issue: [1146422](https://crbug.com/1146422)
 
@@ -35,7 +32,6 @@ Actualmente la característica de paquete web es experimental. Por favor, activa
 
 Chromium issue: [1182537](https://crbug.com/1182537)
 
-
 ## Depuración de la API de Informes de Atribución
 
 Los errores de la API de Informes de Atribución ahora son notificados en la pestaña **Problemas**.
@@ -45,7 +41,6 @@ Los errores de la API de Informes de Atribución ahora son notificados en la pes
 {{< img src="https://developer-chrome-com.imgix.net/image/dPDCek3EhZgLQPGtEG3y0fTn4v82/bkEGVEv5kKc9M6qBUmLz.png" alt="Errores de la API de Informes de Atribución en el panel Problemas" height="501" >}}
 
 Chromium issue: [1190735](https://crbug.com/1190735)
-
 
 ## Mejor manejo de cadenas de texto en la Consola
 
@@ -59,7 +54,6 @@ La **Consola** ahora formatea la salida de la cadena de texto como un literal Ja
 
 Chromium issue: [1208389](https://crbug.com/1208389)
 
-
 ## Mejoras en la depuración de CORS
 
 Los errores relacionados CORS de TypeErrors en la **Consola** ahora están enlazados al panel **Red** y la pestaña **Problemas**.
@@ -70,14 +64,13 @@ Haz clic en los dos nuevos iconos al lado de los mensajes de error relacionados 
 
 Chromium issue: [1213393](https://crbug.com/1213393)
 
-
 ## Lighthouse 8.1
 
 El panel de **Lighthouse** ahora usa Lighthouse 8.1.
 
 {{< img src="https://developer-chrome-com.imgix.net/image/dPDCek3EhZgLQPGtEG3y0fTn4v82/wENi9RXYMxdhm3zI4NVu.png" alt="Lighthouse" height="628" >}}
 
-Si tu sitio expone mapas de código fuente (*source maps*) a Lighthouse, revisa el botón **Ver mapa de árbol** para ver un desglose del JavaScript que has enviado, filtrable por tamaño y cobertura al ser cargado.
+Si tu sitio expone mapas de código fuente (_source maps_) a Lighthouse, revisa el botón **Ver mapa de árbol** para ver un desglose del JavaScript que has enviado, filtrable por tamaño y cobertura al ser cargado.
 
 El reporte también incluye una nueva métrica para filtrar (Revisa la captura de pantalla sobre el filtro **Mostrar auditorías relevantas a**). Selecciona una métrica para enfocarte en las oportunidades y diagnósticos más relevantes para mejorar esa métrica.
 
@@ -87,17 +80,15 @@ Revisa las [notas de lanzamiento](https://github.com/GoogleChrome/lighthouse/rel
 
 Chromium issue: [772558](https://crbug.com/772558)
 
-
 ## Muestra una nueva nota URL en el panel de Manifiesto
 
 El panel **Manifiesto** ahora muestra una [nueva nota URL](https://wicg.github.io/manifest-incubations/index.html#dfn-note_taking).
 
-Actualmente en Chrome OS (CrOS), Aplicaciones Chrome y Aplicaciones Android que declaran la capacidad "nueva-nota" pueden ser seleccionados como una aplicación para tomar notas en la configuración de *Stylus* (se muestra si el dispositivo CrOS ha sido usado con un *stylus*). Cuando se selecciona la aplicación de tomar notas, la aplicación puede ser lanzada desde el botón "Crear Nota" de la paleta del *stylus*. Añadir un campo `new-note-url` en el manifiesto de la aplicación es parte de los esfuerzos por añadir una funcionalidad equivalente en las aplicaciones web.
+Actualmente en Chrome OS (CrOS), Aplicaciones Chrome y Aplicaciones Android que declaran la capacidad "nueva-nota" pueden ser seleccionados como una aplicación para tomar notas en la configuración de _Stylus_ (se muestra si el dispositivo CrOS ha sido usado con un _stylus_). Cuando se selecciona la aplicación de tomar notas, la aplicación puede ser lanzada desde el botón "Crear Nota" de la paleta del _stylus_. Añadir un campo `new-note-url` en el manifiesto de la aplicación es parte de los esfuerzos por añadir una funcionalidad equivalente en las aplicaciones web.
 
 {{< img src="https://developer-chrome-com.imgix.net/image/dPDCek3EhZgLQPGtEG3y0fTn4v82/2Cwggroar7pNesfAQi4K.png" alt="Nueva nota URL en el panel de Manifiesto" height="477" >}}
 
 Chromium issue: [1185678](https://crbug.com/1185678)
-
 
 ## Arreglados los selectors CSS coincidentes
 
@@ -111,7 +102,6 @@ Los selectores separados por coma en el panel de **Estilos** tienen colores dife
 {{< img src="https://developer-chrome-com.imgix.net/image/dPDCek3EhZgLQPGtEG3y0fTn4v82/O7CoHBrKA9cVKci1SM0M.png" alt="Selectores CSS coincidentes" height="477" >}}
 
 Chromium issue: [1219153](https://crbug.com/1219153)
-
 
 ## Mostrando las respuestas JSON con formato legible
 

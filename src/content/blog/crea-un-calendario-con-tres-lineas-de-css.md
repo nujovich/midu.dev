@@ -1,7 +1,7 @@
 ---
 title: Crea un calendario 📆 con tres líneas de CSS
-date: '2020-12-25'
-image: '/images/og/crea-un-calendario-con-tres-lineas-de-css.png'
+date: "2020-12-25"
+image: "/images/og/crea-un-calendario-con-tres-lineas-de-css.png"
 description: "Aprende a maquetar un calendario en HTML con unas pocas líneas de CSS gracias a la potencia de display:grid"
 
 toc: true
@@ -80,8 +80,8 @@ ol {
 Usando la clase `.first-day` vamos a indicarle en qué columna debería empezar a poner los números. En este caso lo correcto sería que empezase en viernes. Esto es, en la quinta columna. Pues añadimos este CSS para hacer que funcione:
 
 ```css
-.first-day {
-  grid-column-start: 5
+.first-day  {
+  grid-column-start: 5;
 }
 ```
 

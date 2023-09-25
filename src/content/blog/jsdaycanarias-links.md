@@ -3,7 +3,7 @@ title: Frontend del Futuro - JSDay Canarias 2019
 date: "2019-11-08"
 image: "/images/el-frontend-del-futuro.jpg"
 description: "Todos los enlaces y recursos de la charla el Frontend del futuro de Miguel Ángel Durán en la JSDay Canarias 2019"
-tags : frontend
+tags: frontend
 
 type: page
 ---
@@ -23,8 +23,7 @@ type: page
 
 ## Enlaces de interés
 
-[Internet Explorer Death Countdown](
-https://gabriellaroche.dev/ie11-death-countdown/)<br />Disfruta de una maravillosa cuenta atrás hasta la muerte total de IE11 que será... en 2025. 😅
+[Internet Explorer Death Countdown](https://gabriellaroche.dev/ie11-death-countdown/)<br />Disfruta de una maravillosa cuenta atrás hasta la muerte total de IE11 que será... en 2025. 😅
 
 [Pika.dev](pika.dev)<br />Buscador de paquetes exportados como módulos. Para que puedas empezar a utilizar los Ecmascript Modules en tus desarrollos.
 

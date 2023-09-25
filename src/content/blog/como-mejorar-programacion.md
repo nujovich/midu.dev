@@ -1,10 +1,10 @@
 ---
-title: 'Cómo mejorar en programación'
-date: '2022-07-08'
+title: "Cómo mejorar en programación"
+date: "2022-07-08"
 description: Consejos y tips para mejorar en programación. ¿Cómo seguir mejorando? ¿Qué técnicas puedes hacer para subir de nivel?
 topictags: opinion
 toc: true
-tags :  opinion
+tags: opinion
 image: https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
 ---
 
@@ -38,7 +38,7 @@ Siempre ten la curiosidad suficiente para expandir tu conocimiento.
 
 ## Pair Programming 💻👨‍💻👩‍💻
 
-El *Pair Programming* es **una técnica donde dos personas programan a la vez**. Una es la que codifica, la que tiene el teclado, y la otra persona es la que va guiando sobre qué hay que hacer.
+El _Pair Programming_ es **una técnica donde dos personas programan a la vez**. Una es la que codifica, la que tiene el teclado, y la otra persona es la que va guiando sobre qué hay que hacer.
 
 > Existe otra técnica interesante que se llama **Mob Programming** donde en lugar de ser dos personas, son más personas donde el rol de codificación y navegación va rotando.
 

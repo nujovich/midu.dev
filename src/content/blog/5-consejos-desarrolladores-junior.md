@@ -1,6 +1,6 @@
 ---
 title: 5 consejos para desarrolladores Junior
-date: '2022-03-23'
+date: "2022-03-23"
 description: Te comparto 5 consejos para desarrolladores que están comenzando en el mundo de la programación
 topictags: opinion
 toc: true
@@ -25,7 +25,7 @@ Cambia el enfoque. Tienes que ser una esponja y absorber. ¿Pero qué pasa cuand
 ¿No sabes algo? PREGUNTA.<br>
 ¿Quieres conocer a alguien? PREGUNTA.
 
-Preguntar NO es malo. Especialmente si sabes hacer las preguntas adecuadas. Intenta hacer preguntas específicas en base a lo que entiendes. No es lo mismo decir: *"No funciona. ¿Por qué?"* a *"Veo que me da un error sobre la falta de una dependencia pero he revisado y la veo bien instalada. ¿Te ha pasado alguna vez?".*
+Preguntar NO es malo. Especialmente si sabes hacer las preguntas adecuadas. Intenta hacer preguntas específicas en base a lo que entiendes. No es lo mismo decir: _"No funciona. ¿Por qué?"_ a _"Veo que me da un error sobre la falta de una dependencia pero he revisado y la veo bien instalada. ¿Te ha pasado alguna vez?"._
 
 Está bien que intentes buscar por tu parte, en Google, las soluciones. Pero llegado el punto, no tengas miedo a hacer preguntas. **Yo tengo 15 años de experiencia y no me da miedo a preguntar a cualquier persona.**
 
@@ -39,6 +39,6 @@ Saber programar es importante. Saber tratar con personas, comunicarte, empatizar
 
 A todos nos pasa. Tenemos miedo de dar nuestra opinión porque creemos que no tenemos nivel suficiente y vamos a decir una tontería. Pues igual sí dices una tontería. ¡O no! ¿Pero sabes qué? Que también vas a aprender con eso.
 
-Si sabes mostrar tu opinión correctamente, siempre será apreciado. *"Quizás me falta todo el contexto y la experiencia. ¿Sería posible hacer X en lugar de Y? ¿Cómo lo veis?"*.
+Si sabes mostrar tu opinión correctamente, siempre será apreciado. _"Quizás me falta todo el contexto y la experiencia. ¿Sería posible hacer X en lugar de Y? ¿Cómo lo veis?"_.
 
 **Recibir feedback de opiniones nos ayuda a crecer.**

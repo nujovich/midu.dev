@@ -1,6 +1,6 @@
 ---
 title: "¿Qué significa el error “Uncaught TypeError: Cannot set/read property 'XXX' of undefined/null” y cómo solucionarlo?"
-date: '2021-07-05'
+date: "2021-07-05"
 description: Aprende a solucionar este típico error de JavaScript al intentar acceder a propiedades y atributos de un objeto
 topic: javascript
 toc: true
@@ -16,14 +16,14 @@ Pues como el mensaje dice el problema es que estás intentando acceder (ya sea p
 Por ejemplo:
 
 ```javascript
-const persona = { nombre: 'Miguel', twitch: 'https://twitch.tv/midudev' }
+const persona = { nombre: "Miguel", twitch: "https://twitch.tv/midudev" };
 
-persona.nombre // ✅ 'Miguel'
-persona.twitch // ✅ ''https://twitch.tv/midudev'
+persona.nombre; // ✅ 'Miguel'
+persona.twitch; // ✅ ''https://twitch.tv/midudev'
 
-persona.youtube // ✅ undefined
+persona.youtube; // ✅ undefined
 
-persona.direccion.calle
+persona.direccion.calle;
 // ❌ TypeError: Cannot read property 'calle' of undefined
 ```
 
@@ -42,13 +42,13 @@ Una forma de evitar el problema sería simplemente asegurarnos que la propiedad 
 
 ```js
 const persona = {
-  nombre: 'Miguel',
-  twitch: 'https://twitch.tv/midudev',
-  direccion: {}
-}
+  nombre: "Miguel",
+  twitch: "https://twitch.tv/midudev",
+  direccion: {},
+};
 
 // ahora el intentar acceder a `direccion` almenos ya no tenemos un error
-persona.direccion.calle // ✅ undefined
+persona.direccion.calle; // ✅ undefined
 ```
 
 ## Usa el optional chaining (encadenamiento opcional)
@@ -59,18 +59,18 @@ Esta solución es la recomendable y, especialmente, es ideal cuando no tenemos c
 
 ```js
 const persona = {
-  nombre: 'Miguel',
-  twitch: 'https://twitch.tv/midudev'
-}
+  nombre: "Miguel",
+  twitch: "https://twitch.tv/midudev",
+};
 
-const calle = persona.direccion?.calle
-console.log(calle) // ✅ undefined
+const calle = persona.direccion?.calle;
+console.log(calle); // ✅ undefined
 ```
 
 Es interesante saber que esto mismo lo puedes hacer a la hora de intentar ejecutar métodos en un objeto anidado.
 
 ```js
-persona.acciones?.enviarMail?.()
+persona.acciones?.enviarMail?.();
 ```
 
 El operador `?.` es realmente potente y puede ayudarte a evitar el error de `Uncaught TypeError: Cannot set/read property 'XXX' of undefined/null`.

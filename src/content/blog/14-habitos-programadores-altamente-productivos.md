@@ -1,7 +1,7 @@
 ---
-title: Resumen del libro "14 Hábitos de Desarrolladores Altamente Productivos" 
-date: '2022-07-26'
-description: Te cuento los 14 
+title: Resumen del libro "14 Hábitos de Desarrolladores Altamente Productivos"
+date: "2022-07-26"
+description: Te cuento los 14
 topictags: opinion
 toc: true
 tags: opinion
@@ -9,17 +9,18 @@ tags: opinion
 
 > Si te interesa adquirir el libro, lo puedes comprar aquí: [https://amzn.to/3Oy8jze](https://amzn.to/3Oy8jze)
 
-{{< img align="left" src="https://14habits.com/static/img/cover.jpg" alt="Libro '14 hábitos de desarrolladores altamente productivos'" >}} 
+{{< img align="left" src="https://14habits.com/static/img/cover.jpg" alt="Libro '14 hábitos de desarrolladores altamente productivos'" >}}
 
-Me he leído el libro de ***14 hábitos de desarrolladores altamente productivos*** de *Zeno Rocha*. Un libro interesante en líneas generales, aunque creo que es cortito y algunas ideas no se desarrollan del todo.
+Me he leído el libro de **_14 hábitos de desarrolladores altamente productivos_** de _Zeno Rocha_. Un libro interesante en líneas generales, aunque creo que es cortito y algunas ideas no se desarrollan del todo.
 
 Si estás empezando en el mundo de la programación **te puede servir de guía para tomar algunos hábitos** que te pueden acompañar en tu camino. O al menos leer qué ideas han tenido las personas que ya llevan años en el sector.
 
-Porque además trae al final de cada capítulo, una serie de entrevistas con referentes del sector, como *Addy Osmani* de *Google* y devs de *Shopify*, *GitHub*, *Amazon* o *Elastic*.
+Porque además trae al final de cada capítulo, una serie de entrevistas con referentes del sector, como _Addy Osmani_ de _Google_ y devs de _Shopify_, _GitHub_, _Amazon_ o _Elastic_.
 
 **Zeno Rocha**, por si no lo conoces, es el creador del tema [Dracula Pro](https://draculatheme.com/pro). Tiene más de 10 años de experiencia en el mundo del desarrollo y ha dado más de 110 charlas a lo largo y ancho del mundo.
 
 **El libro consiste en 14 hábitos** que están pensados para ayudarte a:
+
 - Seguir aprendiendo en programación
 - Mejorar en tu día a día
 - Progresar en tu carrera
@@ -34,7 +35,7 @@ No tienes que perder el tiempo en intentar aprenderlo todo.
 
 Hay que concentrarse en saber decir que "no" a lo que queremos aprender.
 
-El libro dice, *"Acepta que no puedes aprenderlo todo. Los deseos son ilimitados, las necesidades limitadas"*.
+El libro dice, _"Acepta que no puedes aprenderlo todo. Los deseos son ilimitados, las necesidades limitadas"_.
 
 ### 2️⃣ Foco en los fundamentos
 
@@ -43,14 +44,13 @@ Algoritmos, estructuras de datos, redes, diseño de sistemas...
 
 No importa cuantas horas le dediques a aprender algo si no controlas los fundamentos.
 
-
 ### 3️⃣ Enseñar es igual a aprender
 
 Al enseñar nos obligamos a aprender y entender lo que queremos transmitir.
 
 Compartir nuestros conocimientos con otras personas puede ayudarnos a asimilar los conocimientos.
 
-**Puede ser en tu trabajo, ayudando y mentorizando personas.** No hace falta que te lances a crear contenido en las redes para compartir tus conocimientos. 
+**Puede ser en tu trabajo, ayudando y mentorizando personas.** No hace falta que te lances a crear contenido en las redes para compartir tus conocimientos.
 
 Busca comunidades locales que necesiten ayuda, apoya a tus amigos y compañeros. La creación de contenido en redes puede ser una forma pero a veces **pierdes más tiempo en la creación que en la propia enseñanza.**
 
@@ -64,15 +64,13 @@ La programación es algo que nunca termina, siempre hay algo que aprender o hace
 
 Hacerlo repetitivo te hará más consistente y persistente.
 
-
 ### 5️⃣ Hazlo por tu Yo futuro
 
 Escribe el código como si fuese para ti mismo dentro de unos años.
 
 Usa nombres que puedas entender, documenta, testing...
 
-*"No intentes ser inteligente. No intentes codificar algo para que te sientas inteligente".*
-
+_"No intentes ser inteligente. No intentes codificar algo para que te sientas inteligente"._
 
 ### 6️⃣ Tu jornada laboral no es suficiente
 
@@ -115,7 +113,7 @@ Ambos tienen potencial pero si saltas constantemente de un trabajo a otro (Mario
 
 Deja de hablar todo el rato. Escucha a las otras personas. Entiende sus motivaciones, qué necesitan.
 
-*"Un concepto erróneo que muchas personas tienen es que necesitamos escuchar para responder, mientras que en realidad, necesitamos escuchar para entender".*
+_"Un concepto erróneo que muchas personas tienen es que necesitamos escuchar para responder, mientras que en realidad, necesitamos escuchar para entender"._
 
 ### 1️⃣1️⃣ No subestimes
 
@@ -133,7 +131,6 @@ En el mundo de la programación y el desarrollo puedes encontrar dos perfiles cl
 
 - **Positivo:** Aprendes muchas cosas nuevas, más oportunidades, flexibilidad, oportunidades de crear tu propio proyecto o empresa más fácilmente.
 - **Negativo:** Normalmente peor salario y más difícil acceder a posiciones de liderazgo.
-
 
 El **Especialista** sería quién prefiere profundizar en las cosas que ya sabe. Dominarlas hasta crearse experta en las tecnologías que conoce. Su crecimiento es más vertical pero llega un momento en el que se puede estancar porque cada vez cuesta más aprender algo de lo que le interesa.
 
@@ -160,7 +157,7 @@ Si no te motivas, hazlo sin esperar a motivarte.
 
 ### Conclusiones
 
-¡Espero que te haya gustado el resumen del libro *"14 hábitos de programadores altamente productivos"*! Aunque estoy en líneas generales bastante de acuerdo, creo que a veces peca un poco de simplista... Pero así hay que tomárselo, como algo en líneas muy generales que no siempre encaja a nivel individual.
+¡Espero que te haya gustado el resumen del libro _"14 hábitos de programadores altamente productivos"_! Aunque estoy en líneas generales bastante de acuerdo, creo que a veces peca un poco de simplista... Pero así hay que tomárselo, como algo en líneas muy generales que no siempre encaja a nivel individual.
 
 **Si quieres comprar el libro completo, lo tienes aquí:**
 https://amzn.to/3Oy8jze

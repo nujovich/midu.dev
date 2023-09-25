@@ -1,8 +1,8 @@
 ---
 title: Personaliza el prompt de la terminal de macOS
-date: '2019-01-22'
-image: '/images/customiza-prompt-terminal.png'
-description: 'Por defecto, la terminal de sistemas como UNIX y macOS traen bash pero su aspecto no es el más bonito. Y las apariencias importan. ¡Vamos a arreglarlo!'
+date: "2019-01-22"
+image: "/images/customiza-prompt-terminal.png"
+description: "Por defecto, la terminal de sistemas como UNIX y macOS traen bash pero su aspecto no es el más bonito. Y las apariencias importan. ¡Vamos a arreglarlo!"
 topic: terminal
 tags: terminal
 ---

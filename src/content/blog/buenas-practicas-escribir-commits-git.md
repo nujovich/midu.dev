@@ -1,6 +1,6 @@
 ---
 title: Buenas prácticas para escribir commits en Git
-date: '2021-07-22'
+date: "2021-07-22"
 description: Aprende a escribir buenos mensajes de commit en Git con esta lista de buenas prácticas
 toc: true
 tags: git
@@ -16,11 +16,11 @@ Aunque el mensaje puede sonar un poco borde, el verbo presente es una forma de e
 
 {{< img align="center" src="https://imgs.xkcd.com/comics/git_commit_2x.png" alt="¿Quién no se ha encontrado con un historial de commits así? Fuente: xkcd.com" >}}
 
-Sé que muchas veces estamos tentados a escribirlo en pasado *"Added..."*, *"Fixed..."* o *"Removed..."* pero **cada commit hay que entenderlo como una instrucción para cambiar el estado del proyecto**. Dicho de otro modo, el verbo presente nos permite saber qué estado queremos que el proyecto se encuentre en el momento de añadir el commit.
+Sé que muchas veces estamos tentados a escribirlo en pasado _"Added..."_, _"Fixed..."_ o _"Removed..."_ pero **cada commit hay que entenderlo como una instrucción para cambiar el estado del proyecto**. Dicho de otro modo, el verbo presente nos permite saber qué estado queremos que el proyecto se encuentre en el momento de añadir el commit.
 
 Sólo hay que ver también los mensajes de commit que el propio Git nos añade (al hacer merge de una rama usa `Merge branch`).
 
-Lo mejor es que el mensaje del commit complete esta frase: *"Si aplico este commit, entonces este commit..."*
+Lo mejor es que el mensaje del commit complete esta frase: _"Si aplico este commit, entonces este commit..."_
 
 - ...add a new search feature
 - ...fix a problem with the topbar
@@ -69,7 +69,7 @@ Y con el editor, podrás añadir un mensaje de commit con saltos de línea fáci
 
 ## 5. Usa un prefijo para tus commits para hacerlos más semánticos
 
-Cuando un proyecto crece, es necesario que existan ciertas reglas para que el historial sea legible. Para ello, puedes añadir un prefijo para darle más significado a los commits que realizas. A esto se le llama *commits semánticos* y se haría de la siguiente manera:
+Cuando un proyecto crece, es necesario que existan ciertas reglas para que el historial sea legible. Para ello, puedes añadir un prefijo para darle más significado a los commits que realizas. A esto se le llama _commits semánticos_ y se haría de la siguiente manera:
 
 ```
 <tipo-de-commit>[scope]: <descripcion>
@@ -96,6 +96,7 @@ fix(web): remove wrong color
 Sobre el tipo de cambio, lo mínimo es diferenciar entre `fix` y `feat` pero existen diferentes convenciones. Una de ellas, bastante famosa, es la [convención que sigue el framework Angular](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
 
 Estos serían los prefijos:
+
 - **feat**: Una nueva característica para el usuario.
 - **fix**: Arregla un bug que afecta al usuario.
 - **perf**: Cambios que mejoran el rendimiento del sitio.
@@ -129,9 +130,10 @@ git commit -m "Keep calm and commit"
 git push -u origin master # los tests se ejecutarán antes de realizar el push
 ```
 
-Con `commitlint` puedes asegurarte de que los commits sean semánticos, legibles y sigan una convención que elijas. 
+Con `commitlint` puedes asegurarte de que los commits sean semánticos, legibles y sigan una convención que elijas.
 
 Para instalar `commitlint`:
+
 ```sh
 # Install commitlint cli and conventional config
 npm install --save-dev @commitlint/{config-conventional,cli}

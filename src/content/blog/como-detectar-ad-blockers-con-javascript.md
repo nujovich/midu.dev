@@ -1,9 +1,9 @@
 ---
 title: Cómo detectar ad blockers con JavaScript
-date: '2021-02-06'
+date: "2021-02-06"
 description: Usando un poco de JavaScript podemos detectar si el usuario de nuestro sitio está usando un AdBlocker y hacer algo al respecto.
 toc: true
-tags :  javascript
+tags: javascript
 image: /images/og/como-detectar-ad-blockers-con-javascript.png
 ---
 
@@ -15,35 +15,35 @@ Igualmente es bastante **útil a veces tener una forma de detectar si el usuario
 
 ## Código JavaScript para saber usuario usa un AdBlocker
 
-**La técnica consiste en crear un elemento que simule ser un anuncio** de forma que el *AdBlocker* lo detecte y lo elimine. De esta forma, si se elimina, sabremos que tenemos una extensión que bloque este tipo de contenido y, si se mantiene, entonces el usuario no tiene ningún *AdBlocker* 💡.
+**La técnica consiste en crear un elemento que simule ser un anuncio** de forma que el _AdBlocker_ lo detecte y lo elimine. De esta forma, si se elimina, sabremos que tenemos una extensión que bloque este tipo de contenido y, si se mantiene, entonces el usuario no tiene ningún _AdBlocker_ 💡.
 
 **¡Vamos a verlo con código!**
 
 ```javascript
 // creamos un flag para saber si tenemos adblocker
-let isAdBlockEnabled = false
+let isAdBlockEnabled = false;
 
 // creamos un elemento div y lo iniciamos con una clase
 // que sabemos que el adblocker eliminaría
-const ad = document.createElement('div')
-ad.innerHTML = '&nbsp;'
-ad.className = 'adsbox'
+const ad = document.createElement("div");
+ad.innerHTML = "&nbsp;";
+ad.className = "adsbox";
 // añadimos nuestra simulación de anuncio en el body
-document.body.appendChild(ad)
+document.body.appendChild(ad);
 
 // ahora dejamos 100ms para que el adblocker haga su trabajo
 // y entonces veremos si el elemento sigue visible
 window.setTimeout(() => {
   // si el elemento no tiene altura, es que
   // el AdBlocker se lo ha cargado
-  isAdBlockEnabled = ad.offsetHeight === 0
+  isAdBlockEnabled = ad.offsetHeight === 0;
   // eliminamos el "falso" anuncio
-  ad.remove()
+  ad.remove();
 
   if (isAdBlockEnabled) {
     // codigo a ejecutar si el adblocker está activado
   }
-}, 100)
+}, 100);
 ```
 
 Una cosa importante es que este snippet **tiene que ejecutarse una vez el DOM haya sido cargado totalmente.** Para ello puedes añadir el script al final del documento o simplemente esperar al evento `DOMContentLoaded`.
@@ -60,35 +60,35 @@ En el caso que quieras envolver esta utilidad en una promesa, lo puedes hacer de
 // ahora usamo como estado inicial `undefined`
 // que nos servirá para saber si ya hemos calculado
 // si el usuario tiene adBlocker
-let isAdBlockEnabled = undefined
+let isAdBlockEnabled = undefined;
 
 const checkIsAdBlockEnabled = () => {
   // con esto evitamos que se vuelva a manipular el DOM
   // si ya sabemos si el resultado de la ejecución anterior
-  if (typeof isAdBlockEnabled !== 'undefined')
-    return Promise.resolve(isAdBlockEnabled)
+  if (typeof isAdBlockEnabled !== "undefined")
+    return Promise.resolve(isAdBlockEnabled);
 
-  const ad = document.createElement('div')
-  ad.innerHTML = '&nbsp;'
-  ad.className = 'adsbox'
-  document.body.appendChild(ad)
+  const ad = document.createElement("div");
+  ad.innerHTML = "&nbsp;";
+  ad.className = "adsbox";
+  document.body.appendChild(ad);
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     window.setTimeout(() => {
       // si el elemento no tiene altura, es que
       // el AdBlocker se lo ha cargado
-      isAdBlockEnabled = ad.offsetHeight === 0
+      isAdBlockEnabled = ad.offsetHeight === 0;
       // eliminamos el "falso" anuncio
-      ad.remove()
-      resolve(isAdBlockEnabled)
-    }, 100)
-  })
-}
+      ad.remove();
+      resolve(isAdBlockEnabled);
+    }, 100);
+  });
+};
 
 // ya lo podrías usar en cualquier parte de tu código así
-checkIsAdBlockEnabled().then(isAdBlockEnabled => {
-  console.log(isAdBlockEnabled)
-})
+checkIsAdBlockEnabled().then((isAdBlockEnabled) => {
+  console.log(isAdBlockEnabled);
+});
 ```
 
 ## Conclusiones sobre detectar el AdBlocker con JavaScript

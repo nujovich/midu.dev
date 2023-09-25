@@ -1,15 +1,15 @@
 ---
 title: Qué significa ser Senior en Programación
-date: '2022-07-20'
+date: "2022-07-20"
 description: Aprende a solucionar este típico error de JavaScript al intentar acceder a propiedades y atributos de un objeto
 topictags: opinion
 toc: true
 tags: opinion
 ---
 
-Mucha gente me pregunta que **qué se necesita para ser senior.** Lo primero que diría es *paciencia*, porque llegar a ese nivel es cuestión de tiempo y motivación. Lo segundo es que dependerá de la empresa, porque cada una puede entender que ese perfil requiere diferentes aptitudes (y actitudes).
+Mucha gente me pregunta que **qué se necesita para ser senior.** Lo primero que diría es _paciencia_, porque llegar a ese nivel es cuestión de tiempo y motivación. Lo segundo es que dependerá de la empresa, porque cada una puede entender que ese perfil requiere diferentes aptitudes (y actitudes).
 
-Pero te comparto algunos puntos que creo que deberían ser los esperados para una persona que llegue a considerarse *Senior*.
+Pero te comparto algunos puntos que creo que deberían ser los esperados para una persona que llegue a considerarse _Senior_.
 
 ## Aceptas que el código no es de piedra
 

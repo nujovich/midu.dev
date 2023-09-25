@@ -1,7 +1,7 @@
 ---
 title: React hooks, cómo utilizar el hook useState
-date: '2019-02-07'
-image: '/images/react-hooks-use-state.png'
+date: "2019-02-07"
+image: "/images/react-hooks-use-state.png"
 description: Los componentes en React pueden tener un estado interno que determina cómo se debe renderizar. Con los hooks podremos crear componentes dinámicos e interactivos muy fácilmente.
 
 tags: react
@@ -14,7 +14,7 @@ Como ya hemos visto en [la entrada anterior](https://midu.dev/react-hooks-introd
 Para usar este hook, primero debemos importarlo desde la librería de React.
 
 ```jsx
-import React, { useState } from 'react'
+import React, { useState } from "react";
 ```
 
 Ahora, en nuestro componente funcional, **vamos a inicializar el estado interno de nuestro componente.** Para eso, ejecutaremos el método `useState` y le pasaremos como parámetro el valor inicial del estado, que en nuestro caso queremos que sea el número 0.
@@ -23,8 +23,8 @@ Ahora, en nuestro componente funcional, **vamos a inicializar el estado interno 
 import React, { useState } from 'react'
 
 function Contador() {
-  const [count, setCount] = useState(0)
-  // ...
+const [count, setCount] = useState(0)
+// ...
 {{< / highlight >}}
 
 Ejecutar el método `useState` con el valor inicial de nuestro estado **nos devuelve un array que tendrá el valor del estado y un método para actualizar el estado.**
@@ -37,11 +37,11 @@ Para que lo veáis más claro, **podríamos hacer el mismo ejemplo utilizando la
 import React, { useState } from 'react'
 
 function Contador() {
-  const counterState = useState(0) // ejecutar useState devuelve un array
+const counterState = useState(0) // ejecutar useState devuelve un array
 
-  const counter = counterState[0] // el primer elemento es el valor del state
-  const setCounter = counterState[1] // el segundo elemento es el método para actualizar el state
-  // ...
+const counter = counterState[0] // el primer elemento es el valor del state
+const setCounter = counterState[1] // el segundo elemento es el método para actualizar el state
+// ...
 {{< / highlight >}}
 
 **Como véis, no deja de ser un array de dos posiciones.** Por legibilidad os recomiendo que siempre uséis la desestructuración del array y pongáis nombres claros y concisos sobre lo que hacen.
@@ -56,30 +56,30 @@ Esto significa que, aunque es recomendable usar nombres semánticos que tengan s
 import React, { useState } from 'react'
 
 function Contador() {
-  const [count, setCount] = useState(0)
-  return (
-    <span>El contador está a {count}</span> 
-  )
+const [count, setCount] = useState(0)
+return (
+<span>El contador está a {count}</span>
+)
 }
 {{< / highlight >}}
 
 Como véis, hasta este punto, **ya se ve la ventaja y la claridad respecto a usar clases para tener un state en nuestro componente.** No necesitamos referirnos al contexto `this` para acceder al state, ni tenemos que inicializarlo como propiedad de nuestra clase porque, oh, tampoco necesitamos ninguna clase. **Aquí os lo dejo para que veáis vosotros mismo la diferencia.**
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Contador extends Component {
-  state = { count: 0 }
-  
-  render () {
-    return <span>El contador está a {this.state.count}</span>
+  state = { count: 0 };
+
+  render() {
+    return <span>El contador está a {this.state.count}</span>;
   }
 }
 ```
 
 ## Cómo actualizar el estado de nuestro componente 🖍
 
-De la misma forma que antes utilizábamos el método `this.setState` para actualizar el estado, ahora tendremos que utilizar el método `setCount` que hemos recuperado al usar `useState` para pasar como parámetro el nuevo valor que tenga el state. 
+De la misma forma que antes utilizábamos el método `this.setState` para actualizar el estado, ahora tendremos que utilizar el método `setCount` que hemos recuperado al usar `useState` para pasar como parámetro el nuevo valor que tenga el state.
 
 Vamos a ver un ejemplo donde actualizamos el valor del estado de `count` al hacer click en un botón.
 
@@ -87,15 +87,16 @@ Vamos a ver un ejemplo donde actualizamos el valor del estado de `count` al hace
 import React, { useState } from 'react'
 
 function Contador() {
-  const [count, setCount] = useState(0)
-  return (
-    <div>
-      <span>El contador está a {count}</span> 
-      <button onClick={() => setCount(count + 1)}>
-        Incrementar contador
-      </button>
-    </div>
-  )
+const [count, setCount] = useState(0)
+return (
+
+<div>
+<span>El contador está a {count}</span>
+<button onClick={() => setCount(count + 1)}>
+Incrementar contador
+</button>
+</div>
+)
 }
 {{< / highlight >}}
 
@@ -112,12 +113,12 @@ En los ejemplos anteriores hemos visto el caso de un `state` sencillo, que es s�
 this.state = {
   isLoading: true,
   hasResults: false,
-  literal: 'Star Wars'
-}
+  literal: "Star Wars",
+};
 // ejecutamos setState con lo que cambia del state
-this.setState({ isLoading: false }) 
+this.setState({ isLoading: false });
 // el state nuevo es la mezcla entre el nuevo state y el antiguo
-console.log(this.state)
+console.log(this.state);
 // { isLoading: false, hasResults: false, literal: 'Star Wars'}
 ```
 
@@ -128,12 +129,12 @@ Así es como funcionaba al utilizar el `state` que proporcionaban las clases de 
 const [state, setState] = useState({
   isLoading: true,
   hasResults: false,
-  literal: 'Star Wars'
-})
+  literal: "Star Wars",
+});
 // ejecutamos el setState para actualizar la parte que cambia
-setState({ isLoading: false })
+setState({ isLoading: false });
 // el nuevo state es... incorrecto!
-console.log(state) // { isLoading: false }
+console.log(state); // { isLoading: false }
 ```
 
 La diferencia es que, el método `this.setState` fusionaba el objeto del estado anterior con la parte del estado nuevo que queremos actualizar y que le pasábamos como parámetro. En cambio, **el nuevo método `useState` nos devuelve un método para actualizar el `state` pero, lo que hará, es machacar el estado anterior y poner el nuevo.**
@@ -145,12 +146,12 @@ En este caso, podríamos solucionarlo pasando el valor previo del estado a la ho
 const [state, setState] = useState({
   isLoading: true,
   hasResults: false,
-  literal: 'Star Wars'
-})
+  literal: "Star Wars",
+});
 // ejecutamos el setState para actualizar la parte que cambia
-setState({ ...state, isLoading: false })
+setState({ ...state, isLoading: false });
 // el nuevo state es... incorrecto!
-console.log(state) // { isLoading: false, hasResults: false, literal: 'Star Wars' }
+console.log(state); // { isLoading: false, hasResults: false, literal: 'Star Wars' }
 ```
 
 Eso, en este caso, podría funcionar. Pero hay diferentes cuestions. Lo primero es que, **con un estado más complicado con más niveles, podría no funcionar** dependiendo de cómo querríamos hacer las actualizaciones. Y, lo segundo, es que **estaríamos actualizando partes del estado sin que haya necesidad.**
@@ -159,13 +160,13 @@ Debemos cambiar nuestra mentalidad de cómo gestionamos el state con el hook `us
 
 ```javascript
 // ✅ SEPARATING THE STATE
-const [isLoading, setIsLoading] = useState(true)
-const [hasResults, setHasResults] = useState(false)
-const [literal, setLiteral] = useState('Star Wars')
+const [isLoading, setIsLoading] = useState(true);
+const [hasResults, setHasResults] = useState(false);
+const [literal, setLiteral] = useState("Star Wars");
 // ✅ WE ONLY UPDATE WHAT IS NEEDED
-setIsLoading(false)
+setIsLoading(false);
 
-console.log(isLoading) // false
+console.log(isLoading); // false
 ```
 
 Como véis, hemos usado un `useState` para cada parte del state y, cada uno, lo hemos inicializado con su valor inicial correspondiente. De esta forma obtenemos una mayor legibilidad, tenemos el estado separado en pequeñas partes y, además, **somos mucho más claros a la hora de actualizarlo.**

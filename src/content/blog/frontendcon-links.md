@@ -3,7 +3,7 @@ title: React Rendering Strategies resources
 date: "2019-11-25"
 image: "/images/react-rendering-strategies-cover.png"
 description: "Find all the links and resources from the React Rendering strategies talk by Miguel Ángel Durán on Frontend Con 2019 Warsaw"
-tags :  react
+tags: react
 language: 🇬🇧
 type: page
 ---
@@ -27,6 +27,7 @@ type: page
 [SSR with hydration Demo](https://react-rendering.midudev.now.sh/ssr-client-rehydration)<br />Demo website to show Server Side Rendering with (re)hydration demo.
 
 ## About Dynamic Rendering
+
 [Yandex Documentation regarding Sites Crawling](https://yandex.com/support/webmaster/recommendations/changing-site-structure.html)<br />Yandex documentation stating that client-side rendering is not supported by their crawlers.
 
 [Dynamic Rendering Guide](https://developers.google.com/search/docs/guides/dynamic-rendering)<br />Guide from Google explaining how to implement Dynamic Rendering strategy by route on your site and how can it help you.

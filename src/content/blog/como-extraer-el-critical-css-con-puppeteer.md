@@ -1,8 +1,8 @@
 ---
 title: Cómo extraer el Critical Path CSS con Puppeteer, Code Coverage y en sólo 20 líneas de código
-date: '2019-02-21'
-image: '/images/critical-path-css-20-lines-of-code.jpg'
-description: 'Gracias a la potencia de Puppeeteer y usando el Code Coverage de las Chrome Developer Tools, podemos extraer muy fácilmente el CSS crítico de nuestro site'
+date: "2019-02-21"
+image: "/images/critical-path-css-20-lines-of-code.jpg"
+description: "Gracias a la potencia de Puppeeteer y usando el Code Coverage de las Chrome Developer Tools, podemos extraer muy fácilmente el CSS crítico de nuestro site"
 topic: performance
 
 tags: performance
@@ -42,6 +42,7 @@ Una de las formas de solucionar esto meter los estílos críticos de tu página 
 {{< img src="/images/critical-path-css-20-lines-of-code.jpg" alt="Con Code Coverage podemos ver en las dos primeras líneas que apenas usamos el 30% de cada fichero CSS. La parte en verde sería nuestro CSS crítico">}}
 
 El problema de extraer el CSS crítico de nuestra página son varios:
+
 1. Es complicado hacer esto manualmente...
 2. y es más complicado hacerlo para las diferentes rutas de nuestra página que necesitan un CSS distinto.
 
@@ -60,25 +61,25 @@ Ahora, creamos el archivo `index.js` en la misma carpeta con nuestro editor favo
 Lo primero que hacemos es requerir la dependencia:
 
 ```javascript
-const puppeteer = require('puppeteer')
+const puppeteer = require("puppeteer");
 ```
 
 Ahora, vamos a crear una forma bastante rudimentaria de hacer que podamos utilizar diferentes URLs con nuestro programa utilizando las variables de entorno:
 
 ```javascript
-const URL = process.env.URL || 'https://www.fotocasa.es'
+const URL = process.env.URL || "https://www.fotocasa.es";
 ```
 
-¡Empieza la magia 🎩✨!. **La API de Puppeteer es totalmente asíncrona y basada en *Promises***, por lo que vamos a crear una IIFE (función que se invoca inmediatamente) que nos permita poder utilizar `async/await` en nuestro código y mejorar la legibilidad del mismo.
+¡Empieza la magia 🎩✨!. **La API de Puppeteer es totalmente asíncrona y basada en _Promises_**, por lo que vamos a crear una IIFE (función que se invoca inmediatamente) que nos permita poder utilizar `async/await` en nuestro código y mejorar la legibilidad del mismo.
 
 Dentro, lo que vamos a hacer es; **primero, crear una instancia de un navegador.** Le pasaremos como opciones que lo queremos headless, para que no nos abra la ventana visual del navegador. Y, en ese navegador, abriremos una página donde luego iremos a la URL.
 
 ```javascript
-;(async () => {
-  const browser = await puppeteer.launch({headless: true})
-  const page = await browser.newPage()
+(async () => {
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
   // ...
-})()
+})();
 ```
 
 **Puppeteer también nos permite controlar y acceder a muchas funciones de las Chrome Developer Tools.** Hay una en concreto que nos va a servir en nuestro caso. Se trata del **Code Coverage**, una función que nos indica qué tanto por ciento de código Javascript y CSS estamos usando en nuestra página. Así que lo primero que haremos será abrir esta herramienta con `page.coverage.startCSSCoverage()`.
@@ -88,68 +89,69 @@ Después, **le indicaremos a la página que queremos navegar a nuestra URL.** Aq
 Una vez termine la navegación, lo que haremos es **parar el coverage que hemos iniciializiado anteriormente** utilizando el método `stopCSSCoverage`. Esto **nos devolverá valiosa información** que, más adelante, trataremos para recuperar el CSS crítico de nuestra página:
 
 ```javascript
-  await page.coverage.startCSSCoverage()
-  await page.goto(URL, {waitUntil: 'load'}) // domcontentload, load, networkidle0
-  const cssCoverage = await page.coverage.stopCSSCoverage()
+await page.coverage.startCSSCoverage();
+await page.goto(URL, { waitUntil: "load" }); // domcontentload, load, networkidle0
+const cssCoverage = await page.coverage.stopCSSCoverage();
 ```
 
 Ya tenemos el coverage de nuestro CSS, **ahora vamos a extraer el CSS que sí que usamos en nuestra página.** Para ello, creamos un string vacío en una variable llamada `criticalCSS` donde iremos acumulando todo el CSS que sí usamos.
 
 ```javascript
-  let criticalCSS = ''
+let criticalCSS = "";
 ```
 
 **Iteramos entre todos los CSS que estamos cargando en nuestra página.** Tendremos una `entry` por cada archivo `CSS` que estemos cargando. Dentro de cada entrada, tendremos los rangos de CSS que usamos.
 
-De esta forma **Code Coverage nos indica qué trozos de nuestro código usamos. Estos rangos nos dan la posición inicial y final del rango de código que usamos**, y es lo que usaremos para extraer el CSS del archivo. Para ello, por cada rango, sacamos la porción usando `slice` y lo hacemos entre el principio y el final del rango. Y eso lo vamos acumulando en nuestra variable `criticalCSS`. 
+De esta forma **Code Coverage nos indica qué trozos de nuestro código usamos. Estos rangos nos dan la posición inicial y final del rango de código que usamos**, y es lo que usaremos para extraer el CSS del archivo. Para ello, por cada rango, sacamos la porción usando `slice` y lo hacemos entre el principio y el final del rango. Y eso lo vamos acumulando en nuestra variable `criticalCSS`.
 
 ```javascript
-  for (const entry of cssCoverage) {
-    for (const range of entry.ranges) {
-      criticalCSS += entry.text.slice(range.start, range.end) + "\n"
-    }
+for (const entry of cssCoverage) {
+  for (const range of entry.ranges) {
+    criticalCSS += entry.text.slice(range.start, range.end) + "\n";
   }
+}
 ```
 
 Una vez terminamos el bucle, sólo tenemos mostrar por consola y cerrar las conexiones de la página y el navegador.
 
 ```javascript
-  console.log(criticalCSS)
+console.log(criticalCSS);
 
-  await page.close()
-  await browser.close()
+await page.close();
+await browser.close();
 ```
 
 Y aquí tenéis el snippet de código completo, de una pieza, para que lo podáis copiar y pegar. ⤵️
 
 ```javascript
-const puppeteer = require('puppeteer')
-const URL = process.env.URL || 'https://www.fotocasa.es'
+const puppeteer = require("puppeteer");
+const URL = process.env.URL || "https://www.fotocasa.es";
 
-;(async () => {
-  const browser = await puppeteer.launch({headless: true})
-  const page = await browser.newPage()
+(async () => {
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
 
-  await page.coverage.startCSSCoverage()
-  await page.goto(URL, {waitUntil: 'load'}) // domcontentload, load, networkidle0
+  await page.coverage.startCSSCoverage();
+  await page.goto(URL, { waitUntil: "load" }); // domcontentload, load, networkidle0
 
-  const cssCoverage = await page.coverage.stopCSSCoverage()
+  const cssCoverage = await page.coverage.stopCSSCoverage();
 
-  let criticalCSS = ''
+  let criticalCSS = "";
   for (const entry of cssCoverage) {
     for (const range of entry.ranges) {
-      criticalCSS += entry.text.slice(range.start, range.end) + "\n"
+      criticalCSS += entry.text.slice(range.start, range.end) + "\n";
     }
   }
-  
-  console.log(criticalCSS)
 
-  await page.close()
-  await browser.close()
-})()
+  console.log(criticalCSS);
+
+  await page.close();
+  await browser.close();
+})();
 ```
 
 Ahora, para utilizarlo, sólo tenemos que ejecutar en nuestra terminal el siguiente comando:
+
 ```
 URL=https://www.fotocasa.es/es node index.js
 ```
@@ -170,4 +172,3 @@ URL=http://fotocasa.es/es/alquiler/viviendas/barcelona-capital/eixample/l node i
 [Puppeteer - Headless Chrome Node API ](https://github.com/GoogleChrome/puppeteer)<br />
 [Google Chrome Labs Examples](https://github.com/GoogleChromeLabs/puppeteer-examples)<br />
 [Minimal CSS Service](https://github.com/SUI-Components/minimal-css-service)
-

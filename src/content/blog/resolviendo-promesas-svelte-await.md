@@ -1,16 +1,16 @@
 ---
-title: 'Resolviendo promesas en Svelte con {#await}'
-date: '2020-12-12'
+title: "Resolviendo promesas en Svelte con {#await}"
+date: "2020-12-12"
 description: >-
   Aprende a usar las plantillas de Svelte para resolver tus promesas y mejorar
   tus componentes
-tags :  svelte
+tags: svelte
 image: /images/og/resolviendo-promesas-svelte-await.png
 ---
 
 {{< youtube id="c1kvN5jqQ18" >}}
 
-Como ya hemos visto en artículos anteriores, podemos fácilmente [crear un estado en Svelte y utilizarlo para guardar el fetching de datos](https://midu.dev/declaraciones-reactivas-fetching-de-datos-en-svelte/). Sin embargo, *Svelte* ofrece una **sintaxis especial** a la hora de trabajar con promesas y vamos a ver qué nos ofrece.
+Como ya hemos visto en artículos anteriores, podemos fácilmente [crear un estado en Svelte y utilizarlo para guardar el fetching de datos](https://midu.dev/declaraciones-reactivas-fetching-de-datos-en-svelte/). Sin embargo, _Svelte_ ofrece una **sintaxis especial** a la hora de trabajar con promesas y vamos a ver qué nos ofrece.
 
 ## Resolviendo promesas con declaraciones reactivas y condicionales
 
@@ -20,24 +20,24 @@ Por ejemplo, vamos a recuperar una imagen aleatoria de un zorro 🦊 de la API `
 
 ```html
 <script>
-	let loading = true
-	let foxImage
+  let loading = true;
+  let foxImage;
 
   const fetchRandomFox = async () => {
-    const response = await fetch('https://randomfox.ca/floof/')
-    const data = await response.json()
+    const response = await fetch("https://randomfox.ca/floof/");
+    const data = await response.json();
     // actualizamos las declaraciones reactivas
-		loading = false
-		foxImage = data.image
-  }
-	
-	fetchRandomFox()
+    loading = false;
+    foxImage = data.image;
+  };
+
+  fetchRandomFox();
 </script>
 
 {#if loading}
-  <p>...cargando</p>
+<p>...cargando</p>
 {:else if foxImage}
-  <img src={foxImage} alt="Fox" />
+<img src="{foxImage}" alt="Fox" />
 {/if}
 ```
 
@@ -56,9 +56,9 @@ La sintaxis funciona de esta manera:
 
 ```html
 {#await promise}
-	<p>...cargando promesa</p>
+<p>...cargando promesa</p>
 {:then data}
-	<p>promesa resuelta con {data}</p>
+<p>promesa resuelta con {data}</p>
 {/await}
 ```
 
@@ -67,17 +67,17 @@ Para ver cómo nos podría ayudar, **vamos a reescribir nuestro ejemplo** de for
 ```html {hl_lines=["4", "7", "10-14"]}
 <script>
   const fetchRandomFox = async () => {
-    const response = await fetch('https://randomfox.ca/floof/')
-    return response.json() // devolvemos directamente la promesa
-  }
+    const response = await fetch("https://randomfox.ca/floof/");
+    return response.json(); // devolvemos directamente la promesa
+  };
   // guardamos la promesa directamente en una variable
-	const foxImagePromise = fetchRandomFox()
+  const foxImagePromise = fetchRandomFox();
 </script>
 
 {#await foxImagePromise}
-  <p>...cargando</p>
+<p>...cargando</p>
 {:then data}
-  <img src={data.image} alt="Fox" />
+<img src="{data.image}" alt="Fox" />
 {/await}
 ```
 
@@ -88,19 +88,19 @@ Para ver cómo nos podría ayudar, **vamos a reescribir nuestro ejemplo** de for
 ```html {hl_lines=["14-16"]}
 <script>
   const fetchRandomFox = async () => {
-    const response = await fetch('https://randomfox.ca/floof/')
-    return response.json() // devolvemos directamente la promesa
-  }
+    const response = await fetch("https://randomfox.ca/floof/");
+    return response.json(); // devolvemos directamente la promesa
+  };
   // guardamos la promesa directamente en una variable
-	const foxImagePromise = fetchRandomFox()
+  const foxImagePromise = fetchRandomFox();
 </script>
 
 {#await foxImagePromise}
-  <p>...cargando</p>
+<p>...cargando</p>
 {:then data}
-  <img src={data.image} alt="Fox" />
+<img src="{data.image}" alt="Fox" />
 {:catch error}
-	<p>Algo no ha ido bien!</p>
+<p>Algo no ha ido bien!</p>
 {/await}
 ```
 
@@ -110,7 +110,7 @@ En el caso que tu promesa siempre resuelva (por lo tanto nunca entraría en el `
 
 ```html
 {#await promise then value}
-	<p>El valor que devuelve la promesa es {value}</p>
+<p>El valor que devuelve la promesa es {value}</p>
 {/await}
 ```
 
@@ -119,20 +119,19 @@ En nuestro ejemplo quedaría de la siguiente forma:
 ```html {hl_lines=["10-12"]}
 <script>
   const fetchRandomFox = async () => {
-    const response = await fetch('https://randomfox.ca/floof/')
-    return response.json() // devolvemos directamente la promesa
-  }
+    const response = await fetch("https://randomfox.ca/floof/");
+    return response.json(); // devolvemos directamente la promesa
+  };
   // guardamos la promesa directamente en una variable
-	const foxImagePromise = fetchRandomFox()
+  const foxImagePromise = fetchRandomFox();
 </script>
 
 {#await foxImagePromise then data}
-  <img src={data.image} alt="Fox" />
+<img src="{data.image}" alt="Fox" />
 {/await}
 ```
 
 [**Enlace a la demo**](https://svelte.dev/repl/458ba21ab528427e81cc06986d016fa3?version=3.31.0)
-
 
 ## Conclusiones
 
@@ -140,7 +139,7 @@ Teniendo en cuenta la cruzada contra el boilerplate que tiene Svelte en nuestros
 
 Además se parece mucho a la forma de trabajar con eventos asíncronos en **Javascript con la sintaxis de `await` que se añadió en el lenguaje en ES2017.**
 
-Con eso, podemos esperar a las promesas a resolverse y definir diferentes partes de nuestra interfaz dependiendo de si nuestra promesa todavía no se ha resultado (*await*), si se ha resuelto (*resolve/then*) o si ha fallado (*reject/catch*).
+Con eso, podemos esperar a las promesas a resolverse y definir diferentes partes de nuestra interfaz dependiendo de si nuestra promesa todavía no se ha resultado (_await_), si se ha resuelto (_resolve/then_) o si ha fallado (_reject/catch_).
 
 Te dejo la clase en vídeo por si prefieres seguirla visualmente.
 

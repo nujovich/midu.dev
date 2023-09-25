@@ -1,7 +1,7 @@
 ---
 title: Adiós Google Analytics. Alternativas para tener estadísticas en tu web
-date: '2021-02-04'
-image: '/images/og/adios-google-analytics-alternativas-para-tener-estadisticas-en-tu-web.png'
+date: "2021-02-04"
+image: "/images/og/adios-google-analytics-alternativas-para-tener-estadisticas-en-tu-web.png"
 description: ¿Por qué he dejado de usar Google Analytics y tú también deberías? Además, te doy algunas alternativas que puedes utilizar en su lugar
 topictags: opinion
 toc: true
@@ -22,7 +22,7 @@ Y por si esto fuera poco, **hay más...**
 
 Bueno, esto poca gente lo sabe o realmente le importa. Pero **es grave**. El caso es que **si usas Google Analytics** y tu página web se sirve en la Unión Europea, **DEBERÍAS estar enseñando el AVISO DE COOKIES.**
 
-*¡Pero Miguel, que yo ya enseño el aviso de cookies!*
+_¡Pero Miguel, que yo ya enseño el aviso de cookies!_
 
 ¿Sí? Pero... **¿Realmente estás cargando Google Analytics sólo cuando tienes el consentimiento del usuario?** ¿O estás haciendo tracking incluso cuando el usuario te ha dicho que NO? De hecho, **¿le has dado realmente esa opción?**
 
@@ -30,8 +30,8 @@ Bueno, esto poca gente lo sabe o realmente le importa. Pero **es grave**. El cas
 
 El tema es que no basta con enseñar el aviso. Tendrías que hacer **dos cosas**:
 
-* a) No cargar Google Analytics y/o trackear al usuario **hasta no tener su consentimiento**.
-* b) Darle la posibilidad de revocar su consentimiento en cualquier momento.
+- a) No cargar Google Analytics y/o trackear al usuario **hasta no tener su consentimiento**.
+- b) Darle la posibilidad de revocar su consentimiento en cualquier momento.
 
 **Y esto no pasa nunca.** De hecho **tooooodo el mundo tiene un blog donde carga Google Analytics** y ni pide consentimiento ni nada de nada. No te estoy señalando... yo mismo hasta hace unas semanas estaba haciendo lo mismo.
 
@@ -75,19 +75,19 @@ Si no quieres usar mi código de referal: [Fathom Analytics](https://usefathom.c
 
 #### Más alternativas para Google Analytics y Fathom
 
-* [Plausible](https://plausible.io/): **La mejor alternativa a Fathom.** De hecho tiene todas las ventajas de Fathom a un precio más pequeño y un diseño muy cuidado. ¿Por qué elegí entonces Fathom? Porque tiene más años en el mercado y pensaba en utilizar algo más asentado... pero veremos si no doy el salto. 😝
+- [Plausible](https://plausible.io/): **La mejor alternativa a Fathom.** De hecho tiene todas las ventajas de Fathom a un precio más pequeño y un diseño muy cuidado. ¿Por qué elegí entonces Fathom? Porque tiene más años en el mercado y pensaba en utilizar algo más asentado... pero veremos si no doy el salto. 😝
 
-* [Simple Analytics](https://simpleanalytics.com/): Otro que lleva un tiempo. Su precio empieza por **19$ por 100k páginas vistas**. Una razón que me echó para atrás es que en varios artículos leí que tenía [grandes discrepancias con las visitas registradas](https://dev.to/hmhrex/a-comparison-of-the-top-3-privacy-focused-analytics-platforms-209m) con **Plausible** y **Fathom**. Supongo que lo habrán arreglado pero no me apetecía probarlo por mi mismo (y además es más caro respecto a **Fathom** y **Plausible**)
+- [Simple Analytics](https://simpleanalytics.com/): Otro que lleva un tiempo. Su precio empieza por **19$ por 100k páginas vistas**. Una razón que me echó para atrás es que en varios artículos leí que tenía [grandes discrepancias con las visitas registradas](https://dev.to/hmhrex/a-comparison-of-the-top-3-privacy-focused-analytics-platforms-209m) con **Plausible** y **Fathom**. Supongo que lo habrán arreglado pero no me apetecía probarlo por mi mismo (y además es más caro respecto a **Fathom** y **Plausible**)
 
-* [Privacy First Adinton](https://privacy-first.adinton.com/): Una empresa de Barcelona que **ofrece por 19€ un plan ilimitado para blogs y empresas pequeñas**. Tampoco requiere el consentimiento del usuario y ofrece un montón de estadísticas y maneras de crear KPIs de tus métricas.
- 
-* [Matomo](https://matomo.org/): Una alternativa que **puedes hospedar por tu parte de forma totalmente gratuita**. Si no, puedes pagar a partir de 29€ al mes por la versión Cloud.
+- [Privacy First Adinton](https://privacy-first.adinton.com/): Una empresa de Barcelona que **ofrece por 19€ un plan ilimitado para blogs y empresas pequeñas**. Tampoco requiere el consentimiento del usuario y ofrece un montón de estadísticas y maneras de crear KPIs de tus métricas.
+
+- [Matomo](https://matomo.org/): Una alternativa que **puedes hospedar por tu parte de forma totalmente gratuita**. Si no, puedes pagar a partir de 29€ al mes por la versión Cloud.
 
 ## Conclusiones del artículo: responsabilizate de tus elecciones
 
 **No quiero con este artículo que te sientas mal o culpable** por usar Google Analytics. Sólo quiero que tengas más información a la hora de tomar la decisión de utilizarlo en tu sitio y que seas consciente que es posible que estés incurriendo en una falta que pueda suponerte una multa.
 
-En un mundo, el de Internet, que **estamos siempre acostumbrados a tener las cosas gratis**... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, **vienen precisamente de los datos que manejan.** 
+En un mundo, el de Internet, que **estamos siempre acostumbrados a tener las cosas gratis**... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, **vienen precisamente de los datos que manejan.**
 
 Que a ver, **a veces también puedes revisar si tu blog realmente necesita analíticas.** Entiendo la necesidad en páginas que se monetizan. Si tienes unas pocas visitas al mes, seguramente es mejor no tener analíticas y dejar que los usuarios disfruten de tu contenido libremente. En mi caso lo hago para saber de **dónde provienen mis usuarios, qué dispositivos usan y qué artículos interesan más**... pero no sería la primera vez que me he planteado quitar totalmente las analíticas... 🙃
 

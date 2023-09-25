@@ -1,7 +1,7 @@
 ---
 title: React Hooks, useEffect. Añadiendo funcionalidad en el ciclo de vida de nuestro componente - III
-date: '2019-02-19'
-image: '/images/react-hooks-use-effect.jpg'
+date: "2019-02-19"
+image: "/images/react-hooks-use-effect.jpg"
 description: Usando useEffect podremos añadir funcionalidad a nuestro componente cuando se renderiza por primera vez, se actualiza cuando nueva información llega y cuando se desmonta del árbol de elementos
 tags: react
 ---
@@ -17,7 +17,7 @@ Con los hooks también podremos acceder a esa ciclo de vida en nuestros componen
 Para usar este hook, primero debemos importarlo desde la librería de React.
 
 ```jsx
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 ```
 
 Ahora, en nuestro componente funcional, **vamos a añadir un efecto que se ejecutará cada vez que nuestro componente se renderice.** Para eso, ejecutaremos el método `useEffect` dentro del cuerpo de nuestra función y le pasaremos como parámetro la función que queremos que ejecute al renderizar el componente.
@@ -26,26 +26,26 @@ Ahora, en nuestro componente funcional, **vamos a añadir un efecto que se ejecu
 import React, { useEffect } from 'react'
 
 function Example() {
-  useEffect(function () {
-    console.log('render!')
-  })
-  
-  return <span>This is a useEffect example</span>
+useEffect(function () {
+console.log('render!')
+})
+
+return <span>This is a useEffect example</span>
 }
 {{< / highlight >}}
 
 Esto hará que se muestre en consola el mensaje `render!` después que el componente se renderice por primera vez. Por si te lo estás preguntando, en este ejemplo, el método `useEffect` ha funcionado de forma similar a como lo hubiera hecho el ciclo de vida `componentDidMount`:
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Example extends Component {
-  componentDidMount () {
-    console.log('render!')
+  componentDidMount() {
+    console.log("render!");
   }
 
-  render () {
-    return (<span>This is a componentDidMount example</span>)
+  render() {
+    return <span>This is a componentDidMount example</span>;
   }
 }
 ```
@@ -55,28 +55,27 @@ class Example extends Component {
 Ahora que ya hemos usado `useEffect` vamos a utilizarlo junto con [el hook `useState` que ya conocemos.](https://midu.dev/react-hooks-use-state-anadiendo-estado-a-nuestro-componente-funcional/#article-content). Para ello, vamos a recuperar el ejemplo del Contador pero vamos a hacer que, cada vez que se vaya a renderizar de nuevo el componente, actualice el título de la página con un mensaje indicando el número de veces que hemos hecho click en el botón. **Para ello tendremos que leer el valor actual del estado interno de nuestro componente de la siguiente forma**:
 
 ```jsx
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
 function Contador() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     // Actualiza el title de la página en cada click!
-    document.title = `Has hecho clic ${count} veces`
-  })
+    document.title = `Has hecho clic ${count} veces`;
+  });
 
   return (
     <div>
-      <span>El contador está a {count}</span> 
-      <button onClick={() => setCount(count + 1)}>
-        Incrementar contador
-      </button>
+      <span>El contador está a {count}</span>
+      <button onClick={() => setCount(count + 1)}>Incrementar contador</button>
     </div>
-  )
+  );
 }
 ```
 
 Para verlo en funcionamiento, [podéis acceder a la demo desde vuestro navegador.](https://codesandbox.io/s/948pj1q7kw) Así podréis comprobar que el título de la página se actualiza:
+
 - Nada más entrar en la página. **Ya que se ejecuta useEffect al montarse nuestro componente.**
 - Cada vez que hacemos click en el componente. Cuando el state cambia, esto dispara un nuevo renderizado y, al renderizarse de nuevo, se vuelve a ejecutar la función que le hemos pasado a `useEffect`.
 
@@ -95,21 +94,21 @@ function ShowWindowWidth() {
   useEffect(() => {
     // Creamos una función para actualizar el estado con el clientWidth
     const updateWidth = () => {
-      const width = document.body.clientWidth
-      console.log(`updateWidth con ${width}`)
-      setWidth(width)
-    }
+      const width = document.body.clientWidth;
+      console.log(`updateWidth con ${width}`);
+      setWidth(width);
+    };
     // Actualizaremos el width al montar el componente
-    updateWidth()
+    updateWidth();
     // Nos suscribimos al evento resize() de window
-    window.addEventListener("resize", updateWidth)
-  })
+    window.addEventListener("resize", updateWidth);
+  });
 
   return (
     <div>
       <span>Width es de {width}px</span>
     </div>
-  )
+  );
 }
 ```
 
@@ -117,41 +116,43 @@ Como véis, hemos usado el `useEffect` para suscribirnos a un evento del DOM, en
 
 {{< code id="21v2xyr90y" height="300" tab="both">}}
 
-⚠️ Esto, funcionar, funciona. **Pero hay un problema bastante gordo y es muy importante que lo entiendas: podríamos provocar *memory leaks* en nuestras aplicaciones si no lo tienes en cuenta.**
+⚠️ Esto, funcionar, funciona. **Pero hay un problema bastante gordo y es muy importante que lo entiendas: podríamos provocar _memory leaks_ en nuestras aplicaciones si no lo tienes en cuenta.**
 
 Como hemos dicho anteriormente, `useEffect` se va a ejecutar cada vez que se renderiza nuestro componente. Por lo tanto, está bien que nos queramos suscribir al evento del `window` en el hook `useEffect` pero, si se vuelve a ejecutar la función en cada renderizado... **¡volveremos a suscribirnos de nuevo al evento `resize` cada vez que actualicemos el estado y hagamos que se renderice nuestro componente!**
 
-**Obviamente, eso no es lo que queremos.** Para ello, tenemos que hacer limpieza de las suscripciones de nuestros eventos. Por eso, la función que le pasamos a `useEffect` puede, a su vez, devolver una función que se ejecutará cada vez que nuestro componente se vaya a volver a renderizar o que vaya a desmontar completamente. Esto es super útil para limpiar cualquier suscripción y evitar los *memory leaks* que comentaba anteriormente. Vamos a verlo:
+**Obviamente, eso no es lo que queremos.** Para ello, tenemos que hacer limpieza de las suscripciones de nuestros eventos. Por eso, la función que le pasamos a `useEffect` puede, a su vez, devolver una función que se ejecutará cada vez que nuestro componente se vaya a volver a renderizar o que vaya a desmontar completamente. Esto es super útil para limpiar cualquier suscripción y evitar los _memory leaks_ que comentaba anteriormente. Vamos a verlo:
 
 {{< highlight jsx "hl_lines=18-21" >}}
 import React, { useEffect, useState } from "react";
 
 function ShowWindowWidth() {
-  const [width, setWidth] = useState(0);
+const [width, setWidth] = useState(0);
 
-  useEffect(() => {
-    // Creamos una función para actualizar el estado con el clientWidth
-    const updateWidth = () => {
-      const width = document.body.clientWidth
-      console.log(`updateWidth con ${width}`)
-      setWidth(width)
-    }
-    // Actualizaremos el width al montar el componente
-    updateWidth()
-    // Nos suscribimos al evento resize de window
-    window.addEventListener("resize", updateWidth)
+useEffect(() => {
+// Creamos una función para actualizar el estado con el clientWidth
+const updateWidth = () => {
+const width = document.body.clientWidth
+console.log(`updateWidth con ${width}`)
+setWidth(width)
+}
+// Actualizaremos el width al montar el componente
+updateWidth()
+// Nos suscribimos al evento resize de window
+window.addEventListener("resize", updateWidth)
 
     // Devolvemos una función para anular la suscripción al evento
     return () => {
       window.removeEventListener("resize", updateWidth)
     }
-  })
 
-  return (
-    <div>
-      <span>Width es de {width}px</span>
-    </div>
-  )
+})
+
+return (
+
+<div>
+<span>Width es de {width}px</span>
+</div>
+)
 }
 {{< / highlight >}}
 
@@ -170,15 +171,15 @@ En un primer momento, estaríamos tentados a hacer algo así:
 ```jsx
 // 🚫 ESTE COMPONENTE NO FUNCIONA CORRECTAMENTE!
 function PokemonInfo({ name = "pikachu" }) {
-  const [pokemonInfo, setPokemonInfo] = useState(null)
+  const [pokemonInfo, setPokemonInfo] = useState(null);
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-      .then(res => res.json())
-      .then(pikachu => {
-        setPokemonInfo(pikachu)
-      })
-  })
+      .then((res) => res.json())
+      .then((pikachu) => {
+        setPokemonInfo(pikachu);
+      });
+  });
 
   return (
     pokemonInfo && (
@@ -186,7 +187,7 @@ function PokemonInfo({ name = "pikachu" }) {
         La pokeId es #{pokemonInfo.id} y su nombre es {pokemonInfo.name}
       </span>
     )
-  )
+  );
 }
 ```
 
@@ -195,13 +196,13 @@ function PokemonInfo({ name = "pikachu" }) {
 Para solucionar esto vamos a usar el segundo parámetro del hook `useEffect` que hemos explicado antes. Esto sería **la lista de parámetros de los que depende el efecto** y, lo que indica, es que cuando estos parámetros no cambien entonces no volverá a renderizar el efecto. En este caso, **este efecto sólo lo querremos renderizar cuando el nombre del Pokémon que queremos buscar cambie por props.**
 
 {{< highlight jsx "hl_lines=7" >}}
-  useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-      .then(res => res.json())
-      .then(pikachu => {
-        setPokemonInfo(pikachu)
-      })
-  }, [name])
+useEffect(() => {
+fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+.then(res => res.json())
+.then(pikachu => {
+setPokemonInfo(pikachu)
+})
+}, [name])
 {{</ highlight >}}
 
 Podemos ver esto funcionando correctamente en la siguiente demostración:
@@ -211,46 +212,47 @@ Podemos ver esto funcionando correctamente en la siguiente demostración:
 
 Ahora que podemos evitar que el efecto se ejecute... también podríamos pasarle un array vacío como parámetro. ¿Y qué pasaría? **Esto le diría a React que nuestro efecto no depende de ningún valor y que, por lo tanto, sólo debería ejecutarse al montarse y desmontarse nuestro componente.**
 
-*Si sigues pensando en clases*, esto significa que nuestro hook pasaría a ser un `componentDidMount` y un `componentWillUnmount`.
+_Si sigues pensando en clases_, esto significa que nuestro hook pasaría a ser un `componentDidMount` y un `componentWillUnmount`.
 
-Este tipo de comportamiento nos vendría perfecto, por ejemplo, para casos como nuestro ejemplo anterior que habíamos creado un efecto para suscribirnos al *window* y así saber cuando hacíamos resize. La razón es que no dependemos de ninguna prop ni siquiera de si el valor del state cambia, por lo que **podríamos usar ese parámetro para evitar llamadas al efecto de forma no necesaria.**
+Este tipo de comportamiento nos vendría perfecto, por ejemplo, para casos como nuestro ejemplo anterior que habíamos creado un efecto para suscribirnos al _window_ y así saber cuando hacíamos resize. La razón es que no dependemos de ninguna prop ni siquiera de si el valor del state cambia, por lo que **podríamos usar ese parámetro para evitar llamadas al efecto de forma no necesaria.**
 
 {{< highlight jsx "hl_lines=22" >}}
 import React, { useEffect, useState } from "react";
 
 function ShowWindowWidth() {
-  const [width, setWidth] = useState(0);
+const [width, setWidth] = useState(0);
 
-  useEffect(() => {
-    // creamos una función para actualizar el estado con el clientWidth
-    const updateWidth = () => {
-      const width = document.body.clientWidth
-      console.log(`updateWidth con ${width}`)
-      setWidth(width)
-    }
-    // actualizaremos el width al montar el componente
-    updateWidth()
-    // nos suscribimos al evento resize de window
-    window.addEventListener("resize", updateWidth)
+useEffect(() => {
+// creamos una función para actualizar el estado con el clientWidth
+const updateWidth = () => {
+const width = document.body.clientWidth
+console.log(`updateWidth con ${width}`)
+setWidth(width)
+}
+// actualizaremos el width al montar el componente
+updateWidth()
+// nos suscribimos al evento resize de window
+window.addEventListener("resize", updateWidth)
 
     // devolvemos una función para anular la suscripción al evento
     return () => {
       window.removeEventListener("resize", updateWidth)
     }
-  }, []) // este efecto se ejecuta sólo al montarse el componente
 
-  return (
-    <div>
-      <span>Width es de {width}px</span>
-    </div>
-  )
+}, []) // este efecto se ejecuta sólo al montarse el componente
+
+return (
+
+<div>
+<span>Width es de {width}px</span>
+</div>
+)
 }
 {{< / highlight >}}
 
-
 ## Conclusiones sobre useEffect
 
-Con **el hook `useEffect` podremos ejecutar código cada vez que nuestro componente se renderice (ya sea por una actualización o sea la primera vez).** Y no sólo eso. Ya hemos visto que es el sitio ideal para suscribirnos a eventos, ya sea del navegador o de otras fuentes, pero también que podemos manejar las desuscripción para evitar crear *memory leaks*.
+Con **el hook `useEffect` podremos ejecutar código cada vez que nuestro componente se renderice (ya sea por una actualización o sea la primera vez).** Y no sólo eso. Ya hemos visto que es el sitio ideal para suscribirnos a eventos, ya sea del navegador o de otras fuentes, pero también que podemos manejar las desuscripción para evitar crear _memory leaks_.
 
 También hemos podido entender que `useEffect` viene a sustituir en gran parte los ciclos de vida de los componentes que vimos en los componentes que extendían de la clase `Component`. De hecho, viene a sustituir los ciclos `componentWillMount`, `componentDidMount`, `componentWillUpdate`, `componentDidUpdate` y `componentWillUnmount`. **Esto nos debería ayudar a generar menos código y hacer nuestros componentes más sencillos.**
 

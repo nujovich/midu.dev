@@ -1,12 +1,12 @@
 ---
-title: 'Cómo instalar Node en Mac, Linux y Windows'
-date: '2020-08-17'
+title: "Cómo instalar Node en Mac, Linux y Windows"
+date: "2020-08-17"
 description: >-
   Instala paso a paso Node en Linux y Mac usando nvm y en Windows usando
   nvm-windows
 
 toc: true
-tags :  node
+tags: node
 image: /images/og/como-instalar-node-en-mac-y-windows.png
 ---
 
@@ -32,7 +32,7 @@ Por ello, aunque para empezar puede estar bien, te recomiendo los siguientes mé
 
 ### Cómo instalar nvm paso a paso
 
-Para instalar, y también actualizar, *nvm* tienes que ejecutar el script de instalación. Puedes descargar y ejecutar el código desde la terminal usando el siguiente comando:
+Para instalar, y también actualizar, _nvm_ tienes que ejecutar el script de instalación. Puedes descargar y ejecutar el código desde la terminal usando el siguiente comando:
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -88,14 +88,14 @@ Por ejemplo, imaginemos que tenemos instalada la versión 8 y 12 y ahora instala
 nvm install 14
 nvm alias default 14
 ```
-> La primera vez que ejecutas `nvm install` hará que esa versión sea la `default`.
 
+> La primera vez que ejecutas `nvm install` hará que esa versión sea la `default`.
 
 ### Posibles problemas...
 
-* En Mac vas a necesitar tener instalas las herramientas de desarrollo de Xcode. Cuando ejecutes por primera vez el script de instalación de `nvm` es posible que te aparezca una ventana pidiendo que lo hagas. Una vez instalada, prueba otra vez a instalar `nvm` con el mismo script que antes.
-* Recuerda, como he comentado, al terminar la instalación es posible que necesites reiniciar la terminal o crear una nueva pestaña antes de poder ejecutar el comando `nvm`.
-* Si tienes algún problema más, puedes ver la sección de [Problemas Frecuentes en el repositorio de nvm.](https://github.com/nvm-sh/nvm#troubleshooting-on-linux)
+- En Mac vas a necesitar tener instalas las herramientas de desarrollo de Xcode. Cuando ejecutes por primera vez el script de instalación de `nvm` es posible que te aparezca una ventana pidiendo que lo hagas. Una vez instalada, prueba otra vez a instalar `nvm` con el mismo script que antes.
+- Recuerda, como he comentado, al terminar la instalación es posible que necesites reiniciar la terminal o crear una nueva pestaña antes de poder ejecutar el comando `nvm`.
+- Si tienes algún problema más, puedes ver la sección de [Problemas Frecuentes en el repositorio de nvm.](https://github.com/nvm-sh/nvm#troubleshooting-on-linux)
 
 ## Instalar Node en Windows usando nvm-windows
 

@@ -1,14 +1,14 @@
 ---
 title: La mejor forma de cargar Google Analytics en tu web para performance
-date: '2018-12-10'
-image: '/images/analytics.png'
-description: 'Muchas veces vamos a querer cargar Google Analytics en nuestra página web pero nos gustaría evitar el coste en performance que tiene. Te voy a explicar la mejor estrategia para cargar esta librería afectando lo mínimo posible la performance.'
+date: "2018-12-10"
+image: "/images/analytics.png"
+description: "Muchas veces vamos a querer cargar Google Analytics en nuestra página web pero nos gustaría evitar el coste en performance que tiene. Te voy a explicar la mejor estrategia para cargar esta librería afectando lo mínimo posible la performance."
 topic: performance
 toc: true
 tags: performance
 ---
 
-## Intro 
+## Intro
 
 Cargar Google Analytics tiene, lo quieras o no, un impacto en la performance de tu página web. **No es la peor librería de terceros para añadir en tu web** (¡Hola Optimizely 🤪!) porque, en ese aspecto, Google tiene cierta sensibilidad en hacer que tu web cargue rápido pero... **eso no significa que siempre nos vaya a proporcionar la mejor opción**. Por defecto Google nos ofrece un código que puede ser interesante si estamos pensando en usar otros productos de la compañía pero podemos hacer algunas mejoras o... directamente usar otro.
 
@@ -16,13 +16,18 @@ Pero empecemos por el principio, si vamos a las `opciones de nuestra propiedad -
 
 ```html
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  gtag('config', 'UA-XXXXXXXX-X');
+  gtag("config", "UA-XXXXXXXX-X");
 </script>
 ```
 
@@ -37,13 +42,20 @@ El mejor lugar donde cargar el snippet es en el `<head>`. Al ser un script así
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-XXXXXXXX-X');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-XXXXXXXX-X");
 </script>
 <link rel="stylesheet" href="style.css" />
-<style>/* critical-css */</style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
+<style>
+  /* critical-css */
+</style>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"
+></script>
 ```
 
 **El CSS es un recurso crítico y tiene la prioridad más alta de carga,** ya que el navegador considera que es crucial para poder pintar la página y enseñársela al usuario. Parsear el script en línea tiene un coste minúsculo y de esta forma no bloquearemos nada. Más adelante haré un artículo explicando esto pero, por ahora, probad si esto os funciona. 😉
@@ -62,8 +74,8 @@ Ya que sabemos que nuestro snippet va a cargar unos recursos en concreto, podemo
 `dns-prefetch`: es una parte de lo que hace preconnect, la resolución del nombre del sistema de nombres de dominio. Por lo tanto es menos potente pero, sin embargo, tiene un soporte mayor, así que también lo usaremos y el navegador ya detectará cuál es más ventajosa.
 
 ```html
-<link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com" />
 ```
 
 Estas líneas pueden ir sin ningún problema después de las líneas anteriores, ya que el navegador las detectará al descargar el archivo HTML y lo usará incluso antes de empezar a descargar los recursos.
@@ -82,24 +94,36 @@ Como comentaba antes, el snippet que por defecto te da Google es sencillo y te p
 
 ```html
 <script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  ga('create', 'UA-XXXXXXXX-X', 'auto');
-  ga('send', 'pageview');
+  window.ga =
+    window.ga ||
+    function () {
+      (ga.q = ga.q || []).push(arguments);
+    };
+  ga.l = +new Date();
+  ga("create", "UA-XXXXXXXX-X", "auto");
+  ga("send", "pageview");
 </script>
-<script async src='https://www.google-analytics.com/analytics.js' />
+<script async src="https://www.google-analytics.com/analytics.js" />
 ```
 
 Igual que en el anterior, también podemos hacer un preconnect y un dns-prefetch de los recursos, además de optimizar el orden de carga, de forma que nos quedaría algo así:
 
 ```html
-<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com" />
 <script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  ga('create', 'UA-XXXXXXXX-X', 'auto');
-  ga('send', 'pageview');
+  window.ga =
+    window.ga ||
+    function () {
+      (ga.q = ga.q || []).push(arguments);
+    };
+  ga.l = +new Date();
+  ga("create", "UA-XXXXXXXX-X", "auto");
+  ga("send", "pageview");
 </script>
-<style> /* critical-css */ </style>
-<script async src='https://www.google-analytics.com/analytics.js' />
+<style>
+  /* critical-css */
+</style>
+<script async src="https://www.google-analytics.com/analytics.js" />
 ```
 
 Como podéis ver, **ahora solo tenemos que hacer preconnect y prefetch de un solo recurso**. Y ahí ya tenemos una pista de la gran ventaja que tiene este método y es que, en el caso anterior debíamos hacer dos requests para poder empezar a usar Google Analytics mientras que en este método sólo tendremos que hacer una. ¿Y cómo quedaría esto? Una request menos, 31.5KB menos de descarga y casi 100ms más rápido empezar a hacer tracking en desktop.
@@ -114,24 +138,90 @@ El snippet, que **son sin gzipear 1.5KB**, es este:
 
 ```html
 <script>
-  (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
-  h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
-  l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
-  r.hasOwnProperty(t)&&void 0!==r[t]&&s.push(h(t)+"="+h(r[t]));return s.join("&")},
-  n=function(r,s,t,u,v,w,x){var z="https://www.google-analytics.com/collect",
-  A=m({v:"1",ds:"web",aip:c.anonymizeIp?1:void 0,tid:b,cid:l(),t:r||"pageview",
-  sd:c.colorDepth&&screen.colorDepth?screen.colorDepth+"-bits":void 0,dr:e.referrer||
-  void 0,dt:e.title,dl:e.location.origin+e.location.pathname+e.location.search,ul:c.language?
-  (f.language||"").toLowerCase():void 0,de:c.characterSet?e.characterSet:void 0,
-  sr:c.screenSize?(a.screen||{}).width+"x"+(a.screen||{}).height:void 0,vp:c.screenSize&&
-  a.visualViewport?(a.visualViewport||{}).width+"x"+(a.visualViewport||{}).height:void 0,
-  ec:s||void 0,ea:t||void 0,el:u||void 0,ev:v||void 0,exd:w||void 0,exf:"undefined"!=typeof x&&
-  !1==!!x?0:void 0});if(f.sendBeacon)f.sendBeacon(z,A);else{var y=new XMLHttpRequest;
-  y.open("POST",z,!0),y.send(A)}};d.pushState=function(r){return"function"==typeof d.onpushstate&&
-  d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
-  a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
-  trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
-  (window,"UA-XXXXXXXXX-X",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true});
+  (function (a, b, c) {
+    var d = a.history,
+      e = document,
+      f = navigator || {},
+      g = localStorage,
+      h = encodeURIComponent,
+      i = d.pushState,
+      k = function () {
+        return Math.random().toString(36);
+      },
+      l = function () {
+        return g.cid || (g.cid = k()), g.cid;
+      },
+      m = function (r) {
+        var s = [];
+        for (var t in r)
+          r.hasOwnProperty(t) &&
+            void 0 !== r[t] &&
+            s.push(h(t) + "=" + h(r[t]));
+        return s.join("&");
+      },
+      n = function (r, s, t, u, v, w, x) {
+        var z = "https://www.google-analytics.com/collect",
+          A = m({
+            v: "1",
+            ds: "web",
+            aip: c.anonymizeIp ? 1 : void 0,
+            tid: b,
+            cid: l(),
+            t: r || "pageview",
+            sd:
+              c.colorDepth && screen.colorDepth
+                ? screen.colorDepth + "-bits"
+                : void 0,
+            dr: e.referrer || void 0,
+            dt: e.title,
+            dl: e.location.origin + e.location.pathname + e.location.search,
+            ul: c.language ? (f.language || "").toLowerCase() : void 0,
+            de: c.characterSet ? e.characterSet : void 0,
+            sr: c.screenSize
+              ? (a.screen || {}).width + "x" + (a.screen || {}).height
+              : void 0,
+            vp:
+              c.screenSize && a.visualViewport
+                ? (a.visualViewport || {}).width +
+                  "x" +
+                  (a.visualViewport || {}).height
+                : void 0,
+            ec: s || void 0,
+            ea: t || void 0,
+            el: u || void 0,
+            ev: v || void 0,
+            exd: w || void 0,
+            exf: "undefined" != typeof x && !1 == !!x ? 0 : void 0,
+          });
+        if (f.sendBeacon) f.sendBeacon(z, A);
+        else {
+          var y = new XMLHttpRequest();
+          y.open("POST", z, !0), y.send(A);
+        }
+      };
+    (d.pushState = function (r) {
+      return (
+        "function" == typeof d.onpushstate && d.onpushstate({ state: r }),
+        setTimeout(n, c.delay || 10),
+        i.apply(d, arguments)
+      );
+    }),
+      n(),
+      (a.ma = {
+        trackEvent: function o(r, s, t, u) {
+          return n("event", r, s, t, u);
+        },
+        trackException: function q(r, s) {
+          return n("exception", null, null, null, null, r, s);
+        },
+      });
+  })(window, "UA-XXXXXXXXX-X", {
+    anonymizeIp: true,
+    colorDepth: true,
+    characterSet: true,
+    screenSize: true,
+    language: true,
+  });
 </script>
 ```
 
@@ -143,13 +233,13 @@ Las ventajas, como os podéis imaginar, es que con esto tendremos una request me
 - No nos permite utilizar algunas funcionalidades avanzadas como, por ejemplo, trackear Adwords aunque sí podemos enviar eventos y excepciones con el siguiente código.
 
 ```javascript
-ma.trackEvent('Category', 'Action', 'Label', 'Value') // event
-ma.trackException('Description', 'Fatal') // exception
+ma.trackEvent("Category", "Action", "Label", "Value"); // event
+ma.trackException("Description", "Fatal"); // exception
 ```
 
 Además, tened en cuenta que, por buenas razones, utiliza el flag `anonymizeIp` por defecto. De forma que todas las IPs de tus usuarios permanecen anónimas dentro de tu web.
 
-En este caso, todavía, recomiendo dejar `preconnect ` y `dns-prefetch` para el dominio de `https://www.google-analytics.com` 
+En este caso, todavía, recomiendo dejar `preconnect ` y `dns-prefetch` para el dominio de `https://www.google-analytics.com`
 
 Pero lo interesante, que me imagino que lo estáis esperando, es la imagen de network que nos queda. **0 requests de librerías externas, 17KB menos a descargar y unos cuantos ms menos hasta el pageview.**
 
@@ -191,13 +281,15 @@ Si todavía quieres ir más allá, **puedes usar Service Workers para conseguir 
 **Para activar Google Analytics de forma offline**, sólo tenéis que usar el siguiente código en vuestro Service Worker, gracias a workbox:
 
 ```javascript
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
+importScripts(
+  "https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js"
+);
 
 // este register route sólo en el caso de querer usar analytics.js o gtag.js
 workbox.routing.registerRoute(
-  'https://www.google-analytics.com/analytics.js',
+  "https://www.google-analytics.com/analytics.js",
   workbox.strategies.staleWhileRevalidate()
-)
+);
 
 workbox.googleAnalytics.initialize();
 ```

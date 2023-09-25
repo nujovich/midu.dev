@@ -1,7 +1,7 @@
 ---
 title: Curso gratis de ReactJS 2020 con clases en vivo
-date: '2020-05-17'
-image: '/images/curso-gratis-react-2020.jpg'
+date: "2020-05-17"
+image: "/images/curso-gratis-react-2020.jpg"
 description: Aprende qué es React, crea una aplicación desde cero, crea tus propios hooks y añade infinite scroll y testing con estas clases en vivo gratis.
 toc: true
 tags: react
@@ -14,6 +14,7 @@ Aprende qué es React, crea una aplicación desde cero, crea tus propios hooks y
 </a>
 
 ## Aprendiendo React desde cero
+
 {{< youtube id="T_j60n1zgu0" >}}
 {{< subscribe-to-youtube >}}
 
@@ -22,6 +23,7 @@ En esta clase aprendemos React desde cero y respondamos a las preguntas: **¿Qu�
 También vemos **qué son las props y state**. Definimos el concepto de componente y vemos cómo usar eventos. Cómo funciona el renderizado condicional y usamos un hook, `useState` para añadir estado a nuestros componentes.
 
 ## Crea un app con create-react-app
+
 {{< youtube id="QBLbXgeXMU8" >}}
 {{< subscribe-to-youtube >}}
 
@@ -30,6 +32,7 @@ Ahora que **ya conocemos los conceptos básicos de React**, es el momento de **c
 También vemos más hooks, como `useEffect` para ejecutar código cada vez que nuestro componentes se renderiza o sus dependencias cambian. Además también hacemos las primeras llamadas a una API y vemos cómo lo podemos gestionar.
 
 ## Custom Hooks y React Context
+
 {{< youtube id="2qgs7buSnHQ" >}}
 {{< subscribe-to-youtube >}}
 
@@ -38,6 +41,7 @@ También vemos más hooks, como `useEffect` para ejecutar código cada vez que n
 Además conocemos **React Context, una funcionalidad de la biblioteca que nos permite compartir información entre componentes sin que le lleguen por las props.** Esto, además, nos permitirá crear una especie de estado global. Hablamos de las buenas prácticas sobre esto y cómo podemos conseguirlo.
 
 ## Lazy Load, Suspense y Paginación
+
 {{< youtube id="VcxXipZg1-0" >}}
 {{< subscribe-to-youtube >}}
 
@@ -48,16 +52,18 @@ Para hacerlo descubrimos `React.lazy`, que nos permite cargar dinámicamente nue
 Además, **añadimos paginación** a nuestra aplicación, para poder ver más gifs.
 
 ## CSS Grid, Infinite Scroll y Testing
+
 {{< youtube id="oCHdFiCgOSE" >}}
 {{< subscribe-to-youtube >}}
 
-Cuando hicmos la paginación, vimos que no se estaban añadiendo correctamente los resultados. Así que en esta clase **mejoramos el layout de nuestra app utilizando **CSS Grid**** y vemos cómo podríamos hacer un diseño `masonry` (por ahora **sólo con Firefox Nightly pero... es un momento WOW!** 🤩).
+Cuando hicmos la paginación, vimos que no se estaban añadiendo correctamente los resultados. Así que en esta clase **mejoramos el layout de nuestra app utilizando **CSS Grid\***\* y vemos cómo podríamos hacer un diseño `masonry` (por ahora **sólo con Firefox Nightly pero... es un momento WOW!\*\* 🤩).
 
 Además, conseguimos **reusar el hook `useNearScreen` para añadirle Infinite Scroll** a nuestra aplicación y vemos los problemas que nos podemos encontrar y cómo solucionarlo con `useCallback` y usando la función `debounce`.
 
 Finalmente, empezaremos a ver algo de testing con `Jest` y `@testing-library/react`. Además de algún test muy básico, también veremos cómo podemos probar **componentes que se cargan de forma asíncrona.**
 
 ## React.memo, mejora el rendimiento de la app y Deploy con Vercel
+
 {{< youtube id="Wo7_OVtu1ls" >}}
 {{< subscribe-to-youtube >}}
 
@@ -66,6 +72,7 @@ Ahora es el momento de **optimizar nuestra aplicación**. Para ello, aprenderemo
 Finalmente, haremos un **deploy desde la terminal gracias a los servicios gratuitos de Vercel**, que nos ofrecerá SSL y una URL para compartir con nuestros colegas.
 
 ## SEO con React y Deploy Integrado con GitHub
+
 {{< youtube id="b-pwpHaYOTI" >}}
 {{< subscribe-to-youtube >}}
 
@@ -74,6 +81,7 @@ En esta clase vamos a preparar la app para que los crawlers, como el de Google, 
 Además, también **vamos a preparar nuestro repositorio para tener Continuous Deployment.** De forma que cada vez que hagamos un merge a master con cambios de código, tengamos una nueva versión desplegada en Internet.
 
 ## useReducer y testing de React Hooks
+
 {{< youtube id="Wjy_nlYXTik" >}}
 {{< subscribe-to-youtube >}}
 
@@ -82,6 +90,7 @@ Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en produ
 Además, viendo que esto de los hooks se va complicando, veremos cómo podemos hacer testing de los **Custom Hooks** que vamos creando gracias a la librería **React Hooks Testing Library**.
 
 ## Inicio de sesión y gestión de favoritos del usuario
+
 {{< youtube id="VT5S9Y49SYs" >}}
 {{< subscribe-to-youtube >}}
 
@@ -98,7 +107,7 @@ En esta clase vamos a ver cómo podemos usar **Formik** para gestionar nuestros 
 
 ## CSS en JS y Styled Components con Emotion
 
-Y la última clase, donde veremos cómo podemos añadir **CSS en JS** en nuestra aplicación gracias a **Emotion**. Veremos los dos sabores: *CSS-en-JS clásico* y uno basado en *styled components*:
+Y la última clase, donde veremos cómo podemos añadir **CSS en JS** en nuestra aplicación gracias a **Emotion**. Veremos los dos sabores: _CSS-en-JS clásico_ y uno basado en _styled components_:
 
 {{< youtube id="DjVGdUM1dHQ" >}}
 {{< subscribe-to-youtube >}}

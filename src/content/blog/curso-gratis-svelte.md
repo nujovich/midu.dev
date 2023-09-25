@@ -1,7 +1,7 @@
 ---
 title: Curso de Svelte Gratis y Desde Cero 📚
-date: '2021-02-08'
-image: '/images/og/curso-gratis-svelte.jpg'
+date: "2021-02-08"
+image: "/images/og/curso-gratis-svelte.jpg"
 description: Aprende Svelte desde cero, el framework más nuevo del mundo del frontend que ofrece una nueva formación de crear interfaces de usuario
 toc: true
 tags: svelte
@@ -18,7 +18,7 @@ Descubre **qué es el framework Svelte JS**, el framework con la **mejor tendenc
 {{< youtube id="Xsxm8_BI63s" >}}
 {{< subscribe-to-youtube >}}
 
-En la primera clase descubrimos **qué es Svelte JS**, qué ofrece este framework JavaScript, en qué se diferencia de *React, Angular* y *Vue* además de ver su sintaxis. El framework con mejor **tendencia este 2021**. 🔥
+En la primera clase descubrimos **qué es Svelte JS**, qué ofrece este framework JavaScript, en qué se diferencia de _React, Angular_ y _Vue_ además de ver su sintaxis. El framework con mejor **tendencia este 2021**. 🔥
 
 ## Cómo crear un NUEVO PROYECTO con Svelte 3 desde cero 🚀
 
@@ -48,7 +48,7 @@ En esta clase vamos a entender qué son las **declaraciones y sentencias reactiv
 
 Vamos a aprender a utilizar **el renderizado condicional en Svelte**. De esta forma, podremos mostrar al usuario diferente contenido dependiendo del estado y las props de nuestros componentes.
 
-## APRENDE a Renderizar LISTAS y ARRAYS 
+## APRENDE a Renderizar LISTAS y ARRAYS
 
 {{< youtube id="93CL7O4hNWU" >}}
 {{< subscribe-to-youtube >}}

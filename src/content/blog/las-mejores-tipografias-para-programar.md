@@ -1,8 +1,8 @@
 ---
 title: Las 5 mejores tipografías para programar
-date: '2020-07-24'
+date: "2020-07-24"
 description: Elegir la mejor tipografía para tu código tiene una gran importancia para ser más productivo y trabajar de una forma más cómoda.
-image: '/images/og/5-tipografias-programar.png'
+image: "/images/og/5-tipografias-programar.png"
 
 toc: true
 tags: vscode
@@ -50,7 +50,6 @@ Un clásico que nos ha acompañado durante mucho tiempo. **Basada en Fira Mono d
 
 </div>
 
-
 ## JetBrains Mono
 
 Si la gente de **JetBrains** tiene experiencia creando editores para programar... pues es normal que le salga un tipo de letra tan fantástica. El único "pero" es que por su página de presentación es que pareciera que no han tenido en cuenta el desarrollo web pero lo cierto es que encaja perfectamente.
@@ -79,7 +78,7 @@ La tipografía ha sido muy cuidada para ser equilibrada y ofrecer mayor altura a
 
 ## Conclusiones
 
-Lo cierto es que **elegir la mejor fuente para programar es algo muy subjetivo.** Hay gente que ni siquiera les importa y serían capaces de desarrollar usando la *Time News Roman* si hiciese falta.
+Lo cierto es que **elegir la mejor fuente para programar es algo muy subjetivo.** Hay gente que ni siquiera les importa y serían capaces de desarrollar usando la _Time News Roman_ si hiciese falta.
 
 Pero el caso es que teniendo en cuenta que muchas veces estamos, literalmente, pegados delante del editor de código... **creo que por poco que podamos mejorar nuestra vida, poniendo las cosas a nuestro gusto, nos puede ayudar a ser más productivos** y/o no cansar tanto la vista.
 

@@ -1,13 +1,13 @@
 ---
 title: No todo es un objeto en JavaScript
-date: '2022-07-22'
+date: "2022-07-22"
 description: Existe la errónea creencia que en JavaScript todo es un objeto o hereda de Object. Te explico por qué.
 topic: javascript
 toc: true
 tags: javascript
 ---
 
-Decir que en JavaScript *"todo es un objeto"* es incorrecto... No *"todo hereda de Object"* en el lenguaje, aunque lo parezca. No sé de dónde salió esa idea pero... es un error pensar esto.
+Decir que en JavaScript _"todo es un objeto"_ es incorrecto... No _"todo hereda de Object"_ en el lenguaje, aunque lo parezca. No sé de dónde salió esa idea pero... es un error pensar esto.
 
 ## Tipos de datos en JavaScript
 
@@ -22,7 +22,7 @@ Todo lo que no es un primitivo, es un objeto. No sólo el propio `Object`. Tambi
 
 Las `Function` también son objetos. Con la particularidad que pueden ser invocados (ejecutados).
 
-## `typeof` para salir *casi* de dudas
+## `typeof` para salir _casi_ de dudas
 
 Para saber el tipo de dato en JavaScript podemos usar el operador `typeof`. De hecho, **este operador es el que justamente viene a desmentir que todo sea un objeto** aunque tiene algunas particularidades que luego comentaremos.
 
@@ -45,10 +45,10 @@ typeof /abc/; // object
 
 Como podemos ver, los tipos primitivos indican su tipo esperado... excepto `null`. En este caso, el tipo es `object`. **Esto es por un bug histórico en el lenguaje** que no se ha solucionado para no romper la retro compatibilidad con código ya existente. Lo correcto sería que el `typeof` diese `null`, ya que [se trata de un tipo primitivo, tal y como indica la especificación.](https://tc39.es/ecma262/#sec-ecmascript-overview).
 
-Existe otro caso especial. Las funciones. Tienen su propio `typeof`, ya que son un caso especial de `object` ya que son *llamables* (ejecutables).
+Existe otro caso especial. Las funciones. Tienen su propio `typeof`, ya que son un caso especial de `object` ya que son _llamables_ (ejecutables).
 
 ```javascript
-typeof function () {} // function
+typeof function () {}; // function
 ```
 
 > null por un error histórico tiene como typeof object. Pero no es que sea un object ni que herede de él. No se arregla el bug para evitar problemas de retrocompatibilidad. Es lo que tiene la web.
@@ -60,48 +60,55 @@ typeof function () {} // function
 Por ejemplo, puedes acceder a la longitud de un objeto o transformar un número en un string con decimales:
 
 ```javascript
-"Esto es un primitivo".length // 20
-"Esto también".toUpperCase() // 'ESTO TAMBIÉN'
+"Esto es un primitivo".length; // 20
+"Esto también"
+  .toUpperCase()(
+    // 'ESTO TAMBIÉN'
 
-(2).toString() // '2'
-(2).toFixed(2) // '2.00'
+    2
+  )
+  .toString()(
+    // '2'
+    2
+  )
+  .toFixed(2); // '2.00'
 
-true.toString() // 'true'
-true.valueOf() // true
+true.toString(); // 'true'
+true.valueOf(); // true
 ```
 
-Lo que ocurre es que JavaScript envuelve el tipo primitivo automáticamente. Aunque en la especificación no habla de un término en concreto, se le conoce como *boxing* y sería, **según la especificación**, una [forma de coerción implicita para transformar el dato primitivo en objeto al vuelo](https://tc39.es/ecma262/#sec-requireobjectcoercible).
+Lo que ocurre es que JavaScript envuelve el tipo primitivo automáticamente. Aunque en la especificación no habla de un término en concreto, se le conoce como _boxing_ y sería, **según la especificación**, una [forma de coerción implicita para transformar el dato primitivo en objeto al vuelo](https://tc39.es/ecma262/#sec-requireobjectcoercible).
 
 > Aunque creas que la coerción sólo es para transformar de un tipo a otro, grandes autores como Kyle Simpson consideran que este "boxing" también sería una coerción al ser una transformación automáticamente del lenguaje.
 
 Así que la confusión **viene por pensar que el primitivo de string es lo mismo que la instancia de usar el objeto String** que nos da automáticamente JavaScript para facilitarnos la vida.
 
 ```javascript
-const n = 2
-typeof n // number
-n instanceof Number // false
+const n = 2;
+typeof n; // number
+n instanceof Number; // false
 
-const n2 = new Number(2)
-typeof n2 // number
-n2 instanceof Number // true
+const n2 = new Number(2);
+typeof n2; // number
+n2 instanceof Number; // true
 
-n === n2 // false
+n === n2; // false
 ```
 
 Y no lo es. No son iguales, ni son del mismo tipo. Y, claro, el primero no hereda de `object` .
 
 ```javascript
-"hola" === new String("hola") // false
-2 === new Number(2) // false
-true === new Boolean(true) // false
+"hola" === new String("hola"); // false
+2 === new Number(2); // false
+true === new Boolean(true); // false
 ```
 
 Ojo. No confundas usar el `new Boolean(true)` con simplemente usar `Boolean(true)`. El primero crea una instancia del objeto Boolean y el segundo sólo hace una conversión del parámetro al tipo primitivo `boolean`.
 
 ```javascript
-true === Boolean(true) // true
-true === Boolean(1) // true
-true === Boolean(true) // true
+true === Boolean(true); // true
+true === Boolean(1); // true
+true === Boolean(true); // true
 ```
 
 **Los objetos son una parte MUY importante en JavaScript pero eso no significa que TODO sea un objeto.**

@@ -1,7 +1,7 @@
 ---
 title: Introducción a Svelte, un nuevo framework para tu frontend
-date: '2019-08-31'
-image: '/images/svelte-logo.png'
+date: "2019-08-31"
+image: "/images/svelte-logo.png"
 description: Svelte es un nuevo framework que tiene como objetivo simplificar al máximo la creación de aplicaciones web reactivas escribiendo el mínimo número de líneas posible.
 
 toc: true
@@ -26,7 +26,7 @@ No sólo la necesidad de compilar es la diferencia. **También la total ausencia
 
 {{< img align="center" src="/images/rethinking-best-practices.jpg" alt="Pete Hunt en la JSConf 2013 hablando por qué decidieron añadir el Virtual DOM en React. El VDOM simplemente evita hacer trabajo innecesario en el DOM." >}}
 
-Entonces, **si es algo bueno, ¿por qué Svelte no lo usa?** Porque no es gratis. El diffing que realiza el VDOM tiene su coste, y peor será cuanto más compleja sea nuestra app. ¿Eso quiere decir que Svelte es más lento que React y renderiza elementos de forma innecesaria? 
+Entonces, **si es algo bueno, ¿por qué Svelte no lo usa?** Porque no es gratis. El diffing que realiza el VDOM tiene su coste, y peor será cuanto más compleja sea nuestra app. ¿Eso quiere decir que Svelte es más lento que React y renderiza elementos de forma innecesaria?
 
 Nada de eso. Como Svelte es un compilador, lo que hace, es evitar el uso del Virtual DOM y aprovechándose del paso de compilación, para **envolver los cambios de estado y propiedades en métodos que, de forma quirúrgica, podrán actualizar el DOM.**
 
@@ -38,7 +38,7 @@ Entonces, **¿cómo escribiríamos un Hola Mundo con este framework?**
 
 ```html
 <script>
-  let name = "World"
+  let name = "World";
 </script>
 
 <h1>Hello {name}!</h1>
@@ -47,12 +47,12 @@ Entonces, **¿cómo escribiríamos un Hola Mundo con este framework?**
 Con esto ya podemos ver las primeras diferencias con otras alternativas como React. De hecho, vamos a añadir un Hola Mundo, lo más parecido posible, en React para que veamos algunas diferencias.
 
 ```javascript
-import React from 'react'
+import React from "react";
 
 export default () => {
-  let name = "World"
-  return <h1>Hello {name}!</h1>
-}
+  let name = "World";
+  return <h1>Hello {name}!</h1>;
+};
 ```
 
 **Primero; nada de importar la librería.** Al ser compilado, Svelte lo hará por nosotros. **Segundo, más declarativo** al no tener que indicarle que queremos exportar ese componente ni el marcado que queremos renderizar. Y, **tercero, separación de conceptos.** El marcado y el comportamiento e inicialización de datos están separados.
@@ -63,7 +63,7 @@ Ahora, si vieramos este Hola Mundo, veríamos que nos queda un poco soso en cuan
 
 ```html
 <script>
-  let name = 'world';
+  let name = "world";
 </script>
 
 <h1>Hello {name}!</h1>
@@ -78,6 +78,7 @@ Ahora, si vieramos este Hola Mundo, veríamos que nos queda un poco soso en cuan
 ```
 
 Aquí puedes ver el código funcionando:
+
 <iframe loading="lazy" src="https://codesandbox.io/embed/trusting-germain-2to2d?fontsize=14&module=%2FApp.svelte" title="trusting-germain-2to2d" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ## ¿Y qué pasa con el estado?
@@ -86,24 +87,25 @@ Aquí puedes ver el código funcionando:
 
 ```html
 <script>
-  let name = 'world';
+  let name = "world";
   // a los 2 segundos, queremos que name pase a ser "frontender"
-	setTimeout(function () {
-		name = 'frontender'
-	}, 2000)
+  setTimeout(function () {
+    name = "frontender";
+  }, 2000);
 </script>
 
 <h1>Hello {name}!</h1>
 
 <style>
-	h1 {
-		font-weight: 100;
-		text-transform: uppercase;
-	}
+  h1 {
+    font-weight: 100;
+    text-transform: uppercase;
+  }
 </style>
 ```
 
-Lo que estamos haciendo es que, a los dos segundos, queremos cambiar el valor de `name` de forma que pase de `world` a `frontender`. **¿Lo hará? Pues lo cierto es que sí.** ¿Pero cómo? Pues Svelte, al hacer la compilación, determinará que `name` es un estado y que, al reasignarle un valor, debe hacer un re-renderizado de nuestro componente. 
+Lo que estamos haciendo es que, a los dos segundos, queremos cambiar el valor de `name` de forma que pase de `world` a `frontender`. **¿Lo hará? Pues lo cierto es que sí.** ¿Pero cómo? Pues Svelte, al hacer la compilación, determinará que `name` es un estado y que, al reasignarle un valor, debe hacer un re-renderizado de nuestro componente.
 
 ## Conclusiones
+
 Esto sólo es una pequeña pincelada sobre lo que nos ofrece Svelte. Desde luego, tiene un enfoque radicalmente distinto a lo que podemos estar acostumbrados con soluciones como React. Es cierto que no tiene la tracción que otras soluciones pero, desde luego, quién sabe si esto es un camino que en el futuro usen más y más bibliotecas. Por ahora, yo me he quedado con ganas de explorar más posibilidades de este framework así que, estáte atento, porque **seguro que sigo haciendo contenido sobre ello. :)**

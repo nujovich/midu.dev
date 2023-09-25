@@ -1,7 +1,7 @@
 ---
 title: Algolia + Firebase. ¡La extensión perfecta para hacer búsquedas en Firestore!
-date: '2021-07-05'
-description: Aprende a integrar la base de datos Firestore de Google Firebase con la búsqueda de Algolia de forma fácil y rápida 
+date: "2021-07-05"
+description: Aprende a integrar la base de datos Firestore de Google Firebase con la búsqueda de Algolia de forma fácil y rápida
 topic: firebase
 toc: true
 tags: firebase
@@ -31,22 +31,23 @@ Esta función **se asegurará de sincronizar el índice de Algolia con la nueva 
 
 Antes de empezar, ten en cuenta que necesitarás lo siguiente:
 
-- Una cuenta de *Algolia* (puede ser gratuita) con un índice creado.
-- Una cuenta y proyecto de *Firebase* (con el plan Braze activado)
-- Una cuenta en *Google Cloud Platform*
+- Una cuenta de _Algolia_ (puede ser gratuita) con un índice creado.
+- Una cuenta y proyecto de _Firebase_ (con el plan Braze activado)
+- Una cuenta en _Google Cloud Platform_
 
-Ahora vamos al catálogo de extensiones de **Firebase** y le damos a [*Search with Algolia*](https://firebase.google.com/products/extensions/firestore-algolia-search).
+Ahora vamos al catálogo de extensiones de **Firebase** y le damos a [_Search with Algolia_](https://firebase.google.com/products/extensions/firestore-algolia-search).
 
 1. `Collection Path`. La colección de tu base de datos en Firestore.
 2. `Fields`. Los campos que quieres enviar al índice de Algolia.
 3. `Algolia Application ID`. La ID de tu aplicación en Algolia (la encuentras en tu sección de API Key).
 4. `Algolia Index Name`. El nombre del índice de [Algolia](https://utm.io/udih1) que has debido crear previamente.
-5. `Algolia API Key`. La API Key. Lo recomendable es que crees una *API Key* especial para este caso. **NO uses la API Key de Admin.**
-6. `Location`. La región donde quieres desplegar la *Cloud Function*. Lo ideal sería que fuese lo más cerca posible de la región que has seleccionado para tu índice.
+5. `Algolia API Key`. La API Key. Lo recomendable es que crees una _API Key_ especial para este caso. **NO uses la API Key de Admin.**
+6. `Location`. La región donde quieres desplegar la _Cloud Function_. Lo ideal sería que fuese lo más cerca posible de la región que has seleccionado para tu índice.
 
 Una vez hecho esto... **ten en cuenta que los documentos que ya tenías en la colección no serán enviados al índice de [Algolia](https://utm.io/udih1).** En este caso tienes dos opciones:
-- Ejecutar manualmente la *Cloud Function* para que envíe todos los documentos que ya están en la colección.
-- Modificar todos los documentos para que la *Cloud Function* se ejecute y los envié.
+
+- Ejecutar manualmente la _Cloud Function_ para que envíe todos los documentos que ya están en la colección.
+- Modificar todos los documentos para que la _Cloud Function_ se ejecute y los envié.
 
 Obviamente lo ideal sería tener la extensión activada antes de haber empezado a guardar documentos en la colección... Pero al menos tienes dos opciones en el caso que eso ya no sea posible. :)
 

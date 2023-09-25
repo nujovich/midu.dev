@@ -1,6 +1,6 @@
 ---
 title: Malas prácticas en JavaScript
-date: '2022-09-11'
+date: "2022-09-11"
 description: Se habla mucho de las buenas prácticas en programación pero... ¿qué pasa con lo que debes evitar?
 topic: javascript
 tags: javascript
@@ -18,12 +18,12 @@ Aunque el resultado es el mismo, el segundo es más corto y más fácilmente rec
 
 ```javascript
 // ❌
-const object = new Object()
-const array = new Array()
+const object = new Object();
+const array = new Array();
 
 // ✅
-const object = {}
-const array = [] 
+const object = {};
+const array = [];
 ```
 
 ## Usar `var` en vez de `let` y `const`
@@ -31,6 +31,7 @@ const array = []
 NO uses var en pleno 2022...
 
 Hoy en día deberías usar sólo `let` y `const`:
+
 - El ámbito está más claro (entre llaves)
 - No crea objetos globales.
 - Da error si los redeclaras.
@@ -39,18 +40,18 @@ La única excusa es que todavía soportas IE11 y no puedes transformar tu códig
 
 ```javascript
 // ❌ Usando var
-var name = 'Miguel'
-if (name === 'Miguel') {
-  var name = 'Midu'
+var name = "Miguel";
+if (name === "Miguel") {
+  var name = "Midu";
 }
-console.log(name) // 'Midu'
+console.log(name); // 'Midu'
 
 // ✅ Usando let y const
-const name = 'Miguel'
-if (name === 'Miguel') {
-  let name = 'Midu'
+const name = "Miguel";
+if (name === "Miguel") {
+  let name = "Midu";
 }
-console.log(name) // 'Miguel'
+console.log(name); // 'Miguel'
 ```
 
 ## Usar y abusar de las funciones impuras
@@ -62,30 +63,31 @@ Son mucho más difíciles de entender, de hacer tests y de depurar.
 Evítalas siempre que puedas:
 
 ```javascript
-const STOP_WORDS = ['a', 'and', 'the', 'or']
-let inputSearch = 'The new iPhone or a new clone'
+const STOP_WORDS = ["a", "and", "the", "or"];
+let inputSearch = "The new iPhone or a new clone";
 
 // ❌ slugify es una función impura
-const slugify = () => inputSearch
-    .split(' ')
-  	.map(n => n.toLowerCase())
-    .filter(n => !STOP_WORDS.includes(n))
-    .join('-')
+const slugify = () =>
+  inputSearch
+    .split(" ")
+    .map((n) => n.toLowerCase())
+    .filter((n) => !STOP_WORDS.includes(n))
+    .join("-");
 
-slugify()
+slugify();
 
 // ✅ Función pura, pasando parámetros
-const slugify = ({input, stopWords }) => {
+const slugify = ({ input, stopWords }) => {
   return input
-    .split(' ')
-  	.map(n => n.toLowerCase())
-    .filter(n => !stopWords.includes(n))
-    .join('-')
-}
+    .split(" ")
+    .map((n) => n.toLowerCase())
+    .filter((n) => !stopWords.includes(n))
+    .join("-");
+};
 
 // Ahora es más extensible, fácil de hacer tests
 // y de reutilizares en otros proyectos
-slugify({ input: 'The new iPhone or a new clone', stopWords: STOP_WORDS })
+slugify({ input: "The new iPhone or a new clone", stopWords: STOP_WORDS });
 ```
 
 ## Usar los comentarios para explicar el código
@@ -118,13 +120,13 @@ Son mucho más entendibles y justamente esa es su función.
 Ahorrarte unos bytes no justifica la perdida de comprensión por otras personas.
 
 ```javascript
-const number = 0
-const string = '7'
+const number = 0;
+const string = "7";
 
 // ❌
 !!number; // false
 +string; // 7
-number + ''; // '0'
+number + ""; // '0'
 
 // ✅
 Boolean(number); // false
@@ -143,13 +145,13 @@ Si según una condición ya estás determinando el booleano, devuélvelo directa
 ```javascript
 // ❌ Innecesario if
 if (num > 0 && num % 2 === 0) {
-  return true
+  return true;
 } else {
-  return false
+  return false;
 }
 
 // ✅ Devolvemos directamente el booleano
-return num > 0 && num % 2 === 0
+return num > 0 && num % 2 === 0;
 ```
 
 ## No utilices `==` para comparar valores
@@ -162,21 +164,21 @@ Mejor usar siempre la igualdad estricta `===` para comparar valor y tipo.
 
 ```javascript
 // ❌
-const number = 0
-const string = '0'
-const bool = false
-const nil = null
+const number = 0;
+const string = "0";
+const bool = false;
+const nil = null;
 
-number == bool // true
-string == number // true
-nil == string // false OJO!
-number == nil // false OJO!
+number == bool; // true
+string == number; // true
+nil == string; // false OJO!
+number == nil; // false OJO!
 
 // ✅
-number === bool // false
-string === number // false
-nil === string // false
-number === nil // false
+number === bool; // false
+string === number; // false
+nil === string; // false
+number === nil; // false
 ```
 
 ## Magic Strings y Magic Numbers
@@ -212,27 +214,27 @@ Si tu promesa puede hacer lanzar una excepción, algo muy probable, es posible q
 Recuerda manejarlas para evitarlo:
 
 ```javascript
-async function downloadImage(img = 'panda.png') {
-  let response = await fetch(img)
+async function downloadImage(img = "panda.png") {
+  let response = await fetch(img);
   if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`)
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
-  return await response.blob()
+  return await response.blob();
 }
 
 // ❌
-const img = await downloadImage()
+const img = await downloadImage();
 
 // ✅
-let img
+let img;
 try {
-  img = await downloadImage()
+  img = await downloadImage();
 } catch {
-  img = DEFAULT_IMG
+  img = DEFAULT_IMG;
 }
 
 // ✅
-const img = await downloadImage().catch(() => DEFAULT_IMG)
+const img = await downloadImage().catch(() => DEFAULT_IMG);
 ```
 
 Si quieres **Aprender JavaScript completamente gratis**, te recomiendo que te apuntes a [https://aprendejavascript.dev/](https://aprendejavascript.dev/).

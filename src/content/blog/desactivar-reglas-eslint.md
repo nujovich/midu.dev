@@ -1,6 +1,6 @@
 ---
 title: Desactivar reglas de eslint
-date: '2023-01-29'
+date: "2023-01-29"
 description: Aprende a desactivar reglas de eslint en tu código a diferentes niveles
 tags: javascript
 ---
@@ -13,20 +13,20 @@ Puedes desactivar una regla para una sola línea agregando un comentario en esa 
 
 ```javascript
 // eslint-disable-next-line no-alert
-alert('foo');
+alert("foo");
 ```
 
 También puedes desactivar una regla para una sola línea agregando un comentario en la misma línea.
 
 ```javascript
-alert('foo'); // eslint-disable-line no-alert
+alert("foo"); // eslint-disable-line no-alert
 ```
 
 Si no indicas el nombre de la regla, se desactivará la regla para esa línea.
 
 ```javascript
 // eslint-disable-next-line
-alert('foo');
+alert("foo");
 ```
 
 ## 2. Desactivar eslint para un bloque
@@ -35,8 +35,8 @@ Puedes desactivar una regla para un bloque de código agregando un comentario en
 
 ```javascript
 /* eslint-disable no-alert */
-alert('foo');
-alert('bar');
+alert("foo");
+alert("bar");
 /* eslint-enable no-alert */
 ```
 
@@ -44,8 +44,8 @@ Si no indicas la regla, desactivarás todas las reglas para ese bloque.
 
 ```javascript
 /* eslint-disable */
-alert('foo');
-alert('bar');
+alert("foo");
+alert("bar");
 /* eslint-enable */
 ```
 
@@ -55,14 +55,14 @@ Puedes desactivar una regla para un archivo agregando un comentario en la primer
 
 ```javascript
 /* eslint-disable no-alert */
-alert('foo');
+alert("foo");
 ```
 
 Si no indicas la regla, desactivarás completamente el linter para ese archivo.
 
 ```javascript
 /* eslint-disable */
-alert('foo');
+alert("foo");
 ```
 
 ## 4. Desactivar una regla para todo el proyecto

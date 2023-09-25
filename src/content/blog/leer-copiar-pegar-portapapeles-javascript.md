@@ -1,13 +1,13 @@
 ---
 title: Cómo leer, copiar y pegar del portapapeles en JavaScript
-date: '2023-01-30'
+date: "2023-01-30"
 description: En este artículo aprenderás a usar el portapapeles en JavaScript con ejemplos de código
 tags: javascript
 ---
 
 La API del portapapeles disponible en el objeto `navigator` te permite leer y escribir datos del portapapeles del usuario.
 
-Ten en cuenta que para usar la API del portapapeles, **el usuario debe dar permiso a la página web o aplicación para acceder al portapapeles.** Este permiso debe obtenerse de la API de permisos usando los permisos *"clipboard-read"* y/o *"clipboard-write"*.
+Ten en cuenta que para usar la API del portapapeles, **el usuario debe dar permiso a la página web o aplicación para acceder al portapapeles.** Este permiso debe obtenerse de la API de permisos usando los permisos _"clipboard-read"_ y/o _"clipboard-write"_.
 
 Esta API está diseñada para dejar de usar el objeto `document.execCommand()` que ya no está soportado en la mayoría de los navegadores.
 
@@ -18,23 +18,24 @@ Esta API está diseñada para dejar de usar el objeto `document.execCommand()` q
 Para leer del portapapeles, puedes usar el método `readText()` del objeto `navigator.clipboard`. Este método devuelve una promesa que resuelve con el texto del portapapeles.
 
 ```javascript
-navigator.clipboard.readText()
-  .then(text => {
-    console.log('Texto del portapapeles:', text)
+navigator.clipboard
+  .readText()
+  .then((text) => {
+    console.log("Texto del portapapeles:", text);
   })
-  .catch(err => {
-    console.error('Error al leer del portapapeles:', err)
-  })
+  .catch((err) => {
+    console.error("Error al leer del portapapeles:", err);
+  });
 ```
 
 También puedes usar `async/await` para leer del portapapeles:
 
 ```javascript
 try {
-  const text = await navigator.clipboard.readText()
-  console.log('Texto del portapapeles:', text)
+  const text = await navigator.clipboard.readText();
+  console.log("Texto del portapapeles:", text);
 } catch (err) {
-  console.error('Error al leer del portapapeles:', err)
+  console.error("Error al leer del portapapeles:", err);
 }
 ```
 
@@ -70,40 +71,42 @@ navigator.clipboard.read()
 Para escribir al portapapeles texto, puedes usar el método `writeText()` del objeto `navigator.clipboard`. Este método devuelve una promesa que resuelve cuando el texto se ha copiado al portapapeles.
 
 ```javascript
-navigator.clipboard.writeText('Hola mundo')
+navigator.clipboard
+  .writeText("Hola mundo")
   .then(() => {
-    console.log('Texto copiado al portapapeles')
+    console.log("Texto copiado al portapapeles");
   })
-  .catch(err => {
-    console.error('Error al copiar al portapapeles:', err)
-  })
+  .catch((err) => {
+    console.error("Error al copiar al portapapeles:", err);
+  });
 ```
 
 También puedes usar `async/await` para escribir al portapapeles:
 
 ```javascript
 try {
-  await navigator.clipboard.writeText('Hola mundo')
-  console.log('Texto copiado al portapapeles')
+  await navigator.clipboard.writeText("Hola mundo");
+  console.log("Texto copiado al portapapeles");
 } catch (err) {
-  console.error('Error al copiar al portapapeles:', err)
+  console.error("Error al copiar al portapapeles:", err);
 }
 ```
 
 Pero imagina que quieres copiar una imagen al portapapeles. En ese caso, puedes usar el método `write()` del objeto `navigator.clipboard` que devuelve una promesa que resuelve cuando los datos se han copiado al portapapeles.
 
 ```javascript
-const img = document.querySelector('img')
-const blob = await fetch(img.src).then(r => r.blob())
-const item = new ClipboardItem({ 'image/png': blob })
+const img = document.querySelector("img");
+const blob = await fetch(img.src).then((r) => r.blob());
+const item = new ClipboardItem({ "image/png": blob });
 
-navigator.clipboard.write([item])
+navigator.clipboard
+  .write([item])
   .then(() => {
-    console.log('Imagen copiada al portapapeles')
+    console.log("Imagen copiada al portapapeles");
   })
-  .catch(err => {
-    console.error('Error al copiar al portapapeles:', err)
-  })
+  .catch((err) => {
+    console.error("Error al copiar al portapapeles:", err);
+  });
 ```
 
 Como ves, en el ejemplo usamos la clase `ClipboardItem` para crear un objeto que contiene los datos que queremos copiar al portapapeles. Este objeto se pasa al método `write()` del objeto `navigator.clipboard`.

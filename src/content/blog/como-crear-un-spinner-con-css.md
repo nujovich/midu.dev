@@ -1,10 +1,10 @@
 ---
 title: "Cómo crear un spinner loader con CSS 🌀"
-date: '2021-04-15'
+date: "2021-04-15"
 description: >-
   Aprende a crear un donut spinner 🍩 sólo usando CSS y en menos de un minuto. Perfecto para frontenders impacientes ⏲️.
 toc: true
-tags :  css
+tags: css
 image: https://img.youtube.com/vi/8nm9WPptL0c/maxresdefault.jpg
 ---
 
@@ -16,7 +16,8 @@ Vamos a ver **cómo puedes crear el tuyo con HTML y CSS** en muy pocas líneas d
 {{< subscribe-to-youtube >}}
 
 ## ¿Cómo queda el spinner?
-Si quieres ver el resultado final, te dejo aquí un Codepen para que veas cómo quedaría nuestro spinner: 
+
+Si quieres ver el resultado final, te dejo aquí un Codepen para que veas cómo quedaría nuestro spinner:
 
 <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="result" data-user="miduga" data-slug-hash="RwGxpyJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Spinner">
   <span>See the Pen <a href="https://codepen.io/miduga/pen/RwGxpyJ">
@@ -30,7 +31,7 @@ Si quieres ver el resultado final, te dejo aquí un Codepen para que veas cómo 
 Lo primero que tenemos que hacer es el HTML de nuestro spinner:
 
 ```html
-<div class='spinner'></div>
+<div class="spinner"></div>
 ```
 
 Y a partir de aquí estilamos esta clase con CSS. ¡Vamos por partes!
@@ -39,7 +40,7 @@ Primero le añadimos un borde, con **4 píxeles de borde** y lo hacemos con un c
 
 ```css
 .spinner {
-  border: 4px solid rgba(0, 0, 0, .1);
+  border: 4px solid rgba(0, 0, 0, 0.1);
   border-left-color: transparent;
   border-radius: 50%;
 }
@@ -49,7 +50,7 @@ Para las medidas, usamos una forma cuadrada con un **alto y ancho de 36px.**
 
 ```css
 .spinner {
-  border: 4px solid rgba(0, 0, 0, .1);
+  border: 4px solid rgba(0, 0, 0, 0.1);
   border-left-color: transparent;
   width: 36px;
   height: 36px;
@@ -62,11 +63,11 @@ Lo importante es que pongas que se tiene que hacer de forma `infinite`, para que
 
 ```css
 .spinner {
-  border: 4px solid rgba(0, 0, 0, .1);
+  border: 4px solid rgba(0, 0, 0, 0.1);
   border-left-color: transparent;
   width: 36px;
   height: 36px;
-  
+
   animation: spin 1s linear infinite;
 }
 ```

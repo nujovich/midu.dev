@@ -1,7 +1,7 @@
 ---
 title: Borra todos los directorios node_modules de tu disco y libera espacio
-date: '2019-08-07'
-image: '/images/disco-duro.jpg'
+date: "2019-08-07"
+image: "/images/disco-duro.jpg"
 description: Cómo borrar el contenido de las carpetas node_modules con las dependencias de tus proyectos para liberar espacio en tu disco
 toc: true
 tags: terminal
@@ -55,5 +55,3 @@ FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" rd /s /q "%d"
 Y con esto, **ya puedes limpiar algo tu disco duro.** En mi caso he conseguido rebajar... **¡20GB de espacio!** Aunque también es verdad que tengo un poco de síndrome de diógenes en ese sentido y tenía cientos de repositorios y proyectos en mi carpeta después de años usando el ordenador. **Quizás mi limpieza debería ir un poco más allá y empezar a eliminar proyectos que no toco desde hace meses. 😅**
 
 Fuente: [How to delete ALL node_modules folders on your machine and free up HD space!](https://dev.to/trilon/how-to-delete-all-nodemodules-folders-on-your-machine-43dh)
-
-

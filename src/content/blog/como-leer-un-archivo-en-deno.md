@@ -1,15 +1,15 @@
 ---
-title: 'Cómo leer el contenido de un archivo en Deno'
-date: '2022-12-21'
+title: "Cómo leer el contenido de un archivo en Deno"
+date: "2022-12-21"
 description: Aprende a leer el contenido de un archivo en Deno usando la función Deno.readTextFile y Deno.readFile
 toc: true
-tags :  deno
+tags: deno
 support: deno 1.29.1
 ---
 
 Leer el contenido de un archivo en Deno es una tarea muy simple gracias a la función `Deno.readTextFile`. Esta función toma una ruta de archivo y devuelve una promesa que se resuelve con el contenido del archivo como una cadena de texto.
 
-Como ves, a diferencia de *Node*, no necesitas importar ninguna biblioteca adicional para leer el contenido de un archivo en Deno. La función `Deno.readTextFile` está disponible desde el objeto global `Deno` y no necesitas importarla explícitamente.
+Como ves, a diferencia de _Node_, no necesitas importar ninguna biblioteca adicional para leer el contenido de un archivo en Deno. La función `Deno.readTextFile` está disponible desde el objeto global `Deno` y no necesitas importarla explícitamente.
 
 Acepta una ruta de archivo como argumento y devuelve una promesa que se resuelve con el contenido del archivo como una cadena de texto:
 
@@ -19,7 +19,7 @@ const fileContent = await Deno.readTextFile("ruta/al/archivo.txt");
 
 > **Nota**: `Deno.readTextFile` necesita el permiso de `allow-read` para funcionar. Puedes agregarlo a tu archivo `deno.json` o usar el parámetro `--allow-read` al ejecutar el script.
 
-La variable *fileContent* ahora contendrá el contenido del archivo como una cadena de texto.
+La variable _fileContent_ ahora contendrá el contenido del archivo como una cadena de texto.
 
 Es importante tener en cuenta que `Deno.readTextFile` **solo puede leer archivos de texto**. Si deseamos leer archivos de forma binaria, podemos utilizar la función `Deno.readFile` en su lugar. De hecho, `readTextFile` es solo una abstracción de `readFile` que convierte el contenido del archivo en una cadena de texto.
 

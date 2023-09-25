@@ -3,7 +3,7 @@ title: CURSO EXPRESS gratis de GraphQL, React Apollo y Apollo Server
 date: "2019-07-13"
 image: "/images/curso-express-graphql.png"
 description: "Aprender gratis sobre GraphQL. Una introducción en español sobre como conectarlo con React usando Apollo Client y crear tu propio servidor con Apollo Server."
-tags : graphql
+tags: graphql
 
 toc: true
 ---
@@ -57,7 +57,7 @@ Después, importas el cliente y creas una instancia pasándole la URL con el ser
 import ApolloClient from "apollo-boost";
 
 const client = new ApolloClient({
-  uri: "https://rickandmortyapi.com/graphql"
+  uri: "https://rickandmortyapi.com/graphql",
 });
 ```
 
@@ -95,7 +95,7 @@ const CharactersQuery = () => {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
 
-        return data.characters.results.map(character => (
+        return data.characters.results.map((character) => (
           <p>{character.name}</p>
         ));
       }}
@@ -199,25 +199,25 @@ const typeDefs = gql`
   }
 ```
 
-Ahora, tenemos que cambiar cómo resolvemos los datos para poder tener la información necesaria para esta query. 
+Ahora, tenemos que cambiar cómo resolvemos los datos para poder tener la información necesaria para esta query.
 
 ```javascript
 const resolvers = {
   Query: {
     // Esto resuelve el campo "characters" de la query
-    characters: () => fetchCharacters()
-  }
-}
+    characters: () => fetchCharacters(),
+  },
+};
 ```
 
 ¿Qué es lo que hace el método `fetchCharacters`? Pues hacer una petición a [la API Rest de Rick & Morty para poder recupera la información de todos los cáracteres.](https://rickandmortyapi.com/documentation/#rest)
 
 ```javascript
-// import fetch from 'node-fetch' 
+// import fetch from 'node-fetch'
 function fetchCharacters() {
-  return fetch('https://rickandmortyapi.com/api/character/')
-    .then(res => res.json())
-    .then(json => json.results)
+  return fetch("https://rickandmortyapi.com/api/character/")
+    .then((res) => res.json())
+    .then((json) => json.results);
 }
 ```
 

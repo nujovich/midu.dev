@@ -1,8 +1,8 @@
 ---
 title: "Curso de Rust para desarrolladores JavaScript"
-date: '2023-01-10'
+date: "2023-01-10"
 description: "Aprende Rust usando todos tus conocimientos que ya tienes de JavaScript"
-tags :  rust
+tags: rust
 toc: true
 ---
 
@@ -12,11 +12,11 @@ Este es un **curso de Rust pensado especialmente para personas con conocimientos
 
 ### ¿Qué es Rust?
 
-**Rust es un lenguaje de programación de propósito general** desarrollado originalmente por *Mozilla* en 2010 y ahora mantenido por la Fundación Rust. Al igual que *JavaScript* es **multiparadigma**, por lo que puedes usar programación funcional, imperativa o incluso orientada a objetos, entre otras.
+**Rust es un lenguaje de programación de propósito general** desarrollado originalmente por _Mozilla_ en 2010 y ahora mantenido por la Fundación Rust. Al igual que _JavaScript_ es **multiparadigma**, por lo que puedes usar programación funcional, imperativa o incluso orientada a objetos, entre otras.
 
 A diferencia de JavaScript, para poder ejecutar un programa en Rust, primero debes compilarlo. Esto es debido a que Rust es un lenguaje de programación **compilado**, mientras que JavaScript es un lenguaje de programación **interpretado** (aunque en realidad existe un paso de compilación interno a nivel de motor de JavaScript).
 
-En cuanto al **tipado de Rust es estático y fuerte**, todo lo contrario a *JavaScript* que **es dinámico y débil**. Esto significa que las variables se declaradan con un tipo de dato (o detecta automáticamente el tipo con inferencia) y que no se pueden cambiar de tipo de dato durante la ejecución del programa (esto es que su tipado es fuerte).
+En cuanto al **tipado de Rust es estático y fuerte**, todo lo contrario a _JavaScript_ que **es dinámico y débil**. Esto significa que las variables se declaradan con un tipo de dato (o detecta automáticamente el tipo con inferencia) y que no se pueden cambiar de tipo de dato durante la ejecución del programa (esto es que su tipado es fuerte).
 
 **Rust** ha sido diseñado para ser **seguro** y **rápido**, por lo que es un lenguaje de programación muy adecuado para el desarrollo de aplicaciones de alto rendimiento, como por ejemplo, servidores web, aplicaciones de escritorio, sistemas embebidos, etc. JavaScript, aunque también se puede usar para muchas de ellas, en realidad **fue diseñado para añadir interactividad a las webs.**
 
@@ -36,7 +36,7 @@ Si te encuentras en Linux o macOS, puedes instalar Rust con el siguiente comando
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-Al ejecutarlo, se descargará un *script* que instalará *rustup*. Para que te hagas una idea, *rustup* sería el equivalente a *nvm* para poder instalar y administrar diferentes versiones de *Node* en tu sistema.
+Al ejecutarlo, se descargará un _script_ que instalará _rustup_. Para que te hagas una idea, _rustup_ sería el equivalente a _nvm_ para poder instalar y administrar diferentes versiones de _Node_ en tu sistema.
 
 > Si lo prefieres, puedes **probar Rust sin instalarlo** con [este playground.](https://play.rust-lang.org/)
 
@@ -49,7 +49,7 @@ rustc 1.66.0 (69f9c33d7 2022-12-12)
 
 > Si te aparece que el comando no ha sido encontrado, seguramente la instalación no ha dejado correctamente el binario en el PATH. Prueba a cerrar la terminal y abrirla de nuevo, a veces eso lo soluciona. Si no, puedes añadir la ruta a mano con `export PATH="$PATH:$HOME/.cargo/bin"`.
 
-Como ves, en **Rust tenemos un compilador oficial** mientras que en *JavaScript* no tenemos (ya que son los entornos de ejecución de los navegadores, Node, Deno y similares que compilan y evalúan al vuelo nuestro código).
+Como ves, en **Rust tenemos un compilador oficial** mientras que en _JavaScript_ no tenemos (ya que son los entornos de ejecución de los navegadores, Node, Deno y similares que compilan y evalúan al vuelo nuestro código).
 
 ### Hola mundo en Rust
 
@@ -103,27 +103,28 @@ Así que es imposible que se te pueda olvidar esta regla.
 
 ### Mostrando mensajes en la consola con `println!`
 
-Mientras que en JavaScript usamos el mítico método `console.log`, en Rust usamos `println!`. El objetivo es similar pero la particularidad es que `println!` no es una función. Es un *macro*.
+Mientras que en JavaScript usamos el mítico método `console.log`, en Rust usamos `println!`. El objetivo es similar pero la particularidad es que `println!` no es una función. Es un _macro_.
 
-Aunque más adelante exploraremos este concepto, un *macro* no es nada más que una forma de generar código en tiempo de compilación. Como en JavaScript no tenemos compilación, tampoco existe este concepto, pero lo más parecido, si sabes algo de React, sería pensar en JSX. Tu escribes código JSX y React lo transforma en código JavaScript en un paso de compilación (con Babel, SWC o TypeScript):
+Aunque más adelante exploraremos este concepto, un _macro_ no es nada más que una forma de generar código en tiempo de compilación. Como en JavaScript no tenemos compilación, tampoco existe este concepto, pero lo más parecido, si sabes algo de React, sería pensar en JSX. Tu escribes código JSX y React lo transforma en código JavaScript en un paso de compilación (con Babel, SWC o TypeScript):
 
 ```jsx
-const App = () => <h1>Hello World</h1>
+const App = () => <h1>Hello World</h1>;
 
 // compila en:
 var _jsxRuntime = require("react/jsx-runtime");
-const App = () => /*#__PURE__*/(0, _jsxRuntime.jsx)("h1", {
-  children: "Hello World"
-});
+const App = () =>
+  /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+    children: "Hello World",
+  });
 ```
 
 En Rust, el compilador transforma el código que escribimos en código que puede ejecutar el sistema operativo. Por eso, cuando escribimos `println!`, el compilador genera el código necesario para mostrar el mensaje en la consola.
 
-Para diferenciar un *macro* de una función, sólo tienes que fijarte en la exclamación antes de los paréntesis.
+Para diferenciar un _macro_ de una función, sólo tienes que fijarte en la exclamación antes de los paréntesis.
 
 ### Cadenas de texto
 
-En *Rust*, las cadenas de texto se declaran entre comillas dobles `"`. Las comillas simples `'` se usan sólo para declarar caracteres por lo que no pueden usarlas para declarar cadenas de texto (algo que en JavaScript sí está permitido).
+En _Rust_, las cadenas de texto se declaran entre comillas dobles `"`. Las comillas simples `'` se usan sólo para declarar caracteres por lo que no pueden usarlas para declarar cadenas de texto (algo que en JavaScript sí está permitido).
 
 En Rust puedes escapar las comillas dobles con `\`:
 
@@ -133,19 +134,19 @@ fn main() {
 }
 ```
 
-Algo muy interesante de las cadenas de texto en *Rust* es que, igual que los template string de *JavaScript*, respeta los saltos de línea dentro de la cadena de texto.
+Algo muy interesante de las cadenas de texto en _Rust_ es que, igual que los template string de _JavaScript_, respeta los saltos de línea dentro de la cadena de texto.
 
 Prueba a compilar y ejecutar este código y fíjate en la salida:
 
 ```rust
 fn main() {
   println!("Hello
-  
+
     World");
 }
 ```
 
-Más adelante hablaremos más de las cadenas de texto en *Rust* porque vienen con un montón de diferencias con *JavaScript* que no se aprecian en la superficie...
+Más adelante hablaremos más de las cadenas de texto en _Rust_ porque vienen con un montón de diferencias con _JavaScript_ que no se aprecian en la superficie...
 
 ### Puntos y coma
 
@@ -153,7 +154,7 @@ Más adelante hablaremos más de las cadenas de texto en *Rust* porque vienen co
 
 ### Comentarios
 
-Como es tu primera vez escribiendo código en Rust, vamos a utilizar a lo largo del curso anotaciones para que puedas entender qué hace cada línea. Y, para ello, vamos a usar *comentarios* en el código.
+Como es tu primera vez escribiendo código en Rust, vamos a utilizar a lo largo del curso anotaciones para que puedas entender qué hace cada línea. Y, para ello, vamos a usar _comentarios_ en el código.
 
 Los comentarios son **muy similares a JavaScript**, son **anotaciones que no interfieren en la ejecución del programa** y podemos describir lo que hace nuestro código o dar un mejor contexto del mismo.
 
@@ -275,7 +276,7 @@ error: aborting due to previous error
 
 ### const
 
-En *Rust* también existen las constantes pero, de nuevo, su comportamiento es muy diferente al de JavaScript.
+En _Rust_ también existen las constantes pero, de nuevo, su comportamiento es muy diferente al de JavaScript.
 
 Cuando creas una constante con `const` en Rust estás creando un valor constante en tiempo de compilación. Esto significa que no hay forma de cambiar o mutar su valor en tiempo de ejecución (algo que sí es posible en JavaScript al, por ejemplo, añadir una propiedad a un objeto que creaste con `const`).
 
@@ -323,7 +324,7 @@ El número es 7
 
 ### Interpolación de variables
 
-En el código anterior has visto que hemos usado la interpolación de variables para mostrar el valor de la constante en la consola. En *Rust* la interpolación de variables se hace con llaves (`{}`) y dentro de ellas el nombre de la variable:
+En el código anterior has visto que hemos usado la interpolación de variables para mostrar el valor de la constante en la consola. En _Rust_ la interpolación de variables se hace con llaves (`{}`) y dentro de ellas el nombre de la variable:
 
 ```rust
 fn main() {
@@ -338,7 +339,7 @@ Si ejecutamos el código, veremos que la consola nos indica:
 Hola, midu
 ```
 
-También podemos hacer la interpolación dejando *placeholders* usando las llaves vacías (`{}`) y luego indicando el valor de la variable en el método `println!` como segundo argumento:
+También podemos hacer la interpolación dejando _placeholders_ usando las llaves vacías (`{}`) y luego indicando el valor de la variable en el método `println!` como segundo argumento:
 
 ```rust
 fn main() {
@@ -366,24 +367,24 @@ El número de la suerte de midu es 7
 
 ## Tipos de datos
 
-*Rust* es un lenguaje con tipado estático por lo que debe, en tiempo de compilación, el tipo de cualquier valor que uses en el código.
+_Rust_ es un lenguaje con tipado estático por lo que debe, en tiempo de compilación, el tipo de cualquier valor que uses en el código.
 
-Como hemos visto en ejemplos anteriores, a veces no es necesario indicar el tipo ya que Rust lo puede *inferir* gracias al valor que le estamos asignando. Pero en otros casos sí es necesario.
+Como hemos visto en ejemplos anteriores, a veces no es necesario indicar el tipo ya que Rust lo puede _inferir_ gracias al valor que le estamos asignando. Pero en otros casos sí es necesario.
 
 ### Tipos de datos primitivos
 
-Igual que en *JavaScript*, en Rust también tenemos **datos primitivos**. Se le llaman así porque estos datos son la construcción básica de los lenguajes de programación. Son **los tipos de datos más simples que existen y que no se pueden descomponer en otros más pequeños.**
+Igual que en _JavaScript_, en Rust también tenemos **datos primitivos**. Se le llaman así porque estos datos son la construcción básica de los lenguajes de programación. Son **los tipos de datos más simples que existen y que no se pueden descomponer en otros más pequeños.**
 
-Sin embargo, en Rust estos primitivos se dividen en dos grupos: los *escalares* y los *compuestos*.
+Sin embargo, en Rust estos primitivos se dividen en dos grupos: los _escalares_ y los _compuestos_.
 
 #### Tipos escalares
 
 En este grupo tienes todos los tipos que representan un único valor y Rust tiene cuatro:
 
-- *bool*: Para guardar un valor cierto o falso con *true* o *false* respectivamente.
-- *char*: Un carácter Unicode de 4 bytes envuelto en comillas simples.
-- *integers*: Un número entero (que puede ser de diferentes tamaños).
-- *float*: Un número decimal (que puede ser de diferentes tamaños).
+- _bool_: Para guardar un valor cierto o falso con _true_ o _false_ respectivamente.
+- _char_: Un carácter Unicode de 4 bytes envuelto en comillas simples.
+- _integers_: Un número entero (que puede ser de diferentes tamaños).
+- _float_: Un número decimal (que puede ser de diferentes tamaños).
 
 Antes de entrar a detallar cada uno, ya podemos ver algunas diferencias con JavaScript.
 
@@ -395,7 +396,7 @@ Tampoco hay rastro de los tipos `null` y `undefined` que existen en JavaScript. 
 
 ##### Booleanos
 
-Los booleanos son los valores `true` y `false` que representan la verdad y la falsedad. Ocupan un solo *byte* y en Rust se representan con el tipo `bool`:
+Los booleanos son los valores `true` y `false` que representan la verdad y la falsedad. Ocupan un solo _byte_ y en Rust se representan con el tipo `bool`:
 
 ```rust
 fn main() {
@@ -421,7 +422,7 @@ fn main() {
 
 ##### Caracteres
 
-Los caracteres son los valores que representan un carácter Unicode y ocupan 4 bytes. Se debe envolver con comillas simples.  En Rust se representan con el tipo `char`:
+Los caracteres son los valores que representan un carácter Unicode y ocupan 4 bytes. Se debe envolver con comillas simples. En Rust se representan con el tipo `char`:
 
 ```rust
 fn main() {
@@ -497,10 +498,10 @@ El siguiente código es válido en ambos lenguajes de programación:
 let avengers = ["Iron Man", "Thor", "Hulk", "Captain America"];
 ```
 
-Sin embargo hay dos diferencias clave entre los arrays de *JavaScript* y los arrays de *Rust*:
+Sin embargo hay dos diferencias clave entre los arrays de _JavaScript_ y los arrays de _Rust_:
 
-- En *JavaScript*, los Arrays son dinámicos, es decir, podemos cambiar su longitud en cualquier momento. En Rust los Arrays tienen un tamaño fijo y una vez creados no se pueden modificar.
-- En *JavaScript* los Arrays pueden contener elementos de diferentes tipos. En *Rust* los Arrays solo pueden contener elementos de un mismo tipo.
+- En _JavaScript_, los Arrays son dinámicos, es decir, podemos cambiar su longitud en cualquier momento. En Rust los Arrays tienen un tamaño fijo y una vez creados no se pueden modificar.
+- En _JavaScript_ los Arrays pueden contener elementos de diferentes tipos. En _Rust_ los Arrays solo pueden contener elementos de un mismo tipo.
 
 ```rust
 // ❌ este código es incorrecto
@@ -547,15 +548,15 @@ En JavaScript, la longitud de un Array se puede obtener usando la propiedad `len
 ```rust
 fn main() {
   let fav_movies = ["Avengers", "Iron Man", "Thor"];
-  println!("Tengo {} películas favoritas", fav_movies.len()); 
+  println!("Tengo {} películas favoritas", fav_movies.len());
 }
 ```
 
 #### Tuplas
 
-Las tuplas son un tipo de dato que nos permite agrupar valores de distintos tipos. Al igual que los *Array*, las tuplas tienen un tamaño fijo y una vez creadas no se pueden modificar.
+Las tuplas son un tipo de dato que nos permite agrupar valores de distintos tipos. Al igual que los _Array_, las tuplas tienen un tamaño fijo y una vez creadas no se pueden modificar.
 
-Es un tipo de dato que no existe en JavaScript (lo más parecido sería un *Array* de tamaño fijo y de distintos tipos de elementos).
+Es un tipo de dato que no existe en JavaScript (lo más parecido sería un _Array_ de tamaño fijo y de distintos tipos de elementos).
 
 ```rust
 fn main() {
@@ -766,7 +767,7 @@ Fíjate que en este caso, no hemos usado `return` **ni tampoco hemos terminado l
 
 ```rust
 fn multiply(number1: i32, number2: i32) -> i32 {
-  number1 * number2; // ❌ Esto es incorrecto 
+  number1 * number2; // ❌ Esto es incorrecto
 }
 ```
 
@@ -831,14 +832,14 @@ fn main() {
 
 Como ves, hemos asignado a la variable `result` el resultado de la expresión `if`. En este caso, el resultado es un `string`.
 
-En *JavaScript*, para lograr algo similar, necesitamos usar una ternaria:
+En _JavaScript_, para lograr algo similar, necesitamos usar una ternaria:
 
 ```js
 // JavaScript
 const checkIsOddOrEven = (number) => {
-  const result = number % 2 === 0 ? 'par' : 'impar'
-  console.log(`El número es ${result}`)
-}
+  const result = number % 2 === 0 ? "par" : "impar";
+  console.log(`El número es ${result}`);
+};
 ```
 
 ### En Rust no existe `switch`, existe `match`
@@ -968,12 +969,12 @@ Esto es similar a lo que hacemos en JavaScript con `while` de esta manera:
 
 ```js
 // JavaScript
-const numbers = [1, 2, 3, 4, 5]
+const numbers = [1, 2, 3, 4, 5];
 
-let index = 0
+let index = 0;
 while (index < numbers.length) {
-  console.log(`El número es ${numbers[index]}`)
-  index += 1
+  console.log(`El número es ${numbers[index]}`);
+  index += 1;
 }
 ```
 
@@ -995,10 +996,10 @@ Esto genera una variable `number` que toma el valor de cada elemento de la colec
 
 ```js
 // JavaScript
-const numbers = [1, 2, 3, 4, 5]
+const numbers = [1, 2, 3, 4, 5];
 
 for (const number of numbers) {
-  console.log(`El número es ${number}`)
+  console.log(`El número es ${number}`);
 }
 ```
 
@@ -1046,7 +1047,7 @@ enum Day {
 }
 ```
 
-Tiene sentido que `Day` sea un *enum* ya que sus valores son finitos, constantes y pueden ser nombrados. Si queremos usarlo, podemos crear una variable de tipo `Day` y asignarle un valor:
+Tiene sentido que `Day` sea un _enum_ ya que sus valores son finitos, constantes y pueden ser nombrados. Si queremos usarlo, podemos crear una variable de tipo `Day` y asignarle un valor:
 
 ```rust
 fn main() {
@@ -1054,30 +1055,30 @@ fn main() {
 }
 ```
 
-> Si compilas el código verás que te muestra advertencias. Esto es porque no estamos usando todas las variantes del *enum*. Para evitar esto, podríamos usar el atributo `#[allow(dead_code)]` antes de la definición del *enum*.
+> Si compilas el código verás que te muestra advertencias. Esto es porque no estamos usando todas las variantes del _enum_. Para evitar esto, podríamos usar el atributo `#[allow(dead_code)]` antes de la definición del _enum_.
 
-Para acceder a los valores de un *enum*, usamos el operador `::` y el nombre del valor. En este caso, `Day::Monday`.
+Para acceder a los valores de un _enum_, usamos el operador `::` y el nombre del valor. En este caso, `Day::Monday`.
 
-En JavaScript no existen los *enums* pero podemos simularlos con objetos:
+En JavaScript no existen los _enums_ pero podemos simularlos con objetos:
 
 ```js
 // JavaScript
 const Day = {
-  Monday: 'Monday',
-  Tuesday: 'Tuesday',
-  Wednesday: 'Wednesday',
-  Thursday: 'Thursday',
-  Friday: 'Friday',
-  Saturday: 'Saturday',
-  Sunday: 'Sunday',
-}
+  Monday: "Monday",
+  Tuesday: "Tuesday",
+  Wednesday: "Wednesday",
+  Thursday: "Thursday",
+  Friday: "Friday",
+  Saturday: "Saturday",
+  Sunday: "Sunday",
+};
 ```
 
-Donde sí existen los *enums* son en *TypeScript* que funcionan de forma muy similar a los de Rust e incluso su sintaxis es idéntica.
+Donde sí existen los _enums_ son en _TypeScript_ que funcionan de forma muy similar a los de Rust e incluso su sintaxis es idéntica.
 
 ### Variantes
 
-Cada valor de un *enum* se llama *variante*. Lo interesante de las variantes es que también pueden ser dinámicas. Con los días ya sabemos de antemano sus nombres y sabemos que son finitos. Pero también podríamos tener variantes dinámicas.
+Cada valor de un _enum_ se llama _variante_. Lo interesante de las variantes es que también pueden ser dinámicas. Con los días ya sabemos de antemano sus nombres y sabemos que son finitos. Pero también podríamos tener variantes dinámicas.
 
 Imagina que queremos representar los colores. En un sistema `RGB` tenemos los colores `Red`, `Green` y `Blue`. Pero también podríamos tener un color `Rgb` que es un color compuesto por los valores `Red`, `Green` y `Blue` en una escala de 0 a 255.
 
@@ -1103,9 +1104,9 @@ El tipo de dato es `u8` ya que los valores RGB van del 0 al 255 y `u8` es un tip
 
 ## De vuelta con los Strings
 
-Ya hemos trabajado anteriormente con los *Strings* en Rust y hemos visto que, visualmente, son muy similares a los Strings de JavaScript. Sin embargo, existen diferencias más profundas que debes conocer...
+Ya hemos trabajado anteriormente con los _Strings_ en Rust y hemos visto que, visualmente, son muy similares a los Strings de JavaScript. Sin embargo, existen diferencias más profundas que debes conocer...
 
-Para empezar, cuando hablamos de *Strings* en Rust hay que diferenciar entre dos tipos de Strings: `&str` y `String`.
+Para empezar, cuando hablamos de _Strings_ en Rust hay que diferenciar entre dos tipos de Strings: `&str` y `String`.
 
 ### `&str`
 
@@ -1122,11 +1123,11 @@ fn main() {
 }
 ```
 
-A este tipo de dato se le conoce como *String Slice*, en español sería como *Trozo de String*.
+A este tipo de dato se le conoce como _String Slice_, en español sería como _Trozo de String_.
 
-Como hemos visto, podemos concatenar dos *String Slices* con el operador `+` y el resultado es un nuevo *String Slice*, pero en ningún momento hemos modificado los *String Slices* originales.
+Como hemos visto, podemos concatenar dos _String Slices_ con el operador `+` y el resultado es un nuevo _String Slice_, pero en ningún momento hemos modificado los _String Slices_ originales.
 
-Su comportamiento es muy parecido a los *String* de *JavaScript* de tipo primitivo, ya que tampoco podemos mutarlo una vez creado y siempre tenemos que crear un nuevo String.
+Su comportamiento es muy parecido a los _String_ de _JavaScript_ de tipo primitivo, ya que tampoco podemos mutarlo una vez creado y siempre tenemos que crear un nuevo String.
 
 ```javascript
 const hello = "Hola";
@@ -1199,13 +1200,13 @@ fn main() {
 }
 ```
 
-Resumen: cuando hablamos de cadenas de texto en Rust debemos diferenciar entre dos tipos. Tenemos el tipo `&str` que se llama *Slice String*, que es un tipo de dato inmutable y que no podemos modificar, similar al *String* de *JavaScript*. Por otro lado, tenemos el tipo `String` en Rust, que es un tipo de dato mutable y que podemos modificar para cambiar su contenido y su longitud.
+Resumen: cuando hablamos de cadenas de texto en Rust debemos diferenciar entre dos tipos. Tenemos el tipo `&str` que se llama _Slice String_, que es un tipo de dato inmutable y que no podemos modificar, similar al _String_ de _JavaScript_. Por otro lado, tenemos el tipo `String` en Rust, que es un tipo de dato mutable y que podemos modificar para cambiar su contenido y su longitud.
 
 > No confundas que la variable sea mutable con que el tipo de dato es mutable. Si usas `let mut hello = "Hello"` estás creando una variable mutable y, por lo tanto, podrás reasignar la variable. Pero el tipo de dato es `&str` y no podrás modificar el valor. Reasignar la variable no es lo mismo que modificar el valor.
 
 ## Structs
 
-En *JavaScript* cuando queremos agrupar un conjunto de datos que definen un objeto podemos usar `class`:
+En _JavaScript_ cuando queremos agrupar un conjunto de datos que definen un objeto podemos usar `class`:
 
 ```js
 // JavaScript
@@ -1225,7 +1226,7 @@ Ahora podemos crear un objeto de tipo `Animal` pasando los parámetros necesario
 const dog = new Animal("Zeus", "Perro", 3);
 ```
 
-En *Rust* no existen las clases pero sí los *Structs*. Los *Structs* son una forma de agrupar datos complejos que definen algo. Por ejemplo, podemos crear un *Struct* para definir un `Animal`, tal y como hemos hecho antes:
+En _Rust_ no existen las clases pero sí los _Structs_. Los _Structs_ son una forma de agrupar datos complejos que definen algo. Por ejemplo, podemos crear un _Struct_ para definir un `Animal`, tal y como hemos hecho antes:
 
 ```rust
 // Rust
@@ -1249,7 +1250,7 @@ let dog = Animal {
 };
 ```
 
-También puedes usar la notación corta para crear un `struct`, similar a la que usamos en *JavaScript*, si ya tienes una variable con el mismo nombre que el campo:
+También puedes usar la notación corta para crear un `struct`, similar a la que usamos en _JavaScript_, si ya tienes una variable con el mismo nombre que el campo:
 
 ```rust
 // Rust
@@ -1268,14 +1269,14 @@ println!("El nombre del perro es {}", dog.name);
 
 ### Mostrar Structs en consola
 
-Ahora, ¿Cómo podemos mostrar el valor de un `struct` en la consola? En *JavaScript* podemos usar `console.log`:
+Ahora, ¿Cómo podemos mostrar el valor de un `struct` en la consola? En _JavaScript_ podemos usar `console.log`:
 
 ```js
 // JavaScript
 console.log(dog);
 ```
 
-En *Rust* ya hemos visto que hay que usar `println!` para mostrar el valor de una variable en la consola. Si intentamos usar `println!` con un `struct` nos dará un error:
+En _Rust_ ya hemos visto que hay que usar `println!` para mostrar el valor de una variable en la consola. Si intentamos usar `println!` con un `struct` nos dará un error:
 
 ```rust
 println!("El perro es {dog}");
@@ -1315,7 +1316,7 @@ El perro es Animal { name: "Zeus", specie: "Perro", age: 3 }
 
 ### Crea un nuevo Struct a partir de otro
 
-En *JavaScript* podemos usar el operador *spread* `...` para crear un nuevo objeto a partir de otro objeto:
+En _JavaScript_ podemos usar el operador _spread_ `...` para crear un nuevo objeto a partir de otro objeto:
 
 ```js
 // JavaScript
@@ -1323,7 +1324,7 @@ const dog = { name: "Zeus", specie: "Perro", age: 3 };
 const dog2 = { ...dog, age: 4 };
 ```
 
-En *Rust* el operador `..` es parecido aunque tiene alguna diferencia que es importante apuntar. Lo usaremos así:
+En _Rust_ el operador `..` es parecido aunque tiene alguna diferencia que es importante apuntar. Lo usaremos así:
 
 ```rust
 // Rust
@@ -1338,27 +1339,27 @@ let dog2 = Animal { age: 4, ..dog };
 
 También fíjate que hemos usado el `..dog` al final, después de los campos que queremos sobreescribir.
 
-El operador `..` se usa para indicar el *struct* base que queremos usar y siempre se tiene que usar al final. Si intentamos usar el `..` en otra posición nos dará un error de sintaxis. Esto es muy diferente a *JavaScript*, ya que la posición del operador *spread* puede ser cualquiera y su posición cambiará el resultado. En *Rust*, siempre va al final.
+El operador `..` se usa para indicar el _struct_ base que queremos usar y siempre se tiene que usar al final. Si intentamos usar el `..` en otra posición nos dará un error de sintaxis. Esto es muy diferente a _JavaScript_, ya que la posición del operador _spread_ puede ser cualquiera y su posición cambiará el resultado. En _Rust_, siempre va al final.
 
 ### Tuple Structs
 
-Los *tuple structs* son una variante de los `structs` que no tienen nombres de campo. En lugar de tener nombres de campo, los `structs` tienen tipos de datos. Los *tuple structs* son útiles cuando queremos dar un nombre a una tupla.
+Los _tuple structs_ son una variante de los `structs` que no tienen nombres de campo. En lugar de tener nombres de campo, los `structs` tienen tipos de datos. Los _tuple structs_ son útiles cuando queremos dar un nombre a una tupla.
 
 ```rust
 struct ColorRGB(i8, i8, i8);
 struct LatLng(f64, f64);
 ```
 
-Para crear una instancia de un *tuple struct* tenemos que usar la misma sintaxis que para crear una tupla:
+Para crear una instancia de un _tuple struct_ tenemos que usar la misma sintaxis que para crear una tupla:
 
 ```rust
 let red = ColorRGB(255, 0, 0);
 let barcelona_marker = LatLng(41.3851, 2.1734);
 ```
 
-Lo bueno de los *tuple structs* es aunque no tienen nombres de campo, hace que nuestro código sea mucho más legible.
+Lo bueno de los _tuple structs_ es aunque no tienen nombres de campo, hace que nuestro código sea mucho más legible.
 
-Para acceder a los valores de un *tuple struct* tenemos que usar la misma sintaxis que para acceder a los valores de una tupla:
+Para acceder a los valores de un _tuple struct_ tenemos que usar la misma sintaxis que para acceder a los valores de una tupla:
 
 ```rust
 let red = ColorRGB(255, 0, 0);
@@ -1367,7 +1368,7 @@ let red_g = red.1;
 let red_b = red.2;
 ```
 
-Pero también podemos usar destructuring para acceder a los valores de un *tuple struct*, tal y como haríamos en *JavaScript* pero usando la sintaxis de *Rust* con paréntesis:
+Pero también podemos usar destructuring para acceder a los valores de un _tuple struct_, tal y como haríamos en _JavaScript_ pero usando la sintaxis de _Rust_ con paréntesis:
 
 ```rust
 let red = ColorRGB(255, 0, 0);
@@ -1376,9 +1377,9 @@ let (red_r, red_g, red_b) = red;
 
 ### Métodos en Structs
 
-Una vez que tenemos definido un *Struct* en *Rust*, podemos añadir métodos a ese *Struct*. Los métodos son funciones que están definidas dentro de un *Struct* y que tienen acceso a los datos del *Struct*.
+Una vez que tenemos definido un _Struct_ en _Rust_, podemos añadir métodos a ese _Struct_. Los métodos son funciones que están definidas dentro de un _Struct_ y que tienen acceso a los datos del _Struct_.
 
-Ahora, la sintaxis para definir métodos en *Rust* es un poco diferente a la que estamos acostumbrados en *JavaScript*. En *Rust* los métodos se definen dentro de un bloque `impl`.
+Ahora, la sintaxis para definir métodos en _Rust_ es un poco diferente a la que estamos acostumbrados en _JavaScript_. En _Rust_ los métodos se definen dentro de un bloque `impl`.
 
 Vamos a crear un método al struct `Animal` que nos permita crear una nueva instancia de `Animal`. Para ello, vamos a crear un método llamado `new` que reciba los datos necesarios para crear una nueva instancia de `Animal` y que devuelva una nueva instancia de `Animal`.
 
@@ -1394,19 +1395,19 @@ impl Animal {
 }
 ```
 
-No es el método más útil del mundo porque ya hemos visto lo fácil que es crear una nueva instancia de `Animal` usando el *struct literal* pero es un ejemplo para que veáis cómo se definen los métodos en *Rust* en los *structs* (además que podrías hacer aquí cosas más interesantes, como comprobar que el nombre no está vacío, por ejemplo o transformar los datos).
+No es el método más útil del mundo porque ya hemos visto lo fácil que es crear una nueva instancia de `Animal` usando el _struct literal_ pero es un ejemplo para que veáis cómo se definen los métodos en _Rust_ en los _structs_ (además que podrías hacer aquí cosas más interesantes, como comprobar que el nombre no está vacío, por ejemplo o transformar los datos).
 
-Ahora, para usar este método, tenemos que llamarlo usando la sintaxis de *Rust* para llamar a métodos:
+Ahora, para usar este método, tenemos que llamarlo usando la sintaxis de _Rust_ para llamar a métodos:
 
 ```rust
 let animal = Animal::new("Paco".to_string(), "Perro".to_string(), 5);
 ```
 
-Fíjate que para llamar al método `new` tenemos que usar la sintaxis `::` para indicar que el método `new` está definido en el *struct* `Animal`.
+Fíjate que para llamar al método `new` tenemos que usar la sintaxis `::` para indicar que el método `new` está definido en el _struct_ `Animal`.
 
-Además, como los campos `name` y `specie` son *String*, usamos la cadena de texto con comillas dobles (que es un *&str* como hemos visto antes) y usamos el método `to_string()` para convertirlo a *String*.
+Además, como los campos `name` y `specie` son _String_, usamos la cadena de texto con comillas dobles (que es un _&str_ como hemos visto antes) y usamos el método `to_string()` para convertirlo a _String_.
 
-Vamos a ver otro ejemplo de método en un *struct*, esta vez para poder recuperar el nombre del animal:
+Vamos a ver otro ejemplo de método en un _struct_, esta vez para poder recuperar el nombre del animal:
 
 ```rust
 impl Animal {
@@ -1418,9 +1419,9 @@ impl Animal {
 
 ¡Ah! Esto tiene una pinta muy rara, ¿verdad? ¿Qué es ese `&` que hemos puesto delante de `self`? ¿Y ese `&` que hemos puesto delante de `String`? ¿Y ese `&` que hemos puesto delante de `self.name`? ¡Muchos `&` que seguro no esperabas!
 
-Por ahora, no te preocupes por los `&` y simplemente piensa que es la forma de indicar una referencia. Así que no devolvemos un *String*, si no una referencia a uno.
+Por ahora, no te preocupes por los `&` y simplemente piensa que es la forma de indicar una referencia. Así que no devolvemos un _String_, si no una referencia a uno.
 
-Lo más interesante es el *self*, que se refiere al propio `struct` de `Animal` y que nos permite acceder a sus datos. Es un parámetro que se pasa implícitamente a todos los métodos de un *struct*, no tienes que pasárselo explícitamente.
+Lo más interesante es el _self_, que se refiere al propio `struct` de `Animal` y que nos permite acceder a sus datos. Es un parámetro que se pasa implícitamente a todos los métodos de un _struct_, no tienes que pasárselo explícitamente.
 
 Ahora vamos a ver cómo usar este método:
 
@@ -1430,7 +1431,7 @@ let name = animal.get_name();
 println!("{name}") // -> Paco
 ```
 
-También podemos tener un método para modificar los datos de un *struct*. Por ejemplo, vamos a crear un método para modificar la edad del animal:
+También podemos tener un método para modificar los datos de un _struct_. Por ejemplo, vamos a crear un método para modificar la edad del animal:
 
 ```rust
 impl Animal {
@@ -1458,7 +1459,7 @@ impl Animal {
       age,
     }
   }
-  
+
   fn get_name(&self) -> &String {
     &self.name
   }
@@ -1475,25 +1476,25 @@ fn main() {
 
 ## Ownership
 
-Una de las características más especiales de *Rust* es el concepto de *Ownership*. Este concepto es muy importante... y no existe en *JavaScript* por lo que no se puede crear una analogía directa.
+Una de las características más especiales de _Rust_ es el concepto de _Ownership_. Este concepto es muy importante... y no existe en _JavaScript_ por lo que no se puede crear una analogía directa.
 
 ### ¿Qué es el Ownership?
 
-El *Ownership* son una serie de reglas que nos permite controlar el acceso a los datos de una forma muy estricta y, además, liberar la memoria de forma automática cuando ya no la necesitamos. Las 3 reglas del *Ownership* son:
+El _Ownership_ son una serie de reglas que nos permite controlar el acceso a los datos de una forma muy estricta y, además, liberar la memoria de forma automática cuando ya no la necesitamos. Las 3 reglas del _Ownership_ son:
 
-1. Cada valor en *Rust* tiene un *dueño* (owner).
-2. Sólo puede haber un *dueño* a la vez.
-3. Cuando el *dueño* sale del ámbito, el valor se descarta.
+1. Cada valor en _Rust_ tiene un _dueño_ (owner).
+2. Sólo puede haber un _dueño_ a la vez.
+3. Cuando el _dueño_ sale del ámbito, el valor se descarta.
 
-#### Inicio de *Ownership* y *move*
+#### Inicio de _Ownership_ y _move_
 
-En Rust, como en muchos otros lenguajes como JavaScript, usamos el símbolo de igual `=` para asignar un valor a una variable. Sin embargo, en *Rust* están pasando más cosas de las que parece.
+En Rust, como en muchos otros lenguajes como JavaScript, usamos el símbolo de igual `=` para asignar un valor a una variable. Sin embargo, en _Rust_ están pasando más cosas de las que parece.
 
 ```rust
 let num = 5;
 ```
 
-Al hacer esto, estamos iniciando el *Ownership* de la variable `num`. Esto significa que la variable `num` es el *dueño* del valor `5`.
+Al hacer esto, estamos iniciando el _Ownership_ de la variable `num`. Esto significa que la variable `num` es el _dueño_ del valor `5`.
 
 ¿Esto significa que no se puede usar más el valor `5`? No. Los tipos primitivos como `i32` o `bool` se copian cuando se asignan a una variable. Esto significa que podemos seguir usando el valor `5` sin problemas:
 
@@ -1503,7 +1504,7 @@ let num2 = num; // Se copia el valor de num a num2
 println!("{num} {num2}"); // -> 5 5
 ```
 
-Pero esto no es así con otros tipos compuestos como *String* o *Vec*. En estos casos, cuando reasignamos un valor a una variable, lo que realmente estamos haciendo es cambiar el *ownership* sobre ese valor.
+Pero esto no es así con otros tipos compuestos como _String_ o _Vec_. En estos casos, cuando reasignamos un valor a una variable, lo que realmente estamos haciendo es cambiar el _ownership_ sobre ese valor.
 
 ```rust
 // Creamos un String a partir del String Slice
@@ -1514,15 +1515,15 @@ let name2 = name;
 println!("{name}"); // -> Error: value borrowed here after move
 ```
 
-¿Qué ha pasado aquí? Pues que cuando hacemos una reasignación no estamos haciendo una copia del valor, si no que estamos cambiando el *dueño* del valor. Esto significa que el valor ya no pertenece a la variable `name` y, por lo tanto, no podemos usarla desde ahí. Ahora el *dueño* es la variable `name2`.
+¿Qué ha pasado aquí? Pues que cuando hacemos una reasignación no estamos haciendo una copia del valor, si no que estamos cambiando el _dueño_ del valor. Esto significa que el valor ya no pertenece a la variable `name` y, por lo tanto, no podemos usarla desde ahí. Ahora el _dueño_ es la variable `name2`.
 
-A este proceso se le llama *move* y es una de las características más importantes de *Rust*.
+A este proceso se le llama _move_ y es una de las características más importantes de _Rust_.
 
-> Como has visto, Rust es muy agresivo a la hora de liberar los recursos. En JavaScript contamos con un Garbage Collector pero Rust incorpora este sistema de *Ownership* que libera el recurso automáticamente cuando el dueño sale del ámbito. Esto no evita que puedan existir *memory leaks* pero sí que se minimizan.
+> Como has visto, Rust es muy agresivo a la hora de liberar los recursos. En JavaScript contamos con un Garbage Collector pero Rust incorpora este sistema de _Ownership_ que libera el recurso automáticamente cuando el dueño sale del ámbito. Esto no evita que puedan existir _memory leaks_ pero sí que se minimizan.
 
-#### *Ownership* y funciones
+#### _Ownership_ y funciones
 
-Hay veces que puede ser un reto detectar cuando se produce un *move* en *Rust* ya que también ocurre cuando usamos la variable como argumento de una función. Por ejemplo, vamos a crear una función que recibe un *String* y lo pasa a todo minúsculas:
+Hay veces que puede ser un reto detectar cuando se produce un _move_ en _Rust_ ya que también ocurre cuando usamos la variable como argumento de una función. Por ejemplo, vamos a crear una función que recibe un _String_ y lo pasa a todo minúsculas:
 
 ```rust
 fn to_lowercase(name: String) -> String {
@@ -1540,13 +1541,13 @@ fn main() {
 
 Vamos a ver qué ha pasado aquí paso a paso.
 
-1. Creamos una variable `name` y le asignamos un valor de tipo *String*.
+1. Creamos una variable `name` y le asignamos un valor de tipo _String_.
 2. Llamamos a la función `to_lowercase` pasándole la variable `name` como argumento.
-3. En este punto, estamos haciendo un *move* de la variable `name` a la función `to_lowercase`. Esto significa que la variable `name` ya no existe en el ámbito de la función `main` y que el *dueño* del valor es la función `to_lowercase`.
-4. La función `to_lowercase` devuelve un valor de tipo *String* que se asigna a la variable `lower_case_name`.
-5. Intentamos mostrar el valor de la variable `name` pero no podemos porque ya no existe. El *dueño* del valor era la función `to_lowercase`.
+3. En este punto, estamos haciendo un _move_ de la variable `name` a la función `to_lowercase`. Esto significa que la variable `name` ya no existe en el ámbito de la función `main` y que el _dueño_ del valor es la función `to_lowercase`.
+4. La función `to_lowercase` devuelve un valor de tipo _String_ que se asigna a la variable `lower_case_name`.
+5. Intentamos mostrar el valor de la variable `name` pero no podemos porque ya no existe. El _dueño_ del valor era la función `to_lowercase`.
 
-Este suele ser un problema muy común en *Rust* ya que, por defecto, las funciones toman la propiedad de los valores que recibe como argumentos. Esto es muy útil para evitar que se modifiquen los valores que se pasan a la función. Sin embargo, hay veces que no queremos que esto ocurra y, en esos casos, tenemos que indicar explícitamente que no queremos que se produzca el *move*.
+Este suele ser un problema muy común en _Rust_ ya que, por defecto, las funciones toman la propiedad de los valores que recibe como argumentos. Esto es muy útil para evitar que se modifiquen los valores que se pasan a la función. Sin embargo, hay veces que no queremos que esto ocurra y, en esos casos, tenemos que indicar explícitamente que no queremos que se produzca el _move_.
 
 Ten en cuenta que este problema no existe con los tipos primitivos ya que estos se copian cuando se pasan como argumento a una función. Por ejemplo, vamos a crear una función que recibe un `i32` y lo duplica:
 
@@ -1564,11 +1565,11 @@ fn main() {
 }
 ```
 
-> ¿Por qué los tipos primitivos sí los copia? De los tipos como `i32`, Rust conoce su tamaño en tiempo de compilación y, por lo tanto, puede copiarlos sin problemas. Sin embargo, los tipos compuestos como *String* o *Vec* no pueden ser copiados de esta forma ya que no sabemos su tamaño en tiempo de compilación.
+> ¿Por qué los tipos primitivos sí los copia? De los tipos como `i32`, Rust conoce su tamaño en tiempo de compilación y, por lo tanto, puede copiarlos sin problemas. Sin embargo, los tipos compuestos como _String_ o _Vec_ no pueden ser copiados de esta forma ya que no sabemos su tamaño en tiempo de compilación.
 
 #### Copia de valores
 
-Así que ya sabemos que tipos como `i32` o `bool` se copian automáticamente con reasignaciones o al pasarlos como argumento a una función. Pero, ¿qué pasa con los tipos compuestos? ¿Cómo podemos copiarlos? Existen diferentes estrategias para poder lograrlo. A la hora de trabajar con *String*, por ejemplo, podemos usar el método `clone`:
+Así que ya sabemos que tipos como `i32` o `bool` se copian automáticamente con reasignaciones o al pasarlos como argumento a una función. Pero, ¿qué pasa con los tipos compuestos? ¿Cómo podemos copiarlos? Existen diferentes estrategias para poder lograrlo. A la hora de trabajar con _String_, por ejemplo, podemos usar el método `clone`:
 
 ```rust
 let name = String::from("Miguel");

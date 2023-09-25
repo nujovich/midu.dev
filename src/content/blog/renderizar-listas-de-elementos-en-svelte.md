@@ -1,16 +1,16 @@
 ---
 title: Cómo renderizar una lista de elementos con Svelte
-date: '2020-04-12'
+date: "2020-04-12"
 description: >-
   Aprender a iterar una lista, como un array, y renderizar cada elemento en la
   interfaz del usuario utilizando el framework Svelte.
 
 toc: true
-tags :  svelte
+tags: svelte
 image: /images/og/renderizar-listas-de-elementos-en-svelte.png
 ---
 
-## Intro 
+## Intro
 
 Nueva entrega en la serie de artículos sobre [Svelte](https://midu.dev/introducci%C3%B3n-a-svelte/). Hoy hablamos de cómo podemos iterar una lista de elementos y renderizarlos utilizando este novedoso framework.
 
@@ -24,17 +24,17 @@ Es la acción de iterar un Array y, para cada elemento, mostrar en la interfaz d
 
 ## La sintaxis para renderizar una lista de elementos en Svelte
 
-Como ya vimos en el artículo sobre [renderizado condicional](https://midu.dev/svelte-renderizado-condicional/), *Svelte* tiene una sintaxis propia para conseguir renderizar una lista de elementos.
+Como ya vimos en el artículo sobre [renderizado condicional](https://midu.dev/svelte-renderizado-condicional/), _Svelte_ tiene una sintaxis propia para conseguir renderizar una lista de elementos.
 
 Imaginemos que tenemos una lsita de películas en la constante `movies`. Cada película es un objeto y tiene las propiedades `Title` y `Year`:
 
 ```javascript
 const movies = [
-  {Title: "The Avengers", Year: 2012},
-  {Title: "Avengers: Infinity War", Year: 2018},
-  {Title: "Avengers: Age of Ultron", Year: 2015},
-  {Title: "Avengers: Endgame", Year:2019}
-] 
+  { Title: "The Avengers", Year: 2012 },
+  { Title: "Avengers: Infinity War", Year: 2018 },
+  { Title: "Avengers: Age of Ultron", Year: 2015 },
+  { Title: "Avengers: Endgame", Year: 2019 },
+];
 ```
 
 Para conseguir **renderizar esta lista de elementos en Svelte**, tenemos que utilizar la sintaxis de plantillas `#each` de la siguiente forma:
@@ -48,12 +48,12 @@ Así que para iterar la lista de películas que hemos visto antes, haríamos:
 ```html {hl_lines=["3-7"]}
 <h1>Lista de películas</h1>
 <ul>
-	{#each movies as movie}
-		<li>
-      <strong>{movie.Title}</strong>
-      <date>{movie.Year}</date>
-    </li>
-	{/each}
+  {#each movies as movie}
+  <li>
+    <strong>{movie.Title}</strong>
+    <date>{movie.Year}</date>
+  </li>
+  {/each}
 </ul>
 ```
 
@@ -70,13 +70,13 @@ Por lo que nuestro ejemplo, podría quedar así:
 ```html {hl_lines=["3-8"]}
 <h1>Lista de películas</h1>
 <ul>
-	{#each movies as movie, index}
-		<li>
-      <span>#{index}</span>
-      <strong>{movie.Title}</strong>
-      <date>{movie.Year}</date>
-    </li>
-	{/each}
+  {#each movies as movie, index}
+  <li>
+    <span>#{index}</span>
+    <strong>{movie.Title}</strong>
+    <date>{movie.Year}</date>
+  </li>
+  {/each}
 </ul>
 ```
 
@@ -87,13 +87,13 @@ Ahora bien, es un poco molesto tener que utilizar las propiedades `Title` y `Yea
 ```html {hl_lines=["3"]}
 <h1>Lista de películas</h1>
 <ul>
-	{#each movies as {Title, Year}, index}
-		<li>
-      <span>#{index}</span>
-      <strong>{Title}</strong>
-      <date>{Year}</date>
-    </li>
-	{/each}
+  {#each movies as {Title, Year}, index}
+  <li>
+    <span>#{index}</span>
+    <strong>{Title}</strong>
+    <date>{Year}</date>
+  </li>
+  {/each}
 </ul>
 ```
 
@@ -102,18 +102,17 @@ Siguiendo el ejemplo de la desestructuración, **podemos cambiarle el nombre a l
 ```html {hl_lines=["3"]}
 <h1>Lista de películas</h1>
 <ul>
-	{#each movies as {Title: movieTitle, Year: movieYear}, index}
-		<li>
-      <span>#{index}</span>
-      <strong>{movieTitle}</strong>
-      <date>{movieYear}</date>
-    </li>
-	{/each}
+  {#each movies as {Title: movieTitle, Year: movieYear}, index}
+  <li>
+    <span>#{index}</span>
+    <strong>{movieTitle}</strong>
+    <date>{movieYear}</date>
+  </li>
+  {/each}
 </ul>
 ```
 
 > No solo puedes utilizar la desestructuración del objeto. Puedes utilizar también el operador `rest` y también desestructurar arrays, en el caso que sea eso lo que estás iterando. Simplemente, sigue la misma sintaxis que usas en Javascript.
-
 
 ## Renderizado condicional iterando elementos
 
@@ -128,16 +127,16 @@ Para ello, podemos renderizar todos los elementos con `#each` y, dentro, [hacer 
 ```html {hl_lines=["8-10"]}
 <h1>Lista de películas</h1>
 <ul>
-	{#each movies as {Title: movieTitle, Year: movieYear}, index}
-		<li>
-      <span>#{index}</span>
-      <strong>{movieTitle}</strong>
-      <date>{movieYear}</date>
-			{#if (2020 - movieYear < 5)}
-			  <span role="img">🆕</span>
-			{/if}
+  {#each movies as {Title: movieTitle, Year: movieYear}, index}
+  <li>
+    <span>#{index}</span>
+    <strong>{movieTitle}</strong>
+    <date>{movieYear}</date>
+    {#if (2020 - movieYear < 5)}
+    <span role="img">🆕</span>
+    {/if}
   </li>
-	{/each}
+  {/each}
 </ul>
 ```
 
@@ -150,43 +149,38 @@ También deberíamos **controlar cuando la lista de elementos es vacía**, de fo
 ```html {hl_lines=["14-18"]}
 <h1>Lista de películas</h1>
 <ul>
-	{#if movies.length > 0}
-		{#each movies as {Title: movieTitle, Year: movieYear}, index}
-			<li>
-				<span>#{index}</span>
-				<strong>{movieTitle}</strong>
-				<date>{movieYear}</date>
-				{#if (2020 - movieYear < 5)}
-				  <span role="img">🆕</span>
-				{/if}
-		  </li>
-		{/each}
-  {:else}
-		<p>
-			No hay películas
-	  </p>
+  {#if movies.length > 0} {#each movies as {Title: movieTitle, Year: movieYear},
+  index}
+  <li>
+    <span>#{index}</span>
+    <strong>{movieTitle}</strong>
+    <date>{movieYear}</date>
+    {#if (2020 - movieYear < 5)}
+    <span role="img">🆕</span>
+    {/if}
+  </li>
+  {/each} {:else}
+  <p>No hay películas</p>
   {/if}
 </ul>
 ```
 
-De esta forma, cuando `movies` sea una lista vacía, entonces mostrará al usuario que *no hay películas* y, si hay elementos, entonces los listaremos como le hemos indicado. Esto, funcionar funciona, pero **existe una forma mucho más sencilla de conseguir el mismo resultado utilizando sólo la sintaxis de `#each`**, lo podemos lograr fusionando las dos funcionalidades así:
+De esta forma, cuando `movies` sea una lista vacía, entonces mostrará al usuario que _no hay películas_ y, si hay elementos, entonces los listaremos como le hemos indicado. Esto, funcionar funciona, pero **existe una forma mucho más sencilla de conseguir el mismo resultado utilizando sólo la sintaxis de `#each`**, lo podemos lograr fusionando las dos funcionalidades así:
 
 ```html {hl_lines=["12-16"]}
 <h1>Lista de películas</h1>
 <ul>
   {#each movies as {Title: movieTitle, Year: movieYear}, index}
-    <li>
-      <span>#{index}</span>
-      <strong>{movieTitle}</strong>
-      <date>{movieYear}</date>
-      {#if (2020 - movieYear < 5)}
-        <span role="img">🆕</span>
-      {/if}
-    </li>
+  <li>
+    <span>#{index}</span>
+    <strong>{movieTitle}</strong>
+    <date>{movieYear}</date>
+    {#if (2020 - movieYear < 5)}
+    <span role="img">🆕</span>
+    {/if}
+  </li>
   {:else}
-    <p>
-      No hay películas
-    </p>
+  <p>No hay películas</p>
   {/each}
 </ul>
 ```
@@ -198,7 +192,7 @@ Exactamente, **la sintaxis de `#each` también acepta una cláusula `:else`** qu
 Recapitulando, hemos visto **cómo podemos renderizar listas de elementos con Svelte siguiendo la siguiente sintaxis**:
 
 ```javascript
-// para iterar una lista para cada elemento 
+// para iterar una lista para cada elemento
 {#each lista as elemento}...{/each}
 // para añadir el indice de cada elemento de la lista
 {#each lista as elemento, indice}...{/each}
@@ -210,6 +204,6 @@ Recapitulando, hemos visto **cómo podemos renderizar listas de elementos con Sv
 {#each lista as elemento}...{:else}...{/each}
 ```
 
-De esta forma, **ya sabemos cómo podemos renderizar cada elemento de una lista iterable** (que puede ser un array, un string o cualquier tipo de objeto iterable de Javascript). Además, al final, hemos aprendido que no es necesario recurrir a la sintaxis de `#if` para ser capaces de controlar lo que debemos renderizar cuando no tengamos elementos en esa lista. 
+De esta forma, **ya sabemos cómo podemos renderizar cada elemento de una lista iterable** (que puede ser un array, un string o cualquier tipo de objeto iterable de Javascript). Además, al final, hemos aprendido que no es necesario recurrir a la sintaxis de `#if` para ser capaces de controlar lo que debemos renderizar cuando no tengamos elementos en esa lista.
 
 **¡En la siguiente clase veremos cómo podemos mejorar el manejo de promesas utilizando la sintaxis `#await` de Svelte!**

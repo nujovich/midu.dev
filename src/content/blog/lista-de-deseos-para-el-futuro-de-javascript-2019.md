@@ -1,10 +1,9 @@
 ---
 title: Lista de deseos para el futuro de Javascript
-date: '2019-02-03'
-image: '/images/js-future.jpg'
+date: "2019-02-03"
+image: "/images/js-future.jpg"
 description: En los últimos años hemos visto una evolución brutal de Javascript como lenguaje de programación, añadiendo nuevas caracterísitcas, métodos y funcionalidades. Pero los desarrolladores de este lenguaje queremos más. Aquí una lista de mis deseos.
 tags: javascript
-
 ---
 
 No es casualidad que una de mis sagas favoritas sea [Back to the Future](https://es.wikipedia.org/wiki/Back_to_the_Future). Contiene dos elementos que, desde muy pequeño, siempre me han emocionado. La primera, **los viajes en el tiempo**. La segunda, **la ciencia ficción como medio para imaginar el futuro y dar pinceladas de lo que nos espera.**
@@ -59,9 +58,9 @@ const persona2 = { name: 'Miguel', twitter: '@midudev' }
 
 **Veo muchas posibilidades a esto aunque algún problema.** Por ejemplo, ¿qué pasa con los objetos o arrays que son más complejos? Otra; el símbolo `#` se va a usar para las propiedades privadas de las clases en Javascript, ¿no va a crear confusión? **¿Al comparar los valores también compara el orden de las keys y los elementos?** Muchas dudas al respecto pero, desde luego, interesante de plantear.
 
-
 ### Thin Arrow Function ->
-En EcmaScript2015 se añadieron las _arrow function_ a Javascript. Me he encontrado que muchos estudiantes aprenden que se trata de otra forma de generar funciones. Primero **ven que permite crear funciones más cortas**, después que tienen **la posibilidad de hacer un retorno de valores implícito** y... finalmente **tienen que lidiar con la particularidad que el contexto de `this` se enlaza con el contexto de creación de la función** 😅. 
+
+En EcmaScript2015 se añadieron las _arrow function_ a Javascript. Me he encontrado que muchos estudiantes aprenden que se trata de otra forma de generar funciones. Primero **ven que permite crear funciones más cortas**, después que tienen **la posibilidad de hacer un retorno de valores implícito** y... finalmente **tienen que lidiar con la particularidad que el contexto de `this` se enlaza con el contexto de creación de la función** 😅.
 
 **En la mayoría de los casos, el enlace del contexto, no es un problema por dos razones**: o no lo usamos en absoluto en la función o justamente nos viene bien que lo haga. De hecho, **ya se ha explicado en diferentes ocasiones desde el comité TC39 que está hecho a conciencia** pero en mi opinión, es una pena que en el caso de querer mantener el contexto `this` sin tocar, ya no podamos usar este tipo de funciones.
 
@@ -73,13 +72,14 @@ console.log(materials.map(material -> material.length))
 
 La regla sería:
 
->Usa **=>** cuando quieres que `this` sea el contexto donde el método se **DEFINE**.
+> Usa **=>** cuando quieres que `this` sea el contexto donde el método se **DEFINE**.
 
->Usa **->** cuando quieres que `this` sea el context donde el método se **EJECUTA**.
+> Usa **->** cuando quieres que `this` sea el context donde el método se **EJECUTA**.
 
 De hecho, la idea no sería completamente nueva si no que estaría basada en [cómo funcionan las funciones en CoffeeScript.](https://coffeescript.org/#functions).
 
 ## Mejor soporte para programación funcional y otras lindezas
+
 Añadir más métodos iterativos al _prototype_ de array y las _arrow function_, gracias al return implicito de la primera línea si no usamos `{}`, ha sido un paso adelante para poder seguir más patrones de programación funcional en el lenguaje pero todavía quedan cosas por hacer.
 
 No me refiero sólo a la posibilidad que los Observables llegen al lenguaje, que desde hace años está dando vueltas [una proposal para añadir Observables a Javascript](https://github.com/tc39/proposal-observable), si no a otros añadidos que nos ayuden a seguir este paradigma.
@@ -88,16 +88,13 @@ Un patrón que usa funciones puras es la de crear cadenas de funciones donde la 
 
 ```javascript
 // sin pipeline operator
-let result = exclaim(capitalize(doubleSay("hello")))
-result //=> "Hello, hello!"
+let result = exclaim(capitalize(doubleSay("hello")));
+result; //=> "Hello, hello!"
 
 // con pipeline operator
-let result = "hello"
-  |> doubleSay
-  |> capitalize
-  |> exclaim
+let result = "hello" |> doubleSay |> capitalize |> exclaim;
 
-console.log(result) // "Hello, hello!"
+console.log(result); // "Hello, hello!"
 ```
 
 **Esta propuesta, por desgracia, lleva años dando vueltas y es por la dificultad de concretar los detalles de cómo funcionaría en todos los casos** como, por ejemplo, con métodos asíncronos o métodos a los que queremos añadirle algún parámetro. Para solucionar esto existen diferentes corrientes que están compitiendo entre ellos para ver cuál es la que se convierte en la propuesta final. Las dos más destacadas son: [la basada en F#](https://github.com/tc39/proposal-pipeline-operator/wiki#proposal-1-f-sharp-style-only-with-await) y otra llamada [Hack Style](https://github.com/tc39/proposal-pipeline-operator/wiki#proposal-2-hack-style-only).
@@ -107,15 +104,15 @@ console.log(result) // "Hello, hello!"
 Parece mentira que a estas alturas todavía tengamos que crear una operación para poder acceder al último elemento de un array. Para solucionarlo existe [una proposal llamada `array-last`](https://github.com/keithamus/proposal-array-last) que nos permitirá acceder con una propiedad al último elemento e índice del array.
 
 ```javascript
-myArray[myArray.length - 1] // return the last item of the array
+myArray[myArray.length - 1]; // return the last item of the array
 // but it has some problems...
-const calculatedLastIndex = myArray.length - 1
-myArray[myArray.length] // manual error
-myArray[calculatedLastIndex - 1] // manual error
+const calculatedLastIndex = myArray.length - 1;
+myArray[myArray.length]; // manual error
+myArray[calculatedLastIndex - 1]; // manual error
 
 // using the new proposal
-myArray.lastItem // return the last item of the array
-myArray.lastIndex // return the last index of the array
+myArray.lastItem; // return the last item of the array
+myArray.lastIndex; // return the last index of the array
 ```
 
 De esta forma, igual que para acceder a la longitud de un array usamos la propiedad `length` ahora podremos usar la propiedad `lastItem` para recuperar el último elemento de una lista, sin necesidad de crear una operación o usar el método `pop()` que mutaba el array.
@@ -156,7 +153,7 @@ enum propertyTypes {
 console.log(PropertyTypes.apartment // 2)
 ```
 
-Un caso de uso, por ejemplo, bastante práctico sería [para crear las acciones de los reducers en Redux](https://redux.js.org/basics/actions#actions), de forma que ya no tendríamos que generar la key y la value de la acción, y sólo tendríamos que crear un enum de las acciones. 
+Un caso de uso, por ejemplo, bastante práctico sería [para crear las acciones de los reducers en Redux](https://redux.js.org/basics/actions#actions), de forma que ya no tendríamos que generar la key y la value de la acción, y sólo tendríamos que crear un enum de las acciones.
 
 Por si os interesa, **[ya existe una proposición que, aunque está en la fase 0, tiene bastante buena pinta.](https://github.com/rbuckton/proposal-enum)**.
 

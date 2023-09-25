@@ -16,4 +16,3 @@ tags: podcast
 <p>Pero es cierto que la velocidad a la que los juniors llegan al mercado a través de Bootcamps y similares, igual hace que sea más difícil de ser absorbidos rápidamente...</p>
 <p>Hablamos de este tema en este vídeo, las razones que hay detrás y consejos para que estos tiempos no te pillen sin preparación.</p>
 <p>Que para todo existen soluciones y esto no iba a ser una excepción. ;)</p>
-

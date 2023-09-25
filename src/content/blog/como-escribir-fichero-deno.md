@@ -1,9 +1,9 @@
 ---
-title: 'Cómo escribir un fichero en Deno'
-date: '2022-12-26'
-description: Aprende a escribir el contenido de un fichero en Deno usando 
+title: "Cómo escribir un fichero en Deno"
+date: "2022-12-26"
+description: Aprende a escribir el contenido de un fichero en Deno usando
 toc: true
-tags :  deno
+tags: deno
 support: deno 1.29.1
 ---
 
@@ -14,46 +14,46 @@ Para escribir texto en un archivo con Deno, se puede utilizar el método `Deno.w
 Por ejemplo, para escribir "Hola mundo" en un archivo llamado "hello.txt", se puede utilizar el siguiente código:
 
 ```typescript
-await Deno.writeTextFile("./hello.txt", "Hola mundo!")
-console.log("Archivo escrito en ./hello.txt")
+await Deno.writeTextFile("./hello.txt", "Hola mundo!");
+console.log("Archivo escrito en ./hello.txt");
 ```
 
-Como Deno es seguro por defecto, el código anterior se tiene que ejecutar dándole permisos de escritura a nuestro programa. Para hacerlo, hay que pasarle el *flag* `--allow-write`:
+Como Deno es seguro por defecto, el código anterior se tiene que ejecutar dándole permisos de escritura a nuestro programa. Para hacerlo, hay que pasarle el _flag_ `--allow-write`:
 
 ```typescript
 deno run --allow-write write.ts
 ```
 
-Además, Deno.writeTextFile() tiene un parámetro opcional llamado *options*, que permite especificar diferentes opciones de escritura.
+Además, Deno.writeTextFile() tiene un parámetro opcional llamado _options_, que permite especificar diferentes opciones de escritura.
 
-Por ejemplo, se puede utilizar la opción *append* para agregar texto al final de un archivo existente, en lugar de sobreescribirlo. Por ejemplo:
+Por ejemplo, se puede utilizar la opción _append_ para agregar texto al final de un archivo existente, en lugar de sobreescribirlo. Por ejemplo:
 
 ```typescript
 await Deno.writeTextFile("./hello.txt", "Este texto se agregará al final.", {
   append: true,
-})
+});
 ```
 
-Otra forma útil de utilizar `Deno.writeTextFile()` es combinarlo con `JSON.stringify` para escribir objetos serializados en formato *JSON* en un archivo.
+Otra forma útil de utilizar `Deno.writeTextFile()` es combinarlo con `JSON.stringify` para escribir objetos serializados en formato _JSON_ en un archivo.
 
-Por ejemplo, vamos a escribir una función `writeJson` que nos permite pasarle un *path* y un objeto, y que nos devuelve una promesa con el *path* del archivo escrito o un mensaje de error en caso de que algo salga mal.
+Por ejemplo, vamos a escribir una función `writeJson` que nos permite pasarle un _path_ y un objeto, y que nos devuelve una promesa con el _path_ del archivo escrito o un mensaje de error en caso de que algo salga mal.
 
 ```typescript
 async function writeJson(path: string, data: object): string {
   try {
-    const json = JSON.stringify(data)
-    await Deno.writeTextFile(path, json)
-    return { path }
+    const json = JSON.stringify(data);
+    await Deno.writeTextFile(path, json);
+    return { path };
   } catch (e) {
-    return { error: e.message }
+    return { error: e.message };
   }
 }
 
-console.log(writeJson("./data.json", { message: "Hello World" }))
+console.log(writeJson("./data.json", { message: "Hello World" }));
 ```
 
 También existe la versión síncrona de `Deno.writeTextFile()`, que se llama `Deno.writeTextFileSync()`. Esta versión síncrona recibe los mismos parámetros que la versión asíncrona, pero no devuelve una promesa.
 
 ```typescript
-Deno.writeTextFileSync("./hello.txt", "Hola mundo!")
+Deno.writeTextFileSync("./hello.txt", "Hola mundo!");
 ```

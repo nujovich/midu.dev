@@ -1,6 +1,6 @@
 ---
 title: Música para programar y concentrarse ✌
-date: '2021-07-26'
+date: "2021-07-26"
 description: Encuentra tu lista de reproducción para concentrarte y mejorar tu productividad mientras estás estudiando, programando o trabajando
 toc: true
 tags: opinion
@@ -20,10 +20,10 @@ He pasado por todos los géneros para encontrar mi espacio zen 👨‍💻... De
 
 ## Techno chill con deep house
 
-Si te quieres sentir como *Neo* en *The Matrix*, igual puedes darle un tiento a esta **lista de Spotify** llena de tracks movidos, con música house, techno y dance. Y así poder rememorar aquella escena de *Neo* con *Morpheus*.
+Si te quieres sentir como _Neo_ en _The Matrix_, igual puedes darle un tiento a esta **lista de Spotify** llena de tracks movidos, con música house, techno y dance. Y así poder rememorar aquella escena de _Neo_ con _Morpheus_.
 
-*- ¡Ya sé JavaScript!*
-*- Demuestralo.*
+_- ¡Ya sé JavaScript!_
+_- Demuestralo._
 
 <iframe loading="lazy" src="https://open.spotify.com/embed/playlist/5aL9jeGMCA7uiH8MviKDSQ" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
@@ -45,10 +45,9 @@ Si eres un amante de Star Wars, lo mejor es que la fuerza te acompañe mientras 
 
 {{< youtube id="78cyA-aGaKc">}}
 
-
 ## Si lo tuyo son los videojuegos 🎮
 
-Entonces no te puedes perder **la banda sonora de Zelda** pero optimizada para que el código que salga de tus manos sea tan maravilloso como la música de una ocarina 🎼. Millones de reproducciones en YouTube avalan a esta selección que te da **la trifuerza**: *productividad, focus y entretenimiento.*
+Entonces no te puedes perder **la banda sonora de Zelda** pero optimizada para que el código que salga de tus manos sea tan maravilloso como la música de una ocarina 🎼. Millones de reproducciones en YouTube avalan a esta selección que te da **la trifuerza**: _productividad, focus y entretenimiento._
 
 {{< youtube id="6zvIxD4FUTA" >}}
 

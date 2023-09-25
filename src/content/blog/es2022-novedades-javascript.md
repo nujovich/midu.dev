@@ -3,7 +3,7 @@ title: "ES2022 / ES13: novedades de la última versión de JavaScript"
 date: "2021-08-07"
 description: Descubre todas las novedades del lenguaje JavaScript con la especificación EcmaScript 2022, para sacarle el máximo partido al lenguaje.
 toc: true
-tags :  javascript
+tags: javascript
 ---
 
 **JavaScript** no deja de evolucionar y todos los años se añaden nuevas funcionalidades para mejorar la productividad de los desarrolladores. Este año **2021 no iba a ser una excepción** y te explico las nuevas características que ya tienes disponible en la mayoría de navegadores.
@@ -14,19 +14,19 @@ Los operadores lógicos `&&`, `||` y `??` ahora también pueden usarse para asig
 
 ```javascript
 // Si x es falsy, se le asigna y
-x ||= y
+x ||= y;
 // Equivale a...
-x || (x = y)
+x || (x = y);
 
 // Si x es truthy, se le asigna y
-x &&= y
+x &&= y;
 // Equivale a...
-x && (x = y)
+x && (x = y);
 
 // Si x es null o undefined, se le asigna y
-x ??= y
+x ??= y;
 // Equivale a...
-x ?? (x = y)
+x ?? (x = y);
 ```
 
 Hay que tener en cuenta que en estas asignaciones, además, entra el juego la evaluación *short-circui*t. Esto quiere decir que estas asignaciones lógicas se evaluan de izquierda a derecha. **Si una expresión lógica no se cumple, no se evalúa la siguiente.**
@@ -35,11 +35,11 @@ Esto es importante para no cometer errores:
 
 ```javascript
 // este nuevo tipo de asignación con &&
-x &&= y
+x &&= y;
 // ✅ es equivalente a...
-x && (x = y)
+x && (x = y);
 // ❌ NO es equivalente a...
-x = x && y
+x = x && y;
 // ya que la asignación ocurre siempre independientemente de la evaluación
 ```
 
@@ -49,13 +49,13 @@ Leer algunas cifras en JavaScript puede ser una tarea difícil. Para solucionar 
 
 ```javascript
 // Es difícil saber qué cifra representa
-1000000000
-19436871.42
+1000000000;
+19436871.42;
 
 // ¡Con Numeric Separator es más fácil!
-1_000_000_000 // Ah, es mil millones
-100_000_000 // Y esto es cien millones
-19_436_871.42 // ¡De un vistazo!
+1_000_000_000; // Ah, es mil millones
+100_000_000; // Y esto es cien millones
+19_436_871.42; // ¡De un vistazo!
 ```
 
 ## 3. Promise.any
@@ -64,21 +64,21 @@ Leer algunas cifras en JavaScript puede ser una tarea difícil. Para solucionar 
 
 ```javascript
 const promises = [
-  fetch('/from-external-api'),
-  fetch('/from-memory'),
-  fetch('/from-new-api'),
-]
+  fetch("/from-external-api"),
+  fetch("/from-memory"),
+  fetch("/from-new-api"),
+];
 
 try {
   // espera a la primera respuesta correcta que termine
-  const first = await Promise.any(promises)
+  const first = await Promise.any(promises);
   // La más rápida fue la de memoria
-  console.log(first) // respuesta desde 'from-memory'
+  console.log(first); // respuesta desde 'from-memory'
 } catch (error) {
   // ¡Todas las promesas han fallado!
-  console.assert(error instanceof AggregateError)
+  console.assert(error instanceof AggregateError);
   // Log the rejection values:
-  console.log(error.errors)
+  console.log(error.errors);
   // → [
   //     <TypeError: Failed to fetch /from-external-api>,
   //     <TypeError: Failed to fetch /from-memory>,
@@ -93,7 +93,7 @@ Como has podido ver en el ejemplo anterior, ahora cuando la promesa falla, se de
 
 ### La diferencia con `Promise.race`...
 
-`Promise.race` y `Promise.any` son muy similares. La diferencia es que `Promise.race` se resuelve cuando cualquier promesa ha sido *resuelta* o *rechazada*. En cambio `Promise.any` ignora las promesas que son rechazadas y sólo se resuelve cuando se resuelve la primera... o se rechaza cuando todas las promesas se han rechazado.
+`Promise.race` y `Promise.any` son muy similares. La diferencia es que `Promise.race` se resuelve cuando cualquier promesa ha sido _resuelta_ o _rechazada_. En cambio `Promise.any` ignora las promesas que son rechazadas y sólo se resuelve cuando se resuelve la primera... o se rechaza cuando todas las promesas se han rechazado.
 
 ### La tabla de diferencias de `Promise`
 
@@ -112,47 +112,47 @@ Para que lo veas más claro, he preparado una pequeña tabla para diferenciar lo
 
 ## 4. replaceAll
 
-Hasta ahora, reemplazar todas las *instancias* de una cadena de texto en una cadena de texto te obligaba a usar `Regex` ya que `replace`, si le pasabas un *string*, lo que hacía era sólo reemplazar la primera instancia encontrada.
+Hasta ahora, reemplazar todas las _instancias_ de una cadena de texto en una cadena de texto te obligaba a usar `Regex` ya que `replace`, si le pasabas un _string_, lo que hacía era sólo reemplazar la primera instancia encontrada.
 
 ```javascript
 // ¡Quiero cambiar las manzanas por bananas!
-'🍏🍏🍋🍋🍊🍊'.replace('🍏', '🍌')
+"🍏🍏🍋🍋🍊🍊".replace("🍏", "🍌");
 // Pero qué...
 // -> '🍌🍏🍋🍋🍊🍊'
 
 // ¡Tienes que usar Regex para conseguirlo!
-'🍏🍏🍋🍋🍊🍊'.replace(/🍏/g, '🍌')
+"🍏🍏🍋🍋🍊🍊".replace(/🍏/g, "🍌");
 
 // ¡Hasta ahora! ¡Hola replaceAll!
-'🍏🍏🍋🍋🍊🍊'.replaceAll('🍏', '🍌')
+"🍏🍏🍋🍋🍊🍊".replaceAll("🍏", "🍌");
 ```
 
-`replaceAll` queda mucho más legible en nuestro código y hace justo lo que esperaba: cambiar todas las *instancias* de una cadena de texto en una cadena de texto.
+`replaceAll` queda mucho más legible en nuestro código y hace justo lo que esperaba: cambiar todas las _instancias_ de una cadena de texto en una cadena de texto.
 
 ## 5. WeakRef
 
-`WeakRef` te permite crear una referencia débil a un objeto para no prevenir que se destruya por el *Garbage Collector* de JavaScript. ¿Por qué? Pues por qué cuando creamos un objeto, especialmente si son grandes, estos no son automáticamente destruidos por el *Garbage Collector* si existe una referencia a ellos.
+`WeakRef` te permite crear una referencia débil a un objeto para no prevenir que se destruya por el _Garbage Collector_ de JavaScript. ¿Por qué? Pues por qué cuando creamos un objeto, especialmente si son grandes, estos no son automáticamente destruidos por el _Garbage Collector_ si existe una referencia a ellos.
 
 Con el método `deref` de `WeakRef`, podemos acceder a la referencia del objeto. Si la referencia al objeto ha sido eliminada, se devuelve `undefined`.
 
 ```javascript
 // Al crear un objeto...
-let coords = { x: 13, y: 72 }
+let coords = { x: 13, y: 72 };
 // Mientras tengas acceso a él directamente,
 // el objeto no será liberado de memoria
 // por el Garbage Collector
 
 // Ahora podemos crear una referencia débil al objeto
-const weakCoords = new WeakRef(coords)
+const weakCoords = new WeakRef(coords);
 
 // Recuperamos las propiedades del elemento
-const ref = weakCoords.deref()
+const ref = weakCoords.deref();
 if (ref) {
-  console.log('Todavía tenemos acceso a las coordenadas')
-  ref.x // -> 13
+  console.log("Todavía tenemos acceso a las coordenadas");
+  ref.x; // -> 13
 } else {
   // ref es `undefined`
-  console.log('La referencia ha sido eliminada')
+  console.log("La referencia ha sido eliminada");
 }
 ```
 

@@ -1,16 +1,16 @@
 ---
 title: "box-sizing: border-box: ¿Qué es y para qué sirve?"
-date: '2020-12-24'
+date: "2020-12-24"
 description: >-
   Con el cambio de prestaciones de Travis para repositorios de código abierto en
   GitHub, el paso más lógico parece migrar a GitHub Actions. En este artículo te
   cuento cómo hacerlo paso a paso con proyectos de Node.js.
 topic: css
-tags :  css
+tags: css
 image: /images/og/que-es-y-para-que-sirve-box-sizing-border-box.png
 ---
 
-**El valor border-box en CSS para la propiedad box-sizing** llegó para cambiar la vida de los frontend para siempre. Trabajar con *paddings* en nuestros diseños era un incordio. ¿Por qué? Por el modelo de la caja. ¿Qué modelo de la caja? El de CSS. ¿Pero eso que es? Pues si tienes un minuto y lo quieres ver en vídeo, te lo cuento.
+**El valor border-box en CSS para la propiedad box-sizing** llegó para cambiar la vida de los frontend para siempre. Trabajar con _paddings_ en nuestros diseños era un incordio. ¿Por qué? Por el modelo de la caja. ¿Qué modelo de la caja? El de CSS. ¿Pero eso que es? Pues si tienes un minuto y lo quieres ver en vídeo, te lo cuento.
 
 {{< youtube id="Vx854s9YE78" >}}
 
@@ -19,7 +19,7 @@ image: /images/og/que-es-y-para-que-sirve-box-sizing-border-box.png
 La propiedad de CSS `box-sizing` indica cómo se deben calcular las medidas de un elemento. Esto, que parece trivial, no lo es tanto ya que por defecto **CSS considera que el ancho y alto de la caja es de las propiedades `width` y `height`**. ¿Qué significa esto? Pues que si le añades un `padding` o un `border` el tamaño de renderizado de la caja será: **width + padding + border**.
 
 En el siguiente ejemplo tendríamos una caja de 290px de ancho ya que:
-*250px de width + (10px * 2) de padding + (10px * 2) de border*
+_250px de width + (10px _ 2) de padding + (10px _ 2) de border_
 
 ```css
 div {
@@ -60,7 +60,9 @@ Muchos resets CSS o normalizers ya incluyen el CSS necesario para que tu página
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 ```

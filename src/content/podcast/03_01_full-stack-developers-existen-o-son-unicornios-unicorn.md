@@ -1,9 +1,9 @@
 ---
-title: 'FullStack Developers, ¿existen o son unicornios 🦄? - 03x01'
-date: 'Sun, 03 Jan 2021 14:38:55 GMT'
-image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1609684744349-67039142a4e7a.jpg'
-description: 'La leyenda de los Fullstack Developers 👨‍💻. ¿Existen ¿Unicornios 🦄? ¿Postureo? ¿Tienen sentido hoy en día?'
-category: 'podcast'
+title: "FullStack Developers, ¿existen o son unicornios 🦄? - 03x01"
+date: "Sun, 03 Jan 2021 14:38:55 GMT"
+image: "https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1609684744349-67039142a4e7a.jpg"
+description: "La leyenda de los Fullstack Developers 👨‍💻. ¿Existen ¿Unicornios 🦄? ¿Postureo? ¿Tienen sentido hoy en día?"
+category: "podcast"
 season: 03
 episode: 01
 audio: https://anchor.fm/s/2c58e75c/podcast/play/24705878/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-0-3%2F42214f70-223f-578c-91c5-ded4ee817354.m4a
@@ -27,4 +27,3 @@ tags: podcast
 Lo importante es no cerrarse a seguir aprendiendo.<br>
 <br>
 ⚠️ Eso sí, si estás empezando, lo mejor es que te enfoques en crear el palito de la T, tu base, para que luego puedas seguir creciendo. ¡No lo olvides!</p>
-

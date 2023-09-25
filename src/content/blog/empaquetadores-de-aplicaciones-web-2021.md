@@ -1,11 +1,11 @@
 ---
 title: "Las alternativas de Webpack, empaquetadores de aplicaciones web para 2021 \U0001F4E6"
-date: '2020-12-18'
+date: "2020-12-18"
 description: >-
   ¿Existen alternativas a Webpack y Rollup? ¡Sí! Y algunas MUY interesantes.
   Conoce los mejores empaquetadores de apps web del momento.
 toc: true
-tags :  webpack
+tags: webpack
 image: /images/og/empaquetadores-de-aplicaciones-web-2021.png
 ---
 
@@ -18,11 +18,13 @@ Nacido en 2020, **esbuild** es un empaquetador de aplicaciones web que está **e
 Además trae soporte para Typescript, transformaciones a lo Babel de Javascript, soporte a la sintaxis JSX, minificación, source maps y tree shaking... **¡sin configuración ni dependencias!**
 
 Para instalar `esbuild` sólo tenéis que ejecutar en vuestro proyecto:
+
 ```
 npm install esbuild
 ```
 
 A partir de aquí podéis usar directamente la línea de comandos. Por ejemplo, para empaquetar una aplicación que tiene como punto de entrada un archivo `app.js`y que queremos empaquetarlo en un archivo `bundle.js` sería así:
+
 ```
 esbuild app.js --bundle --outfile=bundle.js
 ```
@@ -30,11 +32,13 @@ esbuild app.js --bundle --outfile=bundle.js
 También se puede usar la API de Javascript que ofrece una forma de usar `esbuild` de forma programática:
 
 ```javascript
-require('esbuild').build({
-  entryPoints: ['app.js'],
-  bundle: true,
-  outfile: 'out.js',
-}).catch(() => process.exit(1))
+require("esbuild")
+  .build({
+    entryPoints: ["app.js"],
+    bundle: true,
+    outfile: "out.js",
+  })
+  .catch(() => process.exit(1));
 ```
 
 Seguramente esta última sería la forma ideal para proyectos que van creciendo. Además así se puede envolver con [chokidar](https://github.com/paulmillr/chokidar) para hacer que se vuelva a ejecutar el bundelizado cada vez que los archivos cambian.
@@ -51,6 +55,7 @@ De la mano **del creador de Vue.js**, Evan You, llega **vite**. La apuesta de es
 Como curiosidad, **vite utiliza para ciertas operaciones también esbuild** (para la compilación de Typescript, por ejemplo)... por lo que viendo que usa Rollup y esbuild, podríamos decir que vite es como una implementación subjetiva de un conjunto de herramientas para empaquetar tu aplicación. Que tampoco está nada mal.
 
 Especialmente recomendado para proyectos con Vue.js, puedes iniciar uno fácilmente así:
+
 ```
 npm init vite-app nombre-de-tu-proyecto
 cd nombre-de-tu-proyecto
@@ -120,7 +125,7 @@ En el caso de **Snowpack**, como otros empaquetadores que hemos visto como **WMR
 
 **Creo que en 2021 todavía Webpack va a tener un papel principal en el desarrollo web.** Es difícil que, de repente, Webpack deje de ser el rey después de tanto tiempo pero, lo cierto, es que muchos frameworks ya están optando por Rollup, la alternativa a Webpack. Es el caso de Svelte, Vue.js y Angular.
 
-El tema es que React sigue siendo, y no creo que tampoco cambie el próximo año, la biblioteca más extendida y hay que tener en cuenta que tanto como *Next.js* como *create-react-app* utilizan *Webpack* por debajo para ser usados. **¿Sería posible ver Next.js con esbuild?** Pues no lo descarto para nada... de hecho, viendo los tiempos que ofrece, quién sabe si cuando esté algo más maduro...
+El tema es que React sigue siendo, y no creo que tampoco cambie el próximo año, la biblioteca más extendida y hay que tener en cuenta que tanto como _Next.js_ como _create-react-app_ utilizan _Webpack_ por debajo para ser usados. **¿Sería posible ver Next.js con esbuild?** Pues no lo descarto para nada... de hecho, viendo los tiempos que ofrece, quién sabe si cuando esté algo más maduro...
 
 Pero en este artículo he querido destacar mis cuatro favoritos de cara a 2021. Hay otras opciones como [swc](https://github.com/swc-project/swc) o [brunch](https://brunch.io/) pero he querido enfocarme en estos que, en mi opinión, son los más prometedores, cada uno por un motivo distinto. ¡Espero que te hayan gustado y te animes a probarlos!
 

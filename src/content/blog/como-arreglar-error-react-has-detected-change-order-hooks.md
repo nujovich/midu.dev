@@ -1,8 +1,8 @@
 ---
 title: 'Cómo arreglar el error "Warning: React has detected a change in the order of Hooks"'
-date: '2021-03-31'
+date: "2021-03-31"
 description: Entiende qué significa y cómo arreglar este típico error de React
-tags :  react
+tags: react
 image: >-
   /images/og/como-arreglar-error-react-has-detected-change-order-hooks.jpg
 ---
@@ -21,14 +21,14 @@ Por ejemplo, mira este componente:
 
 ```jsx
 function App() {
-  const [count, setCount] = useState(0)
-  if (count === 0) return 'No count' // ❌
+  const [count, setCount] = useState(0);
+  if (count === 0) return "No count"; // ❌
 
   useEffect(() => {
-    trackCount(count)
-  }, [])
+    trackCount(count);
+  }, []);
 
-  return <h1>{count}</h1>
+  return <h1>{count}</h1>;
 }
 ```
 
@@ -38,14 +38,14 @@ Lo correcto sería dejar esta condición después de todas las llamadas a los ho
 
 ```jsx
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    trackCount(count)
-  }, [])
+    trackCount(count);
+  }, []);
 
-  if (count === 0) return 'No count' // ✅
-  return <h1>{count}</h1>
+  if (count === 0) return "No count"; // ✅
+  return <h1>{count}</h1>;
 }
 ```
 
@@ -53,15 +53,16 @@ También puede ocurrir si directamente usas un hook en un condicional de la sigu
 
 ```jsx
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  if (count > 9) {  // ❌
+  if (count > 9) {
+    // ❌
     useEffect(() => {
-      localStorage.setItem('count', count)
-    }, [count])
+      localStorage.setItem("count", count);
+    }, [count]);
   }
 
-  return <h1>{count}</h1>
+  return <h1>{count}</h1>;
 }
 ```
 
@@ -69,15 +70,16 @@ Aquí, se ejecuta el `useEffect` solo cuando el count sea mayor de 9. Esto hace 
 
 ```jsx
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (count > 9) { // ✅
-      localStorage.setItem('count', count)
+    if (count > 9) {
+      // ✅
+      localStorage.setItem("count", count);
     }
-  }, [count])
+  }, [count]);
 
-  return <h1>{count}</h1>
+  return <h1>{count}</h1>;
 }
 ```
 
@@ -87,41 +89,28 @@ Por ejemplo, con `useSWR` podrías estar tentado a hacer esto:
 
 ```jsx
 const App = () => {
-  const [user] = useUser()
-  let content
+  const [user] = useUser();
+  let content;
 
-  if (user) {  // ❌
-    const { data } = useSWR(`/api/user`, fetcher)
-    content = data.content
+  if (user) {
+    // ❌
+    const { data } = useSWR(`/api/user`, fetcher);
+    content = data.content;
   }
-  
-  return (
-    <>
-      {content
-        ? <h1>{content}</h1>
-        : <span>Loading...</span>
-      }
-    </>
-  )
-}
+
+  return <>{content ? <h1>{content}</h1> : <span>Loading...</span>}</>;
+};
 ```
 
 Pero esto también estaría mal porque estamos usando de forma condicional el hook `useSWR`. En este caso lo mejor sería pasar `null` o `undefined` a `useSWR` para evitar que haga una llamada si no tenemos usuario:
 
 ```jsx
 const App = () => {
-  const [user] = useUser()
-  const { data } = useSWR(user ? `/api/user` : null, fetcher) // ✅
+  const [user] = useUser();
+  const { data } = useSWR(user ? `/api/user` : null, fetcher); // ✅
 
-  return (
-    <>
-      {data
-        ? <h1>{data}</h1>
-        : <span>Loading...</span>
-      }
-    </>
-  )
-}
+  return <>{data ? <h1>{data}</h1> : <span>Loading...</span>}</>;
+};
 ```
 
 Existe un plugin de eslint que puede ayudarte a evitar este tipo de problemas. Se llama [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) y está mantenido por el equipo core de React.js, de forma que siempre incorpora las últimas ventajas para que funcione con React.

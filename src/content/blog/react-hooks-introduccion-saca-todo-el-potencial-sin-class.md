@@ -1,7 +1,7 @@
 ---
 title: React Hooks, saca todo el potencial de React sin escribir clases
-date: '2019-02-06'
-image: '/images/react-hooks.jpeg'
+date: "2019-02-06"
+image: "/images/react-hooks.jpeg"
 description: Con la nueva característica de React, llamada Hooks, podremos utilizar los componentes funcionales para sacar todo el potencial a la librería. Algo que, hasta hace poco, sólo era posible con las clases.
 
 tags: react
@@ -18,23 +18,23 @@ tags: react
 Para que veamos en qué consisten vamos a ver cómo, hasta ahora, podíamos crear un componente Contador que tenía un estado interno que, al hacer click en un botón, se actualizaba y mostraba el número de veces que habíamos pulsado el botón. Todo esto creando un componente con `class`.
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Contador extends Component {
-  state = { count: 0 } // inicializamos el state a 0
+  state = { count: 0 }; // inicializamos el state a 0
 
-  render () {
-    const { count } = this.state // extraemos el count del state
+  render() {
+    const { count } = this.state; // extraemos el count del state
 
     return (
       <div>
         <p>Has hecho click {count} veces</p>
-        { /* Actualizamos el state usando el método setState */ }
+        {/* Actualizamos el state usando el método setState */}
         <button onClick={() => this.setState({ count: count + 1 })}>
           Haz click!
         </button>
       </div>
-    )
+    );
   }
 }
 ```
@@ -46,21 +46,22 @@ Ahora, gracias a los hooks, podremos conseguir el mismo resultado utilizando una
 import React, { useState } from 'react'
 
 function Contador() {
-  // useState recibe un parámetro: el valor inicial del estado (que será 0)
-  // y devuelve un array de dos posiciones:
-  //  la primera (count), tiene el valor del estado
-  //  la segunda (setCount), el método para actualizar el estado
-  const [count, setCount] = useState(0)
+// useState recibe un parámetro: el valor inicial del estado (que será 0)
+// y devuelve un array de dos posiciones:
+// la primera (count), tiene el valor del estado
+// la segunda (setCount), el método para actualizar el estado
+const [count, setCount] = useState(0)
 
-  return (
-    <div>
-      <p>Has hecho click {count} veces</p>
-      { /* actualizamos el state al hacer click con setCount */ }
-      <button onClick={() => setCount(count + 1)}>
-        Haz click!
-      </button>
-    </div>
-  )
+return (
+
+<div>
+<p>Has hecho click {count} veces</p>
+{ /_ actualizamos el state al hacer click con setCount _/ }
+<button onClick={() => setCount(count + 1)}>
+Haz click!
+</button>
+</div>
+)
 }
 {{< / highlight >}}
 
@@ -94,17 +95,17 @@ La reutilización de componentes ha sido una de las grandes bazas de React. Sin 
 
 **La primera fueron los Mixins** pero [finalmente se consideraron una mala práctica dada su complejidad](https://reactjs.org/blog/2016/07/13/mixins-considered-harmful.html) y que hacía que los componentes quedasen demasiado atados a ellos. Podías llamar a algunos métodos mágicamente en tu método render que venían heredados por ellos por lo que, al final, se perdía.
 
-Más tarde, **llegaron los HoC (High Order Componentes)** (puedes descubrir el primer sitio donde se mostraron de la mano de [Sebastian Markbåge](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775)) Básicamente, eran **funciones  que envolvían componentes de React, de forma que dependiendo de la lógica interna de la función le inyectaba props diferentes al componente.** De esta forma se conseguía reutilizar la lógica entre diferentes componentes y ha sido, hasta hace muy poco, la forma predilecta de conseguirlo.
+Más tarde, **llegaron los HoC (High Order Componentes)** (puedes descubrir el primer sitio donde se mostraron de la mano de [Sebastian Markbåge](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775)) Básicamente, eran **funciones que envolvían componentes de React, de forma que dependiendo de la lógica interna de la función le inyectaba props diferentes al componente.** De esta forma se conseguía reutilizar la lógica entre diferentes componentes y ha sido, hasta hace muy poco, la forma predilecta de conseguirlo.
 
 Después, [llegaron las Render Props](https://reactjs.org/docs/render-props.html). Lo que las render props buscaban era acabar con la magia oculta de los HoC y llevar esa funcionalidad al terreno declarativo. **La idea es muy buena, y se han visto muy buenas ideas al respecto como [la API de React Apollo](https://www.apollographql.com/docs/react/essentials/queries.html#manual-query).** Funciona muy bien especialmente cuando sólo necesitas un componente que proporcione Render Props pero, al concatenar uno tras otro, [se puede convertir en el Render Props Hell.](http://callbackhell.com/)
 
 ```jsx
 class Mouse extends React.Component {
-  state = { x: 0, y: 0 }
+  state = { x: 0, y: 0 };
 
   handleMouseMove = ({ clientX, clientY }) => {
-    this.setState({ x, y })
-  }
+    this.setState({ x, y });
+  };
 
   render() {
     return (
@@ -114,7 +115,7 @@ class Mouse extends React.Component {
         */}
         {this.props.render(this.state)}
       </div>
-    )
+    );
   }
 }
 
@@ -122,12 +123,14 @@ const MouseTracker = () => (
   <div>
     <h1>Move the mouse around!</h1>
     <Mouse
-      render={mouse => (
-        <span>Position of x is {mouse.x} and y is {mouse.y}</span>
+      render={(mouse) => (
+        <span>
+          Position of x is {mouse.x} and y is {mouse.y}
+        </span>
       )}
     />
   </div>
-)
+);
 ```
 
 El tema es que con la llegada de los Hooks, **podremos crear nuestros propios hooks (Custom Hooks) de forma que ganaremos lo mejor de los High Order Components y las Render Props**, sin necesidad de complicar nuestro componente y manteniendo la programación declarativa. Y vaya sin son reusables, tan reusables que la gente se ha animado a [compartir en diferentes catálogos pequeños hooks](https://usehooks.com/) para poder reutilizar muchas lógicas comunes a la hora de desarrollar aplicaciones de **React**.
@@ -151,7 +154,6 @@ Antes de terminar el artículo me gustaría dejar clara una cosa. **React ha sid
 Dicho esto, mi recomendación es que, **si vas a crear un componente nuevo y tienes la última versión de React, entonces utilices funciones y Hooks**. Y eso si ya tienes claro cómo funcionan y entiendes lo que estás haciendo.
 
 No hace falta que te recorras toda tu aplicación y conviertas todos tus componentes que usan `class` a `function`. Puedes hacerlo, conforme vayas tocando los componentes antiguos, cuando te vayas sintiendo más cómodo con la nueva API. En cualquier caso, **espero que la colección de artículos y [vídeos](https://www.youtube.com/c/midudev?sub_confirmation=1) que voy a ir publicando te ayuden.**
-
 
 ## Referencias
 

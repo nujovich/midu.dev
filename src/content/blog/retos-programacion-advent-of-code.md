@@ -1,9 +1,9 @@
 ---
-title: 'Retos de programación en diciembre: Advientos de Código'
-date: '2021-12-08'
+title: "Retos de programación en diciembre: Advientos de Código"
+date: "2021-12-08"
 description: >-
   Calendarios de Adviento para desarrolladores. Mejora tu lógica de programación.
-tags :  javascript
+tags: javascript
 ---
 
 El adviento tiene su origen en la religión católica pero, poco a poco, se ha convertido en una tradición en forma de calendario con chocolatinas y, ahora, también de retos de programación.

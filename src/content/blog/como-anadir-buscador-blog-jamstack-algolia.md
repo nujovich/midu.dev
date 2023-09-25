@@ -1,9 +1,9 @@
 ---
-title: 'Cómo añadir un buscador en tu blog JamStack con Algolia'
-date: '2021-05-21'
+title: "Cómo añadir un buscador en tu blog JamStack con Algolia"
+date: "2021-05-21"
 description: Te voy a explicar paso a paso cómo he añadido en mi blog hecho con JamStack un buscador gracias a Algolia
 toc: true
-tags :  algolia
+tags: algolia
 image: >-
   /images/og/como-anadir-buscador-blog-jamstack-algolia.jpg
 ---
@@ -12,7 +12,7 @@ image: >-
 
 Muchos lectores del blog me han pedido que añada un buscador. Al ser mi blog un JAMStack, había algunos retos. **¿Cómo podía indexar todo el contenido que tengo en archivos estáticos?** **¿Cómo hago que ese índice esté actualizado a lo largo del tiempo?** **¿Cómo hago un ranking de esas búsquedas...?**
 
-Una forma bastante sencilla, que da una solución general, sería tirar de *Google Custom Search*, que ya tiene todo mi contenido indexado. Sin embargo, tiene algunas **desventajas**: es rápido pero no lo suficiente, pierdo el control de la búsqueda y, además, no puedo evolucionarlo como me gustaría.
+Una forma bastante sencilla, que da una solución general, sería tirar de _Google Custom Search_, que ya tiene todo mi contenido indexado. Sin embargo, tiene algunas **desventajas**: es rápido pero no lo suficiente, pierdo el control de la búsqueda y, además, no puedo evolucionarlo como me gustaría.
 
 Después de informarme de mis opciones, al final he decidido tirar por Algolia, una compañía que se encarga de crear experiencias de búsqueda como servicio (SaaS) y que viene a solucionar mis problemas. Vamos a ver cómo podemos añadir la búsqueda en mi blog paso a paso.
 
@@ -28,6 +28,7 @@ Algolia nos **ofrece una API y widgets** para montar nuestra búsqueda. Pero, an
 Para crear una **solución lo más general posible**, que pueda servir para cualquier blog que use un JAMStack, **voy a usar el RSS para generar un archivo JSON** y, este, que pase a formar parte del índice de Algolia.
 
 Los pasos serán:
+
 - Creamos la aplicación y el índice en Algolia.
 - Convertimos el RSS a un formato JSON.
 - Enviamos ese JSON al índice de Algolia usando su API.
@@ -38,7 +39,7 @@ Los pasos serán:
 
 ## Creando nuestra aplicación e índice en Algolia
 
-Primero, [vamos a ir a Algolia para registranos](https://midu.dev/images/algolia-horizontal-logo.png), si no lo estamos ya. Seguramente, si es la primera vez que entras, tendrás un tutorial que te indica cómo empezar paso a paso. 
+Primero, [vamos a ir a Algolia para registranos](https://midu.dev/images/algolia-horizontal-logo.png), si no lo estamos ya. Seguramente, si es la primera vez que entras, tendrás un tutorial que te indica cómo empezar paso a paso.
 
 Lo primero es crear una aplicación. Aquí, además del nombre, indicaremos la capa de precios que queremos utilizar. En nuestro caso será la FREE, que te da 10 unidades gratis al mes y que trae lo suficiente para funcionar (más adelante os comentaré sobre los precios del servicio).
 
@@ -56,7 +57,7 @@ Nos pide un nombre. En este punto es interesante utilizar diferentes índices de
 
 Ahora tendremos que importar la información que tiene que ser indexada. Podríamos añadir los elementos subiendo un archivo JSON con nuestros elementos, podríamos añadirlos a mano (nooooooo) y, lo que haremos, **se puede utilizar la API para automatizar este proceso.**
 
-Ahora nos faltaría recuperar 
+Ahora nos faltaría recuperar
 
 ## Generando el contenido para enviarlo al índice de Algolia
 
@@ -65,17 +66,20 @@ Teniendo en cuenta que ya estoy creando un RSS para mi blog, puedo leer ese mism
 Vamos a recuperar el archivo `index.xml` (que es el RSS) y lo transformamos a JSON.
 
 ```javascript
-const fs = require('fs')
-const path = require('path')
+const fs = require("fs");
+const path = require("path");
 // usamos el paquete `xml2json` para transformar el RSS a un JSON
-const parser = require('xml2json')
+const parser = require("xml2json");
 
 // leemos con Node el RSS de nuestro blog
-const rss = fs.readFileSync(path.resolve(__dirname, '../public/index.xml'), 'utf-8')
+const rss = fs.readFileSync(
+  path.resolve(__dirname, "../public/index.xml"),
+  "utf-8"
+);
 // pasamos la opción object: true para que nos devuelva un objeto de JavaScript
-const json = parser.toJson(rss, {object: true})
+const json = parser.toJson(rss, { object: true });
 // en item vamos a tener un array de elementos con todos los artículos
-console.log(json.rss.channel.item)
+console.log(json.rss.channel.item);
 ```
 
 Con esto ya tendríamos todo nuestro contenido del blog preparado para ser indexado. Si no tienes un archivo RSS generado, tendrás que pensar en una alternativa para ser capaz de exporar todo el contenido aunque, desde luego, te recomiendo que siempre generes un archivo RSS.
@@ -87,14 +91,14 @@ Una vez que ya tenemos el contenido, sólo nos faltará enviarlo a Algolia. Para
 Una vez tengamos eso, necesitamos instalar primero la dependencia de `algoliasearch`. Lo haremos con `npm install algoliasearch`. Y ahora pasamos al código.
 
 ```javascript
-const algoliasearch = require('algoliasearch')
+const algoliasearch = require("algoliasearch");
 
-const ALGOLIA_APPLICATION_ID = "N06USNNE94"
-const ALGOLIA_ADMIN_API_KEY = "ffb74847ebfbabfbfbf66cb59c4673ba" // es inventado :P
-const ALGOLIA_INDEX_NAME = "prod_blog_content"
+const ALGOLIA_APPLICATION_ID = "N06USNNE94";
+const ALGOLIA_ADMIN_API_KEY = "ffb74847ebfbabfbfbf66cb59c4673ba"; // es inventado :P
+const ALGOLIA_INDEX_NAME = "prod_blog_content";
 
-const client = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_ADMIN_API_KEY)
-const index = client.initIndex(ALGOLIA_INDEX_NAME)
+const client = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_ADMIN_API_KEY);
+const index = client.initIndex(ALGOLIA_INDEX_NAME);
 ```
 
 Las constantes de `ALGOLIA_`, seguramente, sería **mejor sacarlos de variables de entorno.** Pero en este caso, por sencillez, los vamos a dejar así.
@@ -102,7 +106,10 @@ Las constantes de `ALGOLIA_`, seguramente, sería **mejor sacarlos de variables 
 Lo interesante del índice de Algolia es que no necesita un contrato en concreto pero sería interesante hacer que nuestros posts siempre tengan una id única. Para ello podemos usar la propiedad `ObjectId` que Algolia define como un identificador único para nuestro post. En nuestro caso vamos a usar el atributo `guid` que ya está disponible.
 
 ```javascript
-const posts = json.rss.channel.item.map(post => ({...post, objectID: post.guid }))
+const posts = json.rss.channel.item.map((post) => ({
+  ...post,
+  objectID: post.guid,
+}));
 ```
 
 > Es importante ofrecer un objectID que siempre sea el mismo para evitar que el mismo post se añada dos veces en el índice con identificadores distintos. No es importante que sea un número, auto-generado o lo que sea. Pero siempre tiene que ser el mismo y debe ser único que identifique a ese post.
@@ -110,43 +117,50 @@ const posts = json.rss.channel.item.map(post => ({...post, objectID: post.guid }
 Con esto ya habremos iniciado el índice, preparado para recibir los posts para ser indexados. Así que ya podemos llamar la API para enviar todos estos posts al índice de Algolia.
 
 ```javascript
-index.saveObjects(posts)
-  .then(objectIds => {
-    console.log({objectIds})
+index
+  .saveObjects(posts)
+  .then((objectIds) => {
+    console.log({ objectIds });
   })
-  .catch(err => {
-    console.error(err)
-  })
+  .catch((err) => {
+    console.error(err);
+  });
 ```
 
 El código completo quedaría así:
 
 ```javascript
-const parser = require('xml2json')
-const fs = require('fs')
-const path = require('path')
-const algoliasearch = require('algoliasearch')
+const parser = require("xml2json");
+const fs = require("fs");
+const path = require("path");
+const algoliasearch = require("algoliasearch");
 
-const ALGOLIA_APPLICATION_ID = "N06USNNE94"
-const ALGOLIA_ADMIN_API_KEY = "9089a9d591b8c82c89e2a810f4c77fa1" // es inventado :P
-const ALGOLIA_INDEX_NAME = "prod_blog_content"
+const ALGOLIA_APPLICATION_ID = "N06USNNE94";
+const ALGOLIA_ADMIN_API_KEY = "9089a9d591b8c82c89e2a810f4c77fa1"; // es inventado :P
+const ALGOLIA_INDEX_NAME = "prod_blog_content";
 
-const rss = fs.readFileSync(path.resolve(__dirname, '../public/index.xml'), 'utf-8')
-const json = parser.toJson(rss, {object: true})
+const rss = fs.readFileSync(
+  path.resolve(__dirname, "../public/index.xml"),
+  "utf-8"
+);
+const json = parser.toJson(rss, { object: true });
 
+const client = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_ADMIN_API_KEY);
+const index = client.initIndex(ALGOLIA_INDEX_NAME);
 
-const client = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_ADMIN_API_KEY)
-const index = client.initIndex(ALGOLIA_INDEX_NAME)
+const posts = json.rss.channel.item.map((post) => ({
+  ...post,
+  objectID: post.guid,
+}));
 
-const posts = json.rss.channel.item.map(post => ({...post, objectID: post.guid }))
-
-index.saveObjects(posts)
-  .then(objectIds => {
-    console.log({objectIds})
+index
+  .saveObjects(posts)
+  .then((objectIds) => {
+    console.log({ objectIds });
   })
-  .catch(err => {
-    console.error(err)
-  })
+  .catch((err) => {
+    console.error(err);
+  });
 ```
 
 Al ejecutar el código nos debería aparecer algo así:
@@ -163,7 +177,7 @@ Al ejecutar el código nos debería aparecer algo así:
       'https://midu.dev/no-sirvo-para-programar-no-es-para-todos-vales-como-programador/',
     ...
   }
-  ```
+```
 
 Eso significa que todo ha ido bien. Y, para comprobarlo, podemos ir a nuestra página de Algolia y ver si nuestro contenido ha sido indexado correctamente.
 
@@ -177,7 +191,7 @@ Tenemos el contenido pero todavía le tenemos que decir a Algolia cómo funciona
 
 Primero vamos a decirle qué atributos del contenido se usan en la búsqueda. En nuestro caso estamos enviando el `title`, `description`, `date`, `link` y `objectID`. Vamos a indicar que queremos que se pueda buscar sobre los dos primeros. Además, tenemos que indicar el orden de importancia de cada uno.
 
-En nuestro caso el título es más importante que la descripción, por lo que vamos a añadir el `title` por encima del `description`. Además, vamos a hacer que estos atributos sean _ordered_. Esto significa que si la palabra buscada está más al principio de la frase, tendrá una importancia mayor. Por ejemplo si buscas *"React"* el título *"React desde cero"* será más importante que *"Cómo mejorar en React"*, ya que la palabra está al final de la frase. Esto lo podéis ir personalizando a vuestro gusto.
+En nuestro caso el título es más importante que la descripción, por lo que vamos a añadir el `title` por encima del `description`. Además, vamos a hacer que estos atributos sean _ordered_. Esto significa que si la palabra buscada está más al principio de la frase, tendrá una importancia mayor. Por ejemplo si buscas _"React"_ el título _"React desde cero"_ será más importante que _"Cómo mejorar en React"_, ya que la palabra está al final de la frase. Esto lo podéis ir personalizando a vuestro gusto.
 
 No olvides darle a _Review and Save Settings_ antes de salir de la página.
 
@@ -189,22 +203,24 @@ Si quieres probar cómo funciona la búsqueda, puedes volver a la pestaña _Brow
 
 En nuestro `index.html`
 
-
 ```html
-  <!-- Motor de búsqueda de algolia -->
-  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
-  <!-- Widget para añadir un Instant Search en nuestro blog fácilmente -->
-  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js"></script>
-  <!-- Estilos por defecto para el Instant Search -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css">
+<!-- Motor de búsqueda de algolia -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+<!-- Widget para añadir un Instant Search en nuestro blog fácilmente -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js"></script>
+<!-- Estilos por defecto para el Instant Search -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css"
+/>
 ```
 
 Una vez que tenemos todos los recursos cargados, vamos a añadir el HTML necesario en nuestro blog. Lo colocaremos donde queramos que aparezca nuestra búsqueda y sus resultados:
 
 ```html
 <div>
-  <div id='searchbox'></div>
-  <div id='hits'></div>
+  <div id="searchbox"></div>
+  <div id="hits"></div>
 </div>
 ```
 
@@ -212,39 +228,42 @@ Ya podemos empezar a escribir nuestro JavaScript para inicializar la búsqueda. 
 
 ```javascript
 // Vamos a "API Keys" y recuperamos el Application ID y el Search-Only API Key
-var ALGOLIA_APPLICATION_ID = 'QK9VV9YO5F'
-var ALGOLIA_SEARCH_ONLY_API_KEY = '247bb355c786b6e9f528bc382cab3039'
+var ALGOLIA_APPLICATION_ID = "QK9VV9YO5F";
+var ALGOLIA_SEARCH_ONLY_API_KEY = "247bb355c786b6e9f528bc382cab3039";
 
 // Las usamos para inicializar el cliente de Algolia
-var algoliaClient = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY);
+var algoliaClient = algoliasearch(
+  ALGOLIA_APPLICATION_ID,
+  ALGOLIA_SEARCH_ONLY_API_KEY
+);
 
 // Inicializamos el módulo de instantsearch
 var search = instantsearch({
-  indexName: 'prod_blog_content', // este es el nombre de tu índice, pon el correcto
-  numberLocale: 'es', // idioma para el buscador
-  searchClient: algoliaClient // el cliente que hemos iniciado antes
+  indexName: "prod_blog_content", // este es el nombre de tu índice, pon el correcto
+  numberLocale: "es", // idioma para el buscador
+  searchClient: algoliaClient, // el cliente que hemos iniciado antes
 });
 
 // Le indicamos los widgets que vamos a usar
 search.addWidgets([
   // en el elemento con id 'searchbox' iniciamos el buscador
   instantsearch.widgets.searchBox({
-    container: '#searchbox',
-    placeholder: 'Buscar...'
+    container: "#searchbox",
+    placeholder: "Buscar...",
   }),
 
   // los resultados irán en el elemento con id 'hits'
   instantsearch.widgets.hits({
-    container: '#hits'
+    container: "#hits",
   }),
 
   // configuramos que sólo salgan tres resultados
   instantsearch.widgets.configure({
-    hitsPerPage: 3
+    hitsPerPage: 3,
   }),
 ]);
 
-search.start()
+search.start();
 ```
 
 Si has llegado hasta aquí... verás que todo funcionar funciona... pero al entrar en nuestro blog, aparece el buscador ya con resultados y además el cómo se muestran no es lo más adecuado (se ve el objeto JSON ahí horrible, directamente :D). Si haces una búsqueda veás que sí funciona pero nos quedaría mejorar los dos puntos mencionados.
@@ -285,7 +304,10 @@ Igualmente sabemos de programación, así que vamos a conseguir emular el mismo 
 
 ```javascript
 // creamos una variable y la iniciamos a true
-var algoliaClient = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY);
+var algoliaClient = algoliasearch(
+  ALGOLIA_APPLICATION_ID,
+  ALGOLIA_SEARCH_ONLY_API_KEY
+);
 
 // creamos un searchClient partiendo del algoliaClient
 var searchClient = {
@@ -295,17 +317,17 @@ var searchClient = {
     // se hace una búsqueda. Comprobamos antes si es la primera
     // carga para evitar que haga la búsqueda
     if (firstLoad === true) {
-      firstLoad = false
-      return // return sin hacer nada
+      firstLoad = false;
+      return; // return sin hacer nada
     }
-    return algoliaClient.search(requests)
-  }
-}
+    return algoliaClient.search(requests);
+  },
+};
 
 var search = instantsearch({
-  indexName: 'prod_blog_content',
-  numberLocale: 'es',
-  searchClient // el cliente que tiene el cambio de la config
+  indexName: "prod_blog_content",
+  numberLocale: "es",
+  searchClient, // el cliente que tiene el cambio de la config
 });
 ```
 

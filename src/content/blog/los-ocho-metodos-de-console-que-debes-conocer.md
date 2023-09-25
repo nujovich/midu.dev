@@ -1,7 +1,7 @@
 ---
 title: Los ocho métodos de console que debes conocer
-date: '2019-09-30'
-image: '/images/console-info-warn-error.png'
+date: "2019-09-30"
+image: "/images/console-info-warn-error.png"
 description: La consola nos ofrece muchos métodos más además de console.log. Conoce los que quedan, que te ayudarán a mostrar mejores mensajes en la consola. warn, error, info, table, time, timeEnd, count y assert.
 topic: javascript
 
@@ -14,11 +14,11 @@ Estamos muy habituados a usar `console.log` para depurar nuestro código pero...
 
 Si queremos mostrar un mensaje en la consola, normalmente usamos simplemente `console.log`. Existe, sin embargo, diferentes **métodos que nos van a permitir indicar de una forma mucho más clara qué tipo de mensaje queremos mostrar.**
 
-* `console.info(msg)`: Para enviar a la consola un mensaje **informativo**. En algunos navegadores se comportará como el  `console.log` y en otros se acompañará con un icono "i". ℹ️
-* `console.warn(msg)`: Para enviar **advertencias** o *warnings*. Se mostrará en amarillo y se acompaña normalmente con un signo de atención. ⚠️
-* `console.error(msg)`: Enviamos **errores** a la consola. Se muestra en rojo y adjunta un icono indicando que es un error. 🛑
+- `console.info(msg)`: Para enviar a la consola un mensaje **informativo**. En algunos navegadores se comportará como el `console.log` y en otros se acompañará con un icono "i". ℹ️
+- `console.warn(msg)`: Para enviar **advertencias** o _warnings_. Se mostrará en amarillo y se acompaña normalmente con un signo de atención. ⚠️
+- `console.error(msg)`: Enviamos **errores** a la consola. Se muestra en rojo y adjunta un icono indicando que es un error. 🛑
 
-Aquí puedes ver un ejemplo en las herramientas de desarrollo de *Google Chrome*:
+Aquí puedes ver un ejemplo en las herramientas de desarrollo de _Google Chrome_:
 {{< img src="/images/console-info-warn-error.png" alt="Los métodos info, warn y error nos permiten dotar de mayor contexto el mensaje que queremos mostrar" align="center">}}
 
 Lo más interesante de todo esto, es que normalmente **los navegadores te permiten filtrar en consola el tipo de mensaje que quieres ver**. De forma que podrías filtrar para ver sólo las advertencias. Esto te puede ayudar a buscar entre la maraña de mensajes en la consola todas las advertencias que tengas.
@@ -31,22 +31,22 @@ Tomando este objeto como referencia:
 
 ```javascript
 const person = {
-    name: 'Miguel',
-    twitter: 'midudev',
-    frontend: true
-}
+  name: "Miguel",
+  twitter: "midudev",
+  frontend: true,
+};
 
-console.table(person)
+console.table(person);
 ```
 
 En la consola de nuestro navegador, nos mostraría la información de la siguiente manera:
 
 {{< img src="/images/console-table-example.png" alt="Con table, la información se entiende mucho mejor sin necesidad de tener que expandir nada" align="center">}}
 
-Por ejemplo, puedes sacarle partido a este método para conocer todas las posibilidades de `console` para ello prueba a ejecutar el siguiente código en tu consola: 
+Por ejemplo, puedes sacarle partido a este método para conocer todas las posibilidades de `console` para ello prueba a ejecutar el siguiente código en tu consola:
 
 ```javascript
-console.table(Object.entries(console).sort())
+console.table(Object.entries(console).sort());
 ```
 
 ## time y timeEnd, para contar el tiempo de ejecución
@@ -56,16 +56,16 @@ Con `console.time` vamos a poder iniciar un temporizador ⏲ para calcular la du
 Lo mejor es que veamos un ejemplo:
 
 ```javascript
-console.time('fetch')
-console.time('fetchAndRender')
+console.time("fetch");
+console.time("fetchAndRender");
 
 fetch(apiURL)
-    .then(res => res.json())
-    .then(response => {
-        console.timeEnd('fetch') // fetch: 5213.01904296875ms
-        renderResults(response)
-        console.timeEnd('fetchAndRender') // 6048.29687501904ms
-    })
+  .then((res) => res.json())
+  .then((response) => {
+    console.timeEnd("fetch"); // fetch: 5213.01904296875ms
+    renderResults(response);
+    console.timeEnd("fetchAndRender"); // 6048.29687501904ms
+  });
 ```
 
 Lo puedes probar tu mismo en la consola de tu navegador para que veas como funciona:

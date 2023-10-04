@@ -1,6 +1,10 @@
 ---
-const { ButtonUrl, ButtonClass } = Astro.props
+const { ButtonUrl, ButtonClass } = Astro.props;
 ---
-<a href={ButtonUrl} class=` w-full py-2 rounded-xl flex items-center justify-center gap-3 font-semibold ${ButtonClass}`>
+
+<a
+  href={ButtonUrl}
+  class=`w-full py-2 flex items-center justify-center gap-3 font-semibold ${ButtonClass}`
+>
   <slot />
 </a>

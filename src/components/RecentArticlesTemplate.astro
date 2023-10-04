@@ -10,14 +10,16 @@ interface Props {
 
 const { title, date, url, tags } = Astro.props;
 
-const fullDate = date.toLocaleDateString('es', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-})
+const fullDate = date.toLocaleDateString("es", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
-<li class="flex items-center justify-start max-w-lg">
+<li
+  class="h-28 flex items-center justify-start bg-transparent py-3 px-6 rounded-xl hover:bg-midu-600"
+>
   <a href={url} class="flex items-center justify-center gap-4">
     <Icon name={tags} class="w-14 h-14 rounded-full" />
     <div class="flex flex-col items-start justify-between gap-3 max-w-sm">

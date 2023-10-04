@@ -2,15 +2,15 @@
 import navLinks from "@data/navbarLinks.json";
 ---
 
-<nav class="flex items-center gap-4 grow">
+<nav class="flex items-center gap-x-6">
   <a href="/" class="">
-    <img src="/logo-dark.png" alt="midudev logo" class="w-36" />
+    <img src="/logo-dark.png" alt="midudev logo" class="w-36 mb-1" />
   </a>
   <ul class="flex items-center justify-center gap-4">
     {
-      navLinks.map((link, index) => (
+      navLinks.map((link) => (
         <li class="">
-          <a key={index} href={link.url} class="text-midu-50 font-bold">
+          <a href={link.url} class="text-midu-50 font-bold">
             {link.title}
           </a>
         </li>

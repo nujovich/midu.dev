@@ -8,5 +8,6 @@
       "@data/*": ["src/data/*"],
       "@services/*": ["src/services/*"]
     }
-  }
+  },
+  "allowSyntheticDefaultImports": true,
 }

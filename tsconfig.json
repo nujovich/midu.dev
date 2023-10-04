@@ -9,5 +9,5 @@
       "@services/*": ["src/services/*"]
     }
   },
-  "allowSyntheticDefaultImports": true,
+  "allowSyntheticDefaultImports": true
 }

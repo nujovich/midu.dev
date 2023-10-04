@@ -21,11 +21,11 @@ const posts = (await getCollection("blog")).sort((a, b) => {
 });
 ---
 
-<section
-  class="flex items-center justify-center h-[calc(100vh-12rem)]"
->
+<section class="flex items-center justify-center h-[calc(100vh-12rem)]">
   <div class="flex flex-col items-start justify-center gap-8">
-    <h2 class="w-full text-4xl font-extrabold text-midu-100">Artículos Recientes</h2>
+    <h2 class="w-full text-4xl font-extrabold text-midu-300">
+      Artículos Recientes
+    </h2>
     <ul class="grid grid-cols-2 items-center justify-center gap-y-12">
       {
         posts
@@ -44,6 +44,8 @@ const posts = (await getCollection("blog")).sort((a, b) => {
           ))
       }
     </ul>
-    <a href='/blog/' class="text-lg font-bold text-midu-400 pt-6">Ver otros artículos</a>
+    <a href="/blog/" class="text-lg font-bold text-midu-50 pt-6"
+      >Ver otros artículos →</a
+    >
   </div>
 </section>

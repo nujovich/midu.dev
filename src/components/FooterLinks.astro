@@ -4,10 +4,10 @@ import footerLinks from "@data/footerlinks.json";
 
 {
   footerLinks.footer.map((categoria) => (
-    <div class='flex flex-col items-start justify-start w-fit gap-1'>
-      <h3 class='font-bold text-sm pb-1'>{categoria.title}</h3>
+    <div class="flex flex-col items-start justify-start w-fit gap-1">
+      <h3 class="font-bold text-md pb-1">{categoria.title}</h3>
       {categoria.items.map((item) => (
-        <a href={item.url} class="text-sm text-gray-500 hover:text-gray-700">
+        <a href={item.url} class="text-md text-midu-50 hover:text-midu-200">
           {item.name}
         </a>
       ))}

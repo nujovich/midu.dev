@@ -15,20 +15,22 @@ Bienvenido al proyecto de rediseño del Blog de midudev. Este proyecto tiene com
 
 ## Roadmap
 
-[] Mobile responsive.
-[] 100/100 Lighthouse performance.
-[] SEO-friendly with canonical URLs and OpenGraph data
-[] Sitemap support
-[] RSS Feed support
-[] Image optimization
-[] Light mode
-[] Draft mode
-[] Copy code block
-[] Post Sharing Options
+- [ ] Mobile responsive.
+- [ ] 100/100 Lighthouse performance.
+- [ ] SEO-friendly with canonical URLs and OpenGraph data.
+- [ ] Sitemap support.
+- [ ] RSS Feed support.
+- [ ] Image optimization.
+- [ ] Light mode.
+- [ ] Draft mode.
+- [ ] Copy code block.
+- [ ] Post Sharing Options.
 
-[] Página de Agenda
-[] Sección Redes Sociales (home)
-[] Sección últimas clases
+-
+
+- [ ] Página de Agenda.
+- [ ] Sección Redes Sociales (home).
+- [ ] Sección últimas clases.
 
 ## Stack
 
@@ -54,7 +56,7 @@ Bienvenido al proyecto de rediseño del Blog de midudev. Este proyecto tiene com
 
 ## Estructura
 
-```
+```no.highlight
 /
 ├── public/
 ├── src/

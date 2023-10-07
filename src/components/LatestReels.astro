@@ -1,19 +1,32 @@
 ---
 import FetchLatestReels from "@components/FetchLatestReels.astro"
+import Icons from "./Icons.astro";
 ---
 
-<section class="">
-  <div class="">
-    <div class="">
-      <h3 class="">Sígueme en mis otras redes sociales</h3>
-      <p class="">
+<section class="m-8">
+  <div class="grid grid-cols-3 items-start gap-4">
+    <div class="grid grid-cols-1 gap-2">
+      <h3 class="text-4xl font-extrabold text-midu-100">Sígueme en mis otras redes sociales</h3>
+      <p class="text-lg">
         Encuentra retos, tips y recursos para seguir creciendo profesionalmente.
       </p>
-      <ul class="">
-        <li class="">Youtube/@midudev</li>
-        <li class="">Instagram/midu.dev</li>
-        <li class="">Tiktok/midudev</li>
-        <li class="">Twitter/midudev</li>
+      <ul class="grid grid-cols-1 gap-5 text-md">
+        <li class="flex gap-3">
+          <Icons IconPack='simple-icons' IconName="youtube" IconClass='w-5 h-5 fill-midu-50' />
+          Youtube/@midudev
+        </li>
+        <li class="flex gap-3">
+          <Icons IconPack='simple-icons' IconName="instagram" IconClass='w-5 h-5 fill-midu-50' />
+          Instagram/midu.dev
+        </li>
+        <li class="flex gap-3">
+          <Icons IconPack='simple-icons' IconName="tiktok" IconClass='w-5 h-5 fill-midu-50' />
+          Tiktok/midudev
+        </li>
+        <li class="flex gap-3">
+          <Icons IconPack='simple-icons' IconName="twitter" IconClass='w-5 h-5 fill-midu-50' />
+          Twitter/midudev
+        </li>
       </ul>
     </div>
     <FetchLatestReels />

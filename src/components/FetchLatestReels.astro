@@ -3,13 +3,20 @@ import { getLatestReels } from "@services/getLatestReels";
 
 const reels = await getLatestReels();
 
+// <img crossorigin="anonymous" src={reel.media.image_versions2.additional_candidates.igtv_first_frame.url} class="aspect-video" /> --> <img crossorigin="anonymous" src={reel.media.image_versions2.additional_candidates.igtv_first_frame.url} class="aspect-video" />
+
 const instaURL = "https://www.instagram.com/reel/";
+let count =0;
 ---
 
 {
-  reels.slice(0, 2).map((reel) => (
-    <a href={`${instaURL}${reel.node.shortcode}`}>
-      <img src={reel.node.display_url} class="aspect-video" />
-    </a>
-  ))
+  reels.map((reel) => {
+    count++;
+    return (
+        <a href={`${instaURL}${reel.media.code}`}>
+          <img alt="Reel de Midu" class="rounded-lg border-4 border-midu-50" src={`./../../midu_${count}.jpg`}/>
+        </a>
+
+    )
+  })
 }

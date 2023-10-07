@@ -2,7 +2,7 @@
 
 export const getLatestReels = async () => {
   const url =
-    "https://instagram-looter2.p.rapidapi.com/user-feeds?id=8242141302&count=12";
+    "https://instagram-looter2.p.rapidapi.com/reels?id=8242141302&count=2";
   const options = {
     method: "GET",
     headers: {
@@ -16,15 +16,8 @@ export const getLatestReels = async () => {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    const edges = result.data.user.edge_owner_to_timeline_media.edges;
-    return edges;
+    return result.items;
   } catch (error) {
     console.error(error);
   }
 };
-
-//
-// export const getLatestReels = async () => {
-//   const edges = reelsJSON.data.user.edge_owner_to_timeline_media.edges;
-//   return edges;
-// }

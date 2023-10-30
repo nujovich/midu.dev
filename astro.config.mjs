@@ -12,5 +12,10 @@ export default defineConfig({
     },
     remarkPlugins: [remarkReadingTime],
   },
+  server: {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
   integrations: [tailwind(), mdx()],
 });

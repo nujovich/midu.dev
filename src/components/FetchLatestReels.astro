@@ -1,15 +1,17 @@
 ---
-import { getLatestReels } from "@services/getLatestReels";
+import fetchInstagramClips  from '@services/instascraper';
 
-const reels = await getLatestReels();
-
+const reels = await fetchInstagramClips();
 const instaURL = "https://www.instagram.com/reel/";
 ---
 
 {
-  reels.slice(0, 2).map((reel) => (
-    <a href={`${instaURL}${reel.node.shortcode}`}>
-      <img src={reel.node.display_url} class="aspect-video" />
-    </a>
-  ))
+  reels.items.map((reel) => {
+    return (
+        <a href={`${instaURL}${reel.media.code}`}>
+          <img crossorigin="anonymous" src={reel.media.image_versions2.additional_candidates.igtv_first_frame.url} class="aspect-video" /> 
+        </a>
+
+    )
+  })
 }

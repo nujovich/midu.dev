@@ -2,13 +2,25 @@
 
 export const getLatestReels = async () => {
   const url =
-    "https://instagram-looter2.p.rapidapi.com/user-feeds?id=8242141302&count=12";
+    "https://instagram.com/api/v1/clips/user/?include_feed_video=true&page_size=2&target_user_id=8242141302";
   const options = {
-    method: "GET",
+    method: "POST",
     headers: {
-      "X-RapidAPI-Key": "afd6c4d8e9msh86ce4954636692bp1cdd9djsn6ee28d8a9f49",
-      "X-RapidAPI-Host": "instagram-looter2.p.rapidapi.com",
-      "Cross-Origin-Resource-Policy": "cross-origin",
+      "access-control-allow-methods": "POST, OPTIONS",
+      "access-control-allow-headers": "content-type",
+      "user-agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36",
+      "access-control-allow-origin": "*",
+      "cors-origin": "*",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "sec-gpc": "1",
+      "x-asbd-id": "129477",
+      "x-csrftoken": "mPMVQyMfv2HYqLbHVjGcmo2Ul4mf7wSB",
+      "x-ig-app-id": "936619743392459",
+      "x-ig-www-claim": "hmac.AR0slj81AGMUZmqJL1uSMrjB7HTujuef3BDM44xGoic2gIG8",
+      "x-instagram-ajax": "1009123641",
+      "x-requested-with": "XMLHttpRequest",
     },
     mode: "cors",
   };
@@ -16,15 +28,8 @@ export const getLatestReels = async () => {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    const edges = result.data.user.edge_owner_to_timeline_media.edges;
-    return edges;
+    return result.items;
   } catch (error) {
     console.error(error);
   }
 };
-
-//
-// export const getLatestReels = async () => {
-//   const edges = reelsJSON.data.user.edge_owner_to_timeline_media.edges;
-//   return edges;
-// }

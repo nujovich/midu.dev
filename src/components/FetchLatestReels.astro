@@ -1,20 +1,15 @@
 ---
-import { getLatestReels } from "@services/getLatestReels";
+import fetchInstagramClips  from '@services/instascraper';
 
-const reels = await getLatestReels();
-
-// <img crossorigin="anonymous" src={reel.media.image_versions2.additional_candidates.igtv_first_frame.url} class="aspect-video" /> --> <img crossorigin="anonymous" src={reel.media.image_versions2.additional_candidates.igtv_first_frame.url} class="aspect-video" />
-
+const reels = await fetchInstagramClips();
 const instaURL = "https://www.instagram.com/reel/";
-let count =0;
 ---
 
 {
-  reels.map((reel) => {
-    count++;
+  reels.items.map((reel) => {
     return (
         <a href={`${instaURL}${reel.media.code}`}>
-          <img alt="Reel de Midu" class="rounded-lg border-4 border-midu-50" src={`./../../midu_${count}.jpg`}/>
+          <img crossorigin="anonymous" src={reel.media.image_versions2.additional_candidates.igtv_first_frame.url} class="aspect-video" /> 
         </a>
 
     )
